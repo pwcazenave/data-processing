@@ -1,0 +1,47 @@
++---------------------+---------+---------+-------+-------+--------+-------+-------+------+
+| SITE                | LON dec | LAT dec | SHOM  | LEGOS | PSMSL  | GLOSS | UHSLC | IGS  |
++---------------------+---------+---------+-------+-------+--------+-------+-------+------+
+| AJACCIO             |    8.76 |   41.93 | AJACC |       |        |  ALT  |       | AJAC |
+| ARCACHON-EYRAC      |   -1.16 |   44.66 | EYRAC |       |        |       |       |      |
+| BOUCAU-BAYONNE      |   -1.42 |   43.78 | BOUCA |       | 190139 |       |       |      |
+| BOULOGNE-SUR-MER    |    1.58 |   50.73 | BOULO |       | 190021 |       |       |      |
+| BREST               |   -4.50 |   48.38 | BREST |       | 190091 |  242  |       | BRST |
+| CALAIS              |    1.66 |   50.97 | CALAI |       | 190011 |       |       |      |
+| CAYENNE             |  -52.00 |    5.00 |       |       | 876001 |  202  |       |      |
+| CHERBOURG           |   -1.63 |   49.65 | CHERB |       | 190061 |       |       |      |
+| CLIPPERTON          | -109.22 |   10.28 |       |       | 831002 |  165  |  391  |      |
+| CONCARNEAU          |   -3.92 |   47.87 | CONCA |       |        |       |       |      |
+| CROZET              |   51.87 |  -46.42 |       |  178  |        |  021  |  178  |      |
+| DUMONT D'URVILLE    |  140.00 |  -66.67 |       |  189  |        |  131  |       | DUM1 |
+| DUNKERQUE           |    2.37 |   51.05 | DUNKE |       | 190001 |       |       |      |
+| DZAOUDZI, MAYOTTE   |   45.25 |  -12.78 | DZAOU |       | 438001 |  096  |  155  |      |
+| FORT-DE-FRANCE      |  -60.08 |   14.60 | FOR2F |       | 912001 |       |       |      |
+| ILES DU SALUT       |  -52.59 |    5.07 | SALUT |       |        |       |       |      |
+| KERGUELEN           |   70.25 |  -49.35 |       |  180  | 434001 |  023  |  180  | KERG |
+| LA_ROCHELLE         |   -1.22 |   46.16 | LROCH |       | 190121 |       |       | LROC |
+| LES_SABLES_D_OLONNE |   -1.80 |   46.50 | OLONE |       | 190116 |       |       |      |
+| LE_CONQUET          |   -4.78 |   48.37 | LCONQ |       | 190089 |       |       |      |
+| LE_CROUESTY         |   -2.89 |   47.54 | LCROU |       |        |       |       |      |
+| LE_HAVRE            |   -0.12 |   49.48 | HAVRE |       | 190051 |       |       |      |
+| LE_ROBERT           |  -60.93 |   14.68 |       |       | 912001 |  204  |       |      |
+| MARSEILLE           |    5.35 |   43.28 | MARSE |       | 230051 |  205  |       | MARS |
+| MONACO              |    7.42 |   43.73 | MONAC |       | 233011 |       |       |      |
+| NICE                |    7.27 |   43.70 | NICE1 |       | 230081 |       |       |      |
+| NOUMEA-CHALEIX      |  166.41 |  -22.27 | NOUME |       | 740001 |  123  |  019  | NOUM |
+| NOUMEA-NUMBO        |  166.41 |  -22.25 | NUMBO |       |        |  123  |       | NOUM |
+| NUKU HIVA, MARQUISE | -139.03 |   -9.82 |       |       | 805011 |  142  |       |      |
+| PAPEETE, TAHITI     | -149.61 |  -17.58 |       |       | 780011 |  140  |  015  | PAPE |
+| POINTE-A-PITRE      |  -61.53 |   16.23 | PITRE |       | 914001 |       |       |      |
+| PTE GALETS, REUNION |   55.30 |  -20.92 | GALET |       | 451001 |  017  |  164  |      |
+| PORT_BLOC/LE_VERDON |   -1.07 |   45.55 | PBLOC |       | 190131 |       |       |      | 
+| PORT VENDRES        |    3.11 |   42.52 | PVEND |       | 230006 |       |       |      |
+| RIKITEA, GAMBIER    | -134.95 |  -23.13 |       |       | 808001 |  138  |       |      |
+| ROSCOFF             |   -3.96 |   48.72 | RSCOF |       | 190086 |       |       |      |
+| SAINT JEAN-DE-LUZ   |   -1.68 |   43.40 | SJLUZ |       | 190141 |       |       | SCOA |
+| SAINT-MALO          |   -2.03 |   48.64 | SMALO |       | 190071 |       |       |      |
+| SAINT-NAZAIRE       |   -2.20 |   47.27 | SNAZA |       | 190111 |       |       |      |
+| SAINT-PAUL          |   77.58 |  -38.72 |       |  179  |        |  024  |  179  |      |
+| SETE                |    3.70 |   43.40 | SETE1 |       | 230021 |       |       |      |
+| TOULON              |    5.92 |   43.12 | TOULO |       | 230061 |       |       |      |
++---------------------+---------+---------+-------+-------+--------+-------+-------+------+
+
