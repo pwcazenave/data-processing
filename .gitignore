@@ -9,5 +9,9 @@
 *.slv # SHOM
 *.zip # Duh
 *.db # SQLite Database
+*.db.backup # SQLite Database
 *.dbf # ShapeFile
 *.bar # SHOM
+
+# Data directories
+GSHHS/shp/GSHHS_shp/
