@@ -1,13 +1,13 @@
 # Exclude data files
-*.shp
-*.grd
-*.dat
-*.lst
-*.xyz
-*.dbf
-*.prj
-*.shx
-*.slv
-*.zip
-*.db
-*.dbf
+*.shp # ShapeFile
+*.grd # GMT grids
+*.dat # BODC data
+*.lst # BODC data
+*.xyz # Any spatial data
+*.prj # ShapeFile
+*.shx # ShapeFile
+*.slv # SHOM
+*.zip # Duh
+*.db # SQLite Database
+*.dbf # ShapeFile
+*.bar # SHOM

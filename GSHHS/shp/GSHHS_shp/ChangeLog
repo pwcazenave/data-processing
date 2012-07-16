@@ -1,0 +1,118 @@
+-----------------------------------------------------------------------------------------
+	$Id: ChangeLog,v 1.17 2011/07/07 19:32:00 guru Exp $
+-----------------------------------------------------------------------------------------
+
+2011-07-15	GSHHS 2.2.0 released
+
+2011-06-27	pwessel
+	Store polygon area using adjustable magnitude scale so that smaller features
+	can retain precision (and features smaller than 0.1 km^2 no longer being seen
+	as having no area ).  Furthermore, the areas were recomputed using the WGS-84
+	ellipsoid as the previous values were based on a spherical calculation.  Thanks
+	to José Luis García Pallero for bringing this issues to our attention.
+	Also adjusted the greenwich flag to be 1 if crossing Greenwich (as before) but 2
+	if crossing Dateline, and 3 if crossing both (only Eurasia and Antarctica);
+	otherwise set to 0.  Custom code can now use greenwich to adjust longitudes.
+	Finally, the binary gshhs files now store Antarctica in -180/+180 range so as
+	to avoid a longitude jump when dumped to ASCII.  Also, the WDBII shapefiles
+	only had the first 3 levels of rivers; version 2.2.0 has all 11.
+
+2011-03-10	GSHHS 2.1.1 released
+
+2011-01-08	pwessel
+	Added missing segment of border between Germany and Poland ending at the
+	Baltic Sea. Removing 4 spikes in full and one spike in the intermediate
+	coastline files [Thanks again to Tom Kratzke].
+	
+2010-12-20	pwessel
+	Fixing a few minor problem in the low resolution file related to the manual
+	editing of 2010-07-16.  Plus a few more non-area spikes as well. This includes
+	pols 6367, 6453, and 6469 in the low resolution file.  This will result in a
+	revised GSHHS version 2.1.1.
+
+2010-07-16	pwessel
+	To aid in the dumb splitting of polygons crossing the Dateline (for GIS stuff),
+	I manually added in the crossing coordinates for lon == 180.  This applied to
+	5-6 polygons per resolution.  polygon_to_shape.c can now do a very simple splitting.
+
+2010-07-15	GSHHS 2.1.0 released
+
+2010-06-16	pwessel
+	With feedback (and data) from Branislav Mikulas (Branislav.Mikulas@iblsoft.com) I
+	have added some missing borders to the WDBII borders, level 1: Syria-Israel,
+	Israel-Jordan, Moldova-Ukraine, and the Eritrea border with Ethiopia.  Seems OK.
+
+2010-05-16	pwessel
+	(a) After restoring the negative areas for river-lakes I made the binary files, then
+	ran polygon_sort on these to restore the proper sorting, then converted back to
+	ascii with binary_to_ascii, then reformatted the binary files with "make data".
+	(b) Running polygon_consistency revealed several polygons in the i, l, c resolutions
+	with zero-angle excursions so I removed those polygons and reran step (a) above.
+	(c) Since polygon IDs have changed due to the removal of features and resorting
+	I ran polygon_findlevel for all five resolutions, then polygon_hierarchy to find
+	the parent IDs, and polygon_sync to update the metadata.  Then, again did binary_to_ascii
+	and updated the ASCII files which were then updated in cvs.
+	
+2010-04-30	pwessel
+	Sometime during or after GMT 4.5.2 I made the mistake of removing the sign of the
+	area for river-lakes.  As these were marked by having a negative area we lost the
+	ability to identify them.  The fix was to extract the most recent cvs version that
+	still had the negative areas, get those header records only, and use awk to write a
+	script that would apply sed to change "A = " to "A = -" for those records only.
+	This was done only for the five res_?/GSHHS_?_Level_2.txt files since it is a lake
+	issue only.
+	
+2009-06-05	pwessel
+	Reverted the river database using GMT 4.3.1 version to restore whatever
+	was screwed up during the August-28-1007 activity listed below.
+	Corrected a dozen minor issues pointed out by Tom Kratzke, including an
+	island (level 3) that was listed as lake in a lake.  Corrected gross errors
+	in the coastline near the mouth of the Amazon, resulting in numerous lakes
+	becoming islands and vice versa.  Extended two riverlakes to connect to the
+	coastline.  Other riverlakes flagged with negative area so they can be given
+	special treatment by programs.  Now store the parent id of polygon containing
+	a polygon (-1 for level 1 features).  At this point, only the full resolution
+	has these corrections and improvements.
+
+2007-08-28	pwessel
+	Note on rivers: The original WDBII classification for rivers was this:
+	01      Permanent major rivers
+	02      Additional major rivers
+	03      Additional rivers
+	04      Minor rivers
+	05      Double lined rivers
+	06      Intermittent rivers -- major
+	07      Intermittent rivers -- additional
+	08      Intermittent rivers -- minor
+	10      Major canals
+	11      Canals of lesser importance
+	12      Canals -- irrigation type
+
+	However:
+	1. 05 double rivers was manually stitched into long skinny lakes and added
+	   to the coastline database back in mid/late 1990ies.  Since this classification
+	   was not always well done in the original data we now add the double rivers
+	   to class 1 (permanent major rivers); this yields better plots.
+	2. 12 Irrigation canals:  The files seems to skip 12 and use 13 for this type.
+
+	Thus, when GMT prepares the cdf files we change the level values as follows:
+	1-4 pass through
+	5 becomes 1 as well
+	6-8 becomes 5-7
+	10-11 becomes 8-9
+	13 becomes 10
+
+2007-06-03	pwessel
+	Several polygons have zero area in the original GMT polygons.  We
+	need to recalculate these.
+
+2007-06-01	pwessel
+	Need to verify that the binary files produced from ascii via
+	ascii_to_polygon do match the latest GMT polygons.
+
+	Change how area is handled: Use irint(log10(area-in-km)*2e8)
+	instead to preserve precision.  This would mean changes to
+	polygon_to_bins.c, shoremaker.c, and gmt_shore.c.  Perhaps add
+	a new area netcdf variable so that old code can run on new files.
+	Bring WDBII source lines (borders and rivers) into CVS as well.
+	The full rivers are 21 Mb binary - split into ???
