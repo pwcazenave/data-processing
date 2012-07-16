@@ -1,0 +1,11 @@
+# Exclude data files
+*.shp
+*.grd
+*.dat
+*.lst
+*.xyz
+*.dbf
+*.prj
+*.shx
+*.slv
+*.zip
