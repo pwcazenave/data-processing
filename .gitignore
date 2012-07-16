@@ -15,3 +15,9 @@
 
 # Data directories
 GSHHS/shp/GSHHS_shp/
+NTSLF/formatted/
+NTSLF/formatted/sql/
+NTSLF/raw_data/
+NTSLF/BPR/formatted/
+NTSLF/BPR/formatted/sql/
+NTSLF/BPR/raw_data/
