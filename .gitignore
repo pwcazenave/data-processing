@@ -9,3 +9,5 @@
 *.shx
 *.slv
 *.zip
+*.db
+*.dbf
