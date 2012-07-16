@@ -1,0 +1,30 @@
+# Exclude data files
+*.shp
+*.grd
+*.dat
+*.lst
+*.xyz
+*.prj
+*.shx
+*.slv
+*.zip
+*.db
+*.db.backup
+*.dbf
+*.bar
+*.mpk
+
+# Miscellaneous files
+.~lock*#
+
+# Data directories
+GSHHS/shp/GSHHS_shp/
+NTSLF/formatted/
+NTSLF/formatted/sql/
+NTSLF/raw_data/
+NTSLF/BPR/formatted/
+NTSLF/BPR/formatted/sql/
+NTSLF/BPR/raw_data/
+NTSLF/meta_info/
+NTSLF/docs/
+TPXO/
