@@ -10,7 +10,7 @@ for ((i=0; i<${#files[@]}; i++)); do
    # which file are we on?
    echo -n "Working on ${files[$i]}... "
    # get the location
-   coords=$(grep GEOGRAPH ${files[$i]} | tr "[A-Z/=]" " " | awk '{print $2,$1}')
+   coords=$(grep GEOGRAPH ${files[$i]} | tr "[A-Z/=]" " " | awk '{print $1,$2}')
    # get the site info for the sites that have it
    startTime=$(grep PERIOD\ BEGIN ${files[$i]} | awk 'BEGIN{FS="=| "};{print $4}')
    startDate=$(grep PERIOD\ BEGIN ${files[$i]} | awk 'BEGIN{FS="=| "};{print $3}')

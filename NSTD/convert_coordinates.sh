@@ -5,7 +5,7 @@
 echo "lonDD,latDD,siteNum,siteName,startDate,startTime,endDate,endTime,durationDays,durationHours,interval,waterLevel,timeReference,waterReference" > shelf_stations_latlong.csv
 
 cut \
-   -c1-3,4-5,6-9,11-12,13-14,15-18,20- \
+   -c1-2,3-4,5-8,10-12,13-14,15-18,20- \
    --output-delimiter=" " \
    shelf_stations.csv | \
    sed '1d' | \
