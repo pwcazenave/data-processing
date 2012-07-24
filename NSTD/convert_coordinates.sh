@@ -2,7 +2,7 @@
 
 # script to convert the coordinate strings into DD from DMS
 
-echo "lonDD,latDD,siteNum,siteName,startDate,startTime,endDate,endTime,durationDays,durationHours,interval,waterLevel,timeReference,waterReference" > shelf_stations_latlong.csv
+echo "latDD,lonDD,siteNum,siteName,startDate,startTime,endDate,endTime,durationDays,durationHours,interval,waterLevel,timeReference,waterReference" > shelf_stations_latlong.csv
 
 cut \
    -c1-2,3-4,5-8,10-12,13-14,15-18,20- \

@@ -1,4 +1,4 @@
-lonDMS,latDMS,siteNum,siteName,startDate,startTime,endDate,endTime,durationDays,durationHours,interval,waterLevel,timeReference,waterReference
+latDMS,lonDMS,siteNum,siteName,startDate,startTime,endDate,endTime,durationDays,durationHours,interval,waterLevel,timeReference,waterReference
 544000.0,0040000.0,0021Z,DDH,1988/06/16,17:15:00,1988/07/27,17:00:00,00040,23.75,15,50.2,GMT,MSL
 545000.0,0032000.0,0022Z,DDH,1988/06/16,09:15:00,1988/07/23,07:30:00,00036,22.25,15,38.5,GMT,MSL
 545000.0,0040000.0,0023Z,DDH,1988/06/16,05:45:00,1988/07/27,03:45:00,00040,22.00,15,50.5,GMT,MSL

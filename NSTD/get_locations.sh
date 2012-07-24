@@ -3,7 +3,7 @@
 # extract the coordinates and site names of the water level data from the
 # north sea tidal data files in ./raw_data
 
-echo "lonDMS,latDMS,siteNum,siteName,startDate,startTime,endDate,endTime,durationDays,durationHours,interval,waterLevel,timeReference,waterReference" > ./shelf_stations.csv
+echo "latDMS,lonDMS,siteNum,siteName,startDate,startTime,endDate,endTime,durationDays,durationHours,interval,waterLevel,timeReference,waterReference" > ./shelf_stations.csv
 files=(raw_data/*.OBS)
 
 for ((i=0; i<${#files[@]}; i++)); do
