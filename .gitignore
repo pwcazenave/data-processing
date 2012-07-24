@@ -14,12 +14,17 @@
 *.bar
 *.mpk
 *.tif
+*.OBS
 
 # Miscellaneous files
 .~lock*#
+.nfs*
 
 # Data directories
 GSHHS/shp/GSHHS_shp/
+NSTD/cleaned
+NSTD/formatted
+NSTD/raw_data/
 NTSLF/formatted/
 NTSLF/formatted/sql/
 NTSLF/raw_data/
