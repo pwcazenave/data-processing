@@ -4,20 +4,20 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>431935.285575</xmin>
-            <ymin>5891636.901811</ymin>
-            <xmax>525768.607134</xmax>
-            <ymax>5965796.674267</ymax>
+            <xmin>-1530836.734234</xmin>
+            <ymin>5954810.691085</ymin>
+            <xmax>1116351.021372</xmax>
+            <ymax>8046976.228252</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
             <spatialrefsys>
-                <proj4>+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</proj4>
-                <srsid>3114</srsid>
-                <srid>32630</srid>
-                <authid>EPSG:32630</authid>
-                <description>WGS 84 / UTM zone 30N</description>
-                <projectionacronym>utm</projectionacronym>
+                <proj4>+proj=merc +lon_0=0 +lat_ts=0 +x_0=0 +y_0=0 +a=6378137 +b=6378137 +units=m +no_defs</proj4>
+                <srsid>3857</srsid>
+                <srid>3857</srid>
+                <authid>EPSG:3857</authid>
+                <description>WGS 84 / Pseudo Mercator</description>
+                <projectionacronym>merc</projectionacronym>
                 <ellipsoidacronym>WGS84</ellipsoidacronym>
                 <geographicflag>false</geographicflag>
             </spatialrefsys>
@@ -56,8 +56,8 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::Checked" name="Currents">
-            <legendgroup open="false" checked="Qt::Checked" name="BODC">
+        <legendgroup open="true" checked="Qt::Checked" name="Currents">
+            <legendgroup open="true" checked="Qt::Checked" name="BODC">
                 <legendlayer open="false" checked="Qt::Checked" name="Moorinv_edited" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="Moorinv_edited20120726122511683" visible="1"/>
@@ -65,10 +65,10 @@
                 </legendlayer>
             </legendgroup>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Modelling">
-            <legendlayer open="false" checked="Qt::Checked" name="blob_modified" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Modelling">
+            <legendlayer open="false" checked="Qt::Unchecked" name="blob_modified" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="blob_modified20120726151912564" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="blob_modified20120726151912564" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer open="false" checked="Qt::Unchecked" name="cophase-corange" showFeatureCount="0">
@@ -81,8 +81,8 @@
                     <legendlayerfile isInOverview="0" layerid="1_s2_0_S0278434311003578_gr2_1_modified20120724163157457" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendgroup open="false" checked="Qt::Unchecked" name="Shelf">
-                <legendgroup open="false" checked="Qt::Unchecked" name="Grids">
+            <legendgroup open="true" checked="Qt::Unchecked" name="Shelf">
+                <legendgroup open="true" checked="Qt::Unchecked" name="Grids">
                     <legendlayer open="false" checked="Qt::Unchecked" name="ukerc_v14_manual_bathy" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="ukerc_v14_manual_bathy20120724095454069" visible="0"/>
@@ -676,7 +676,7 @@
             </renderer-v2>
             <customproperties/>
             <displayfield>Filename</displayfield>
-            <label>1</label>
+            <label>0</label>
             <labelfield>Site</labelfield>
             <labelattributes>
                 <label fieldname="Site" text="Label"/>
@@ -2040,9 +2040,9 @@
         </Identify>
         <WMSContactPhone type="QString"></WMSContactPhone>
         <SpatialRefSys>
-            <ProjectCRSProj4String type="QString">+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +towgs84=0,0,0</ProjectCRSProj4String>
+            <ProjectCRSProj4String type="QString">+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs</ProjectCRSProj4String>
             <ProjectCrs type="QString">EPSG:4326</ProjectCrs>
-            <ProjectCRSID type="int">3114</ProjectCRSID>
+            <ProjectCRSID type="int">3857</ProjectCRSID>
             <ProjectionsEnabled type="int">1</ProjectionsEnabled>
         </SpatialRefSys>
         <Gui>
