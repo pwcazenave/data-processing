@@ -14,6 +14,5 @@ parse = [
           positive_integer('minute'),
           positive_integer('second'),
           real('water_level'),
-          real('residual'),
          ]
 
