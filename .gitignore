@@ -16,6 +16,9 @@
 *.tif
 *.OBS
 *.aux.xml
+*.png.xml
+*.qpj
+*.qgs
 
 # Miscellaneous files
 .~lock*#
