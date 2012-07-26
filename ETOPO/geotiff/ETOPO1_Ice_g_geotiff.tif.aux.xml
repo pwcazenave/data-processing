@@ -1,0 +1,27 @@
+<PAMDataset>
+  <Metadata>
+    <MDI key="NC_GLOBAL#Conventions">COARDS/CF-1.0</MDI>
+    <MDI key="NC_GLOBAL#title">ETOPO1_Ice_g_gmt4.grd</MDI>
+    <MDI key="NC_GLOBAL#history">grdreformat ETOPO1_Ice_g_gdal.grd ETOPO1_Ice_g_gmt4.grd=ni</MDI>
+    <MDI key="NC_GLOBAL#GMT_version">4.4.0</MDI>
+    <MDI key="NC_GLOBAL#node_offset">0</MDI>
+    <MDI key="z#long_name">z</MDI>
+    <MDI key="z#_FillValue">-2147483648</MDI>
+    <MDI key="z#actual_range">-10898, 8271</MDI>
+    <MDI key="x#long_name">Longitude</MDI>
+    <MDI key="x#actual_range">-180, 180</MDI>
+    <MDI key="x#units">degrees</MDI>
+    <MDI key="y#long_name">Latitude</MDI>
+    <MDI key="y#actual_range">-90, 90</MDI>
+    <MDI key="y#units">degrees</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <Metadata>
+      <MDI key="NETCDF_VARNAME">z</MDI>
+      <MDI key="STATISTICS_MINIMUM">-10898</MDI>
+      <MDI key="STATISTICS_MAXIMUM">8271</MDI>
+      <MDI key="STATISTICS_MEAN">-1892.3528468296</MDI>
+      <MDI key="STATISTICS_STDDEV">2650.1402766093</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>
