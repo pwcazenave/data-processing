@@ -32,13 +32,13 @@ def addToDB(db, stationName, constituentName, phase, amplitude, speed, inferred,
     For reference, to extract the M2 amplitude, phase and speed for Ilfracombe,
     the SQL statment would be:
 
-    select
+    SELECT
         Amplitude.value,
         Phase.value,
         Speed.value
-    from
+    FROM
         Amplitude join Phase join Speed
-    where
+    WHERE
         Phase.constituentName is 'm2' and
         Speed.constituentName is 'm2' and
         Amplitude.constituentName is 'm2' and
@@ -63,6 +63,8 @@ def addToDB(db, stationName, constituentName, phase, amplitude, speed, inferred,
     c.execute('CREATE TABLE IF NOT EXISTS Phase (shortName TEXT COLLATE nocase, value FLOAT(10), constituentName TEXT COLLATE nocase, valueUnits TEXT COLLATE nocase, inferredConstituent TEXT COLLATE nocase)')
     c.execute('CREATE TABLE IF NOT EXISTS Speed (shortName TEXT COLLATE nocase, value FLOAT(10), constituentName TEXT COLLATE nocase, valueUnits TEXT COLLATE nocase, inferredConstituent TEXT COLLATE nocase)')
 
+    if noisy:
+        print 'amplitude, phase and speed.',
     for item in xrange(len(inferred)):
         c.execute('INSERT INTO Amplitude VALUES (?,?,?,?,?)',\
                   (stationName, amplitude[item], constituentName[item], 'metres', inferred[item]))
@@ -104,7 +106,7 @@ if __name__ == '__main__':
             try:
                 f = open(tableName + '.xml', 'r')
                 f.close()
-                print 'analysis already completed. Skipping.'
+                print 'Analysis already completed. Skipping.'
             except:
                 # Use getObservedData() to extract all the data for each table
                 currData = getObservedData('../../../NTSLF/tides.db', tableName,
@@ -152,7 +154,7 @@ if __name__ == '__main__':
             # Now I need to read in the xml file and add the results to an SQL
             # database.
             if noisy:
-                print 'Adding station ' + tableName + ' harmonics to database...',
+                print 'Adding station ' + tableName + ' harmonics to database:',
 
             try:
                 f = open(tableName + '.xml', 'r')
