@@ -13,70 +13,7 @@ import sys
 
 from lxml import etree
 
-from read_observed_data import getObservedData
-
-def addToDB(db, stationName, constituentName, phase, amplitude, speed, inferred, noisy=False):
-    """
-    Add data to an SQLite database.
-
-    - db specifies an SQLite databse. If it doesn't exist, it will be created.
-    - stationName is the short name (i.e. AVO not Avonmouth)
-    - constituent Name is M2, S2 etc.
-    - phase is in degrees
-    - amplitude is in metres
-    - speed is in degrees/hour
-    - inferred is 'true' or 'false' (as strings, not python special values)
-
-    Optionally specify noisy=True to turn on verbose output.
-
-    For reference, to extract the M2 amplitude, phase and speed for Ilfracombe,
-    the SQL statment would be:
-
-    SELECT
-        Amplitude.value,
-        Phase.value,
-        Speed.value
-    FROM
-        Amplitude join Phase join Speed
-    WHERE
-        Phase.constituentName is 'm2' and
-        Speed.constituentName is 'm2' and
-        Amplitude.constituentName is 'm2' and
-        Phase.shortName is 'ILF' and
-        Speed.shortName is 'ILF' and
-        Amplitude.shortName is 'ILF';
-
-    """
-
-    try:
-        import sqlite3
-    except ImportError:
-        sys.exit('Importing SQLite3 module failed')
-
-    conn = sqlite3.connect(db)
-    c = conn.cursor()
-
-
-    # Create the necessary tables if they don't exist already
-    c.execute('CREATE TABLE IF NOT EXISTS StationName (latDD FLOAT(10), lonDD FLOAT(10), shortName TEXT COLLATE nocase, longName TEXT COLLATE nocase)')
-    c.execute('CREATE TABLE IF NOT EXISTS Amplitude (shortName TEXT COLLATE nocase, value FLOAT(10), constituentName TEXT COLLATE nocase, valueUnits TEXT COLLATE nocase, inferredConstituent TEXT COLLATE nocase)')
-    c.execute('CREATE TABLE IF NOT EXISTS Phase (shortName TEXT COLLATE nocase, value FLOAT(10), constituentName TEXT COLLATE nocase, valueUnits TEXT COLLATE nocase, inferredConstituent TEXT COLLATE nocase)')
-    c.execute('CREATE TABLE IF NOT EXISTS Speed (shortName TEXT COLLATE nocase, value FLOAT(10), constituentName TEXT COLLATE nocase, valueUnits TEXT COLLATE nocase, inferredConstituent TEXT COLLATE nocase)')
-
-    if noisy:
-        print 'amplitude, phase and speed.',
-    for item in xrange(len(inferred)):
-        c.execute('INSERT INTO Amplitude VALUES (?,?,?,?,?)',\
-                  (stationName, amplitude[item], constituentName[item], 'metres', inferred[item]))
-        c.execute('INSERT INTO Phase VALUES (?,?,?,?,?)',\
-                  (stationName, phase[item], constituentName[item], 'degrees', inferred[item]))
-        c.execute('INSERT INTO Speed VALUES (?,?,?,?,?)',\
-                  (stationName, speed[item], constituentName[item], 'degrees per mean solar hour', inferred[item]))
-
-    conn.commit()
-
-    conn.close()
-
+from tide_tools import getObservedData, addHarmonicResults
 
 
 if __name__ == '__main__':
@@ -142,8 +79,7 @@ if __name__ == '__main__':
                 # use the data directly with the imported library, but I can't figure
                 # out how to do it. So, instead, we'll do this the hard way:
                 #   1. Run TAPPY on the saved file output to XML
-                #   2. Parse the XML and create a dict for the current site
-                #   3. Add the dict to a new database with just the harmonic constituents
+                #   2. Parse the XML and add the relevant values to an SQL database.
 
                 #subprocess.call(['/usr/bin/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=' + tableName + '.xml', '--quiet', '/tmp/data.txt'])
 
@@ -188,7 +124,7 @@ if __name__ == '__main__':
                     constituentAmplitude.append(item.text)
 
             # Now add all those values to the database
-            addToDB('harmonics.db',\
+            addHarmonicResults('harmonics.db',\
                     tableName,\
                     constituentName,\
                     constituentPhase,\
