@@ -10,6 +10,7 @@ import numpy as np
 import csv
 import subprocess
 import sys
+import os
 
 from lxml import etree
 
@@ -82,6 +83,12 @@ if __name__ == '__main__':
                 #   2. Parse the XML and add the relevant values to an SQL database.
 
                 #subprocess.call(['/usr/bin/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=' + tableName + '.xml', '--quiet', '/tmp/data_' + tableName + '.txt'])
+
+                # Remove the temporary file we created upon which to run TAPPy
+                try:
+                    os.remove('/tmp/data_' + tableName + '.txt')
+                except:
+                    print 'Unable to remove /tmp/data_{}.txt. File may be locked or you don\'t have permissions.'.format(tableName)
 
                 if noisy:
                     print 'done.'
