@@ -10,7 +10,6 @@ import numpy as np
 import csv
 import subprocess
 import sys
-import os
 
 from lxml import etree
 
