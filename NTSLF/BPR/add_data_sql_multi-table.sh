@@ -13,7 +13,7 @@ for file in ./shelf_stations_sql.csv; do
             echo "WARNING: No short name given. Usually because SHOM metadata has more stations that data available. Skipped."
             continue
         fi
-        sqlite3 ../tides.db << SQL
+        sqlite3 ../../proc/tides/tides/.db << SQL
 CREATE TABLE $station(
     year INT,
     month INT,
@@ -37,7 +37,7 @@ SQL
         fi
 
         echo -n "Adding $currFile... "
-            sqlite3 ../tides.db << SQL
+            sqlite3 ../../proc/tides/tides/.db << SQL
 .separator "$delim"
 .import $currFile $station
 SQL
@@ -49,7 +49,7 @@ done
 echo -n "Add metadata... "
 # Populate with the station info
 for file in ./shelf_stations_sql.csv; do
-    sqlite3 ../tides.db << SQL
+    sqlite3 ../../proc/tides/tides/.db << SQL
 .separator ','
 .import $file Stations
 SQL
