@@ -68,8 +68,8 @@ if __name__ == '__main__':
                 # numpy array I've created, dump it to a file and then use that in the
                 # call to tappy. This is not ideal.
                 if noisy:
-                    print 'Saving station {} to /tmp/data.txt...'.format(row[3].title()),
-                np.savetxt('/tmp/data.txt', obsData, fmt='%4i/%02i/%02i %02i:%02i:%02i %.3f')
+                    print 'Saving station {} to /tmp/data_{}.txt...'.format(row[3].title(), tableName),
+                np.savetxt('/tmp/data_' + tableName + '.txt', obsData, fmt='%4i/%02i/%02i %02i:%02i:%02i %.3f')
                 if noisy:
                     print 'done.'
 
@@ -81,7 +81,7 @@ if __name__ == '__main__':
                 #   1. Run TAPPY on the saved file output to XML
                 #   2. Parse the XML and add the relevant values to an SQL database.
 
-                #subprocess.call(['/usr/bin/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=' + tableName + '.xml', '--quiet', '/tmp/data.txt'])
+                #subprocess.call(['/usr/bin/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=' + tableName + '.xml', '--quiet', '/tmp/data_' + tableName + '.txt'])
 
                 if noisy:
                     print 'done.'
