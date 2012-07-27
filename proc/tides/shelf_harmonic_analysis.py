@@ -47,7 +47,7 @@ if __name__ == '__main__':
                 print 'Analysis already completed. Skipping.'
             except:
                 # Use getObservedData() to extract all the data for each table
-                currData = getObservedData('../../../NTSLF/tides.db', tableName,
+                currData = getObservedData('./tides.db', tableName,
                         1990, 2012, noisy=noisy)
 
                 # Convert to a NumPy array and separate the quality out. Throw away the
