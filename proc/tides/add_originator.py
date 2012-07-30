@@ -25,11 +25,11 @@ for file in metaDataFiles:
     if 'NSTD' in file:
         originator = 'NSTD'
         originatorLong = 'North Sea Tidal Data'
-    elif 'NTSLF' in file:
+    elif 'NTSLF' in file and 'BPR' not in file:
         originator = 'NTSLF'
         originatorLong = 'National Tide and Sea Level Facility'
     elif 'NTSLF/BPR' in file:
-        originator = 'BPR'
+        originator = 'NTSLF-BPR'
         originatorLong = 'Historical Bottom Pressure Sensor Recorder'
     elif 'SHOM' in file:
         originator = 'SHOM'
