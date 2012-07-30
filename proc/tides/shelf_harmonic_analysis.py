@@ -23,10 +23,10 @@ if __name__ == '__main__':
     noisy = True
 
     # Shouldn't have a header
-    metaDataFiles = ['../../../NTSLF/shelf_stations_sql.csv',\
-                     '../../../SHOM/shelf_stations_sql_edited.csv',\
-                     '../../../NSTD/shelf_station_single_years_sql.csv',\
-                     '../../../NTSLF/BPR/shelf_staions_sql.csv']
+    metaDataFiles = ['../../NTSLF/shelf_stations_sql.csv',\
+                     '../../SHOM/shelf_stations_sql_edited.csv',\
+                     '../../NSTD/shelf_station_single_years_sql.csv',\
+                     '../../NTSLF/BPR/shelf_staions_sql.csv']
 
     # TAPPY format definition file
     formatFile = '/users/modellers/pica/Work/data/proc/tides/sparse.def'
@@ -82,7 +82,7 @@ if __name__ == '__main__':
                 #   1. Run TAPPY on the saved file output to XML
                 #   2. Parse the XML and add the relevant values to an SQL database.
 
-                #subprocess.call(['/usr/bin/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=' + tableName + '.xml', '--quiet', '/tmp/data_' + tableName + '.txt'])
+                subprocess.call(['/usr/bin/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=' + tableName + '.xml', '--quiet', '/tmp/data_' + tableName + '.txt'])
 
                 # Remove the temporary file we created upon which to run TAPPy
                 try:
