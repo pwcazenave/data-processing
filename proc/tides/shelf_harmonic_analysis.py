@@ -35,6 +35,11 @@ if __name__ == '__main__':
 
         fileHandle = csv.reader(open(file, 'r'))
         for row in fileHandle:
+
+            # Set the skip flag to True so we don't skip by default. Only
+            # change to False if we have to skip this station.
+            doStation = True
+
             # Tables in the SQL database are named by the shortName value.
             # This should be the third column in the current line
             tableName = row[2]
@@ -48,47 +53,68 @@ if __name__ == '__main__':
             except:
                 # Use getObservedData() to extract all the data for each table
                 currData = getObservedData('./tides.db', tableName,
-                        1990, 2012, noisy=noisy)
+                        1960, 2012, noisy=noisy)
 
-                # Convert to a NumPy array and separate the quality out. Throw away the
-                # residuals. This isn't pretty, but I haven't found a better way to
-                # convert mixed data types like numbers and letters.
-                obsData = []
-                obsFlags = []
-                for rowData in currData:
-                    obsData.append(rowData[0:-2])
-                    obsFlags.append(rowData[-1])
+                # Check we have some data
+                if len(currData) != 0:
+                    # Convert to a NumPy array and separate the quality out.
+                    # Throw away the residuals. This isn't pretty, but I
+                    # haven't found a better way to convert mixed data types
+                    # like numbers and letters.
 
-                obsData = np.asarray(obsData, dtype=float)
-                obsFlags = np.asarray(obsFlags)
+                    obsData = []
+                    obsFlags = []
+                    for rowData in currData:
+                        obsData.append(rowData[0:-2])
+                        obsFlags.append(rowData[-1])
 
-                # Remove NaN values too
-                obsData = obsData[np.logical_and(obsFlags == 'P', obsData[:,6] > -9999), :]
+                    obsData = np.asarray(obsData, dtype=float)
+                    obsFlags = np.asarray(obsFlags, dtype=str)
 
-                # Until I can figure out how to get tappy to read the results from the
-                # numpy array I've created, dump it to a file and then use that in the
-                # call to tappy. This is not ideal.
-                if noisy:
-                    print 'Saving station {} to /tmp/data_{}.txt...'.format(row[3].title(), tableName),
-                np.savetxt('/tmp/data_' + tableName + '.txt', obsData, fmt='%4i/%02i/%02i %02i:%02i:%02i %.3f')
-                if noisy:
-                    print 'done.'
+                    # Remove NaN and unlikely (anything below -9999) values.
+                    obsData = obsData[obsFlags == 'P']
+                    obsData = obsData[obsData[:,6] > -9999]
+                    # Strip out impossible time values too.
+                    obsData = obsData[np.logical_and(obsData[:,3] < 24, obsData[:,4] < 60), :]
 
-                if noisy:
-                    print 'Running TAPPY on the data...',
-                # This is a bit of a hack. It ought to be possible to import tappy and
-                # use the data directly with the imported library, but I can't figure
-                # out how to do it. So, instead, we'll do this the hard way:
-                #   1. Run TAPPY on the saved file output to XML
-                #   2. Parse the XML and add the relevant values to an SQL database.
+                    # Sort the data so that times are always increasing
+                    # (apparently some of the SHOM data aren't in the right
+                    # order).
+                    obsData = np.sort(obsData, 0)
 
-                subprocess.call(['/usr/bin/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=' + tableName + '.xml', '--quiet', '/tmp/data_' + tableName + '.txt'])
+                    # Until I can figure out how to get tappy to read the
+                    # results from the numpy array I've created, dump it to a
+                    # file and then use that in the call to tappy. This is not
+                    # ideal.
+                    if noisy:
+                        print 'Saving station {} to /tmp/data_{}.txt...'.format(row[3].title(), tableName),
+                    np.savetxt('/tmp/data_' + tableName + '.txt', obsData, fmt='%4i/%02i/%02i %02i:%02i:%02i %.3f')
+                    if noisy:
+                        print 'done.'
+
+                    if noisy:
+                        print 'Running TAPPY on the data...',
+
+                    # This is a bit of a hack. It ought to be possible to
+                    # import tappy and use the data directly with the imported
+                    # library, but I can't figure out how to do it. So,
+                    # instead, we'll do this the hard way:
+                    #   1. Run TAPPY on the saved file and output to XML
+                    #   2. Parse the XML and add the relevant values to an SQL
+                    #   database.
+
+                    subprocess.call(['/usr/bin/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=' + tableName + '.xml', '--quiet', '/tmp/data_' + tableName + '.txt'])
+
+                else:
+                    print 'No observed data for the time period selected for analysis...',
+                    doStation = False
 
                 # Remove the temporary file we created upon which to run TAPPy
                 try:
                     os.remove('/tmp/data_' + tableName + '.txt')
                 except:
-                    print 'Unable to remove /tmp/data_{}.txt. File may be locked or you don\'t have permissions.'.format(tableName)
+                    if doStation:
+                        print 'Unable to remove /tmp/data_{}.txt. File may be locked or you don\'t have permissions.'.format(tableName)
 
                 if noisy:
                     print 'done.'
@@ -96,51 +122,55 @@ if __name__ == '__main__':
 
             # Now I need to read in the xml file and add the results to an SQL
             # database.
-            if noisy:
-                print 'Adding station ' + tableName + ' harmonics to database:',
+            if doStation:
+                if noisy:
+                    print 'Adding station ' + tableName + ' harmonics to database:',
 
-            try:
-                f = open(tableName + '.xml', 'r')
-            except IOError:
-                sys.exit('Unable to open constituent XML file. Aborting')
+                try:
+                    f = open(tableName + '.xml', 'r')
+                except IOError:
+                    sys.exit('Unable to open constituent XML file. Aborting')
 
-            tree = etree.parse(f)
+                tree = etree.parse(f)
 
-            constituentName = []
-            constituentSpeed = []
-            constituentInference = []
-            constituentPhase = []
-            constituentAmplitude = []
+                constituentName = []
+                constituentSpeed = []
+                constituentInference = []
+                constituentPhase = []
+                constituentAmplitude = []
 
-            for harmonic in tree.iter('Harmonic'):
+                for harmonic in tree.iter('Harmonic'):
 
-                # This is not pretty.
-                for item in harmonic.iter('name'):
-                    constituentName.append(item.text)
+                    # This is not pretty.
+                    for item in harmonic.iter('name'):
+                        constituentName.append(item.text)
 
-                for item in harmonic.iter('speed'):
-                    constituentSpeed.append(item.text)
+                    for item in harmonic.iter('speed'):
+                        constituentSpeed.append(item.text)
 
-                for item in harmonic.iter('inferred'):
-                    constituentInference.append(item.text)
+                    for item in harmonic.iter('inferred'):
+                        constituentInference.append(item.text)
 
-                for item in harmonic.iter('phaseAngle'):
-                    constituentPhase.append(item.text)
+                    for item in harmonic.iter('phaseAngle'):
+                        constituentPhase.append(item.text)
 
-                for item in harmonic.iter('amplitude'):
-                    constituentAmplitude.append(item.text)
+                    for item in harmonic.iter('amplitude'):
+                        constituentAmplitude.append(item.text)
 
-            # Now add all those values to the database
-            addHarmonicResults('harmonics.db',\
-                    tableName,\
-                    constituentName,\
-                    constituentPhase,\
-                    constituentAmplitude,\
-                    constituentSpeed,\
-                    constituentInference,\
-                    noisy=noisy)
+                # Now add all those values to the database
+                addHarmonicResults('harmonics.db',\
+                        tableName,\
+                        constituentName,\
+                        constituentPhase,\
+                        constituentAmplitude,\
+                        constituentSpeed,\
+                        constituentInference,\
+                        noisy=noisy)
 
-            if noisy:
-                print 'done.'
+                if noisy:
+                    print 'done.'
+
+            else:
+                print 'Skipping ' + tableName + '.'
 
 
