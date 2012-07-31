@@ -23,6 +23,7 @@
 # Miscellaneous files
 .~lock*#
 .nfs*
+*.swp
 
 # Data directories
 GSHHS/shp/GSHHS_shp/
