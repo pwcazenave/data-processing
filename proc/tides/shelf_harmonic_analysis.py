@@ -131,7 +131,7 @@ if __name__ == '__main__':
                 except IOError:
                     sys.exit('Unable to open constituent XML file. Aborting')
 
-                [cName, cSpeed, cPhase, cAmplitude, cInference] = parseTappyXML(tableName + '.xml')
+                [cName, cSpeed, cPhase, cAmplitude, cInference] = parseTAPPyXML(tableName + '.xml')
 
                 # Now add all those values to the database
                 addHarmonicResults('harmonics.db',\
