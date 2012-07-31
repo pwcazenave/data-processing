@@ -4,7 +4,7 @@
 # results from T_TIDE.
 
 tappy.py analysis \
-    --def_filename=/users/modellers/pica/Work/data/proc/tides/sparse.def \
+    --def_filename=/users/modellers/pica/Data/proc/tides/sparse.def \
     --outputxml=AVO2.xml \
     --quiet ./raw_data/AVO2.txt
 
