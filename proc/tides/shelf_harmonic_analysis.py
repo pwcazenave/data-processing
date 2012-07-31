@@ -29,7 +29,7 @@ if __name__ == '__main__':
                      '../../NTSLF/BPR/shelf_staions_sql.csv']
 
     # TAPPY format definition file
-    formatFile = '/users/modellers/pica/Work/data/proc/tides/sparse.def'
+    formatFile = '/users/modellers/pica/Data/proc/tides/sparse.def'
 
     for file in metaDataFiles:
 
