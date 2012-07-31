@@ -14,7 +14,7 @@ import os
 
 from lxml import etree
 
-from tide_tools import getObservedData, addHarmonicResults
+from tide_tools import getObservedData, addHarmonicResults, parseTAPPyXML
 
 
 if __name__ == '__main__':
@@ -131,40 +131,16 @@ if __name__ == '__main__':
                 except IOError:
                     sys.exit('Unable to open constituent XML file. Aborting')
 
-                tree = etree.parse(f)
-
-                constituentName = []
-                constituentSpeed = []
-                constituentInference = []
-                constituentPhase = []
-                constituentAmplitude = []
-
-                for harmonic in tree.iter('Harmonic'):
-
-                    # This is not pretty.
-                    for item in harmonic.iter('name'):
-                        constituentName.append(item.text)
-
-                    for item in harmonic.iter('speed'):
-                        constituentSpeed.append(item.text)
-
-                    for item in harmonic.iter('inferred'):
-                        constituentInference.append(item.text)
-
-                    for item in harmonic.iter('phaseAngle'):
-                        constituentPhase.append(item.text)
-
-                    for item in harmonic.iter('amplitude'):
-                        constituentAmplitude.append(item.text)
+                [cName, cSpeed, cPhase, cAmplitude, cInference] = parseTappyXML(tableName + '.xml')
 
                 # Now add all those values to the database
                 addHarmonicResults('harmonics.db',\
                         tableName,\
-                        constituentName,\
-                        constituentPhase,\
-                        constituentAmplitude,\
-                        constituentSpeed,\
-                        constituentInference,\
+                        cName,\
+                        cPhase,\
+                        cAmplitude,\
+                        cSpeed,\
+                        cInference,\
                         noisy=noisy)
 
                 if noisy:
