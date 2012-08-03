@@ -1,0 +1,74 @@
+Identifier,Geographical sector,Station,Body(s) supplying(s) datas,Date of last validated hourly sea level observations
+1,Metropolitan France,DUNKERQUE,SHOM / GPM Dunkerque,04/23/2012 07:00
+6,Metropolitan France,CALAIS,SHOM / Région Nord pas de Calais / Port de Calais,04/23/2012 07:00
+8,Metropolitan France,BOULOGNE_SUR_MER,SHOM / Région Nord pas de Calais / Port de Boulogne-sur-Mer,04/23/2012 07:00
+10,Metropolitan France,DIEPPE,SHOM / Port de Dieppe,04/23/2012 07:00
+15,Metropolitan France,LE_HAVRE,SHOM / GPM du Havre,05/22/2012 14:00
+50,Metropolitan France,CHERBOURG,SHOM / Marine nationale / Port de cherbourg,04/23/2012 07:00
+55,Metropolitan France,SAINT_MALO,SHOM / CCI pays de Saint-Malo / DDTM Ille-et-Vilaine,04/23/2012 08:00
+60,Metropolitan France,ROSCOFF,SHOM / CCI de Morlaix,04/23/2012 08:00
+101,Metropolitan France,LE_CONQUET,SHOM,04/23/2012 08:00
+103,Metropolitan France,BREST,SHOM,04/23/2012 10:00
+108,Metropolitan France,CONCARNEAU,SHOM / CG du Finistère,04/23/2012 08:00
+110,Metropolitan France,PORT_TUDY,SHOM / CG du Morbihan / Mairie de Groix,04/23/2012 14:00
+112,Metropolitan France,LE_CROUESTY,SHOM / Météo france / Syndicat Mixte des Ports et Bases Nautiques du Morbihan,04/23/2012 08:00
+115,Metropolitan France,SAINT_NAZAIRE,SHOM / GPM de Nantes-Saint Nazaire,04/23/2012 09:00
+125,Metropolitan France,LES_SABLES_D_OLONNE,SHOM / CCI de Vendée,04/23/2012 08:00
+128,Metropolitan France,LA_ROCHELLE_LA_PALLICE,SHOM / GPM La Rochelle-La Pallice,04/23/2012 08:00
+130,Metropolitan France,ILE_D_AIX,ULR / SHOM / CG de Charente-Maritime,04/09/12 06:00
+132,Metropolitan France,VERGEROUX,MEDDE,
+133,Metropolitan France,ROCHEFORT,MEDDE,
+134,Metropolitan France,BOURCEFRANC_LE_CHAPUS,MEDDE,
+135,Metropolitan France,LA_COTINIERE,MEDDE,
+136,Metropolitan France,ROYAN,MEDDE,
+140,Metropolitan France,PORT_BLOC,SHOM / GPM de Bordeaux,04/23/2012 09:00
+149,Metropolitan France,BORDEAUX,MEDDE,
+150,Metropolitan France,ARCACHON_EYRAC,SHOM / DDTM de Gironde,04/23/2012 09:00
+160,Metropolitan France,BAYONNE_BOUCAU,SHOM / CR Aquitaine,04/23/2012 09:00
+165,Metropolitan France,SAINT_JEAN_DE_LUZ_SOCOA,SHOM / CG Pyrénées Atlantiques,04/23/2012 09:00
+201,Metropolitan France,PORT_VENDRES,SHOM / DREAL-LR / CG Pyrénées Orientales,04/23/2012 10:00
+205,Metropolitan France,SETE,SHOM / Région Languedoc-Roussillon,04/23/2012 10:00
+210,Metropolitan France,PORT_CAMARGUE,DREAL-LR MEDDTL,
+215,Metropolitan France,FOS_SUR_MER,SHOM / GPM de Marseille,04/23/2012 10:00
+218,Metropolitan France,MARSEILLE,SHOM / IGN,04/23/2012 10:00
+220,Metropolitan France,TOULON,SHOM / Marine nationale,
+223,Metropolitan France,PORT_FERREOL," SHOM,Commune de Roquebrune-Sur-Argens",
+225,Metropolitan France,LA_FIGUEIRETTE,SHOM / Commune de Théoule-sur-Mer,04/23/2012 14:00
+230,Metropolitan France,NICE,SHOM / CCI de Nice côte d'Azur / CG des Alpes Maritimes,04/23/2012 10:00
+280,Metropolitan France,AJACCIO_ASPRETTO,SHOM / OCA / Marine nationale,04/02/12 07:00
+281,Metropolitan France,CENTURI,SHOM / Mairie de Centuri,04/23/2012 10:00
+282,Metropolitan France,SOLENZARA,SHOM / Mairie de Solenzara,
+283,Metropolitan France,ILE_ROUSSE,SHOM / Commune de l'île Rousse,
+501,French West Indies and Guiana,FORT_DE_FRANCE,SHOM / Météo france / Marine nationale,04/23/2012 10:00
+520,French West Indies and Guiana,POINTE_A_PITRE,SHOM / Météo France / DM de Guadeloupe,04/23/2012 10:00
+522,French West Indies and Guiana,LA_DESIRADE,IPGP,
+540,French West Indies and Guiana,ILE_ROYALE,SHOM / DM973-Service des Phares et Balises de Guyane,04/24/2012 07:00
+545,French West Indies and Guiana,ILE_ROYALE_ANSE_LEGOFF,DM973/ Service des Phares et Balises de Guyane,
+546,French West Indies and Guiana,ILET_LA_MERE,DM973/ Service des Phares et Balises de Guyane,
+547,French West Indies and Guiana,DEGRAD_DES_CANNES,DM973/ Service des Phares et Balises de Guyane,
+591,Metropolitan France,SAINT_PIERRE_ET_MIQUELON,DTAM Saint-Pierre-et-Miquelon - SHOM,
+601,Indian Ocean,POINTE_DES_GALETS,SHOM / DMSOI / Météo France,04/23/2012 13:00
+606,Indian Ocean,SAINTE_MARIE," SHOM,CINOR,CCI de La Réunion",
+620,Indian Ocean,DZAOUDZI,SHOM / DMSOI / Météo France,03/25/2012 23:00
+680,Indian Ocean,KERGUELEN,LEGOS,
+685,Indian Ocean,ILE_SAINT_PAUL,LEGOS,
+690,Indian Ocean,ILE_POSSESSION_CROZET,LEGOS,
+691,Antarctica,DUMONT_D_URVILLE,LEGOS,
+701,New Caledonia Wallis and Futuna,CHALEIX_NOUMEA,SHOM UHSLC,06/30/2005 23:00
+702,New Caledonia Wallis and Futuna,NUMBO_NOUMEA,SHOM / Gouvernement de NC / IRD,05/30/2012 22:00
+711,New Caledonia Wallis and Futuna,HIENGHENE,HCR/DSC-NC - SHOM,
+715,New Caledonia Wallis and Futuna,OUINNE,HCR/DSC - NC - SHOM,
+721,New Caledonia Wallis and Futuna,LIFOU,HCR/DSC-NC - SHOM,
+726,New Caledonia Wallis and Futuna,MARE,DéGéOM - NC - SHOM,
+746,New Caledonia Wallis and Futuna,LEAVA,SPP - SHOM,
+801,French Polynesia,PAPEETE,UHSLC,
+802,French Polynesia,VAIRAO,UPF SHOM,05/02/12 23:00
+811,French Polynesia,HUAHINE,UPF SHOM,
+821,French Polynesia,TUBUAI,UPF SHOM,04/13/2012 23:00
+831,French Polynesia,RANGIROA,UPF SHOM,04/19/2012 23:00
+841,French Polynesia,NUKU_HIVA,UHSLC,
+842,French Polynesia,HIVA_OA,CEA/LDG MIOMCTI_MCOM,
+851,French Polynesia,RIKITEA,UHSLC,
+852,French Polynesia,RIKITEA_WHARF,UPF SHOM,
+901,Metropolitan France,MONACO_PORT_HERCULE,SHOM / Principauté de Monaco,
+902,Metropolitan France,MONACO_FONTVIEILLE,SHOM / Principauté de Monaco,04/23/2012 10:00

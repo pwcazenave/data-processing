@@ -27,8 +27,8 @@
 
 # Data directories
 GSHHS/shp/GSHHS_shp/
-NSTD/cleaned
-NSTD/formatted
+NSTD/cleaned/
+NSTD/formatted/
 NSTD/raw_data/
 NTSLF/formatted/
 NTSLF/formatted/sql/
@@ -38,5 +38,7 @@ NTSLF/BPR/formatted/sql/
 NTSLF/BPR/raw_data/
 NTSLF/meta_info/
 NTSLF/docs/
+REFMAR/formatted/
+REFMAT/raw_data/
 TPXO/
-QGIS/co2_leak
+QGIS/co2_leak/
