@@ -80,7 +80,7 @@ if __name__ == '__main__':
                     # Sort the data so that times are always increasing
                     # (apparently some of the SHOM data aren't in the right
                     # order).
-                    obsData = np.sort(obsData, 0)
+                    #obsData = np.sort(obsData, 0)
 
                     # Until I can figure out how to get tappy to read the
                     # results from the numpy array I've created, dump it to a
