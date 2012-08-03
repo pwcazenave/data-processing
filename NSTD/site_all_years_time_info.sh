@@ -9,7 +9,7 @@
 sort -uk1,2 -t, shelf_stations_latlong_edited_sql.csv \
     > shelf_stations_latlong_edited_sql_uniques.csv
 
-echo "latDMS,lonDMS,siteNum,siteName,startDate,startTime,endDate,endTime,durationDays,durationHours,interval,waterLevel,timeReference,waterReference" > ./shelf_stations_single_years.csv
+echo "latDMS,lonDMS,shortName,longName,siteCode,startDate,startTime,endDate,endTime,durationDays,durationHours,interval,waterLevel,timeReference,waterReference" > ./shelf_stations_single_years.csv
 echo -n > ./shelf_stations_single_years_sql.csv
 
 while read line; do
@@ -27,7 +27,7 @@ while read line; do
     # Replace the start/end dates and times in the existing line with the
     # new ones from here.
     echo $line | \
-        awk -F, '{OFS=","; print $1,$2,$3,$4,"'${startEnd[0]}'","'${startEnd[1]}'","'${startEnd[2]}'","'${startEnd[3]}'","'${newDaysHours[0]}'","'${newDaysHours[1]}'",$11,$12,$13,$14}' \
+        awk -F, '{OFS=","; print $1,$2,$4,$4,$3,"'${startEnd[0]}'","'${startEnd[1]}'","'${startEnd[2]}'","'${startEnd[3]}'","'${newDaysHours[0]}'","'${newDaysHours[1]}'",$11,$12,$13,$14}' \
         >> ./shelf_stations_single_years_sql.csv
 
     echo "done."
