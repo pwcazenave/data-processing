@@ -40,5 +40,7 @@ NTSLF/meta_info/
 NTSLF/docs/
 REFMAR/formatted/
 REFMAT/raw_data/
+SHOM/formatted/
+SHOM/raw_data/
 TPXO/
 QGIS/co2_leak/
