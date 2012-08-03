@@ -13,6 +13,6 @@ for ((i=0; i<${#files[@]}; i++)); do
     #           P = pressure in Pascals
     #           z = depth in metres
     awk '{if (NR>13) print $2,$3,(($4/1000)*1e5)/(1026*9.81)}' ${files[i]} | \
-        tr "/" " " | awk -F. '{print $1,$2,$3"."$4,"-9999","P"}' \
-        > ./formatted/$(basename ${files[i]})
+        tr "/" " " | awk -F. '{OFS=","}{print $1,$2,$3"."$4,"-9999","P"}' | \
+        tr " " "," > ./formatted/$(basename ${files[i]})
 done
