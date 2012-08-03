@@ -6,10 +6,11 @@ noisy = False
 con = sqlite3.connect('./tides.db')
 c = con.cursor()
 
-metaDataFiles = ('/users/modellers/pica/Work/data/NSTD/shelf_stations_latlong_sql.csv',\
-                 '/users/modellers/pica/Work/data/NTSLF/shelf_stations_sql.csv',\
-                 '/users/modellers/pica/Work/data/NTSLF/BPR/shelf_stations_sql.csv',\
-                 '/users/modellers/pica/Work/data/SHOM/shelf_stations_sql_edited.csv')
+metaDataFiles = ('/users/modellers/pica/Data/NSTD/shelf_stations_latlong_sql.csv',\
+                 '/users/modellers/pica/Data/NTSLF/shelf_stations_sql.csv',\
+                 '/users/modellers/pica/Data/NTSLF/BPR/shelf_stations_sql.csv',\
+                 '/users/modellers/pica/Data/SHOM/shelf_stations_sql_edited.csv',\
+                 '/users/modellers/pica/Data/REFMAR/shelf_stations_sql.csv')
 
 # Add two new fields to the Stations tables in the database
 try:
@@ -34,6 +35,9 @@ for file in metaDataFiles:
     elif 'SHOM' in file:
         originator = 'SHOM'
         originatorLong = 'Service Hydrographique et Oceanographique de la Marine'
+    elif 'REFMAR' in file:
+        originator = 'REFMAR'
+        originatorLong = 'Reseaux de reference des observations maregraphiques'
     else:
         print 'Unknown originator. Skipping.'
         break
