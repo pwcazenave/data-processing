@@ -22,11 +22,11 @@ if __name__ == '__main__':
     # Be verbose
     noisy = True
 
-    # Shouldn't have a header
+    # Shouldn't have a header. Don't do the SHOM data (it's too crappy)
     metaDataFiles = ['../../NTSLF/shelf_stations_sql.csv',\
-                     '../../SHOM/shelf_stations_sql_edited.csv',\
-                     '../../NSTD/shelf_station_single_years_sql.csv',\
-                     '../../NTSLF/BPR/shelf_staions_sql.csv']
+                     '../../NSTD/shelf_stations_single_years_sql.csv',\
+                     '../../NTSLF/BPR/shelf_stations_sql.csv',\
+                     '../../REFMAR/shelf_stations_sql.csv']
 
     # TAPPY format definition file
     formatFile = '/users/modellers/pica/Data/proc/tides/sparse.def'
@@ -47,13 +47,13 @@ if __name__ == '__main__':
             # Check if the XML file for the current station already exists, and
             # if so, move along to the next station.
             try:
-                f = open(tableName + '.xml', 'r')
+                f = open('./harmonics/' + tableName + '.xml', 'r')
                 f.close()
                 print 'Analysis already completed. Skipping.'
             except:
                 # Use getObservedData() to extract all the data for each table
                 currData = getObservedData('./tides.db', tableName,
-                        1960, 2012, noisy=noisy)
+                        1960, 2013, noisy=noisy)
 
                 # Check we have some data
                 if len(currData) != 0:
@@ -103,7 +103,7 @@ if __name__ == '__main__':
                     #   2. Parse the XML and add the relevant values to an SQL
                     #   database.
 
-                    subprocess.call(['/usr/bin/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=' + tableName + '.xml', '--quiet', '/tmp/data_' + tableName + '.txt'])
+                    subprocess.call(['/usr/bin/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=./harmonics/' + tableName + '.xml', '--quiet', '/tmp/data_' + tableName + '.txt'])
 
                 else:
                     print 'No observed data for the time period selected for analysis...',
@@ -127,11 +127,10 @@ if __name__ == '__main__':
                     print 'Adding station ' + tableName + ' harmonics to database:',
 
                 try:
-                    f = open(tableName + '.xml', 'r')
+                    [cName, cSpeed, cPhase, cAmplitude, cInference] = parseTAPPyXML('./harmonics/' + tableName + '.xml')
                 except IOError:
-                    sys.exit('Unable to open constituent XML file. Aborting')
-
-                [cName, cSpeed, cPhase, cAmplitude, cInference] = parseTAPPyXML(tableName + '.xml')
+                    print 'Unable to open constituent XML file. Skipping {}.'.format(tableName)
+                    continue
 
                 # Now add all those values to the database
                 addHarmonicResults('harmonics.db',\
