@@ -7,7 +7,7 @@ longNames=($(cut -f3 -d, ./shelf_stations_raw.csv))
 
 ID=pcazenave
 PASS=******* # replace with actual password
-NUMSRC=2 # the quality of the data (1=realtime, 2=10minutes, 4=QC'd
+NUMSRC=2 # the quality of the data (1=realtime, 2=10minutes, 4=QC'd)
 STARTDATE=1800-01-01
 ENDDATE=2012-08-01
 
