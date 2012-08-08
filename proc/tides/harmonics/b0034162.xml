@@ -1,0 +1,50 @@
+<Transfer ns0:noNamespaceSchemaLocation="HC_Schema_V1.xsd" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance">
+  <Port>
+    <name>A port in a storm</name>
+    <country>A man without a country</country>
+    <position>
+      <latitude>0.0</latitude>
+      <longitude>0.0</longitude>
+    </position>
+    <timeZone>0000</timeZone>
+    <units>m</units>
+    <observationStart>1981-02-12T12:53:00</observationStart>
+    <comments>No comment</comments>
+    <observationEnd>1981-02-21T12:53:00</observationEnd>
+    <Harmonic>
+      <name>Z0</name>
+      <speed>0.0</speed>
+      <inferred>false</inferred>
+      <phaseAngle>0</phaseAngle>
+      <amplitude>11.14</amplitude>
+    </Harmonic>
+    <Harmonic>
+      <name>K1</name>
+      <speed>15.0410686397</speed>
+      <inferred>false</inferred>
+      <phaseAngle>234</phaseAngle>
+      <amplitude>0.14</amplitude>
+    </Harmonic>
+    <Harmonic>
+      <name>M2</name>
+      <speed>28.9841042426</speed>
+      <inferred>false</inferred>
+      <phaseAngle>101</phaseAngle>
+      <amplitude>0.12</amplitude>
+    </Harmonic>
+    <Harmonic>
+      <name>M3</name>
+      <speed>43.476156364</speed>
+      <inferred>false</inferred>
+      <phaseAngle>27</phaseAngle>
+      <amplitude>0.01</amplitude>
+    </Harmonic>
+    <Harmonic>
+      <name>M4</name>
+      <speed>57.9682084853</speed>
+      <inferred>false</inferred>
+      <phaseAngle>148</phaseAngle>
+      <amplitude>0.01</amplitude>
+    </Harmonic>
+  </Port>
+</Transfer>
