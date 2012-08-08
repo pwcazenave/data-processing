@@ -27,6 +27,7 @@
 
 # Data directories
 GSHHS/shp/GSHHS_shp/
+NSTD/cdrom/
 NSTD/cleaned/
 NSTD/formatted/
 NSTD/raw_data/
