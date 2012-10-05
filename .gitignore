@@ -26,6 +26,7 @@
 *.swp
 
 # Data directories
+GEBCO/
 GSHHS/shp/GSHHS_shp/
 HRCS/
 NSTD/cdrom/
