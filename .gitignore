@@ -19,6 +19,7 @@
 *.png.xml
 *.qpj
 *.qgs
+*.nc
 
 # Miscellaneous files
 .~lock*#
