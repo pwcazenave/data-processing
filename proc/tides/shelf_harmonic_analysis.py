@@ -93,7 +93,7 @@ if __name__ == '__main__':
                         print 'done.'
 
                     if noisy:
-                        print 'Running TAPPY on the data...',
+                        print 'Running TAPPy on the data...',
 
                     # This is a bit of a hack. It ought to be possible to
                     # import tappy and use the data directly with the imported
