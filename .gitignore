@@ -27,6 +27,7 @@
 *.swp
 
 # Data directories
+ArcGIS/
 GEBCO/
 GSHHS/shp/GSHHS_shp/
 HRCS/
@@ -49,5 +50,4 @@ SHOM/formatted/
 SHOM/raw_data/
 TPXO/
 QGIS/co2_leak/
-QGIS/arcgis/
 UKDEAL/
