@@ -20,14 +20,18 @@
 *.qpj
 *.qgs
 *.nc
+*.bz2
 
 # Miscellaneous files
 .~lock*#
 .nfs*
 *.swp
+.gmtdefaults4
+.gmtcommands4
 
 # Data directories
 ArcGIS/
+ESPA/
 GEBCO/
 GSHHS/shp/GSHHS_shp/
 HRCS/
