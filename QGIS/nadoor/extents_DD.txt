@@ -1,0 +1,3 @@
+lat, hemisphere_north, long, hemisphere_west
+35.2829, N, -3.13579, W
+35.1008, N, -2.24096, W
