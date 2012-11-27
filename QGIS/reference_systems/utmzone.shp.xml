@@ -1,0 +1,2176 @@
+﻿<?xml version="1.0"?>
+<!--<!DOCTYPE metadata SYSTEM "http://www.esri.com/metadata/esriprof80.dtd">-->
+<metadata xml:lang="en">
+	<Esri>
+		<MetaID>{02EACBEC-5BDA-4F3D-B130-1AF80F39C4F0}</MetaID>
+		<CreaDate>20000920</CreaDate>
+		<CreaTime>15021200</CreaTime>
+		<SyncOnce>FALSE</SyncOnce>
+		<SyncDate>20080428</SyncDate>
+		<SyncTime>11243700</SyncTime>
+		<ModDate>20080428</ModDate>
+		<ModTime>14100500</ModTime>
+		<Sync>FALSE</Sync>
+		<PublishedDocID>{340C00EE-8836-4049-9407-F62D2848EBE7}</PublishedDocID>
+	</Esri>
+	<idinfo>
+		<native Sync="TRUE">Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 2; ESRI ArcCatalog 9.3.0.1746</native>
+		<descript>
+			<langdata Sync="TRUE">en</langdata>
+			<abstract>World UTM Zones represents the Universal Transverse Mercator (UTM) Zones of the world.</abstract>
+			<purpose>World UTM Zones provides the zones and the latitude and longitude values that are used to project each six-degree-wide zone according to the UTM projection.
+
+</purpose>
+		</descript>
+		<citation>
+			<citeinfo>
+				<pubdate>20080401</pubdate>
+				<title>World UTM Zones</title>
+				<ftname Sync="TRUE">utmzone.sdc</ftname>
+				<geoform Sync="TRUE">vector digital data</geoform>
+				<edition>2008</edition>
+				<serinfo>
+					<sername>ESRI® Data &amp; Maps</sername>
+					<issue>2008 World, Europe, United States, Canada, and Mexico</issue>
+				</serinfo>
+				<pubinfo>
+					<pubplace>Redlands, California, USA</pubplace>
+					<publish>ESRI</publish>
+				</pubinfo>
+				<othercit>Location: \world\data</othercit>
+				<origin>ESRI</origin>
+			</citeinfo>
+		</citation>
+		<timeperd>
+			<current>publication date</current>
+			<timeinfo>
+				<mdattim>
+					<sngdate>
+						<caldate>1997</caldate>
+					</sngdate>
+					<sngdate>
+						<caldate>1987</caldate>
+					</sngdate>
+					<sngdate><caldate>20041122</caldate></sngdate></mdattim>
+			</timeinfo>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>Annually</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc Sync="TRUE">-180.000000</westbc>
+				<eastbc Sync="TRUE">180.000000</eastbc>
+				<northbc Sync="TRUE">90.000000</northbc>
+				<southbc Sync="TRUE">-90.000000</southbc>
+			</bounding>
+			<lboundng>
+				<leftbc Sync="TRUE">-180.000000</leftbc>
+				<rightbc Sync="TRUE">180.000000</rightbc>
+				<bottombc Sync="TRUE">-90.000000</bottombc>
+				<topbc Sync="TRUE">90.000000</topbc>
+			</lboundng>
+		</spdom>
+		<keywords>
+			<theme>
+				<themekt>None</themekt>
+				<themekey>polygon</themekey>
+				<themekey>utm</themekey>
+				<themekey>universal transverse mercator</themekey>
+				<themekey>zones</themekey>
+				<themekey>location</themekey>
+			</theme>
+			<place>
+				<placekey>World</placekey>
+				<placekt>None</placekt>
+			</place>
+			<temporal>
+				<tempkey>1997</tempkey>
+				<tempkt>None</tempkt>
+				<tempkey>1987</tempkey>
+				<tempkey>2004</tempkey></temporal>
+		</keywords>
+		<accconst>Access granted to Licensee only.</accconst>
+		<useconst>The data are provided by multiple, third party data vendors under license to ESRI for inclusion on ESRI Data &amp; Maps for use with ESRI® software.  Each data vendor has its own data licensing policies and may grant varying redistribution rights to end users. Please consult the redistribution rights below for this data set provided on ESRI Data &amp; Maps. As used herein, “Geodata” shall mean any digital data set consisting of geographic data coordinates and associated attributes.
+
+The redistribution rights for this data set: Redistribution rights are granted by the data vendor for hard-copy renditions or static, electronic map images (e.g. .gif, .jpeg, etc.) that are plotted, printed, or publicly displayed with proper metadata and source/copyright attribution to the respective data vendor(s).  Geodata is redistributable with a Value-Added Software Application developed by ESRI Business Partners on a royalty-free basis with proper metadata and source/copyright attribution to the respective data vendor(s). Geodata is redistributable without a Value-Added Software Application (i.e., adding the sample data to an existing, [non]commercial data set for redistribution) with proper metadata and source/copyright attribution to the respective data vendor(s).
+
+The terms and conditions below apply to all the data sets provided on ESRI Data &amp; Maps.
+
+Proprietary Rights and Copyright: Licensee acknowledges that the Data and Related Materials contain proprietary and confidential property of ESRI and its licensor(s). The Data and Related Materials are owned by ESRI and its licensor(s) and are protected by United States copyright laws and applicable international copyright treaties and/or conventions.
+
+Limited Warranty and Disclaimer: ESRI warrants that the media upon which the Data and Related Materials are provided will be free from defects in materials and workmanship under normal use and service for a period of ninety (90) days from the date of receipt.
+
+THE DATA AND RELATED MATERIALS ARE EXCLUDED FROM THE LIMITED WARRANTY, AND THE LICENSEE EXPRESSLY ACKNOWLEDGES THAT THE DATA CONTAINS SOME NONCONFORMITIES, DEFECTS, OR ERRORS. ESRI DOES NOT WARRANT THAT THE DATA WILL MEET LICENSEE'S NEEDS OR EXPECTATIONS; THAT THE USE OF THE DATA WILL BE UNINTERRUPTED; OR THAT ALL NONCONFORMITIES, DEFECTS, OR ERRORS CAN OR WILL BE CORRECTED. ESRI IS NOT INVITING RELIANCE ON THIS DATA, AND THE LICENSEE SHOULD ALWAYS VERIFY ACTUAL DATA.
+
+EXCEPT FOR THE LIMITED WARRANTY SET FORTH ABOVE, THE DATA AND RELATED MATERIALS CONTAINED THEREIN ARE PROVIDED "AS-IS," WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+HIGH RISK ACTIVITIES: 
+(A) THE DATA AND RELATED MATERIALS ARE NOT FAULT-TOLERANT AND ARE NOT DESIGNED, MANUFACTURED, OR INTENDED FOR USE OR RESALE FOR INSURANCE UNDERWRITING OR WITH CRITICAL HEALTH AND SAFETY OR ONLINE CONTROL EQUIPMENT IN HAZARDOUS ENVIRONMENTS THAT REQUIRE FAIL-SAFE PERFORMANCE, INCLUDING, BUT NOT LIMITED TO THE OPERATION OF NUCLEAR FACILITIES, NAVIGATION OR GUIDANCE (I.E., AIRCRAFT, NAUTICAL VEHICLE, ETC.), OR COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, EMERGENCY RESPONSE, TERRORISM PREVENTION OR RESPONSE, LIFE SUPPORT, OR WEAPONS SYSTEMS ("HIGH RISK ACTIVITIES"). ESRI SPECIFICALLY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY OF FITNESS FOR HIGH RISK ACTIVITIES.
+
+(B) TO THE EXTENT PERMITTED BY LAW, LICENSEE AGREES TO INDEMNIFY, DEFEND, AND HOLD ESRI, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, SUBCONTRACTORS, LICENSORS, SUCCESSORS, AND ASSIGNS HARMLESS FROM AND AGAINST ANY AND ALL LIABILITY, LOSSES, CLAIMS, EXPENSES (INCLUDING ATTORNEYS' FEES), DEMANDS, OR DAMAGES OF ANY KIND, INCLUDING DIRECT, INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, ARISING OUT OF OR IN ANY WAY CONNECTED WITH LICENSEE'S USE OR PERMITTING THE USE BY OTHERS OF THE DATA, AND VENDOR'S HARDWARE OR SOFTWARE FOR HIGH RISK ACTIVITIES. DELIVERY OF THE DATA, AND VENDOR'S HARDWARE OR SOFTWARE DOES NOT CONSTITUTE A WAIVER OF THE RIGHTS AND OBLIGATIONS SET FORTH IN THIS ARTICLE.
+
+Exclusive Remedy and Limitation of Liability: The entire liability of ESRI or its licensor(s) and Licensee's exclusive remedy shall be to terminate the Agreement upon Licensee returning the Data and Related Materials to ESRI with a copy of Licensee's invoice/receipt and ESRI returning the license fees paid to Licensee.
+
+IN NO EVENT SHALL ESRI AND/OR ITS LICENSOR(S) BE LIABLE FOR COSTS OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOST PROFITS, LOST SALES, OR BUSINESS EXPENDITURES, INVESTMENTS, OR COMMITMENTS IN CONNECTION WITH ANY BUSINESS; LOSS OF ANY GOODWILL; OR FOR ANY INDIRECT, SPECIAL, INCIDENTAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THIS AGREEMENT OR USE OF THE DATA AND RELATED MATERIALS, HOWEVER CAUSED, ON ANY THEORY OF LIABILITY, AND WHETHER OR NOT ESRI OR ITS LICENSOR(S) HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. THESE LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY EXCLUSIVE REMEDY.
+
+Third Party Beneficiary: ESRI's licensor(s) has (have) authorized ESRI to (sub)distribute and (sub)license its (their) data as incorporated into the Data and Related Materials. As an intended third party beneficiary to this Agreement, the ESRI licensor(s) is (are) entitled to directly enforce, in its own name, the rights and obligations undertaken by the Licensee and to seek all legal and equitable remedies as are afforded to ESRI.
+
+In the event that the data vendor(s) has (have) granted the end user permission to redistribute the Geodata, please use proper proprietary or copyright attribution for the various data vendor(s), and provide the associated metadata file(s) with the Geodata. In compliance with FGDC metadata standards, ESRI has attempted to practice proper metadata methodologies by providing any data source information, descriptions, and file names to assist in this effort.</useconst>
+		<natvform Sync="TRUE">SDC Feature Database</natvform>
+		<ptcontac>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>ESRI</cntorg>
+					<cntper>Data Team</cntper>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>380 New York Street</address>
+					<city>Redlands</city>
+					<state>California</state>
+					<postal>92373-8100</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>909-793-2853</cntvoice>
+				<cntfax>909-793-5953</cntfax>
+				<cntemail>info@esri.com</cntemail>
+				<hours>7:00 a.m.–5:30 p.m. Pacific time, Monday–Friday</hours>
+				<cntinst>In the United States–
+Please direct all inquiries regarding software/data pricing and consulting services to your local ESRI Regional Office.  For support, you may contact ESRI Support Center by telephone (voice) between 6:00 a.m. and 5:00 p.m. Pacific time, Monday through Friday, by dialing 888-377-4575; facsimile (fax) available at 909-792-0960; electronic mail (e-mail) support@esri.com; or visit http://support.esri.com/; ESRI holidays excluded. 
+
+Outside the United States–
+Please direct all inquiries regarding software/data pricing, sales, support, and consulting services to your local ESRI International Distributor.  This information can be found at http://gis.esri.com/intldist/contact/.  
+
+For other questions or comments, you may contact ESRI headquarters by e-mail, telephone, or fax or write to us.</cntinst>
+			</cntinfo>
+		</ptcontac>
+	</idinfo>
+	<metainfo>
+		<langmeta Sync="TRUE">en</langmeta>
+		<metstdn Sync="TRUE">FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv Sync="TRUE">FGDC-STD-001-1998</metstdv>
+		<mettc Sync="TRUE">local time</mettc>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntper>Data Team</cntper>
+					<cntorg>ESRI</cntorg>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<city>Redlands</city>
+					<state>California</state>
+					<postal>92373-8100</postal>
+					<address>380 New York Street</address>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>909-793-2853</cntvoice>
+				<cntfax>909-793-5953</cntfax>
+				<cntemail>info@esri.com</cntemail>
+				<hours>7:00 a.m.–5:30 p.m. Pacific time, Monday–Friday</hours>
+			</cntinfo>
+		</metc>
+		<metd Sync="TRUE">20080428</metd>
+		<metextns><onlink Sync="TRUE">http://www.esri.com/metadata/esriprof80.html</onlink><metprof Sync="TRUE">ESRI Metadata Profile</metprof></metextns></metainfo>
+	<spdoinfo>
+		<direct Sync="TRUE">Vector</direct>
+		<ptvctinf>
+			<esriterm Name="utmzone">
+				<efeatyp Sync="TRUE">Simple</efeatyp>
+				<efeageom Sync="TRUE">Polygon</efeageom>
+				<esritopo Sync="TRUE">FALSE</esritopo>
+				<efeacnt Sync="TRUE">1201</efeacnt>
+				<spindex>TRUE</spindex>
+				<linrefer Sync="TRUE">FALSE</linrefer>
+				<featdesc>World UTM Zone</featdesc>
+			</esriterm>
+			<sdtsterm Name="utmzone">
+				<sdtstype Sync="TRUE">G-polygon</sdtstype>
+				<ptvctcnt Sync="TRUE">1201</ptvctcnt>
+			</sdtsterm>
+		</ptvctinf>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<cordsysn>
+				<geogcsn>GCS_Geographic</geogcsn>
+			</cordsysn>
+			<geograph>
+				<geogunit Sync="TRUE">Decimal degrees</geogunit>
+				<latres Sync="TRUE">0.000000</latres>
+				<longres Sync="TRUE">0.000000</longres>
+			</geograph>
+			<geodetic>
+				<horizdn>This data set was mathematically generated. You can define or use it unchanged with data based on any datum.</horizdn>
+				<ellips Sync="TRUE">WGS_1984</ellips>
+				<semiaxis Sync="TRUE">6378137.000000</semiaxis>
+				<denflat Sync="TRUE">298.257224</denflat>
+			</geodetic>
+		</horizsys>
+	</spref>
+	<eainfo>
+		<detailed Name="utmzone">
+			<enttyp>
+				<enttypl Sync="TRUE">utmzone</enttypl>
+				<enttypt Sync="TRUE">Feature Class</enttypt>
+				<enttypc Sync="TRUE">1201</enttypc>
+				<enttypd>The polygons represent the Universal Transverse Mercator (UTM) Zones, which, lie between 84 degrees north and 80 degrees south latitude. With few exceptions, they divide the world into sixty zones, each of which is six degrees of longitude wide. The zones are numbered from 1 through 60 eastward from 180 degrees longitude. The zone characters designate eight degrees of latitude high rows extending north and south from the equator with the exception of the northern-most row which is 12 degrees high.</enttypd>
+				<enttypds>ESRI</enttypds>
+			</enttyp>
+			<attr>
+				<attrlabl Sync="TRUE">ObjectID</attrlabl>
+				<attalias Sync="TRUE">ObjectID</attalias>
+				<attrtype Sync="TRUE">OID</attrtype>
+				<attwidth Sync="TRUE">4</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+				<attrdef Sync="TRUE">Internal feature number.</attrdef>
+				<attrdefs Sync="TRUE">ESRI</attrdefs>
+				<attrdomv>
+					<udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">Shape</attrlabl>
+				<attalias Sync="TRUE">Shape</attalias>
+				<attrtype Sync="TRUE">Geometry</attrtype>
+				<attwidth Sync="TRUE">0</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+				<attrdef Sync="TRUE">Feature geometry.</attrdef>
+				<attrdefs Sync="TRUE">ESRI</attrdefs>
+				<attrdomv>
+					<udom Sync="TRUE">Coordinates defining the features.</udom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">ZONE</attrlabl>
+				<attalias Sync="TRUE">ZONE</attalias>
+				<attrtype Sync="TRUE">Double</attrtype>
+				<attwidth Sync="TRUE">8</attwidth>
+				<attrdef>The number of the UTM zone.</attrdef>
+				<attrdefs>United States Geological Survey</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>1–60</edomv>
+						<edomvd>The UTM zone numbers.</edomvd>
+						<edomvds>United States Geological Survey</edomvds>
+					</edom>
+					<edom>
+						<edomv>0</edomv>
+						<edomvd>Filler value for north and south polar areas.</edomvd>
+						<edomvds>ESRI</edomvds>
+					</edom>
+				</attrdomv>
+				<atprecis Sync="TRUE">13</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">ROW_</attrlabl>
+				<attalias Sync="TRUE">ROW_</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">1</attwidth>
+				<attrdef>The character or designator of the UTM zone.</attrdef>
+				<attrdefs>United States Geological Survey</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>C, D, E, F, G, H, J, K, L, M, N, P, Q, R, S, T, U, V, W, X</edomv>
+						<edomvd>The UTM row letters.</edomvd>
+						<edomvds>United States Geological Survey</edomvds>
+					</edom>
+					<edom>
+						<edomv>A, B, Y, Z</edomv>
+						<edomvd>Filler values for north and south polar areas.</edomvd>
+						<edomvds>ESRI</edomvds>
+					</edom>
+				</attrdomv>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">WEST_VALUE</attrlabl>
+				<attalias Sync="TRUE">WEST_VALUE</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">4</attwidth>
+				<attrdef>The longitude of the meridian forming the western border of the UTM zone.</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>180W incremented by -/+6 through 174E (with the exception of zones: 33X, 35X, 37X, and 32V)</edomv>
+						<edomvd>The longitude of the meridian forming the western border of a UTM zone.</edomvd>
+						<edomvds>ESRI</edomvds>
+					</edom>
+					<edom>
+						<edomv>NoZN</edomv>
+						<edomvd>Filler value for north and south polar areas.</edomvd>
+						<edomvds>ESRI</edomvds>
+					</edom>
+				</attrdomv>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">CM_VALUE</attrlabl>
+				<attalias Sync="TRUE">CM_VALUE</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">5</attwidth>
+				<attrdef>The longitude of the central meridian of the UTM zone.</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>177W incremented by -/+6 through 177E (with the exception of zones: 31X, 33X, 35X, 37X, 31V, and 32V)</edomv>
+						<edomvd>The longitude of the central meridian of a UTM zone.</edomvd>
+						<edomvds>ESRI</edomvds>
+					</edom>
+					<edom>
+						<edomv>NoZN</edomv>
+						<edomvd>Filler value for north and south polar areas.</edomvd>
+						<edomvds>ESRI</edomvds>
+					</edom>
+				</attrdomv>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">EAST_VALUE</attrlabl>
+				<attalias Sync="TRUE">EAST_VALUE</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">4</attwidth>
+				<attrdomv>
+					<edom>
+						<edomv>174W incremented by -/+6 through 180E (with the exception of zones: 31X, 33X, 35X, and 31V)</edomv>
+						<edomvd>The longitude of the meridian forming the eastern border of a UTM zone.</edomvd>
+						<edomvds>ESRI</edomvds>
+					</edom>
+					<edom>
+						<edomv>NoZN</edomv>
+						<edomvd>Filler value for north and south polar areas.</edomvd>
+						<edomvds>ESRI</edomvds>
+					</edom>
+				</attrdomv>
+				<attrdef>The longitude of the meridian forming the eastern border of the UTM zone.</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+		</detailed>
+	</eainfo>
+	<distinfo>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<transize Sync="TRUE">0.120</transize>
+					<dssize Sync="TRUE">0.120</dssize>
+					<formname>SDC</formname>
+					<filedec>ArcGIS® software</filedec>
+					<formspec>The SDC file contains the geospatial and attribute data. The SDI file contains the spatial index. The PRJ file contains the coordinate system information (optional). The XML file (*.sdc.xml) contains the metadata describing the data set (optional).</formspec>
+				</digtinfo>
+				<digtopt>
+					<offoptn>
+						<offmedia>DVD–ROM</offmedia>
+						<reccap>
+							<recden>7.95</recden>
+							<recdenu>GB (gigabytes)</recdenu>
+						</reccap>
+						<recfmt>UDF (Universal Disc Format)</recfmt>
+					</offoptn>
+				</digtopt>
+			</digform>
+			<fees>Software purchase price</fees>
+			<ordering>ESRI Data &amp; Maps is available only as part of ESRI® software.</ordering>
+		</stdorder>
+		<distrib>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>ESRI; ESRI International Distributors</cntorg>
+				</cntorgp>
+				<cntinst>In the United States, contact the ESRI Telebusiness staff at 800-447-9778 for more information about our software and data.
+
+Outside the United States, please direct all inquiries to your local ESRI International Distributor.  This information can be found at http://gis.esri.com/intldist/contact/.</cntinst>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>380 New York Street</address>
+					<city>Redlands</city>
+					<state>California</state>
+					<postal>92373-8100</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>800-447-9778</cntvoice>
+			</cntinfo>
+		</distrib>
+		<techpreq>To use this data requires software that supports SDC files.</techpreq>
+		<distliab>See use constraints.</distliab>
+		<resdesc>Offline Data</resdesc>
+	</distinfo>
+	<dataqual>
+		<lineage>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<title>ArcData® Online GIS Data on the Web –World UTM Zones Data Set</title>
+						<origin>ESRI</origin>
+						<pubdate>1997</pubdate>
+						<edition>1</edition>
+						<geoform>vector digital data</geoform>
+						<pubinfo>
+							<publish>ESRI</publish>
+							<pubplace>Redlands, California, USA</pubplace>
+						</pubinfo>
+						<onlink>http://www.esri.com/data/online/esri/datapacks/utm_zone.html</onlink>
+						<othercit>This data set is also distributed in ArcWorld™ Supplement from ESRI.</othercit>
+					</citeinfo>
+				</srccite>
+				<typesrc>online</typesrc>
+				<srctime>
+					<timeinfo>
+						<sngdate>
+							<caldate>1987</caldate>
+						</sngdate>
+					</timeinfo>
+					<srccurr>publication date</srccurr>
+				</srctime>
+				<srccitea>ADOL</srccitea>
+				<srccontr>Attribute and geospatial data</srccontr>
+			</srcinfo>
+			<procstep>
+				<procdesc>The UTM zone index was mathematically generated by ESRI using ARC/INFO® software. The zone definitions were obtained from "An Album of Map Projections: A Working Manual" by John P. Snyder (1987: USGS Professional Paper 1395. U.S. Government Printing Office: Washington, D.C.).</procdesc>
+				<procsv>ARC/INFO®, ArcView GIS 3.x</procsv>
+				<procdate>1997</procdate>
+				<srcprod>ADOL</srcprod>
+			</procstep>
+			<procstep>
+				<procdesc>The following steps were performed by ESRI: Downloaded the ArcView GIS Shapefile, utm_zone.zip, from http://www.esri.com/data/online/esri/datapacks/utm_zone.html and extracted it.  Chose UTM Areas (utm_ply.shp) and added attributes East_value, Cm_value, and West_value from UTM zones (zone.shp).  Added filler values to attributes of the polygons in the north and south polar areas.  Removed unneeded attributes.  Created ArcGIS® layer file (.lyr).  Created projection file (.prj).  Ran ArcView GIS Avenue™ request ExportClean, and created spatial indices. Converted the data set to SDC.</procdesc>
+				<procsv>ArcView GIS 3.2</procsv>
+				<srcused>ADOL</srcused>
+				<procdate>20000809</procdate>
+			</procstep>
+			<procstep>
+				<procdesc>The following steps were performed by ESRI: Dissolved out the central meridian of each UTM zone/row cell, reducing the number of polygons by about half.</procdesc>
+				<procsv>ArcView GIS 3, ArcGIS 9</procsv>
+				<procdate>20040307</procdate>
+			</procstep>
+			<procstep>
+				<procdesc>The following steps were performed by ESRI: The EAST_VALUE and WEST_VALUE attributes and their values were reversed, so the attribute names were swapped instead of the values.</procdesc>
+				<procsv>ArcView® GIS 3, ArcGIS® 9</procsv>
+				<procdate>20050215</procdate>
+			</procstep>
+			<procstep>
+				<procdesc>The following steps were performed by ESRI: Corrected the east, north, and south geographic extents. Converted the data set to SDC.</procdesc>
+				<procsv>ArcView® GIS 3, ArcEdit™, ArcGIS® 9, ArcSDE®</procsv>
+				<procdate>20060328</procdate>
+			</procstep>
+			<srcinfo><typesrc>online</typesrc><srccitea>NGA GIS MGRS</srccitea><srccontr>Attribute and geospatial data</srccontr><srccite><citeinfo><origin>National Geospatial-Intelligence Agency (NGA)</origin><pubdate>20041122</pubdate><title>GIS MGRS Grid Data layers in GIS Format</title><geoform>vector digital data</geoform><othercit>Downloaded: MGRS Grid Zone Designators (6°x 8°) (file size 1 MB) Shapefiles of the 6°x 8° zones.</othercit><onlink>http://earth-info.nga.mil/GandG/coordsys/gislayers/gislayers.html</onlink><pubinfo><pubplace>Bethesda, Maryland, USA</pubplace><publish>National Geospatial-Intelligence Agency (NGA)</publish></pubinfo></citeinfo></srccite><srctime><timeinfo><sngdate><caldate>20041122</caldate></sngdate></timeinfo><srccurr>publication date</srccurr></srctime></srcinfo><procstep><procdesc>The following steps were performed by ESRI: Adjusted UTM grid cells to fit two newly sized areas in Norway and Svalbard. The three original cells (32X, 34X, and 36X) no longer exist, having been absorbed by their adjacent cells in the row. The cell 32V absorbed the eastern half of cell 31V. Edited attributes WEST_VALUE, CM_VALUE, and EAST_VALUE for the affected grid cells. Converted the data set to SDC. Created ArcGIS® layer file (.lyr), projection file (.prj), and spatial indices.</procdesc><procsv>ArcView® GIS 3, ArcGIS® 9, ArcSDE®</procsv><srcused>NGA GIS MGRS</srcused><procdate>20080426</procdate></procstep></lineage>
+		<posacc>
+			<horizpa>
+				<horizpar>The horizontal positional accuracy is unknown.</horizpar>
+			</horizpa>
+		</posacc>
+		<logic>The shapefile is converted to SDC (Smart Data Compression) format using either ESRI SDC Data Development Kit Professional 2 (DDKP2) or tools in ArcGIS.  The SDC data set is then loaded into ArcSDE® to verify and validate the geometry.</logic>
+		<complete>After processing, the data set is checked for drawing display and number of records and file sizes compared with source materials.</complete>
+	</dataqual>
+	<dataIdInfo>
+		<envirDesc Sync="TRUE">Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 2; ESRI ArcCatalog 9.3.0.1746</envirDesc>
+		<dataLang>
+			<languageCode Sync="TRUE" value="en"/>
+		</dataLang>
+		<idCitation>
+			<resTitle>World UTM Zones</resTitle>
+			<presForm>
+				<PresFormCd Sync="TRUE" value="005"/>
+			</presForm>
+			<resEd>2008</resEd>
+			<resEdDate>20080401</resEdDate>
+			<resRefDate>
+				<refDate>20000809</refDate>
+				<refDateType>
+					<DateTypCd value="001"/>
+				</refDateType>
+			</resRefDate>
+			<citRespParty>
+				<rpIndName>Data Team</rpIndName>
+				<rpOrgName>ESRI</rpOrgName>
+				<rpPosName>Data Team</rpPosName>
+				<role>
+					<RoleCd value="007"/>
+				</role>
+				<rpCntInfo>
+					<cntAddress>
+						<delPoint>380 New York Street</delPoint>
+						<city>Redlands</city>
+						<adminArea>California</adminArea>
+						<postCode>92373-8100</postCode>
+						<eMailAdd>info@esri.com</eMailAdd>
+						<country>us</country>
+					</cntAddress>
+					<cntPhone>
+						<voiceNum>909-793-2853</voiceNum>
+						<faxNum>909-793-5953</faxNum>
+					</cntPhone>
+				</rpCntInfo>
+			</citRespParty>
+			<resRefDate>
+				<refDate>20080401</refDate>
+				<refDateType>
+					<DateTypCd value="002"/>
+				</refDateType>
+			</resRefDate>
+		</idCitation>
+		<spatRpType>
+			<SpatRepTypCd Sync="TRUE" value="001"/>
+		</spatRpType>
+		<dataExt>
+			<geoEle>
+				<GeoBndBox esriExtentType="native">
+					<westBL Sync="TRUE">-180</westBL>
+					<eastBL Sync="TRUE">180.000000</eastBL>
+					<northBL Sync="TRUE">90</northBL>
+					<southBL Sync="TRUE">-90</southBL>
+					<exTypeCode Sync="TRUE">1</exTypeCode>
+				</GeoBndBox>
+			</geoEle>
+			<tempEle><TempExtent><exTemp><TM_GeometricPrimitive><TM_Period><begin>1987</begin><end>20041122</end></TM_Period></TM_GeometricPrimitive></exTemp></TempExtent></tempEle></dataExt>
+		<geoBox esriExtentType="decdegrees">
+			<westBL Sync="TRUE">-180</westBL>
+			<eastBL Sync="TRUE">180</eastBL>
+			<northBL Sync="TRUE">90</northBL>
+			<southBL Sync="TRUE">-90</southBL>
+			<exTypeCode Sync="TRUE">1</exTypeCode>
+		</geoBox>
+		<idAbs>World UTM Zones represents the Universal Transverse Mercator (UTM) Zones of the world.</idAbs>
+		<tpCat>
+			<TopicCatCd value="013"/>
+		</tpCat>
+		<resConst>
+			<Consts>
+				<useLimit>See legal constraints.</useLimit>
+			</Consts>
+			<LegConsts>
+				<accessConsts>
+					<RestrictCd value="005"/>
+				</accessConsts>
+				<othConsts>The data are provided by multiple, third party data vendors under license to ESRI for inclusion on ESRI Data &amp; Maps for use with ESRI® software.  Each data vendor has its own data licensing policies and may grant varying redistribution rights to end users. Please consult the redistribution rights below for this data set provided on ESRI Data &amp; Maps. As used herein, “Geodata” shall mean any digital data set consisting of geographic data coordinates and associated attributes.
+
+The redistribution rights for this data set: Redistribution rights are granted by the data vendor for hard-copy renditions or static, electronic map images (e.g. .gif, .jpeg, etc.) that are plotted, printed, or publicly displayed with proper metadata and source/copyright attribution to the respective data vendor(s).  Geodata is redistributable with a Value-Added Software Application developed by ESRI Business Partners on a royalty-free basis with proper metadata and source/copyright attribution to the respective data vendor(s). Geodata is redistributable without a Value-Added Software Application (i.e., adding the sample data to an existing, [non]commercial data set for redistribution) with proper metadata and source/copyright attribution to the respective data vendor(s).
+
+The terms and conditions below apply to all the data sets provided on ESRI Data &amp; Maps.
+
+Proprietary Rights and Copyright: Licensee acknowledges that the Data and Related Materials contain proprietary and confidential property of ESRI and its licensor(s). The Data and Related Materials are owned by ESRI and its licensor(s) and are protected by United States copyright laws and applicable international copyright treaties and/or conventions.
+
+Limited Warranty and Disclaimer: ESRI warrants that the media upon which the Data and Related Materials are provided will be free from defects in materials and workmanship under normal use and service for a period of ninety (90) days from the date of receipt.
+
+THE DATA AND RELATED MATERIALS ARE EXCLUDED FROM THE LIMITED WARRANTY, AND THE LICENSEE EXPRESSLY ACKNOWLEDGES THAT THE DATA CONTAINS SOME NONCONFORMITIES, DEFECTS, OR ERRORS. ESRI DOES NOT WARRANT THAT THE DATA WILL MEET LICENSEE'S NEEDS OR EXPECTATIONS; THAT THE USE OF THE DATA WILL BE UNINTERRUPTED; OR THAT ALL NONCONFORMITIES, DEFECTS, OR ERRORS CAN OR WILL BE CORRECTED. ESRI IS NOT INVITING RELIANCE ON THIS DATA, AND THE LICENSEE SHOULD ALWAYS VERIFY ACTUAL DATA.
+
+EXCEPT FOR THE LIMITED WARRANTY SET FORTH ABOVE, THE DATA AND RELATED MATERIALS CONTAINED THEREIN ARE PROVIDED "AS-IS," WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+HIGH RISK ACTIVITIES: 
+(A) THE DATA AND RELATED MATERIALS ARE NOT FAULT-TOLERANT AND ARE NOT DESIGNED, MANUFACTURED, OR INTENDED FOR USE OR RESALE FOR INSURANCE UNDERWRITING OR WITH CRITICAL HEALTH AND SAFETY OR ONLINE CONTROL EQUIPMENT IN HAZARDOUS ENVIRONMENTS THAT REQUIRE FAIL-SAFE PERFORMANCE, INCLUDING, BUT NOT LIMITED TO THE OPERATION OF NUCLEAR FACILITIES, NAVIGATION OR GUIDANCE (I.E., AIRCRAFT, NAUTICAL VEHICLE, ETC.), OR COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, EMERGENCY RESPONSE, TERRORISM PREVENTION OR RESPONSE, LIFE SUPPORT, OR WEAPONS SYSTEMS ("HIGH RISK ACTIVITIES"). ESRI SPECIFICALLY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY OF FITNESS FOR HIGH RISK ACTIVITIES.
+
+(B) TO THE EXTENT PERMITTED BY LAW, LICENSEE AGREES TO INDEMNIFY, DEFEND, AND HOLD ESRI, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, SUBCONTRACTORS, LICENSORS, SUCCESSORS, AND ASSIGNS HARMLESS FROM AND AGAINST ANY AND ALL LIABILITY, LOSSES, CLAIMS, EXPENSES (INCLUDING ATTORNEYS' FEES), DEMANDS, OR DAMAGES OF ANY KIND, INCLUDING DIRECT, INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, ARISING OUT OF OR IN ANY WAY CONNECTED WITH LICENSEE'S USE OR PERMITTING THE USE BY OTHERS OF THE DATA, AND VENDOR'S HARDWARE OR SOFTWARE FOR HIGH RISK ACTIVITIES. DELIVERY OF THE DATA, AND VENDOR'S HARDWARE OR SOFTWARE DOES NOT CONSTITUTE A WAIVER OF THE RIGHTS AND OBLIGATIONS SET FORTH IN THIS ARTICLE.
+
+Exclusive Remedy and Limitation of Liability: The entire liability of ESRI or its licensor(s) and Licensee's exclusive remedy shall be to terminate the Agreement upon Licensee returning the Data and Related Materials to ESRI with a copy of Licensee's invoice/receipt and ESRI returning the license fees paid to Licensee.
+
+IN NO EVENT SHALL ESRI AND/OR ITS LICENSOR(S) BE LIABLE FOR COSTS OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOST PROFITS, LOST SALES, OR BUSINESS EXPENDITURES, INVESTMENTS, OR COMMITMENTS IN CONNECTION WITH ANY BUSINESS; LOSS OF ANY GOODWILL; OR FOR ANY INDIRECT, SPECIAL, INCIDENTAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THIS AGREEMENT OR USE OF THE DATA AND RELATED MATERIALS, HOWEVER CAUSED, ON ANY THEORY OF LIABILITY, AND WHETHER OR NOT ESRI OR ITS LICENSOR(S) HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. THESE LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY EXCLUSIVE REMEDY.
+
+Third Party Beneficiary: ESRI's licensor(s) has (have) authorized ESRI to (sub)distribute and (sub)license its (their) data as incorporated into the Data and Related Materials. As an intended third party beneficiary to this Agreement, the ESRI licensor(s) is (are) entitled to directly enforce, in its own name, the rights and obligations undertaken by the Licensee and to seek all legal and equitable remedies as are afforded to ESRI.
+
+In the event that the data vendor(s) has (have) granted the end user permission to redistribute the Geodata, please use proper proprietary or copyright attribution for the various data vendor(s), and provide the associated metadata file(s) with the Geodata. In compliance with FGDC metadata standards, ESRI has attempted to practice proper metadata methodologies by providing any data source information, descriptions, and file names to assist in this effort.</othConsts>
+				<useConsts>
+					<RestrictCd value="008"/>
+				</useConsts>
+			</LegConsts>
+		</resConst>
+		<descKeys KeyTypCd="005">
+			<keyTyp>
+				<KeyTypCd value="005"/>
+			</keyTyp>
+			<keyword>polygon, utm, universal transverse mercator, zones, location</keyword>
+		</descKeys>
+		<descKeys KeyTypCd="002">
+			<keyTyp>
+				<KeyTypCd value="002"/>
+			</keyTyp>
+			<keyword>World</keyword>
+		</descKeys>
+		<descKeys KeyTypCd="004">
+			<keyTyp>
+				<KeyTypCd value="004"/>
+			</keyTyp>
+			<keyword>1997, 1987, 2004</keyword></descKeys>
+		<resMaint>
+			<maintFreq>
+				<MaintFreqCd value="008"/>
+			</maintFreq>
+		</resMaint>
+		<idPoC Sync="TRUE"><rpIndName Sync="TRUE">Data Team</rpIndName><rpOrgName Sync="TRUE">ESRI</rpOrgName><rpPosName Sync="TRUE">Data Team</rpPosName><rpCntInfo><cntPhone><voiceNum Sync="TRUE">909-793-2853</voiceNum><faxNum Sync="TRUE">909-793-5953</faxNum></cntPhone><cntAddress><delPoint Sync="TRUE">380 New York Street</delPoint><city Sync="TRUE">Redlands</city><adminArea Sync="TRUE">California</adminArea><postCode Sync="TRUE">92373-8100</postCode><country Sync="TRUE">us</country><eMailAdd Sync="TRUE">info@esri.com</eMailAdd></cntAddress></rpCntInfo><role><RoleCd Sync="TRUE" value="007"></RoleCd></role></idPoC></dataIdInfo>
+	<mdLang>
+		<languageCode Sync="TRUE" value="en"/>
+	</mdLang>
+	<mdStanName Sync="TRUE">ISO 19115 Geographic Information - Metadata</mdStanName>
+	<mdStanVer Sync="TRUE">DIS_ESRI1.0</mdStanVer>
+	<mdChar>
+		<CharSetCd Sync="TRUE" value="004"/>
+	</mdChar>
+	<mdHrLv>
+		<ScopeCd Sync="TRUE" value="005"/>
+	</mdHrLv>
+	<mdHrLvName Sync="TRUE">dataset</mdHrLvName>
+	<distInfo>
+		<distributor>
+			<distorTran>
+				<onLineSrc>
+					<orDesc>003</orDesc>
+				</onLineSrc>
+				<transSize Sync="TRUE">0.120</transSize>
+				<offLineMed>
+					<medName>
+						<MedNameCd value="003"/>
+					</medName>
+				</offLineMed>
+			</distorTran>
+			<distorFormat>
+				<formatName Sync="TRUE">SDC Feature Database</formatName>
+			</distorFormat>
+			<distorCont>
+				<rpOrgName>ESRI; ESRI International Distributors</rpOrgName>
+				<rpCntInfo>
+					<cntAddress>
+						<delPoint>380 New York Street</delPoint>
+						<city>Redlands</city>
+						<adminArea>California</adminArea>
+						<postCode>92373-8100</postCode>
+						<country>us</country>
+					</cntAddress>
+					<cntPhone>
+						<voiceNum>800-447-9778</voiceNum>
+					</cntPhone>
+				</rpCntInfo>
+				<role>
+					<RoleCd value="005"/>
+				</role>
+			</distorCont>
+			<distorOrdPrc>
+				<ordInstr>ESRI Data &amp; Maps is available only as part of ESRI® software.
+
+In the United States, contact the ESRI Telebusiness staff at 800-447-9778 for more information about our software and data.
+
+Outside the United States, please direct all inquiries to your local ESRI International Distributor.  This information can be found at http://gis.esri.com/intldist/contact/.</ordInstr>
+				<resFees>Software purchase price. ESRI Data &amp; Maps is available only as part of ESRI® software. To use this data requires software that supports SDC files.</resFees>
+			</distorOrdPrc>
+		</distributor>
+	</distInfo>
+	<refSysInfo>
+		<RefSystem>
+			<refSysID>
+				<identCode Sync="TRUE">GCS_WGS_1984</identCode>
+			</refSysID>
+		</RefSystem>
+	</refSysInfo>
+	<spatRepInfo>
+		<VectSpatRep>
+			<topLvl>
+				<TopoLevCd Sync="TRUE" value="001"/>
+			</topLvl>
+			<geometObjs Name="utmzone"><geoObjTyp><GeoObjTypCd Sync="TRUE" value="001"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">1201</geoObjCnt></geometObjs></VectSpatRep>
+	</spatRepInfo>
+	<mdDateSt Sync="TRUE">20080428</mdDateSt>
+	<Binary>
+		<Thumbnail>
+			<Data EsriPropertyType="Picture">Qk3uNwEAAAAAADYAAAAoAAAAyAAAAIUAAAABABgAAAAAALg3AQAAAAAAAAAAAAAAAAAAAAAA////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////1dXV
+1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV
+1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV
+1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV
+1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV
+1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV
+1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV
+1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV
+1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV
+1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV
+1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV8vLy////////////////////////////////
+////////////////////////////////////n9bWr///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///n9bWr///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///1tbW////////////////////////////////////////////////////////////////////
+n9bWr///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///n9bWr///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///1tbW////////////////////////////
+////////////////////////////////////////n9bWr///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///n9bWr///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///1tbW////////////////////////////////////////////////////////////////
+////n9bWr///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///n9bWr///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///1tbW////////////////////////
+////////////////////////////////////////////lLm5n9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVlLm5n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XV1tbW////////////////////////////////////////////////////////////
+////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////
+////////////////////////////////////////////////n9bWr///r///n9bWr///r///n9bW
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///
+r///n9bWr///r///1tbW////////////////////////////////////////////////////////
+////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////
+////////////////////////////////////////////////////lLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XV1tbW////////////////////////////////////////////////////
+////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////
+////////////////////////////////////////////////////////n9bWr///r///n9bWr///
+r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///
+n9bWr///r///n9bWr///r///1tbW////////////////////////////////////////////////
+////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////
+////////////////////////////////////////////////////////////n9bWr///r///n9bW
+r///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////////////////
+////////////////////////lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV1tbW////
+////////////////////////////////////////////////////////////////n9bWr///r///
+n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////////////
+////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW
+////////////////////////////////////////////////////////////////////n9bWr///
+r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////////
+////////////////////////////////lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+1tbW////////////////////////////////////////////////////////////////////n9bW
+r///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////
+////////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///
+r///1tbW////////////////////////////////////////////////////////////////////
+n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////
+////////////////////////////////////////lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XV1tbW////////////////////////////////////////////////////////////////
+////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////
+////////////////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///
+n9bWr///r///1tbW////////////////////////////////////////////////////////////
+////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////
+////////////////////////////////////////////////lLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XV1tbW////////////////////////////////////////////////////////
+////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////
+////////////////////////////////////////////////////n9bWr///r///n9bWr///r///
+n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bW
+r///r///n9bWr///r///1tbW////////////////////////////////////////////////////
+////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////
+////////////////////////////////////////////////////////lLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XV1tbW////////////////////////////////////////////////
+////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////
+////////////////////////////////////////////////////////////n9bWr///r///n9bW
+r///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////////////////
+////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////
+////////////////////////////////////////////////////////////////lLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV1tbW////////////////////////////////////////
+////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW
+////////////////////////////////////////////////////////////////////n9bWr///
+r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////////
+////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///
+1tbW////////////////////////////////////////////////////////////////////lLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV1tbW////////////////////////////////
+////////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///
+r///1tbW////////////////////////////////////////////////////////////////////
+n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////
+////////////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bW
+r///r///1tbW////////////////////////////////////////////////////////////////
+////lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV1tbW////////////////////////
+////////////////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///
+n9bWr///r///1tbW////////////////////////////////////////////////////////////
+////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////
+////////////////////////////////////////////////n9bWr///r///n9bWr///r///n9bW
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///
+r///n9bWr///r///1tbW////////////////////////////////////////////////////////
+////////////lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV1tbW////////////////
+////////////////////////////////////////////////////n9bWr///r///n9bWr///r///
+n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bW
+r///r///n9bWr///r///1tbW////////////////////////////////////////////////////
+////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////
+////////////////////////////////////////////////////////n9bWr///r///n9bWr///
+r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///
+n9bWr///r///n9bWr///r///1tbW////////////////////////////////////////////////
+////////////////////lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUkra2ntTUntTUkra2ntTU
+ntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTU
+kra2ntTUntTUkra2ntTUntTUkra2ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+kra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2
+ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUntTUlLi4ntTUntTUlLi4ntTUntTU1tbW////////
+////////////////////////////////////////////////////////////n9bWr///r///n9bW
+r///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////////////////
+////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////
+////////////////////////////////////////////////////////////////n9bWr///r///
+n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////////////
+////////////////////////////lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUkra2ntTUntTU
+kra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2
+ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTU
+ntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUntTUlLi4ntTUntTUlLi4ntTUntTU1tbW
+////////////////////////////////////////////////////////////////////n9bWr///
+r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////////
+////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///
+1tbW////////////////////////////////////////////////////////////////////n9bW
+r///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////
+////////////////////////////////////lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUkra2
+ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTU
+ntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTU
+kra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTU1tbW////////////////////////////////////////////////////////////////////
+n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////
+////////////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bW
+r///r///1tbW////////////////////////////////////////////////////////////////
+////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////
+////////////////////////////////////////////lLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTU
+kra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2
+ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUntTUlLi4ntTUntTU
+lLi4ntTUntTU1tbW////////////////////////////////////////////////////////////
+////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////
+////////////////////////////////////////////////n9bWr///r///n9bWr///r///n9bW
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///
+r///n9bWr///r///1tbW////////////////////////////////////////////////////////
+////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////
+////////////////////////////////////////////////////lLi4ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2
+ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTU
+ntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTU
+kra2ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUntTUlLi4
+ntTUntTUlLi4ntTUntTU1tbW////////////////////////////////////////////////////
+////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////
+////////////////////////////////////////////////////////n9bWr///r///n9bWr///
+r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///
+n9bWr///r///n9bWr///r///1tbW////////////////////////////////////////////////
+////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////
+////////////////////////////////////////////////////////////lLi4ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTU
+ntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTU
+kra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2
+ntTUntTUkra2ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTU1tbW////////////////////////////////////////////
+////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////
+////////////////////////////////////////////////////////////////n9bWr///r///
+n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////////////
+////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW
+////////////////////////////////////////////////////////////////////lLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTU
+kra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4mcbGntTUmcbGntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2
+ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTU
+ntTUkra2ntTUntTUkra2ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUntTUlLi4ntTUntTUlLi4ntTUntTU1tbW////////////////////////////////////
+////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWn9bWr///r///r///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///
+1tbW////////////////////////////////////////////////////////////////////n9bW
+r///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWn9bWr///r///r///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////////////
+////////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWn9bWr///r///r///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///
+r///1tbW////////////////////////////////////////////////////////////////////
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2
+ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTU
+ntTUkra2ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUntTU
+lLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4mcbGntTUmcbG
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUkra2ntTUntTUkra2ntTU
+ntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTUkra2ntTUntTU
+kra2ntTUntTUkra2ntTUntTUkra2ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4
+ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTUntTUlLi4ntTU
+ntTUlLi4ntTUntTUntTUlLi4ntTUntTUlLi4ntTUntTU1tbW////////////////////////////
+////////////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bW
+r///r///1tbW////////////////////////////////////////////////////////////////
+////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////////////
+////////////////////////////////////////////n9bWr///r///n9bWr///r///n9bWr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///
+n9bWr///r///1tbW////////////////////////////////////////////////////////////
+////////lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV1tbW////////////////////
+////////////////////////////////////////////////n9bWr///r///n9bWr///r///n9bW
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///r///r///r///n9bW
+r///r///r///r///r///n9bWr///r///r///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///
+r///n9bWr///r///1tbW////////////////////////////////////////////////////////
+////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///r///n9bWr///r///r///r///r///n9bWr///r///r///r///r///n9bWr///r///r///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////////
+////////////////////////////////////////////////////n9bWr///r///n9bWr///r///
+n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///r///r///r///
+n9bWr///r///r///r///r///n9bWr///r///r///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bW
+r///r///n9bWr///r///1tbW////////////////////////////////////////////////////
+////////////////n9bWr///r///n9bWr///r///n9bWr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///r///n9bWr///r///r///r///r///n9bWr///r///r///r///r///n9bWr///r///
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///r///1tbW////////////
+////////////////////////////////////////////////////////n9bWr///r///n9bWr///
+r///n9bWr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///
+ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///n9bW
+r///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///n9bWr///
+r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///n9bWr///r///r///r///
+r///n9bWr///r///r///r///r///n9bWr///r///r///r///ndPTr///r///ndPTr///r///ndPT
+r///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///r///ndPTr///
+r///ndPTr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///
+n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///n9bWr///r///r///
+n9bWr///r///n9bWr///r///1tbW////////////////////////////////////////////////
+////////////////////lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVk7e3n9XVn9XVk7e3n9XV
+n9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XV
+k7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5
+n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVn9XVn9XVn9XVlLm5n9XVn9XVn9XVn9XVn9XVlLm5n9XV
+n9XVn9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3
+n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVk7e3n9XVn9XVlLm5n9XVn9XVlLm5n9XV
+n9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV
+lLm5n9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XVn9XVlLm5n9XVn9XVlLm5n9XVn9XV1tbW////////
+////////////////////////////////////////////////////////////n9bWr///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///n9bWr///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///1tbW////////////////////////////////////////////
+////////////////////////n9bWr///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///n9bWr///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///
+r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///r///1tbW////
+////////////////////////////////////////////////////////////////lLm5n9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVlLm5n9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV
+n9XVn9XVn9XVn9XVn9XVn9XVn9XVn9XV1tbW////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////</Data>
+		</Thumbnail>
+	</Binary>
+	<mdContact>
+		<rpIndName>Data Team</rpIndName>
+		<rpOrgName>ESRI</rpOrgName>
+		<rpPosName>Data Team</rpPosName>
+		<rpCntInfo>
+			<cntAddress>
+				<delPoint>380 New York Street</delPoint>
+				<city>Redlands</city>
+				<adminArea>California</adminArea>
+				<postCode>92373-8100</postCode>
+				<eMailAdd>info@esri.com</eMailAdd>
+				<country>us</country>
+			</cntAddress>
+			<cntPhone>
+				<voiceNum>909-793-2853</voiceNum>
+				<faxNum>909-793-5953</faxNum>
+			</cntPhone>
+		</rpCntInfo>
+		<role>
+			<RoleCd value="010"/>
+		</role>
+	</mdContact>
+	<dqInfo>
+		<dataLineage>
+			<statement>ADOL (source 1 of 2) 
+
+ESRI, 1997, ArcData® Online GIS Data on the Web –World UTM Zones Data Set: ESRI, Redlands, California, USA. 
+
+Online links: 
+http://www.esri.com/data/online/esri/datapacks/utm_zone.html 
+
+Other citation details: 
+This data set is also distributed in ArcWorld™ Supplement from ESRI.
+
+Type of source media: online
+Source contribution:
+Attribute and geospatial data
+
+
+NGA GIS MGRS (source 2 of 2) 
+
+National Geospatial-Intelligence Agency (NGA), 20041122, GIS MGRS Grid Data layers in GIS Format: National Geospatial-Intelligence Agency (NGA), Bethesda, Maryland, USA. 
+
+Online links: 
+http://earth-info.nga.mil/GandG/coordsys/gislayers/gislayers.html 
+
+Other citation details: 
+Downloaded: MGRS Grid Zone Designators (6°x 8°) (file size 1 MB) Shapefiles of the 6°x 8° zones.
+
+Type of source media: online
+Source contribution:
+Attribute and geospatial data
+
+
+Date: 1997 (change 1 of 6) 
+The UTM zone index was mathematically generated by ESRI using ARC/INFO® software. The zone definitions were obtained from "An Album of Map Projections: A Working Manual" by John P. Snyder (1987: USGS Professional Paper 1395. U.S. Government Printing Office: Washington, D.C.).
+
+Data sources produced in this process: 
+ADOL 
+
+
+Date: 20000809 (change 2 of 6) 
+The following steps were performed by ESRI: Downloaded the ArcView GIS Shapefile, utm_zone.zip, from http://www.esri.com/data/online/esri/datapacks/utm_zone.html and extracted it.  Chose UTM Areas (utm_ply.shp) and added attributes East_value, Cm_value, and West_value from UTM zones (zone.shp).  Added filler values to attributes of the polygons in the north and south polar areas.  Removed unneeded attributes.  Created ArcGIS® layer file (.lyr).  Created projection file (.prj).  Ran ArcView GIS Avenue™ request ExportClean, and created spatial indices. Converted the data set to SDC.
+
+Data sources used in this process: 
+ADOL 
+
+
+Date: 20040307 (change 3 of 6) 
+The following steps were performed by ESRI: Dissolved out the central meridian of each UTM zone/row cell, reducing the number of polygons by about half.
+
+
+Date: 20050215 (change 4 of 6) 
+The following steps were performed by ESRI: The EAST_VALUE and WEST_VALUE attributes and their values were reversed, so the attribute names were swapped instead of the values.
+
+
+Date: 20060328 (change 5 of 6) 
+The following steps were performed by ESRI: Corrected the east, north, and south geographic extents. Converted the data set to SDC.
+
+
+Date: 20080426 (change 6 of 6) 
+The following steps were performed by ESRI: Adjusted UTM grid cells to fit two newly sized areas in Norway and Svalbard. The three original cells (32X, 34X, and 36X) no longer exist, having been absorbed by their adjacent cells in the row. The cell 32V absorbed the eastern half of cell 31V. Edited attributes WEST_VALUE, CM_VALUE, and EAST_VALUE for the affected grid cells. Converted the data set to SDC. Created ArcGIS® layer file (.lyr), projection file (.prj), and spatial indices.
+
+Data sources used in this process: 
+NGA GIS MGRS</statement>
+		</dataLineage>
+		<dqScope>
+			<scpLvl>
+				<ScopeCd value="005"/>
+			</scpLvl>
+		</dqScope>
+	</dqInfo>
+	<mdFileID Sync="TRUE">{340C00EE-8836-4049-9407-F62D2848EBE7}</mdFileID>
+</metadata>
