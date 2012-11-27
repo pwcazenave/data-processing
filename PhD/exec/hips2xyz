@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+#
+# Script to take an irregularly sampled ASCII bathymetry data file and 
+# output regularly sampled x, y and z values. Takes a single file or a 
+# series of files, and outputs  a series of output files, each with 
+# the sampling resolution appended. Leg work is done by blockmean (part
+# of GMT). All other operations are done by bash, so the required 
+# software list is very small.
+#
+# Pierre Cazenave pwc101 <at> soton {dot} ac [dot] uk
+# 
+# Copyright 2009-2010 Pierre Cazenave <pwcazenave {at} gmail [dot] com>
+# All rights reserved.
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+# Crap out on errors and unbound variables
+set -eu
+
+usage(){
+	echo "Usage: ${0##*/} <resolution[e|k|i|n]> <file(s)>"
+	echo "resolution can be:"
+	echo "	e for metres"
+	echo "	k for kilometres"
+	echo "	i for miles"
+	echo "	n for nautical miles"
+}
+
+if [ $# -eq 0 ]; then
+	usage
+fi
+
+# Get the grid resolution from the command line.
+gRes=$1
+# All the files supplied when the script it called
+files=("$@")
+
+for ((i=0; i<$#; i++)); do
+	# Skip the first value in the arguments as this is the grid resolution.
+	if [ $i -ne 0 ]; then
+		ext="${files[i]##*.}"
+		outFile="${files[i]%.*}"_${gRes}.${ext}
+		# Hopefully this should be sufficiently high precision for the area.
+		if [ ! -e "$outFile" ]; then
+			# Set GMT defaults to default values.
+			\rm -f ./gmt*
+			area=$(minmax "${files[i]}" -I0.01)
+			blockmean "${files[i]}" $area -I$gRes > "$outFile"
+		else
+			echo "$outFile already exists - won't overwrite file. "
+			echo "Please remove output file ($outFile) before continuing."
+			continue
+		fi
+	fi
+done
+
+# Clean up after we're done.
+\rm -f .gmtdefaults4 .gmtcommands4

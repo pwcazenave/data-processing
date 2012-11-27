@@ -1,0 +1,85 @@
+#!/bin/bash
+
+# Script to pull out a region based on WESN coordinates given either at the 
+# command line, or asked for when the script is run.
+#
+# Copyright 2010 Pierre Cazenave pwc101@soton.ac.uk
+# All rights reserved.
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+if [ $# != 6 -a $# != 2 ]; then
+   echo "Usage: $(basename $0) [FILE] [WEST] [EAST] [SOUTH] [NORTH] [OUTPUT]"
+   echo "[INPUT] can be "-" for standard input."
+   echo "[OUTPUT] can be "-" for standard output."
+elif [ $# == 6 ]; then
+   INFILE=$1
+   WEST=$2
+   EAST=$3
+   SOUTH=$4
+   NORTH=$5
+   OUTFILE=$6
+   if [ ! -e $INFILE ] && [ $INFILE != "-" ]; then
+      echo "$INFILE is not a valid file; please check your spelling."
+      exit 1
+   fi
+   if [ "$INFILE" == "$OUTFILE" ] && [ $INFILE != "-" ]; then
+      echo "WARNING: input and output files are the same."
+      exit 1
+   fi
+   if [ $6 == "-" ]; then
+      awk '{if ($1>'$WEST' && $1<='$EAST' && $2>'$SOUTH' && $2<='$NORTH')
+         print $0}' $INFILE
+   elif [ $1 == "-" ]; then
+      awk '{if ($1>'$WEST' && $1<='$EAST' && $2>'$SOUTH' && $2<='$NORTH')
+         print $0}' > $OUTFILE
+   elif [ $1 == "-" ] && [ $6 == "-" ]; then
+      awk '{if ($1>'$WEST' && $1<='$EAST' && $2>'$SOUTH' && $2<='$NORTH')
+         print $0}'
+   else
+      awk '{if ($1>'$WEST' && $1<='$EAST' && $2>'$SOUTH' && $2<='$NORTH')
+         print $0}' $INFILE > $OUTFILE
+   fi
+#   echo "Done."
+elif [ $# == 2 ]; then
+   INFILE=$1
+   OUTFILE=$2
+   if [ ! -e $INFILE ]; then
+      echo "$INFILE is not a valid input file; please check your spelling."
+      exit 1
+   fi
+   if [ "$INFILE" == "$OUTFILE" ]; then
+      echo "WARNING: input and output files are the same."
+      exit 1
+   fi
+   echo "Please supply coordinates:"
+   echo -n "West: "
+   read WEST
+   echo -n "East: "
+   read EAST
+   echo -n "South: "
+   read SOUTH
+   echo -n "North: "
+   read NORTH
+   awk '{if ($1>'$WEST' && $1<='$EAST' && $2>'$SOUTH' && $2<='$NORTH')
+      print $0}' $INFILE > $OUTFILE
+#   echo "Done."
+fi
+
+exit 0

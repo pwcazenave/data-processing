@@ -1,0 +1,282 @@
+#!/bin/bash
+#
+#  bathy
+#
+#  Written by Pierre Cazenave <pwc101@noc.soton.ac.uk> June, 2007
+#
+#  Feel free to distribute this as you see fit. If this script breaks your
+#+ computer, deletes all your work, causes your wife to leave you, I cannot be
+#+ held responsible.
+#
+#  Definitely works on systems with the following:
+#+   0. some form of GNU/Linux
+#+   1. bash version 2.05b.0(1)
+#+   2. coreutils 4.5.3
+#+   3. GMT 4.2.0 (http://gmt.soest.hawaii.edu). Might work with older versions 
+#+      to some extent.
+#
+#  May work on older/newer versions, but has *not* been tested. If you tweak 
+#+ this, feel free to send me corrections and I'll try to incorporate them.
+#
+#  This script takes user input for raw data, grid resolution and output file
+#+ name and generates a series of grid files: 
+#+   1. raw data z values in relation to the x and y (*_surface.grd)
+#+   2. a gradient grid used to illuminate the data (*_grad.grd)
+#+   3. a mask to remove interpolated datapoints (*_mask.grd)
+#+   4. a final grid of the input (*_final.grd)
+#+ In addition a colour palette file is made based on the histogram of the input
+#+ data to colour the image.
+#
+#  Input data must be a single xyz data file without blank lines.
+#
+#  As output, 3 different format image files are generated: postscript, high
+#+ resolution jpeg and a pdf. All files are A4 in size.
+
+set -e
+
+if [ ! -f /nerc/packages/gmt/new/bin/psxy ]; then
+   echo "Please setup GMT before running this script."
+   exit 1
+fi
+
+all="false"
+minmax="false"
+norm_mm="false"
+preprocessing="false"
+gradient="false"
+surface="false"
+imaging="false"
+input="false"
+output="false"
+
+proj=-Jx0.01
+
+gmtset ANNOT_FONT_SIZE 10
+gmtset LABEL_FONT_SIZE 12
+gmtset HEADER_FONT_SIZE 14
+gmtset ANNOT_FONT_SIZE_SECONDARY 10
+gmtset D_FORMAT %.10lf
+
+usage() {
+   echo "Usage: $(basename $0) [ options ... ]"
+   echo ""
+   echo "       [-a|--all]              Run with all commands enabled"
+   echo ""
+   echo "Processing Options:"
+   echo "       [-m|--minmax]           Determine the input data extents"
+   echo "       [-p|--preprocess]       Re-blockmean the input data"
+   echo "       [-s|--surface]          Regenerate a surface grid"
+   echo "       [-g|--gradient]         Regenerate the illumination file"
+   echo ""
+   echo "Imaging Options:"
+   echo "       [-i|--image]            Re-plot the image to Postscript, jpeg and pdf"
+   echo "       [-h|--help]             Display this message"
+   echo ""
+   echo "Need to run with --all|-a first, then use the appropriate flags to adjust certain parts as necessary."
+   echo "If you change the input file, run bathy with the --minmax option to recalculate the input file extents."
+   exit 1
+}
+
+if [ $# -lt 1 ]; then
+   usage
+fi
+
+while test -n "$1"; do
+   case "$1" in
+      --all|-a)
+         all="true"
+         shift
+         ;;
+      --minmax|-m)
+         input="true"
+         grid="true"
+         minmax="true"
+         shift
+         ;;
+      --preprocess|-p)
+         input="true"
+         grid="true"
+         norm_mm="true"
+         preprocessing="true"
+         shift
+         ;;
+      --surface|-s)
+         input="true"
+         grid="true"
+#         output="true"
+         norm_mm="true"
+         surfacing="true"
+         shift
+         ;;
+      --gradient|-g)
+         input="true"
+         grid="true"
+         norm_mm="true"
+         gradient="true"
+         shift
+         ;;
+      --image|-i)
+         output="true"
+         norm_mm="true"
+         imaging="true"
+         shift
+         ;;
+      --help|-h)
+         usage
+         exit 1
+         ;;
+      *)
+         echo "Unknown argument: $1"
+         usage
+         exit 1
+         ;;
+   esac
+done
+
+do_input() {
+   echo -n "Input file name: "
+   read "file"
+   if [[ -z $file ]]; then
+      echo "Error: Please specify an input file name"
+      exit 1
+   else
+      infile="$file"
+      prefix=$(basename "$infile" .txt)
+   fi
+}
+
+
+do_grid() {
+   echo -n "Grid resolution (m): "
+   read res
+   if [[ -z $res ]]; then
+      echo "Error: Please specify a grid resolution in metres"
+      exit 1
+   else
+      gres=-I$res
+   fi
+}
+
+
+do_output() {
+   echo -n "Output file name: "
+   read "file"
+   if [[ -z $file ]]; then
+      echo "Error: Please specify an output file name"
+      exit 1
+   else
+      outfile=./images/"$file".ps
+   fi
+}
+
+if [ ! -d ./images ]; then
+   mkdir ./images 
+fi
+
+
+do_minmax() {
+   echo -n "calculating minmax... "
+   \rm -f ./.minmax
+   minmax -I2/2/2/2 "$infile" > ./.minmax
+   echo "done."
+   area=$(< ./.minmax)
+}
+
+norm_minmax() {
+   if [ -s "./.minmax" ]; then
+      echo -n "assigning minmax... "
+      area=$(< ./.minmax)
+      echo "done."
+   else
+      do_minmax
+   fi
+}
+
+do_preprocessing() {
+   echo -n "blockmeaning... " 
+   blockmean $area "$infile" $gres > ./raw_data/$prefix.bmd 
+   echo "done."
+}
+
+do_surfacing() {   
+   echo -n "surfacing... "
+   surface $area $gres -T0.25 ./raw_data/$prefix.bmd \
+      -G"$prefix"_surface.grd
+   echo "done."
+}
+
+do_gradient() {
+   echo -n "gradient... "
+   grdgradient "$prefix"_surface.grd -A250 \
+      -N3 -G"$prefix"_grad.grd
+   echo -n "mask... "
+   grdmask $area ./raw_data/$prefix.bmd \
+      -G"$prefix"_mask.grd $gres -N/NaN/1/1 -S1
+   grdmath "$prefix"_surface.grd "$prefix"_mask.grd \
+      MUL = "$prefix"_final.grd
+   echo "done."
+}
+
+do_imaging() {
+   echo -n "imaging... "
+   gmtset D_FORMAT %7.9lg
+   psbasemap $area $proj \
+      -Ba200f100:"Eastings":/a200f100:"Northings"::."$infile":WeSn \
+      -Xc -Yc -K > "$outfile"
+#   makecpt -Cwysiwyg -T-1/15/0.5 -I -Z > .$(basename $outfile).cpt
+   grd2cpt $area "$prefix"_final.grd \
+      -Cwysiwyg -I -Z > ."$prefix".cpt
+   psscale -D22/5.5/5/0.5 -B2 -I-1/1 -C."$prefix".cpt \
+      -O -K >> "$outfile"
+   grdimage $area $proj -Bg200 -I"$prefix"_grad.grd \
+      -C."$prefix".cpt "$prefix"_final.grd \
+      -O >> "$outfile"
+   echo -n "conversion... "
+   ps2pdf -r1200 -sPAPERSIZE=a4 "$outfile" \
+      "./images/$(basename "$outfile" .ps).pdf"
+   gs -sDEVICE=jpeg -r1200 -sPAPERSIZE=a4 -dBATCH -dNOPAUSE \
+      "-sOutputFile=./images/$(basename "$outfile" .ps).jpg" \
+      "$outfile" > /dev/null
+   echo "done."
+}
+
+# pick which function to do based on the result of the case statement:
+if [ "$all" == "true" ]; then
+   do_input
+   do_grid
+   do_output
+   do_minmax
+   do_preprocessing
+   do_surfacing
+   do_gradient
+   do_imaging
+fi
+if [ "$input" == "true" ]; then
+   do_input
+fi
+if [ "$output" == "true" ]; then
+   do_output
+fi
+if [ "$grid" == "true" ]; then
+   do_grid
+fi
+if [ "$minmax" == "true" ]; then
+   do_minmax
+fi
+if [ "$norm_mm" == "true" ]; then
+   norm_minmax
+fi
+if [ "$preprocessing" == "true" ]; then
+   do_preprocessing
+fi
+if [ "$surfacing" == "true" ]; then
+   do_surfacing
+fi
+if [ "$gradient" == "true" ]; then
+   do_gradient
+fi
+if [ "$imaging" == "true" ]; then
+   do_imaging
+fi
+
+exit 0

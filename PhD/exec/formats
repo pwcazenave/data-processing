@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+	echo "Converts PostScript to pdf and png."
+	echo "Error: not enough inputs."
+	echo "Usage: formats file1.ps [file2.ps] ... [filen.ps]"
+	exit 1
+fi
+for i in "$@"; do
+	echo -n "converting $i to pdf "
+	ps2pdf -sPAPERSIZE=a4 -dAutoRotatePages=/PageByPage -dPDFSETTINGS=/prepress -q "$i" "${i%.*}.pdf"
+	echo -n "and png... "
+	gs -sDEVICE=png16m -r300 -dAutoRotatePages=/PageByPage -sPAPERSIZE=a4 -dBATCH -dNOPAUSE -q -sOutputFile="${i%.ps}.png" "$i"
+	echo "done."
+done
+

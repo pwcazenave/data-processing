@@ -1,0 +1,195 @@
+#!/usr/bin/env python
+""" Calculates corner coordinates for a rectangular domain based on
+a rectangular subset size. Each successive row or column of subsets
+can be offset by a given amount, described using an angle and a 
+'row' or 'col' flag. 
+
+NOTE: Bounding coordinates are rounded to the nearest metre. I suppose this
+means if your data are in lat/long, then it's not going to work properly.
+
+Mandatory flags:
+    -Rxmin/xmax/ymin/ymax - extents of the input data.
+    -Ixbox[/ybox] - size of the subsampling box(es).
+Options:
+    -D[row|col] - in conjunction with -A (see below). Direction of skew.
+    -Aangle - angle (from vertical) by which to skew adjacent rows or columns.
+    -Xoffset - offset the southern limit by offset.
+    -Yoffset - offset the western limit by offset."""
+
+# Pierre Cazenave 30/11/2010 v1.0
+#
+# Copyright 2010 Pierre Cazenave <pwc101 {at} soton [dot] ac (dot) uk>
+# All rights reserved.
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+# 
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+import os
+import sys
+import math
+import getopt
+
+class createOffsets:
+    """ For a given 'angle', direction ('row' or 'col'), calculate the 
+    corresponding values of dx and dy based on a desired box shape. """
+
+    def __init__(self, direction, boxSizeX, boxSizeY, theta):
+
+        self.dx = []
+        self.dy = []
+
+        if direction == 'col':
+            self.dy = boxSizeY
+            self.dx = self.dy * math.tan(math.radians(theta))
+        elif direction == 'row':
+            self.dx = boxSizeX
+            self.dy = self.dx / math.tan(math.radians(theta))
+        elif direction is None:
+            self.dx = boxSizeX
+            self.dy = boxSizeY
+        else:
+            prints( 'Something\'s amiss here (-D{err})... '.format(err = direction))
+
+
+class createSplit:
+    """ This function is responsible for a list of the corner coordinates.
+    They should be stored as minx, maxx, miny, maxy. """
+    
+    def __init__(self, west, east, south, north, boxSizeX, boxSizeY, dx, dy, direction, theta):
+
+        self.xExtentsMin = []
+        self.xExtentsMax = []
+        self.yExtentsMin = []
+        self.yExtentsMax = []
+
+        xRange = east-west
+        yRange = north-south
+
+        # Check our dx and dy values aren't larger than the width of the domain.
+        if dx > xRange or dy > yRange:
+            sys.stderr.write('Warning: wrapping the subsampling to maintain 100% coverage.\n')
+        
+        # Create a sequence of values increasing by dx and dy between west 
+        # and east, and south and north.
+        x = range(int(west), int(east) + 1, boxSizeX)
+        y = range(int(south), int(north) + 1, boxSizeY)
+        
+        for i in range(len(x)):
+            for j in range(len(y)):
+                if i < len(x)-1:
+                    if j < len(y)-1:
+                        if direction == 'col':
+                            extraX = (j+1)*dx
+                            extraY = 0
+                        elif direction == 'row':
+                            extraX = 0
+                            extraY = (i+1)*dy
+                        elif direction is None:
+                            extraX = 0
+                            extraY = 0
+                        else:
+                            print('Something\'s amiss again (-D{err})... '.format(err = direction))
+
+                        minX = x[i]
+                        maxX = x[i+1]
+                        minY = y[j]
+                        maxY = y[j+1]
+
+                        while (minX + extraX > east):
+                        	minX = minX - xRange
+                        	maxX = maxX - xRange
+
+                        while (minY + extraY > north):
+                        	minY = minY - yRange
+                        	maxY = maxY - yRange
+
+                        self.xExtentsMin.append(math.floor(minX+extraX))
+                        self.xExtentsMax.append(math.ceil(maxX+extraX))
+                        self.yExtentsMin.append(math.floor(minY+extraY))
+                        self.yExtentsMax.append(math.ceil(maxY+extraY))
+
+def main(dirSamp=False, angle=False, offsetX = 0, offsetY = 0):
+
+    # Parse input arguments
+    if len(sys.argv) < 2:
+    	print __doc__
+    	sys.exit(1)
+
+    try:
+        opts, args = getopt.gnu_getopt(sys.argv[1:], "A:D:I:R:X:Y:")
+    except getopt.GetoptError, msg:
+        # Give some vaguely useful error
+        print(msg)
+        sys.exit(2)
+
+    for o, a in opts:
+        if o == "-A":
+            angle = a
+        elif o == "-D":
+            dirSamp = a
+            if dirSamp != 'col':
+            	if dirSamp != 'row':
+                    print("Invalid -D option: -D[col|row]")
+                    print __doc__
+                    sys.exit(3)
+        elif o == "-I":
+            try:
+                bsX, bsY = a.split('/')
+            except:
+                bsX = bsY = a
+        elif o == "-R":
+            try:
+                west, east, south, north = a.split('/')
+            except:
+                print("Improperly formatted -R option or missing altogether. Cannot continue, aborting.")
+                sys.exit(3)
+        elif o == "-X":
+                offsetX = a
+        elif o == "-Y":
+                offsetY = a
+        else:
+            assert False, "Unknown option"
+
+    # Check if dirSamp is true, and if so, we need to check we have an angle
+    if dirSamp and angle is False:
+        sys.stderr.write('It appears you want to sample at staggered x or y increments. Please supply a value to -A in addition to -D[col|row].\n')
+        sys.exit(4)
+    
+    # Likewise, check we have dirSamp is angle has been chosen.
+    if angle and dirSamp is False:
+        sys.stderr.write('It appears you want to sample at staggered x or y increments. Please supply a value to -D[col|row] in addition to -A.\n')
+        sys.exit(4)
+
+    # Make sure that with the offset[X,Y] values we're not outside the domain of interest
+    if float(west) + float(offsetX) > float(east):
+        sys.stderr.write('With the x-offset applied, the subsets will all fall outside the domain. Please reconsider your value.\n')
+        sys.exit(4)
+    if float(south) + float(offsetY) > float(north):
+        sys.stderr.write('With the y-offset applied, the subsets will all fall outside the domain. Please reconsider your value.\n')
+        sys.exit(4)
+            
+    # The leg work.
+    angled=createOffsets(dirSamp, float(bsX), float(bsY), float(angle))
+    coverage=createSplit(math.floor(float(west)+float(offsetX)), math.ceil(float(east)), math.floor(float(south)+float(offsetY)), math.ceil(float(north)), int(bsX), int(bsY), angled.dx, angled.dy, dirSamp, float(angle))
+
+    # For now, spit out the results to stdout.
+    for iout in range(len(coverage.xExtentsMin)):
+        print coverage.xExtentsMin[iout], coverage.xExtentsMax[iout], coverage.yExtentsMin[iout], coverage.yExtentsMax[iout]
+                           
+if __name__ == "__main__":
+    sys.exit(main())
