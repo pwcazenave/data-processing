@@ -4,50 +4,98 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-1317589.074319</xmin>
-            <ymin>4692211.632370</ymin>
-            <xmax>1635458.031665</xmax>
-            <ymax>7193790.383804</ymax>
+            <xmin>1259829.316216</xmin>
+            <ymin>7952104.321026</ymin>
+            <xmax>2121852.929381</xmax>
+            <ymax>8682339.863005</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
             <spatialrefsys>
-                <proj4>+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</proj4>
-                <srsid>3114</srsid>
-                <srid>32630</srid>
-                <authid>EPSG:32630</authid>
-                <description>WGS 84 / UTM zone 30N</description>
-                <projectionacronym>utm</projectionacronym>
+                <proj4>+proj=merc +lon_0=0 +lat_ts=0 +x_0=0 +y_0=0 +a=6378137 +b=6378137 +units=m +no_defs</proj4>
+                <srsid>3857</srsid>
+                <srid>3857</srid>
+                <authid>EPSG:3857</authid>
+                <description>WGS 84 / Pseudo Mercator</description>
+                <projectionacronym>merc</projectionacronym>
                 <ellipsoidacronym>WGS84</ellipsoidacronym>
                 <geographicflag>false</geographicflag>
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
     <legend>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Tides">
-            <legendlayer open="true" checked="Qt::Checked" name="North Sea Tidal Data stations" showFeatureCount="0">
-                <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="shelf_stations_latlong_edited20120723171017778" visible="1"/>
+        <legendlayer open="true" checked="Qt::Checked" name="Google Satellite" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20121123095926275" visible="1"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Checked" name="domain_open_boundary_nodes" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="domain_open_boundary_nodes20121122155225164" visible="1"/>
+            </filegroup>
+        </legendlayer>
+        <legendgroup open="false" checked="Qt::Unchecked" name="Bedforms">
+            <legendlayer open="false" checked="Qt::Unchecked" name="stride_1982_p68a_bedform_coverage" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="stride_1982_p68a_bedform_coverage20121116100244648" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer open="true" checked="Qt::Checked" name="BPR stations" showFeatureCount="0">
+            <legendlayer open="true" checked="Qt::Unchecked" name="stride_1982_p68a_modified" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="BPR_stations20120710114059994" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="stride_1982_p68a_modified20121116100055554" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer open="true" checked="Qt::Checked" name="SHOM stations" showFeatureCount="0">
+        </legendgroup>
+        <legendgroup open="false" checked="Qt::Unchecked" name="Sediments">
+            <legendgroup open="false" checked="Qt::Unchecked" name="BGS">
+                <legendlayer open="false" checked="Qt::Unchecked" name="bgs_30arcsec_d50" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bgs_30arcsec_d5020121116103639577" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer open="false" checked="Qt::Unchecked" name="bgs_manual_arcgis_d50" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bgs_manual_arcgis_d5020121116103643882" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+            </legendgroup>
+            <legendgroup open="false" checked="Qt::Unchecked" name="Blanpain">
+                <legendlayer open="false" checked="Qt::Unchecked" name="blanpain_d50_gradistat_no-nan" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="blanpain_d50_gradistat_no_nan20121116110337738" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer open="false" checked="Qt::Unchecked" name="w001001" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="w00100120121116111725405" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+            </legendgroup>
+        </legendgroup>
+        <legendgroup open="false" checked="Qt::Unchecked" name="Tides">
+            <legendlayer open="true" checked="Qt::Unchecked" name="North Sea Tidal Data stations" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="shelf_stations20120723171317022" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="shelf_stations_latlong_edited20120723171017778" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer open="true" checked="Qt::Checked" name="REFMAR stations" showFeatureCount="0">
+            <legendlayer open="true" checked="Qt::Unchecked" name="BPR stations" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="REFMAR_stations20121010180628638" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="BPR_stations20120710114059994" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer open="true" checked="Qt::Checked" name="NTSLF stations" showFeatureCount="0">
+            <legendlayer open="true" checked="Qt::Unchecked" name="SHOM stations" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="shelf_stations20120704170041758" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="shelf_stations20120723171317022" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer open="true" checked="Qt::Unchecked" name="REFMAR stations" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="REFMAR_stations20121010180628638" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer open="true" checked="Qt::Unchecked" name="NTSLF stations" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="shelf_stations20120704170041758" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer open="false" checked="Qt::Unchecked" name="PSMSL shelf stations" showFeatureCount="0">
@@ -71,7 +119,7 @@
             </legendgroup>
         </legendgroup>
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Modelling">
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="WaveHub">
+            <legendgroup open="false" checked="Qt::PartiallyChecked" name="WaveHub">
                 <legendlayer open="false" checked="Qt::Unchecked" name="Wave-Hub-map-Cornwall_modified" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="Wave_Hub_map_Cornwall_modified20120914112904523" visible="0"/>
@@ -159,6 +207,41 @@
                     </legendlayer>
                 </legendgroup>
                 <legendgroup open="false" checked="Qt::Unchecked" name="Domains">
+                    <legendlayer open="false" checked="Qt::Unchecked" name="GSHHS_f_L1_coastline_v5" showFeatureCount="0">
+                        <filegroup open="false" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="GSHHS_f_L1_coastline_v520121122103415020" visible="0"/>
+                        </filegroup>
+                    </legendlayer>
+                    <legendlayer open="true" checked="Qt::Unchecked" name="coastline_clip_5" showFeatureCount="0">
+                        <filegroup open="true" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="coastline_clip_520121122103310786" visible="0"/>
+                        </filegroup>
+                    </legendlayer>
+                    <legendlayer open="false" checked="Qt::Unchecked" name="coastline_clip_4" showFeatureCount="0">
+                        <filegroup open="false" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="coastline_clip_420121122100023646" visible="0"/>
+                        </filegroup>
+                    </legendlayer>
+                    <legendlayer open="false" checked="Qt::Unchecked" name="GSHHS_f_L1_coastline_v4" showFeatureCount="0">
+                        <filegroup open="false" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="GSHHS_f_L1_coastline_v420121122102106939" visible="0"/>
+                        </filegroup>
+                    </legendlayer>
+                    <legendlayer open="false" checked="Qt::Unchecked" name="coastline_clip_2" showFeatureCount="0">
+                        <filegroup open="false" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="coastline_clip_220121121124858945" visible="0"/>
+                        </filegroup>
+                    </legendlayer>
+                    <legendlayer open="false" checked="Qt::Unchecked" name="GSHHS_f_L1_coastline_v3" showFeatureCount="0">
+                        <filegroup open="false" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="GSHHS_f_L1_coastline_v320121121141623364" visible="0"/>
+                        </filegroup>
+                    </legendlayer>
+                    <legendlayer open="false" checked="Qt::Unchecked" name="coastline_clip_3" showFeatureCount="0">
+                        <filegroup open="false" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="coastline_clip_320121121165724196" visible="0"/>
+                        </filegroup>
+                    </legendlayer>
                     <legendlayer open="false" checked="Qt::Unchecked" name="szBE_BATHYMETRY_polyline" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="szBE_BATHYMETRY_polyline20121018155409941" visible="0"/>
@@ -235,6 +318,16 @@
             </legendgroup>
         </legendgroup>
         <legendgroup open="false" checked="Qt::Unchecked" name="Coverages">
+            <legendlayer open="false" checked="Qt::Unchecked" name="domain_open_boundary" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="domain_open_boundary20121122154126331" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer open="false" checked="Qt::Unchecked" name="POLPRED" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="domain20121121170803093" visible="0"/>
+                </filegroup>
+            </legendlayer>
             <legendlayer open="false" checked="Qt::Unchecked" name="amm_domain" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="amm_domain20120702160515028" visible="0"/>
@@ -305,9 +398,9 @@
                 </filegroup>
             </legendlayer>
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="GSHHS">
-                <legendlayer open="false" checked="Qt::Checked" name="GSHHS_f_L1_coastline_v2" showFeatureCount="0">
+                <legendlayer open="false" checked="Qt::Unchecked" name="GSHHS_f_L1_coastline_v2" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="GSHHS_f_L1_coastline_v220121023100206090" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="GSHHS_f_L1_coastline_v220121023100206090" visible="0"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer open="false" checked="Qt::Unchecked" name="GSHHS_h_L1_coastline_clip" showFeatureCount="0">
@@ -320,9 +413,9 @@
                         <legendlayerfile isInOverview="0" layerid="GSHHS_f_L120120321103445003" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer open="true" checked="Qt::Unchecked" name="GSHHS_h_L1" showFeatureCount="0">
+                <legendlayer open="true" checked="Qt::Checked" name="GSHHS_h_L1" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="GSHHS_h_L120120321103435371" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="GSHHS_h_L120120321103435371" visible="1"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer open="false" checked="Qt::Unchecked" name="GSHHS_i_L1" showFeatureCount="0">
@@ -348,7 +441,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Unchecked" name="HRCS">
+            <legendgroup open="true" checked="Qt::Unchecked" name="HRCS">
                 <legendlayer open="true" checked="Qt::Unchecked" name="HRCS.bathy_0m_v3_grad.tiff" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="HRCS_bathy_0m_v3_grad_tiff20120926145430544" visible="0"/>
@@ -372,7 +465,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Unchecked" name="GEBCO">
+            <legendgroup open="true" checked="Qt::Unchecked" name="GEBCO">
                 <legendlayer open="true" checked="Qt::Unchecked" name="gebco_08_cut_grad" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="gebco_08_cut_grad20120629123925854" visible="0"/>
@@ -437,7 +530,7 @@
     <Composer title="Composer 4" visible="0">
         <Composition printResolution="300" paperWidth="297" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="210" printAsRaster="0"/>
     </Composer>
-    <projectlayers layercount="65">
+    <projectlayers layercount="83">
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>1_s2_0_S0278434311003578_gr2_1_modified20120724163157457</id>
             <datasource>/users/modellers/pica/Data/QGIS/shelf/1-s2.0-S0278434311003578-gr2_1_modified.tif</datasource>
@@ -1543,6 +1636,195 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>GSHHS_f_L1_coastline_v320121121141623364</id>
+            <datasource>/users/modellers/pica/Data/QGIS/irish_sea/GSHHS_f_L1_coastline_v3.shp</datasource>
+            <layername>GSHHS_f_L1_coastline_v3</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="49,152,119,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>GSHHS_f_L1_coastline_v420121122102106939</id>
+            <datasource>/users/modellers/pica/Data/QGIS/irish_sea/GSHHS_f_L1_coastline_v4.shp</datasource>
+            <layername>GSHHS_f_L1_coastline_v4</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="155,120,104,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield></displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>GSHHS_f_L1_coastline_v520121122103415020</id>
+            <datasource>/users/modellers/pica/Data/QGIS/irish_sea/GSHHS_f_L1_coastline_v5.shp</datasource>
+            <layername>GSHHS_f_L1_coastline_v5</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="151,253,123,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield></displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>GSHHS_f_L1_extents20121001132447328</id>
             <datasource>/users/modellers/pica/Data/QGIS/nadoor/GSHHS_f_L1_extents.shp</datasource>
             <layername>GSHHS_f_L1_extents</layername>
@@ -1770,7 +2052,7 @@
                 <sizescale field=""/>
             </renderer-v2>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>id</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -2521,6 +2803,25 @@
             <transparencyLevelInt>255</transparencyLevelInt>
             <customproperties/>
         </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" ol_layer_type="3" type="plugin" hasScaleBasedVisibilityFlag="0" name="openlayers">
+            <id>OpenLayers_plugin_layer20121123095926275</id>
+            <datasource></datasource>
+            <layername>Google Satellite</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=merc +lon_0=0 +lat_ts=0 +x_0=0 +y_0=0 +a=6378137 +b=6378137 +units=m +no_defs</proj4>
+                    <srsid>3857</srsid>
+                    <srid>3857</srid>
+                    <authid>EPSG:3857</authid>
+                    <description>WGS 84 / Pseudo Mercator</description>
+                    <projectionacronym>merc</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>PSMSL_Stations20120704133911949</id>
             <datasource>file:///users/modellers/pica/Data/PSMSL/final_locations.csv?delimiter=%5B%20%5Ct,%5D&amp;delimiterType=regexp&amp;xField=longdd&amp;yField=latdd</datasource>
@@ -2781,6 +3082,62 @@
             </rasterproperties>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>Raster20121116095150040</id>
+            <datasource>/users/modellers/pica/Documents/references/Scanned/Miscellaneous_Scanned/stride_1981_p68a.jpg</datasource>
+            <layername>Raster</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>gdal</provider>
+            <rasterproperties>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false"/>
+                <mRedBandName>Band 1</mRedBandName>
+                <mGreenBandName>Band 2</mGreenBandName>
+                <mBlueBandName>Band 3</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="false"/>
+                <mRGBMinimumMaximumEstimated boolean="true"/>
+                <mUserDefinedGrayMinimumMaximum boolean="false"/>
+                <mGrayMinimumMaximumEstimated boolean="true"/>
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues>
+                    <minMaxEntry>
+                        <min>0</min>
+                        <max>255</max>
+                    </minMaxEntry>
+                    <minMaxEntry>
+                        <min>0</min>
+                        <max>255</max>
+                    </minMaxEntry>
+                    <minMaxEntry>
+                        <min>0</min>
+                        <max>255</max>
+                    </minMaxEntry>
+                </contrastEnhancementMinMaxValues>
+                <mNoDataValue mValidNoDataValue="true">-32768.000000</mNoDataValue>
+                <singleValuePixelList>
+                    <pixelListEntry pixelValue="-32768.000000" percentTransparent="100"/>
+                </singleValuePixelList>
+                <threeValuePixelList>
+                    <pixelListEntry red="-32768.000000" blue="-32768.000000" green="-32768.000000" percentTransparent="100"/>
+                </threeValuePixelList>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>Wave_Hub_map_Cornwall_modified20120914112904523</id>
             <datasource>/users/modellers/pica/Data/QGIS/wave_hub/Wave-Hub-map-Cornwall_modified.tif</datasource>
             <layername>Wave-Hub-map-Cornwall_modified</layername>
@@ -2900,6 +3257,655 @@
                 <edittype type="0" name="id"/>
                 <edittype type="0" name="x"/>
                 <edittype type="0" name="y"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>bgs_30arcsec_d5020121116103639577</id>
+            <datasource>/users/modellers/pica/Data/BGS/seds/derived/bgs_30arcsec_d50.shp</datasource>
+            <layername>bgs_30arcsec_d50</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 attr="gs" symbollevels="0" type="categorizedSymbol">
+                <categories>
+                    <category symbol="0" value="0.01391" label="0.01391"/>
+                    <category symbol="1" value="0.04194" label="0.04194"/>
+                    <category symbol="2" value="0.04567" label="0.04567"/>
+                    <category symbol="3" value="0.07108" label="0.07108"/>
+                    <category symbol="4" value="0.0737" label="0.0737"/>
+                    <category symbol="5" value="0.09649" label="0.09649"/>
+                    <category symbol="6" value="0.12452" label="0.12452"/>
+                    <category symbol="7" value="0.12825" label="0.12825"/>
+                    <category symbol="8" value="0.15628" label="0.15628"/>
+                    <category symbol="9" value="0.2871" label="0.2871"/>
+                    <category symbol="10" value="0.31886" label="0.31886"/>
+                    <category symbol="11" value="0.42463" label="0.42463"/>
+                    <category symbol="12" value="0.66233" label="0.66233"/>
+                    <category symbol="13" value="0.70883" label="0.70883"/>
+                    <category symbol="14" value="0.74491" label="0.74491"/>
+                    <category symbol="15" value="1.25215" label="1.25215"/>
+                    <category symbol="16" value="3.39517" label="3.39517"/>
+                    <category symbol="17" value="1000000" label="1000000"/>
+                </categories>
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="0,0,127,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="1">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="11,26,139,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="10">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="117,209,210,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="11">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="134,183,184,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="12">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="151,157,158,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="13">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="168,131,132,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="14">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="186,104,107,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="15">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="203,78,81,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="16">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="220,52,55,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="17">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="237,26,29,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="2">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="22,52,151,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="3">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="33,78,163,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="4">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="44,104,175,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="5">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="55,131,187,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="6">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="66,157,199,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="7">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="77,183,211,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="8">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="88,209,223,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="9">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="100,236,236,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <source-symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                </source-symbol>
+                <colorramp type="gradient" name="[source]">
+                    <prop k="color1" v="0,0,127,255"/>
+                    <prop k="color2" v="255,0,4,255"/>
+                    <prop k="stops" v="0.5;100,236,236,255"/>
+                </colorramp>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>lonDD</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="gs"/>
+                <edittype type="0" name="latDD"/>
+                <edittype type="0" name="lonDD"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>bgs_manual_arcgis_d5020121116103643882</id>
+            <datasource>/users/modellers/pica/Data/BGS/seds/derived/bgs_manual_arcgis_d50.shp</datasource>
+            <layername>bgs_manual_arcgis_d50</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 attr="d50" symbollevels="0" type="categorizedSymbol">
+                <categories>
+                    <category symbol="0" value="0.01391" label="0.01391"/>
+                    <category symbol="1" value="0.09649" label="0.09649"/>
+                    <category symbol="2" value="0.1283" label="0.1283"/>
+                    <category symbol="3" value="0.1563" label="0.1563"/>
+                    <category symbol="4" value="0.31886" label="0.31886"/>
+                    <category symbol="5" value="0.3189" label="0.3189"/>
+                    <category symbol="6" value="0.7449" label="0.7449"/>
+                    <category symbol="7" value="1.252" label="1.252"/>
+                </categories>
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="0,0,127,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="1">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="25,59,154,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="2">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="50,118,181,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="3">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="75,177,208,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="4">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="100,236,236,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="5">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="138,177,178,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="6">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="177,118,120,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="7">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="216,59,62,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <source-symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                </source-symbol>
+                <colorramp type="gradient" name="[source]">
+                    <prop k="color1" v="0,0,127,255"/>
+                    <prop k="color2" v="255,0,4,255"/>
+                    <prop k="stops" v="0.5;100,236,236,255"/>
+                </colorramp>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>longDD</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="d50"/>
+                <edittype type="0" name="latDD"/>
+                <edittype type="0" name="longDD"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>blanpain_d50_gradistat_no_nan20121116110337738</id>
+            <datasource>/users/modellers/pica/Data/Blanpain/shp/blanpain_d50_gradistat_no-nan.shp</datasource>
+            <layername>blanpain_d50_gradistat_no-nan</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 attr="d50" symbollevels="0" type="categorizedSymbol">
+                <categories>
+                    <category symbol="0" value="0.09061" label="0.09061"/>
+                    <category symbol="1" value="0.1374" label="0.1374"/>
+                    <category symbol="2" value="0.172" label="0.172"/>
+                    <category symbol="3" value="0.3118" label="0.3118"/>
+                    <category symbol="4" value="0.422" label="0.422"/>
+                    <category symbol="5" value="1.1232" label="1.1232"/>
+                    <category symbol="6" value="5.1654" label="5.1654"/>
+                    <category symbol="7" value="5.7672" label="5.7672"/>
+                    <category symbol="8" value="8.1094" label="8.1094"/>
+                    <category symbol="9" value="11.3163" label="11.3163"/>
+                    <category symbol="10" value="11.8517" label="11.8517"/>
+                    <category symbol="11" value="20" label="20"/>
+                </categories>
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="0,0,127,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="1">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="16,39,145,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="10">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="203,78,81,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="11">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="229,39,42,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="2">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="33,78,163,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="3">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="50,118,181,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="4">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="66,157,199,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="5">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="83,196,217,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="6">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="100,236,236,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="7">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="125,196,197,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="8">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="151,157,158,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="9">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="177,118,120,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <source-symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                </source-symbol>
+                <colorramp type="gradient" name="[source]">
+                    <prop k="color1" v="0,0,127,255"/>
+                    <prop k="color2" v="255,0,4,255"/>
+                    <prop k="stops" v="0.5;100,236,236,255"/>
+                </colorramp>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>longDD</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="d50"/>
+                <edittype type="0" name="latDD"/>
+                <edittype type="0" name="longDD"/>
             </edittypes>
             <editform></editform>
             <editforminit></editforminit>
@@ -3223,6 +4229,258 @@
             <annotationform></annotationform>
             <attributeactions/>
         </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>coastline_clip_220121121124858945</id>
+            <datasource>/users/modellers/pica/Data/QGIS/irish_sea/coastline_clip_2.shp</datasource>
+            <layername>coastline_clip_2</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="90,106,160,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>coastline_clip_320121121165724196</id>
+            <datasource>/users/modellers/pica/Data/QGIS/irish_sea/coastline_clip_3.shp</datasource>
+            <layername>coastline_clip_3</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="129,54,166,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>coastline_clip_420121122100023646</id>
+            <datasource>/users/modellers/pica/Data/QGIS/irish_sea/coastline_clip_4.shp</datasource>
+            <layername>coastline_clip_4</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="181,151,31,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield></displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>coastline_clip_520121122103310786</id>
+            <datasource>/users/modellers/pica/Data/QGIS/irish_sea/coastline_clip_5.shp</datasource>
+            <layername>coastline_clip_5</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="156,109,149,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield></displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>cophase_corange20120724163653609</id>
             <datasource>/users/modellers/pica/Data/QGIS/shelf/cophase-corange.png</datasource>
@@ -3340,6 +4598,204 @@
             <edittypes>
                 <edittype type="0" name="Id"/>
             </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>domain20121121170803093</id>
+            <datasource>/users/modellers/pica/Data/POLPRED/domain.shp</datasource>
+            <layername>POLPRED</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>3114</srsid>
+                    <srid>32630</srid>
+                    <authid>EPSG:32630</authid>
+                    <description>WGS 84 / UTM zone 30N</description>
+                    <projectionacronym>utm</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="0.4980392156862745" type="marker" name="0">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>latDD</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="latDD"/>
+                <edittype type="0" name="lonDD"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>domain_open_boundary20121122154126331</id>
+            <datasource>/users/modellers/pica/Data/POLPRED/domain_open_boundary.shp</datasource>
+            <layername>domain_open_boundary</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="line" name="0">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="square"/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="1.5"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="id"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>domain_open_boundary_nodes20121122155225164</id>
+            <datasource>/users/modellers/pica/Data/POLPRED/domain_open_boundary_nodes.shp</datasource>
+            <layername>domain_open_boundary_nodes</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="5,132,151,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="2"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield></displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
             <editform></editform>
             <editforminit></editforminit>
             <annotationform></annotationform>
@@ -5461,6 +6917,128 @@
             <annotationform></annotationform>
             <attributeactions/>
         </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>stride_1982_p68a_bedform_coverage20121116100244648</id>
+            <datasource>/users/modellers/pica/Data/QGIS/shelf/stride_1982_p68a_bedform_coverage.shp</datasource>
+            <layername>stride_1982_p68a_bedform_coverage</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="0.4941176470588236" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="255,149,0,126"/>
+                            <prop k="color_border" v="0,0,0,126"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="id"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>stride_1982_p68a_modified20121116100055554</id>
+            <datasource>/users/modellers/pica/Data/QGIS/shelf/stride_1982_p68a_modified.tif</datasource>
+            <layername>stride_1982_p68a_modified</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>158</transparencyLevelInt>
+            <customproperties/>
+            <provider>gdal</provider>
+            <rasterproperties>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false"/>
+                <mRedBandName>Band 1</mRedBandName>
+                <mGreenBandName>Band 2</mGreenBandName>
+                <mBlueBandName>Band 3</mBlueBandName>
+                <mGrayBandName>Band 1</mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="false"/>
+                <mRGBMinimumMaximumEstimated boolean="true"/>
+                <mUserDefinedGrayMinimumMaximum boolean="false"/>
+                <mGrayMinimumMaximumEstimated boolean="true"/>
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues>
+                    <minMaxEntry>
+                        <min>0</min>
+                        <max>255</max>
+                    </minMaxEntry>
+                    <minMaxEntry>
+                        <min>0</min>
+                        <max>255</max>
+                    </minMaxEntry>
+                    <minMaxEntry>
+                        <min>0</min>
+                        <max>255</max>
+                    </minMaxEntry>
+                </contrastEnhancementMinMaxValues>
+                <mNoDataValue mValidNoDataValue="true">-32768.000000</mNoDataValue>
+                <singleValuePixelList>
+                    <pixelListEntry pixelValue="-32768.000000" percentTransparent="100"/>
+                </singleValuePixelList>
+                <threeValuePixelList>
+                    <pixelListEntry red="-32768.000000" blue="-32768.000000" green="-32768.000000" percentTransparent="100"/>
+                </threeValuePixelList>
+            </rasterproperties>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>szBE_BATHYMETRY_polyline20121018155409941</id>
             <datasource>/users/modellers/pica/Local/Data/SeaZone/bathy/ESW/szBE_BATHYMETRY_polyline.shp</datasource>
@@ -5853,7 +7431,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>utm20120918164035491</id>
-            <datasource>/users/modellers/pica/Data/QGIS/arcgis/Reference Systems/utm.shp</datasource>
+            <datasource>/users/modellers/pica/Data/ArcGIS/Reference Systems/utm.shp</datasource>
             <layername>utm</layername>
             <srs>
                 <spatialrefsys>
@@ -5923,6 +7501,391 @@
             <editforminit></editforminit>
             <annotationform></annotationform>
             <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>w00100120121116111725405</id>
+            <datasource>/users/modellers/pica/Data/Blanpain/raster/blanpain_750/w001001.adf</datasource>
+            <layername>w001001</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>gdal</provider>
+            <rasterproperties>
+                <mDrawingStyle>SingleBandPseudoColor</mDrawingStyle>
+                <mColorShadingAlgorithm>ColorRampShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false"/>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Band 1</mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="false"/>
+                <mRGBMinimumMaximumEstimated boolean="true"/>
+                <mUserDefinedGrayMinimumMaximum boolean="false"/>
+                <mGrayMinimumMaximumEstimated boolean="true"/>
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues>
+                    <minMaxEntry>
+                        <min>-3.40282e+38</min>
+                        <max>3.40282e+38</max>
+                    </minMaxEntry>
+                </contrastEnhancementMinMaxValues>
+                <mNoDataValue mValidNoDataValue="true">-340282346638528859811704183484516925440.000000</mNoDataValue>
+                <singleValuePixelList>
+                    <pixelListEntry pixelValue="-340282346638528859811704183484516925440.000000" percentTransparent="100"/>
+                </singleValuePixelList>
+                <threeValuePixelList>
+                    <pixelListEntry red="-340282346638528859811704183484516925440.000000" blue="-340282346638528859811704183484516925440.000000" green="-340282346638528859811704183484516925440.000000" percentTransparent="100"/>
+                </threeValuePixelList>
+                <customColorRamp>
+                    <colorRampType>DISCRETE</colorRampType>
+                    <colorRampEntry red="5" blue="255" value="0.030000" green="100" label=" "/>
+                    <colorRampEntry red="2" blue="255" value="0.030500" green="98" label=" "/>
+                    <colorRampEntry red="3" blue="255" value="0.031000" green="99" label=" "/>
+                    <colorRampEntry red="2" blue="255" value="0.031500" green="100" label=" "/>
+                    <colorRampEntry red="2" blue="255" value="0.032000" green="101" label=" "/>
+                    <colorRampEntry red="2" blue="255" value="0.032500" green="102" label=" "/>
+                    <colorRampEntry red="2" blue="255" value="0.033000" green="103" label=" "/>
+                    <colorRampEntry red="2" blue="255" value="0.049970" green="104" label=" "/>
+                    <colorRampEntry red="2" blue="255" value="0.050470" green="105" label=" "/>
+                    <colorRampEntry red="3" blue="255" value="0.079920" green="106" label=" "/>
+                    <colorRampEntry red="4" blue="255" value="0.080420" green="106" label=" "/>
+                    <colorRampEntry red="3" blue="255" value="0.080920" green="108" label=" "/>
+                    <colorRampEntry red="3" blue="255" value="0.081420" green="109" label=" "/>
+                    <colorRampEntry red="4" blue="255" value="0.081920" green="110" label=" "/>
+                    <colorRampEntry red="3" blue="255" value="0.082420" green="111" label=" "/>
+                    <colorRampEntry red="4" blue="255" value="0.082920" green="112" label=" "/>
+                    <colorRampEntry red="5" blue="255" value="0.083420" green="113" label=" "/>
+                    <colorRampEntry red="4" blue="255" value="0.083920" green="114" label=" "/>
+                    <colorRampEntry red="4" blue="255" value="0.084420" green="115" label=" "/>
+                    <colorRampEntry red="4" blue="255" value="0.084920" green="116" label=" "/>
+                    <colorRampEntry red="5" blue="255" value="0.085420" green="117" label=" "/>
+                    <colorRampEntry red="4" blue="255" value="0.085910" green="117" label=" "/>
+                    <colorRampEntry red="5" blue="255" value="0.086410" green="118" label=" "/>
+                    <colorRampEntry red="6" blue="255" value="0.086910" green="120" label=" "/>
+                    <colorRampEntry red="5" blue="255" value="0.087410" green="120" label=" "/>
+                    <colorRampEntry red="5" blue="255" value="0.087910" green="121" label=" "/>
+                    <colorRampEntry red="5" blue="255" value="0.088410" green="122" label=" "/>
+                    <colorRampEntry red="6" blue="255" value="0.088910" green="123" label=" "/>
+                    <colorRampEntry red="5" blue="255" value="0.089410" green="124" label=" "/>
+                    <colorRampEntry red="6" blue="255" value="0.089910" green="125" label=" "/>
+                    <colorRampEntry red="7" blue="255" value="0.090410" green="126" label=" "/>
+                    <colorRampEntry red="6" blue="255" value="0.090910" green="127" label=" "/>
+                    <colorRampEntry red="6" blue="255" value="0.091410" green="128" label=" "/>
+                    <colorRampEntry red="7" blue="255" value="0.091910" green="129" label=" "/>
+                    <colorRampEntry red="6" blue="255" value="0.092400" green="131" label=" "/>
+                    <colorRampEntry red="7" blue="255" value="0.092900" green="131" label=" "/>
+                    <colorRampEntry red="8" blue="255" value="0.093400" green="132" label=" "/>
+                    <colorRampEntry red="7" blue="255" value="0.093900" green="133" label=" "/>
+                    <colorRampEntry red="7" blue="255" value="0.094400" green="134" label=" "/>
+                    <colorRampEntry red="7" blue="255" value="0.094900" green="135" label=" "/>
+                    <colorRampEntry red="8" blue="254" value="0.095400" green="136" label=" "/>
+                    <colorRampEntry red="7" blue="255" value="0.095900" green="137" label=" "/>
+                    <colorRampEntry red="8" blue="254" value="0.096400" green="137" label=" "/>
+                    <colorRampEntry red="9" blue="254" value="0.096900" green="139" label=" "/>
+                    <colorRampEntry red="8" blue="254" value="0.097400" green="139" label=" "/>
+                    <colorRampEntry red="8" blue="254" value="0.097900" green="140" label=" "/>
+                    <colorRampEntry red="8" blue="254" value="0.098400" green="141" label=" "/>
+                    <colorRampEntry red="9" blue="254" value="0.098890" green="142" label=" "/>
+                    <colorRampEntry red="8" blue="254" value="0.099390" green="143" label=" "/>
+                    <colorRampEntry red="9" blue="254" value="0.099890" green="144" label=" "/>
+                    <colorRampEntry red="9" blue="254" value="0.100390" green="145" label=" "/>
+                    <colorRampEntry red="10" blue="254" value="0.100890" green="146" label=" "/>
+                    <colorRampEntry red="9" blue="254" value="0.101390" green="147" label=" "/>
+                    <colorRampEntry red="9" blue="254" value="0.101890" green="148" label=" "/>
+                    <colorRampEntry red="9" blue="254" value="0.102390" green="149" label=" "/>
+                    <colorRampEntry red="9" blue="254" value="0.102890" green="150" label=" "/>
+                    <colorRampEntry red="10" blue="254" value="0.103390" green="151" label=" "/>
+                    <colorRampEntry red="11" blue="254" value="0.103890" green="152" label=" "/>
+                    <colorRampEntry red="10" blue="254" value="0.104390" green="153" label=" "/>
+                    <colorRampEntry red="10" blue="254" value="0.104890" green="154" label=" "/>
+                    <colorRampEntry red="10" blue="254" value="0.105380" green="155" label=" "/>
+                    <colorRampEntry red="11" blue="254" value="0.105880" green="156" label=" "/>
+                    <colorRampEntry red="10" blue="254" value="0.106380" green="157" label=" "/>
+                    <colorRampEntry red="11" blue="254" value="0.106880" green="158" label=" "/>
+                    <colorRampEntry red="12" blue="254" value="0.107380" green="159" label=" "/>
+                    <colorRampEntry red="11" blue="254" value="0.107880" green="159" label=" "/>
+                    <colorRampEntry red="11" blue="254" value="0.108380" green="160" label=" "/>
+                    <colorRampEntry red="11" blue="254" value="0.108880" green="161" label=" "/>
+                    <colorRampEntry red="12" blue="254" value="0.109380" green="162" label=" "/>
+                    <colorRampEntry red="11" blue="254" value="0.109880" green="163" label=" "/>
+                    <colorRampEntry red="12" blue="254" value="0.110380" green="164" label=" "/>
+                    <colorRampEntry red="13" blue="254" value="0.110880" green="165" label=" "/>
+                    <colorRampEntry red="12" blue="254" value="0.111380" green="166" label=" "/>
+                    <colorRampEntry red="12" blue="254" value="0.111870" green="167" label=" "/>
+                    <colorRampEntry red="12" blue="254" value="0.112370" green="168" label=" "/>
+                    <colorRampEntry red="13" blue="254" value="0.112870" green="169" label=" "/>
+                    <colorRampEntry red="12" blue="254" value="0.113370" green="169" label=" "/>
+                    <colorRampEntry red="13" blue="254" value="0.113870" green="170" label=" "/>
+                    <colorRampEntry red="14" blue="254" value="0.114370" green="171" label=" "/>
+                    <colorRampEntry red="13" blue="254" value="0.114870" green="172" label=" "/>
+                    <colorRampEntry red="13" blue="254" value="0.115370" green="173" label=" "/>
+                    <colorRampEntry red="13" blue="254" value="0.115870" green="174" label=" "/>
+                    <colorRampEntry red="14" blue="254" value="0.116370" green="175" label=" "/>
+                    <colorRampEntry red="13" blue="254" value="0.116870" green="176" label=" "/>
+                    <colorRampEntry red="14" blue="254" value="0.117370" green="177" label=" "/>
+                    <colorRampEntry red="14" blue="254" value="0.117870" green="178" label=" "/>
+                    <colorRampEntry red="15" blue="254" value="0.118370" green="179" label=" "/>
+                    <colorRampEntry red="14" blue="254" value="0.118860" green="180" label=" "/>
+                    <colorRampEntry red="15" blue="254" value="0.119360" green="181" label=" "/>
+                    <colorRampEntry red="14" blue="254" value="0.119860" green="182" label=" "/>
+                    <colorRampEntry red="15" blue="254" value="0.120360" green="183" label=" "/>
+                    <colorRampEntry red="15" blue="254" value="0.120860" green="184" label=" "/>
+                    <colorRampEntry red="16" blue="254" value="0.121360" green="185" label=" "/>
+                    <colorRampEntry red="15" blue="254" value="0.121860" green="186" label=" "/>
+                    <colorRampEntry red="16" blue="254" value="0.122360" green="187" label=" "/>
+                    <colorRampEntry red="15" blue="254" value="0.122860" green="188" label=" "/>
+                    <colorRampEntry red="16" blue="254" value="0.123360" green="189" label=" "/>
+                    <colorRampEntry red="16" blue="254" value="0.123860" green="190" label=" "/>
+                    <colorRampEntry red="17" blue="254" value="0.124360" green="191" label=" "/>
+                    <colorRampEntry red="16" blue="255" value="0.124860" green="192" label=" "/>
+                    <colorRampEntry red="16" blue="254" value="0.125350" green="193" label=" "/>
+                    <colorRampEntry red="16" blue="253" value="0.125850" green="194" label=" "/>
+                    <colorRampEntry red="16" blue="254" value="0.126350" green="195" label=" "/>
+                    <colorRampEntry red="16" blue="253" value="0.126850" green="196" label=" "/>
+                    <colorRampEntry red="17" blue="253" value="0.127350" green="197" label=" "/>
+                    <colorRampEntry red="18" blue="253" value="0.127850" green="197" label=" "/>
+                    <colorRampEntry red="17" blue="253" value="0.128350" green="198" label=" "/>
+                    <colorRampEntry red="17" blue="253" value="0.128850" green="199" label=" "/>
+                    <colorRampEntry red="17" blue="253" value="0.129350" green="200" label=" "/>
+                    <colorRampEntry red="18" blue="253" value="0.129850" green="201" label=" "/>
+                    <colorRampEntry red="17" blue="253" value="0.130350" green="202" label=" "/>
+                    <colorRampEntry red="18" blue="253" value="0.130850" green="203" label=" "/>
+                    <colorRampEntry red="19" blue="253" value="0.131350" green="204" label=" "/>
+                    <colorRampEntry red="18" blue="253" value="0.131840" green="205" label=" "/>
+                    <colorRampEntry red="18" blue="253" value="0.132340" green="206" label=" "/>
+                    <colorRampEntry red="18" blue="253" value="0.132840" green="207" label=" "/>
+                    <colorRampEntry red="19" blue="253" value="0.133340" green="207" label=" "/>
+                    <colorRampEntry red="18" blue="253" value="0.133840" green="208" label=" "/>
+                    <colorRampEntry red="19" blue="253" value="0.134340" green="209" label=" "/>
+                    <colorRampEntry red="20" blue="253" value="0.134840" green="210" label=" "/>
+                    <colorRampEntry red="19" blue="253" value="0.135340" green="211" label=" "/>
+                    <colorRampEntry red="19" blue="253" value="0.135840" green="212" label=" "/>
+                    <colorRampEntry red="19" blue="253" value="0.136340" green="213" label=" "/>
+                    <colorRampEntry red="20" blue="253" value="0.136840" green="214" label=" "/>
+                    <colorRampEntry red="19" blue="253" value="0.137340" green="215" label=" "/>
+                    <colorRampEntry red="20" blue="253" value="0.137840" green="216" label=" "/>
+                    <colorRampEntry red="21" blue="253" value="0.138330" green="217" label=" "/>
+                    <colorRampEntry red="20" blue="253" value="0.138830" green="218" label=" "/>
+                    <colorRampEntry red="20" blue="253" value="0.139330" green="219" label=" "/>
+                    <colorRampEntry red="21" blue="253" value="0.139830" green="220" label=" "/>
+                    <colorRampEntry red="20" blue="253" value="0.140330" green="221" label=" "/>
+                    <colorRampEntry red="21" blue="253" value="0.140830" green="222" label=" "/>
+                    <colorRampEntry red="21" blue="253" value="0.141330" green="223" label=" "/>
+                    <colorRampEntry red="22" blue="253" value="0.141830" green="224" label=" "/>
+                    <colorRampEntry red="21" blue="253" value="0.142330" green="225" label=" "/>
+                    <colorRampEntry red="21" blue="253" value="0.142830" green="226" label=" "/>
+                    <colorRampEntry red="22" blue="253" value="0.143330" green="227" label=" "/>
+                    <colorRampEntry red="21" blue="253" value="0.143830" green="228" label=" "/>
+                    <colorRampEntry red="22" blue="253" value="0.144330" green="229" label=" "/>
+                    <colorRampEntry red="22" blue="253" value="0.144820" green="230" label=" "/>
+                    <colorRampEntry red="23" blue="253" value="0.145320" green="230" label=" "/>
+                    <colorRampEntry red="22" blue="254" value="0.145820" green="231" label=" "/>
+                    <colorRampEntry red="22" blue="253" value="0.146320" green="232" label=" "/>
+                    <colorRampEntry red="22" blue="252" value="0.146820" green="233" label=" "/>
+                    <colorRampEntry red="22" blue="253" value="0.147320" green="234" label=" "/>
+                    <colorRampEntry red="23" blue="252" value="0.147820" green="235" label=" "/>
+                    <colorRampEntry red="23" blue="252" value="0.148320" green="236" label=" "/>
+                    <colorRampEntry red="24" blue="252" value="0.148820" green="236" label=" "/>
+                    <colorRampEntry red="23" blue="252" value="0.149320" green="237" label=" "/>
+                    <colorRampEntry red="23" blue="252" value="0.149820" green="238" label=" "/>
+                    <colorRampEntry red="23" blue="252" value="0.150320" green="239" label=" "/>
+                    <colorRampEntry red="24" blue="252" value="0.150820" green="240" label=" "/>
+                    <colorRampEntry red="23" blue="252" value="0.151310" green="241" label=" "/>
+                    <colorRampEntry red="24" blue="252" value="0.151810" green="242" label=" "/>
+                    <colorRampEntry red="25" blue="252" value="0.152310" green="243" label=" "/>
+                    <colorRampEntry red="24" blue="252" value="0.152810" green="244" label=" "/>
+                    <colorRampEntry red="24" blue="252" value="0.153310" green="245" label=" "/>
+                    <colorRampEntry red="24" blue="252" value="0.153810" green="246" label=" "/>
+                    <colorRampEntry red="25" blue="252" value="0.154310" green="247" label=" "/>
+                    <colorRampEntry red="24" blue="252" value="0.154810" green="247" label=" "/>
+                    <colorRampEntry red="25" blue="252" value="0.155310" green="248" label=" "/>
+                    <colorRampEntry red="26" blue="252" value="0.155810" green="249" label=" "/>
+                    <colorRampEntry red="25" blue="252" value="0.156310" green="250" label=" "/>
+                    <colorRampEntry red="25" blue="252" value="0.156810" green="251" label=" "/>
+                    <colorRampEntry red="26" blue="253" value="0.157310" green="251" label=" "/>
+                    <colorRampEntry red="27" blue="252" value="0.157800" green="249" label=" "/>
+                    <colorRampEntry red="29" blue="251" value="0.158300" green="248" label=" "/>
+                    <colorRampEntry red="30" blue="251" value="0.158800" green="247" label=" "/>
+                    <colorRampEntry red="31" blue="250" value="0.159300" green="246" label=" "/>
+                    <colorRampEntry red="33" blue="251" value="0.159800" green="244" label=" "/>
+                    <colorRampEntry red="34" blue="250" value="0.160300" green="243" label=" "/>
+                    <colorRampEntry red="35" blue="249" value="0.160800" green="241" label=" "/>
+                    <colorRampEntry red="36" blue="250" value="0.161300" green="240" label=" "/>
+                    <colorRampEntry red="38" blue="249" value="0.161800" green="239" label=" "/>
+                    <colorRampEntry red="39" blue="249" value="0.162300" green="237" label=" "/>
+                    <colorRampEntry red="41" blue="248" value="0.162800" green="236" label=" "/>
+                    <colorRampEntry red="42" blue="247" value="0.163300" green="235" label=" "/>
+                    <colorRampEntry red="43" blue="248" value="0.163800" green="233" label=" "/>
+                    <colorRampEntry red="44" blue="247" value="0.164290" green="232" label=" "/>
+                    <colorRampEntry red="46" blue="246" value="0.164790" green="231" label=" "/>
+                    <colorRampEntry red="46" blue="246" value="0.165290" green="229" label=" "/>
+                    <colorRampEntry red="48" blue="245" value="0.165790" green="228" label=" "/>
+                    <colorRampEntry red="50" blue="246" value="0.166290" green="226" label=" "/>
+                    <colorRampEntry red="50" blue="245" value="0.166790" green="225" label=" "/>
+                    <colorRampEntry red="52" blue="244" value="0.167290" green="224" label=" "/>
+                    <colorRampEntry red="53" blue="244" value="0.167790" green="222" label=" "/>
+                    <colorRampEntry red="55" blue="244" value="0.168290" green="221" label=" "/>
+                    <colorRampEntry red="56" blue="244" value="0.168790" green="219" label=" "/>
+                    <colorRampEntry red="57" blue="243" value="0.169290" green="218" label=" "/>
+                    <colorRampEntry red="58" blue="242" value="0.169790" green="217" label=" "/>
+                    <colorRampEntry red="60" blue="243" value="0.170290" green="216" label=" "/>
+                    <colorRampEntry red="61" blue="242" value="0.170780" green="215" label=" "/>
+                    <colorRampEntry red="62" blue="241" value="0.171280" green="213" label=" "/>
+                    <colorRampEntry red="64" blue="241" value="0.171780" green="212" label=" "/>
+                    <colorRampEntry red="65" blue="241" value="0.172280" green="210" label=" "/>
+                    <colorRampEntry red="66" blue="241" value="0.172780" green="209" label=" "/>
+                    <colorRampEntry red="67" blue="240" value="0.173280" green="208" label=" "/>
+                    <colorRampEntry red="69" blue="239" value="0.173780" green="206" label=" "/>
+                    <colorRampEntry red="70" blue="240" value="0.174280" green="205" label=" "/>
+                    <colorRampEntry red="71" blue="239" value="0.174780" green="203" label=" "/>
+                    <colorRampEntry red="73" blue="239" value="0.175280" green="202" label=" "/>
+                    <colorRampEntry red="74" blue="238" value="0.175780" green="201" label=" "/>
+                    <colorRampEntry red="75" blue="237" value="0.176280" green="200" label=" "/>
+                    <colorRampEntry red="76" blue="238" value="0.176780" green="198" label=" "/>
+                    <colorRampEntry red="78" blue="237" value="0.177280" green="197" label=" "/>
+                    <colorRampEntry red="79" blue="236" value="0.177770" green="195" label=" "/>
+                    <colorRampEntry red="81" blue="236" value="0.178270" green="194" label=" "/>
+                    <colorRampEntry red="82" blue="235" value="0.178770" green="193" label=" "/>
+                    <colorRampEntry red="83" blue="236" value="0.179270" green="191" label=" "/>
+                    <colorRampEntry red="84" blue="235" value="0.179770" green="190" label=" "/>
+                    <colorRampEntry red="86" blue="234" value="0.180270" green="189" label=" "/>
+                    <colorRampEntry red="87" blue="235" value="0.180770" green="187" label=" "/>
+                    <colorRampEntry red="88" blue="234" value="0.181270" green="186" label=" "/>
+                    <colorRampEntry red="89" blue="233" value="0.181770" green="185" label=" "/>
+                    <colorRampEntry red="91" blue="233" value="0.182270" green="183" label=" "/>
+                    <colorRampEntry red="92" blue="232" value="0.182770" green="182" label=" "/>
+                    <colorRampEntry red="93" blue="233" value="0.183270" green="181" label=" "/>
+                    <colorRampEntry red="94" blue="232" value="0.183770" green="180" label=" "/>
+                    <colorRampEntry red="96" blue="231" value="0.184260" green="178" label=" "/>
+                    <colorRampEntry red="97" blue="231" value="0.184760" green="177" label=" "/>
+                    <colorRampEntry red="98" blue="230" value="0.185260" green="175" label=" "/>
+                    <colorRampEntry red="100" blue="231" value="0.185760" green="174" label=" "/>
+                    <colorRampEntry red="101" blue="230" value="0.186260" green="173" label=" "/>
+                    <colorRampEntry red="102" blue="230" value="0.186760" green="171" label=" "/>
+                    <colorRampEntry red="104" blue="229" value="0.187260" green="170" label=" "/>
+                    <colorRampEntry red="105" blue="228" value="0.187760" green="168" label=" "/>
+                    <colorRampEntry red="106" blue="229" value="0.188260" green="167" label=" "/>
+                    <colorRampEntry red="108" blue="228" value="0.188760" green="166" label=" "/>
+                    <colorRampEntry red="108" blue="227" value="0.199740" green="164" label=" "/>
+                    <colorRampEntry red="110" blue="228" value="0.200240" green="163" label=" "/>
+                    <colorRampEntry red="112" blue="227" value="0.200740" green="162" label=" "/>
+                    <colorRampEntry red="113" blue="226" value="0.201240" green="160" label=" "/>
+                    <colorRampEntry red="114" blue="226" value="0.201740" green="159" label=" "/>
+                    <colorRampEntry red="115" blue="226" value="0.202240" green="158" label=" "/>
+                    <colorRampEntry red="117" blue="226" value="0.202740" green="156" label=" "/>
+                    <colorRampEntry red="118" blue="225" value="0.203240" green="155" label=" "/>
+                    <colorRampEntry red="119" blue="224" value="0.330040" green="153" label=" "/>
+                    <colorRampEntry red="120" blue="224" value="0.330540" green="152" label=" "/>
+                    <colorRampEntry red="122" blue="224" value="0.331040" green="151" label=" "/>
+                    <colorRampEntry red="123" blue="223" value="0.331540" green="150" label=" "/>
+                    <colorRampEntry red="124" blue="223" value="0.332040" green="148" label=" "/>
+                    <colorRampEntry red="126" blue="223" value="0.332540" green="147" label=" "/>
+                    <colorRampEntry red="127" blue="223" value="0.333040" green="145" label=" "/>
+                    <colorRampEntry red="128" blue="222" value="0.333540" green="144" label=" "/>
+                    <colorRampEntry red="129" blue="221" value="0.334040" green="143" label=" "/>
+                    <colorRampEntry red="131" blue="222" value="0.334530" green="142" label=" "/>
+                    <colorRampEntry red="132" blue="221" value="0.335030" green="140" label=" "/>
+                    <colorRampEntry red="133" blue="221" value="0.335530" green="139" label=" "/>
+                    <colorRampEntry red="135" blue="220" value="0.336030" green="137" label=" "/>
+                    <colorRampEntry red="136" blue="219" value="1.139800" green="136" label=" "/>
+                    <colorRampEntry red="137" blue="220" value="1.140300" green="135" label=" "/>
+                    <colorRampEntry red="139" blue="219" value="1.140800" green="133" label=" "/>
+                    <colorRampEntry red="140" blue="219" value="1.141300" green="132" label=" "/>
+                    <colorRampEntry red="141" blue="218" value="1.141800" green="130" label=" "/>
+                    <colorRampEntry red="143" blue="217" value="1.142300" green="129" label=" "/>
+                    <colorRampEntry red="144" blue="218" value="1.142800" green="128" label=" "/>
+                    <colorRampEntry red="145" blue="217" value="1.143300" green="127" label=" "/>
+                    <colorRampEntry red="146" blue="216" value="1.143800" green="125" label=" "/>
+                    <colorRampEntry red="148" blue="217" value="1.144300" green="124" label=" "/>
+                    <colorRampEntry red="149" blue="216" value="1.144800" green="122" label=" "/>
+                    <colorRampEntry red="150" blue="216" value="1.145300" green="121" label=" "/>
+                    <colorRampEntry red="152" blue="215" value="1.145800" green="120" label=" "/>
+                    <colorRampEntry red="153" blue="214" value="1.146300" green="119" label=" "/>
+                    <colorRampEntry red="154" blue="215" value="1.146790" green="117" label=" "/>
+                    <colorRampEntry red="155" blue="214" value="1.147290" green="116" label=" "/>
+                    <colorRampEntry red="156" blue="213" value="1.147790" green="115" label=" "/>
+                    <colorRampEntry red="158" blue="213" value="1.148290" green="113" label=" "/>
+                    <colorRampEntry red="159" blue="212" value="1.148790" green="112" label=" "/>
+                    <colorRampEntry red="160" blue="213" value="1.149290" green="110" label=" "/>
+                    <colorRampEntry red="162" blue="212" value="1.149790" green="109" label=" "/>
+                    <colorRampEntry red="163" blue="211" value="1.150290" green="108" label=" "/>
+                    <colorRampEntry red="164" blue="211" value="1.150790" green="107" label=" "/>
+                    <colorRampEntry red="166" blue="210" value="1.151290" green="105" label=" "/>
+                    <colorRampEntry red="167" blue="211" value="1.151790" green="104" label=" "/>
+                    <colorRampEntry red="168" blue="210" value="1.152290" green="102" label=" "/>
+                    <colorRampEntry red="170" blue="209" value="1.152790" green="101" label=" "/>
+                    <colorRampEntry red="171" blue="210" value="1.153280" green="100" label=" "/>
+                    <colorRampEntry red="172" blue="209" value="1.153780" green="98" label=" "/>
+                    <colorRampEntry red="174" blue="208" value="1.154280" green="97" label=" "/>
+                    <colorRampEntry red="175" blue="208" value="1.154780" green="95" label=" "/>
+                    <colorRampEntry red="176" blue="207" value="1.155280" green="94" label=" "/>
+                    <colorRampEntry red="177" blue="208" value="1.155780" green="93" label=" "/>
+                    <colorRampEntry red="179" blue="207" value="1.156280" green="91" label=" "/>
+                    <colorRampEntry red="180" blue="206" value="1.156780" green="90" label=" "/>
+                    <colorRampEntry red="181" blue="206" value="1.157280" green="89" label=" "/>
+                    <colorRampEntry red="183" blue="206" value="1.157780" green="87" label=" "/>
+                    <colorRampEntry red="184" blue="206" value="1.158280" green="86" label=" "/>
+                    <colorRampEntry red="185" blue="205" value="1.158780" green="85" label=" "/>
+                    <colorRampEntry red="186" blue="204" value="1.159280" green="84" label=" "/>
+                    <colorRampEntry red="187" blue="204" value="1.159770" green="82" label=" "/>
+                    <colorRampEntry red="189" blue="204" value="1.160270" green="81" label=" "/>
+                    <colorRampEntry red="191" blue="203" value="1.160770" green="79" label=" "/>
+                    <colorRampEntry red="191" blue="203" value="1.161270" green="78" label=" "/>
+                    <colorRampEntry red="193" blue="203" value="1.161770" green="77" label=" "/>
+                    <colorRampEntry red="194" blue="203" value="1.162270" green="75" label=" "/>
+                    <colorRampEntry red="195" blue="202" value="1.162770" green="74" label=" "/>
+                    <colorRampEntry red="197" blue="201" value="1.163270" green="72" label=" "/>
+                    <colorRampEntry red="198" blue="202" value="1.163770" green="71" label=" "/>
+                    <colorRampEntry red="199" blue="201" value="1.164270" green="70" label=" "/>
+                    <colorRampEntry red="201" blue="201" value="1.164770" green="69" label=" "/>
+                    <colorRampEntry red="202" blue="200" value="6.409760" green="67" label=" "/>
+                    <colorRampEntry red="203" blue="199" value="6.410260" green="66" label=" "/>
+                    <colorRampEntry red="205" blue="200" value="6.410750" green="64" label=" "/>
+                    <colorRampEntry red="206" blue="199" value="6.411250" green="63" label=" "/>
+                    <colorRampEntry red="207" blue="199" value="6.411750" green="62" label=" "/>
+                    <colorRampEntry red="208" blue="198" value="6.412250" green="60" label=" "/>
+                    <colorRampEntry red="210" blue="197" value="6.412750" green="59" label=" "/>
+                    <colorRampEntry red="211" blue="198" value="6.413250" green="58" label=" "/>
+                    <colorRampEntry red="212" blue="197" value="6.413750" green="56" label=" "/>
+                    <colorRampEntry red="214" blue="196" value="6.414250" green="55" label=" "/>
+                    <colorRampEntry red="215" blue="197" value="6.414750" green="53" label=" "/>
+                    <colorRampEntry red="216" blue="196" value="6.415250" green="52" label=" "/>
+                    <colorRampEntry red="217" blue="195" value="6.415750" green="51" label=" "/>
+                    <colorRampEntry red="218" blue="195" value="6.416250" green="50" label=" "/>
+                    <colorRampEntry red="220" blue="194" value="6.416750" green="49" label=" "/>
+                    <colorRampEntry red="221" blue="195" value="6.417240" green="47" label=" "/>
+                    <colorRampEntry red="223" blue="194" value="8.929910" green="46" label=" "/>
+                    <colorRampEntry red="224" blue="193" value="8.930410" green="44" label=" "/>
+                    <colorRampEntry red="225" blue="193" value="8.930910" green="43" label=" "/>
+                    <colorRampEntry red="226" blue="192" value="8.931410" green="42" label=" "/>
+                    <colorRampEntry red="228" blue="193" value="8.931900" green="40" label=" "/>
+                    <colorRampEntry red="229" blue="192" value="8.932400" green="39" label=" "/>
+                    <colorRampEntry red="230" blue="191" value="8.932900" green="37" label=" "/>
+                    <colorRampEntry red="232" blue="192" value="8.933400" green="36" label=" "/>
+                    <colorRampEntry red="233" blue="191" value="8.933900" green="35" label=" "/>
+                    <colorRampEntry red="234" blue="191" value="8.934400" green="34" label=" "/>
+                    <colorRampEntry red="235" blue="190" value="8.934900" green="32" label=" "/>
+                    <colorRampEntry red="237" blue="189" value="8.935400" green="31" label=" "/>
+                    <colorRampEntry red="238" blue="190" value="8.935900" green="29" label=" "/>
+                    <colorRampEntry red="239" blue="189" value="19.999500" green="28" label=" "/>
+                    <colorRampEntry red="241" blue="188" value="19.999750" green="27" label=" "/>
+                    <colorRampEntry red="242" blue="188" value="20.000000" green="25" label=" "/>
+                    <colorRampEntry red="243" blue="188" value="20.000250" green="24" label=" "/>
+                    <colorRampEntry red="245" blue="189" value="20.000500" green="26" label=" "/>
+                </customColorRamp>
+            </rasterproperties>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>wave_hub_location20121011155114311</id>
@@ -6131,7 +8094,7 @@
         <SpatialRefSys>
             <ProjectCRSProj4String type="QString">+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +towgs84=0,0,0</ProjectCRSProj4String>
             <ProjectCrs type="QString">EPSG:4326</ProjectCrs>
-            <ProjectCRSID type="int">3114</ProjectCRSID>
+            <ProjectCRSID type="int">3857</ProjectCRSID>
             <ProjectionsEnabled type="int">1</ProjectionsEnabled>
         </SpatialRefSys>
         <Gui>
