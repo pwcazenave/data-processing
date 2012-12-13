@@ -4,44 +4,64 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>1259829.316216</xmin>
-            <ymin>7952104.321026</ymin>
-            <xmax>2121852.929381</xmax>
-            <ymax>8682339.863005</ymax>
+            <xmin>-328395.109102</xmin>
+            <ymin>4831957.886587</ymin>
+            <xmax>1506258.549230</xmax>
+            <ymax>6333441.994375</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
             <spatialrefsys>
-                <proj4>+proj=merc +lon_0=0 +lat_ts=0 +x_0=0 +y_0=0 +a=6378137 +b=6378137 +units=m +no_defs</proj4>
-                <srsid>3857</srsid>
-                <srid>3857</srid>
-                <authid>EPSG:3857</authid>
-                <description>WGS 84 / Pseudo Mercator</description>
-                <projectionacronym>merc</projectionacronym>
+                <proj4>+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</proj4>
+                <srsid>3114</srsid>
+                <srid>32630</srid>
+                <authid>EPSG:32630</authid>
+                <description>WGS 84 / UTM zone 30N</description>
+                <projectionacronym>utm</projectionacronym>
                 <ellipsoidacronym>WGS84</ellipsoidacronym>
                 <geographicflag>false</geographicflag>
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
     <legend>
-        <legendlayer open="true" checked="Qt::Checked" name="Google Satellite" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20121123095926275" visible="1"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="domain_open_boundary_nodes" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="domain_open_boundary_nodes20121122155225164" visible="1"/>
-            </filegroup>
-        </legendlayer>
-        <legendgroup open="false" checked="Qt::Unchecked" name="Bedforms">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Bedforms">
+            <legendlayer open="false" checked="Qt::Unchecked" name="stride_bedforms_coverage_utm30n" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="stride_bedforms_coverage_utm30n20121213120616958" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer open="false" checked="Qt::Unchecked" name="stride_bedforms_coverage_utm30n_5km_with_attributes" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="stride_bedforms_coverage_utm30n_5km_with_attributes20121213120617814" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer open="false" checked="Qt::Unchecked" name="stride_1982_p68a_bedform_coverage_utm30n_points_5km" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="stride_1982_p68a_bedform_coverage_utm30n_points_5km20121211121706987" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer open="false" checked="Qt::Unchecked" name="stride_1982_p68a_bedform_coverage_utm30n" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="stride_1982_p68a_bedform_coverage_utm30n20121211121502219" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer open="false" checked="Qt::Unchecked" name="stride_1982_p68a_bedform_coverage_points_0.05" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="stride_1982_p68a_bedform_coverage_points_0_0520121211121351948" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer open="false" checked="Qt::Unchecked" name="stride_1982_p68a_bedform_coverage_points_0.01" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="stride_1982_p68a_bedform_coverage_points_0_0120121205103010356" visible="0"/>
+                </filegroup>
+            </legendlayer>
             <legendlayer open="false" checked="Qt::Unchecked" name="stride_1982_p68a_bedform_coverage" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="stride_1982_p68a_bedform_coverage20121116100244648" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer open="true" checked="Qt::Unchecked" name="stride_1982_p68a_modified" showFeatureCount="0">
-                <filegroup open="true" hidden="false">
+            <legendlayer open="false" checked="Qt::Unchecked" name="stride_1982_p68a_modified" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="stride_1982_p68a_modified20121116100055554" visible="0"/>
                 </filegroup>
             </legendlayer>
@@ -59,7 +79,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Unchecked" name="Blanpain">
+            <legendgroup open="true" checked="Qt::Unchecked" name="Blanpain">
                 <legendlayer open="false" checked="Qt::Unchecked" name="blanpain_d50_gradistat_no-nan" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="blanpain_d50_gradistat_no_nan20121116110337738" visible="0"/>
@@ -110,7 +130,7 @@
             </legendlayer>
         </legendgroup>
         <legendgroup open="false" checked="Qt::Unchecked" name="Currents">
-            <legendgroup open="false" checked="Qt::Unchecked" name="BODC">
+            <legendgroup open="true" checked="Qt::Unchecked" name="BODC">
                 <legendlayer open="false" checked="Qt::Unchecked" name="Moorinv_edited" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="Moorinv_edited20120726122511683" visible="0"/>
@@ -118,21 +138,28 @@
                 </legendlayer>
             </legendgroup>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Modelling">
-            <legendgroup open="false" checked="Qt::PartiallyChecked" name="WaveHub">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Modelling">
+            <legendgroup open="false" checked="Qt::Unchecked" name="EMEC">
+                <legendlayer open="true" checked="Qt::Unchecked" name="EMEC Map ALL" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="EMECMapALL20121128100840981" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+            </legendgroup>
+            <legendgroup open="false" checked="Qt::Unchecked" name="WaveHub">
                 <legendlayer open="false" checked="Qt::Unchecked" name="Wave-Hub-map-Cornwall_modified" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="Wave_Hub_map_Cornwall_modified20120914112904523" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer open="true" checked="Qt::Checked" name="wave_hub_site" showFeatureCount="0">
+                <legendlayer open="true" checked="Qt::Unchecked" name="wave_hub_site" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="wave_hub_site20121011154331420" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="wave_hub_site20121011154331420" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer open="true" checked="Qt::Checked" name="wave_hub_location" showFeatureCount="0">
+                <legendlayer open="true" checked="Qt::Unchecked" name="wave_hub_location" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="wave_hub_location20121011155114311" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="wave_hub_location20121011155114311" visible="0"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
@@ -318,6 +345,11 @@
             </legendgroup>
         </legendgroup>
         <legendgroup open="false" checked="Qt::Unchecked" name="Coverages">
+            <legendlayer open="false" checked="Qt::Unchecked" name="domain_open_boundary_nodes" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="domain_open_boundary_nodes20121122155225164" visible="0"/>
+                </filegroup>
+            </legendlayer>
             <legendlayer open="false" checked="Qt::Unchecked" name="domain_open_boundary" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="domain_open_boundary20121122154126331" visible="0"/>
@@ -392,12 +424,27 @@
             </legendgroup>
         </legendgroup>
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Background">
-            <legendlayer open="false" checked="Qt::Unchecked" name="utm" showFeatureCount="0">
-                <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="utm20120918164035491" visible="0"/>
+            <legendlayer open="true" checked="Qt::Unchecked" name="Google Satellite" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20121123095926275" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="GSHHS">
+            <legendlayer open="false" checked="Qt::Unchecked" name="utmzone" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="utmzone20121127155308037" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendgroup open="true" checked="Qt::Unchecked" name="GSHHS">
+                <legendlayer open="true" checked="Qt::Unchecked" name="GSHHS_f_L1_shelf" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="GSHHS_f_L1_shelf20121212115020054" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer open="true" checked="Qt::Unchecked" name="GSHHS_f_L1_coastline_v6" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="GSHHS_f_L1_coastline_v620121128150846795" visible="0"/>
+                    </filegroup>
+                </legendlayer>
                 <legendlayer open="false" checked="Qt::Unchecked" name="GSHHS_f_L1_coastline_v2" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="GSHHS_f_L1_coastline_v220121023100206090" visible="0"/>
@@ -408,14 +455,14 @@
                         <legendlayerfile isInOverview="0" layerid="GSHHS_h_L1_coastline_clip20121024104110926" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer open="false" checked="Qt::Unchecked" name="GSHHS_f_L1" showFeatureCount="0">
-                    <filegroup open="false" hidden="false">
+                <legendlayer open="true" checked="Qt::Unchecked" name="GSHHS_f_L1" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="GSHHS_f_L120120321103445003" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer open="true" checked="Qt::Checked" name="GSHHS_h_L1" showFeatureCount="0">
-                    <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="GSHHS_h_L120120321103435371" visible="1"/>
+                <legendlayer open="false" checked="Qt::Unchecked" name="GSHHS_h_L1" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="GSHHS_h_L120120321103435371" visible="0"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer open="false" checked="Qt::Unchecked" name="GSHHS_i_L1" showFeatureCount="0">
@@ -441,20 +488,25 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::Unchecked" name="HRCS">
-                <legendlayer open="true" checked="Qt::Unchecked" name="HRCS.bathy_0m_v3_grad.tiff" showFeatureCount="0">
-                    <filegroup open="true" hidden="false">
+            <legendgroup open="false" checked="Qt::Unchecked" name="HRCS">
+                <legendlayer open="false" checked="Qt::Unchecked" name="HRCS.bathy_0m_v3_grad.tiff" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="HRCS_bathy_0m_v3_grad_tiff20120926145430544" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer open="true" checked="Qt::Unchecked" name="HRCS.bathy_0m_v3" showFeatureCount="0">
-                    <filegroup open="true" hidden="false">
+                <legendlayer open="false" checked="Qt::Unchecked" name="HRCS.bathy_0m_v3" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="HRCS_bathy_0m_v320120926143301118" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer open="true" checked="Qt::Unchecked" name="HRCS" showFeatureCount="0">
-                    <filegroup open="true" hidden="false">
+                <legendlayer open="false" checked="Qt::Unchecked" name="HRCS" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="HRCS20120926145150281" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer open="false" checked="Qt::Unchecked" name="hrcs_v12" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="hrcs_v1220121205121223640" visible="0"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
@@ -465,15 +517,15 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::Unchecked" name="GEBCO">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="GEBCO">
                 <legendlayer open="true" checked="Qt::Unchecked" name="gebco_08_cut_grad" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="gebco_08_cut_grad20120629123925854" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer open="true" checked="Qt::Unchecked" name="gebco_08_cut" showFeatureCount="0">
+                <legendlayer open="true" checked="Qt::Checked" name="gebco_08_cut" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="gebco_08_cut20120629122401889" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="gebco_08_cut20120629122401889" visible="1"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
@@ -530,7 +582,7 @@
     <Composer title="Composer 4" visible="0">
         <Composition printResolution="300" paperWidth="297" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="210" printAsRaster="0"/>
     </Composer>
-    <projectlayers layercount="83">
+    <projectlayers layercount="93">
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>1_s2_0_S0278434311003578_gr2_1_modified20120724163157457</id>
             <datasource>/users/modellers/pica/Data/QGIS/shelf/1-s2.0-S0278434311003578-gr2_1_modified.tif</datasource>
@@ -650,6 +702,73 @@
                 <edittype type="0" name="latDD"/>
                 <edittype type="0" name="lonDD"/>
                 <edittype type="0" name="seriesName"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>EMECMapALL20121128100840981</id>
+            <datasource>/users/modellers/pica/Data/EMEC/EMECMapALL.kml</datasource>
+            <layername>EMEC Map ALL</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="215,117,37,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="name" v="regular_star"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>Name</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="Description"/>
+                <edittype type="0" name="Name"/>
             </edittypes>
             <editform></editform>
             <editforminit></editforminit>
@@ -1734,7 +1853,7 @@
                 <sizescale field=""/>
             </renderer-v2>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>id</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -1797,7 +1916,7 @@
                 <sizescale field=""/>
             </renderer-v2>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>id</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -1819,6 +1938,72 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>GSHHS_f_L1_coastline_v620121128150846795</id>
+            <datasource>/users/modellers/pica/Data/QGIS/irish_sea/GSHHS_f_L1_coastline_v6.shp</datasource>
+            <layername>GSHHS_f_L1_coastline_v6</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="143,143,143,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="id"/>
+            </edittypes>
             <editform></editform>
             <editforminit></editforminit>
             <annotationform></annotationform>
@@ -1914,6 +2099,69 @@
                     <symbol outputUnit="MM" alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
                             <prop k="color" v="179,116,131,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>GSHHS_f_L1_shelf20121212115020054</id>
+            <datasource>/users/modellers/pica/Data/QGIS/shelf/GSHHS_f_L1_shelf.shp</datasource>
+            <layername>GSHHS_f_L1_shelf</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="70,144,175,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="style" v="solid"/>
@@ -2702,7 +2950,6 @@
                 <mNoDataValue mValidNoDataValue="true">0.000000</mNoDataValue>
                 <singleValuePixelList>
                     <pixelListEntry pixelValue="-32768.000000" percentTransparent="100"/>
-                    <pixelListEntry pixelValue="218.000000" percentTransparent="100"/>
                 </singleValuePixelList>
                 <threeValuePixelList>
                     <pixelListEntry red="-32768.000000" blue="-32768.000000" green="-32768.000000" percentTransparent="100"/>
@@ -4391,7 +4638,7 @@
                 <sizescale field=""/>
             </renderer-v2>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>id</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -4454,7 +4701,7 @@
                 <sizescale field=""/>
             </renderer-v2>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>id</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -4774,7 +5021,7 @@
                 <sizescale field=""/>
             </renderer-v2>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>id</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -5062,7 +5309,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>gebco_08_cut20120629122401889</id>
-            <datasource>/users/modellers/pica/Models/FVCOM/models/shelf/data/ukerc/sms/data/bathy/gebco/gebco_08_cut.grd</datasource>
+            <datasource>/users/modellers/pica/Models/FVCOM/models/shelf/data/bathy/gebco/gebco_08_cut.grd</datasource>
             <layername>gebco_08_cut</layername>
             <srs>
                 <spatialrefsys>
@@ -5496,6 +5743,54 @@
                 </singleValuePixelList>
                 <threeValuePixelList>
                     <pixelListEntry red="-32768.000000" blue="-32768.000000" green="-32768.000000" percentTransparent="100"/>
+                </threeValuePixelList>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>hrcs_v1220121205121223640</id>
+            <datasource>/users/modellers/pica/Models/FVCOM/models/shelf/data/bathy/merged/shelf/hrcs_v12.grd</datasource>
+            <layername>hrcs_v12</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>3114</srsid>
+                    <srid>32630</srid>
+                    <authid>EPSG:32630</authid>
+                    <description>WGS 84 / UTM zone 30N</description>
+                    <projectionacronym>utm</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>gdal</provider>
+            <rasterproperties>
+                <mDrawingStyle>SingleBandPseudoColor</mDrawingStyle>
+                <mColorShadingAlgorithm>PseudoColorShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false"/>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Band 1</mGrayBandName>
+                <mStandardDeviations>0.5</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="false"/>
+                <mRGBMinimumMaximumEstimated boolean="true"/>
+                <mUserDefinedGrayMinimumMaximum boolean="false"/>
+                <mGrayMinimumMaximumEstimated boolean="true"/>
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues>
+                    <minMaxEntry>
+                        <min>-3.40282e+38</min>
+                        <max>3.40282e+38</max>
+                    </minMaxEntry>
+                </contrastEnhancementMinMaxValues>
+                <mNoDataValue mValidNoDataValue="true">2147483647.000000</mNoDataValue>
+                <singleValuePixelList>
+                    <pixelListEntry pixelValue="2147483647.000000" percentTransparent="100"/>
+                </singleValuePixelList>
+                <threeValuePixelList>
+                    <pixelListEntry red="2147483647.000000" blue="2147483647.000000" green="2147483647.000000" percentTransparent="100"/>
                 </threeValuePixelList>
             </rasterproperties>
         </maplayer>
@@ -6426,7 +6721,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>shelf_coast20120628150726229</id>
-            <datasource>file:///users/modellers/pica/Models/FVCOM/models/shelf/data/ukerc/sms/data/coast/shelf_coast.xyz?delimiter=%5B%20%5Ct%5D&amp;delimiterType=regexp&amp;xField=-1.3453460906884529&amp;yField=60.004245348114061</datasource>
+            <datasource>file:///users/modellers/pica/Models/FVCOM/models/shelf/data/coast/shelf_coast.xyz?delimiter=%5B%20%5Ct%5D&amp;delimiterType=regexp&amp;xField=-1.3453460906884529&amp;yField=60.004245348114061</datasource>
             <layername>shelf_coast</layername>
             <srs>
                 <spatialrefsys>
@@ -6919,7 +7214,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>stride_1982_p68a_bedform_coverage20121116100244648</id>
-            <datasource>/users/modellers/pica/Data/QGIS/shelf/stride_1982_p68a_bedform_coverage.shp</datasource>
+            <datasource>/users/modellers/pica/Data/QGIS/shelf/bedform_coverage/stride_1982_p68a_bedform_coverage.shp</datasource>
             <layername>stride_1982_p68a_bedform_coverage</layername>
             <srs>
                 <spatialrefsys>
@@ -6983,9 +7278,267 @@
             <annotationform></annotationform>
             <attributeactions/>
         </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>stride_1982_p68a_bedform_coverage_points_0_0120121205103010356</id>
+            <datasource>/users/modellers/pica/Data/QGIS/shelf/bedform_coverage/stride_1982_p68a_bedform_coverage_points_0.01.shp</datasource>
+            <layername>stride_1982_p68a_bedform_coverage_points_0.01</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="0.5176470588235293" type="marker" name="0">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="52,94,231,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="4.23"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>ID</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="ID"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>stride_1982_p68a_bedform_coverage_points_0_0520121211121351948</id>
+            <datasource>/users/modellers/pica/Data/QGIS/shelf/bedform_coverage/stride_1982_p68a_bedform_coverage_points_0.05.shp</datasource>
+            <layername>stride_1982_p68a_bedform_coverage_points_0.05</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="137,126,199,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="2"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>ID</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>stride_1982_p68a_bedform_coverage_utm30n20121211121502219</id>
+            <datasource>/users/modellers/pica/Data/QGIS/shelf/bedform_coverage/stride_1982_p68a_bedform_coverage_utm30n.shp</datasource>
+            <layername>stride_1982_p68a_bedform_coverage_utm30n</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>3114</srsid>
+                    <srid>32630</srid>
+                    <authid>EPSG:32630</authid>
+                    <description>WGS 84 / UTM zone 30N</description>
+                    <projectionacronym>utm</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="134,213,31,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>stride_1982_p68a_bedform_coverage_utm30n_points_5km20121211121706987</id>
+            <datasource>/users/modellers/pica/Data/QGIS/shelf/bedform_coverage/stride_1982_p68a_bedform_coverage_utm30n_points_5km.shp</datasource>
+            <layername>stride_1982_p68a_bedform_coverage_utm30n_points_5km</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>3114</srsid>
+                    <srid>32630</srid>
+                    <authid>EPSG:32630</authid>
+                    <description>WGS 84 / UTM zone 30N</description>
+                    <projectionacronym>utm</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="0.6392156862745098" type="marker" name="0">
+                        <layer pass="0" class="FontMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="chr" v=""/>
+                            <prop k="color" v="72,225,202,255"/>
+                            <prop k="font" v="Dingbats"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="5"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>ID</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="ID"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>stride_1982_p68a_modified20121116100055554</id>
-            <datasource>/users/modellers/pica/Data/QGIS/shelf/stride_1982_p68a_modified.tif</datasource>
+            <datasource>/users/modellers/pica/Data/QGIS/shelf/bedform_coverage/stride_1982_p68a_modified.tif</datasource>
             <layername>stride_1982_p68a_modified</layername>
             <srs>
                 <spatialrefsys>
@@ -7038,6 +7591,169 @@
                     <pixelListEntry red="-32768.000000" blue="-32768.000000" green="-32768.000000" percentTransparent="100"/>
                 </threeValuePixelList>
             </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>stride_bedforms_coverage_utm30n20121213120616958</id>
+            <datasource>/users/modellers/pica/Data/QGIS/shelf/bedform_coverage/stride_bedforms_coverage_utm30n.shp</datasource>
+            <layername>stride_bedforms_coverage_utm30n</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>3114</srsid>
+                    <srid>32630</srid>
+                    <authid>EPSG:32630</authid>
+                    <description>WGS 84 / UTM zone 30N</description>
+                    <projectionacronym>utm</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 attr="id" symbollevels="0" type="categorizedSymbol">
+                <categories>
+                    <category symbol="0" value="0" label="0"/>
+                    <category symbol="1" value="1" label="1"/>
+                </categories>
+                <symbols>
+                    <symbol outputUnit="MM" alpha="0.4588235294117647" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="0,0,127,117"/>
+                            <prop k="color_border" v="0,0,0,117"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="0.4588235294117647" type="fill" name="1">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="100,236,236,117"/>
+                            <prop k="color_border" v="0,0,0,117"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <source-symbol>
+                    <symbol outputUnit="MM" alpha="0.4588235294117647" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="7,143,136,117"/>
+                            <prop k="color_border" v="0,0,0,117"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </source-symbol>
+                <colorramp type="gradient" name="[source]">
+                    <prop k="color1" v="0,0,127,255"/>
+                    <prop k="color2" v="255,0,4,255"/>
+                    <prop k="stops" v="0.5;100,236,236,255"/>
+                </colorramp>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="id"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>stride_bedforms_coverage_utm30n_5km_with_attributes20121213120617814</id>
+            <datasource>/users/modellers/pica/Data/QGIS/shelf/bedform_coverage/stride_bedforms_coverage_utm30n_5km_with_attributes.shp</datasource>
+            <layername>stride_bedforms_coverage_utm30n_5km_with_attributes</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>3114</srsid>
+                    <srid>32630</srid>
+                    <authid>EPSG:32630</authid>
+                    <description>WGS 84 / UTM zone 30N</description>
+                    <projectionacronym>utm</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="103,205,69,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="2"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Sans"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="id"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>szBE_BATHYMETRY_polyline20121018155409941</id>
@@ -7364,7 +8080,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>ukerc_v14_manual_bathy20120724095454069</id>
-            <datasource>file:///users/modellers/pica/Models/FVCOM/models/shelf/data/ukerc/sms/grids/ukerc_v14/ukerc_v14_manual_bathy.xy?delimiter=%5B%20%5Ct,%5D&amp;delimiterType=regexp&amp;xField=-7.99085500e+004&amp;yField=7.17518497e+006</datasource>
+            <datasource>file:///users/modellers/pica/Models/FVCOM/models/shelf/grids/ukerc_v14/ukerc_v14_manual_bathy.xy?delimiter=%5B%20%5Ct,%5D&amp;delimiterType=regexp&amp;xField=-7.99085500e+004&amp;yField=7.17518497e+006</datasource>
             <layername>ukerc_v14_manual_bathy</layername>
             <srs>
                 <spatialrefsys>
@@ -7430,9 +8146,9 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>utm20120918164035491</id>
-            <datasource>/users/modellers/pica/Data/ArcGIS/Reference Systems/utm.shp</datasource>
-            <layername>utm</layername>
+            <id>utmzone20121127155308037</id>
+            <datasource>/users/modellers/pica/Data/QGIS/reference_systems/utmzone.shp</datasource>
+            <layername>utmzone</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
@@ -7450,14 +8166,16 @@
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
-                    <symbol outputUnit="MM" alpha="0.2431372549019608" type="fill" name="0">
-                        <layer pass="0" class="SimpleFill" locked="0">
-                            <prop k="color" v="52,174,70,62"/>
-                            <prop k="color_border" v="0,0,0,62"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="style" v="no"/>
-                            <prop k="style_border" v="solid"/>
-                            <prop k="width_border" v="0.26"/>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="square"/>
+                            <prop k="color" v="181,181,181,255"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="0.26"/>
                         </layer>
                     </symbol>
                 </symbols>
@@ -7465,7 +8183,7 @@
                 <sizescale field=""/>
             </renderer-v2>
             <customproperties/>
-            <displayfield>AREA</displayfield>
+            <displayfield>ZONE</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -7488,14 +8206,12 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype type="0" name="AREA"/>
                 <edittype type="0" name="CM_VALUE"/>
                 <edittype type="0" name="EAST_VALUE"/>
-                <edittype type="0" name="PERIMETER"/>
+                <edittype type="0" name="OID"/>
+                <edittype type="0" name="ROW_"/>
                 <edittype type="0" name="WEST_VALUE"/>
                 <edittype type="0" name="ZONE"/>
-                <edittype type="0" name="ZONE_"/>
-                <edittype type="0" name="ZONE_ID"/>
             </edittypes>
             <editform></editform>
             <editforminit></editforminit>
@@ -8094,7 +8810,7 @@
         <SpatialRefSys>
             <ProjectCRSProj4String type="QString">+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +towgs84=0,0,0</ProjectCRSProj4String>
             <ProjectCrs type="QString">EPSG:4326</ProjectCrs>
-            <ProjectCRSID type="int">3857</ProjectCRSID>
+            <ProjectCRSID type="int">3114</ProjectCRSID>
             <ProjectionsEnabled type="int">1</ProjectionsEnabled>
         </SpatialRefSys>
         <Gui>
