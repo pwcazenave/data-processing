@@ -1,0 +1,2579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>EMEC Map ALL</name>
+  <description><![CDATA[]]></description>
+  <Style id="style81">
+  </Style>
+  <Style id="style79">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/lookout.png</href>
+      </Icon>
+      <scale>0.800000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.800000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style2">
+    <LineStyle>
+      <color>FFFFFFFF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style6">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style73">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style42">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/shapes/movies_maps.png</href>
+      </Icon>
+      <scale>0.000000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>FFFFAA55</color>
+      <scale>0.000000</scale>
+    </LabelStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style63">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/shapes/movies_maps.png</href>
+      </Icon>
+      <scale>0.000000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>FFFFAA55</color>
+      <scale>0.000000</scale>
+    </LabelStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style36">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/shapes/movies_maps.png</href>
+      </Icon>
+      <scale>0.000000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>FFFFAA55</color>
+      <scale>0.000000</scale>
+    </LabelStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style43">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/shapes/movies_maps.png</href>
+      </Icon>
+      <scale>0.000000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>FFFFAA55</color>
+      <scale>0.000000</scale>
+    </LabelStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style26">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/shapes/movies_maps.png</href>
+      </Icon>
+      <scale>0.000000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>FFFFAA55</color>
+      <scale>0.000000</scale>
+    </LabelStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style50">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/leccy.png</href>
+      </Icon>
+      <scale>0.600000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>FF00FFFF</color>
+      <scale>0.800000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style59">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/cable.png</href>
+      </Icon>
+      <scale>0.600000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.800000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style69">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/clients_tidal.png</href>
+      </Icon>
+      <scale>1.200000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>BFFFFFFF</color>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style24">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/clients_tidal.png</href>
+      </Icon>
+      <scale>1.200000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style53">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FF0000CC</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style76">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/clients_tidal.png</href>
+      </Icon>
+      <scale>1.200000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style72">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/clients_tidal.png</href>
+      </Icon>
+      <scale>1.200000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.600000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style11">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/clients_tidal.png</href>
+      </Icon>
+      <scale>1.200000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.600000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style54">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/clients_tidal.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style51">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/clients_tidal.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style22">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/clients_tidal.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style33">
+  </Style>
+  <Style id="style13">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style56">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style21">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style64">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style31">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FF0066FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style68">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/buoys_cardinal.png</href>
+      </Icon>
+      <scale>0.500000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>FF0055FF</color>
+      <scale>1.100000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style7">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/buoys_cardinal.png</href>
+      </Icon>
+      <scale>0.500000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>FF0055FF</color>
+      <scale>1.100000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style38">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/buoys_cardinal.png</href>
+      </Icon>
+      <scale>0.500000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>FF0055FF</color>
+      <scale>1.100000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style90">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/buoys_cardinal.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>FF00FFFF</color>
+      <scale>1.100000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style23">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/buoys_cardinal.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>FF00FFFF</color>
+      <scale>1.100000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style62">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FFFFFFFF</color>
+      <width>3</width>
+    </LineStyle>
+  </Style>
+  <Style id="style10">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FFFFFFFF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style89">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FFFFFFFF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="style34">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/leccy.png</href>
+      </Icon>
+      <scale>0.600000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style66">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/lookout.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style60">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/met.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style3">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/cable.png</href>
+      </Icon>
+      <scale>0.500000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style8">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icon/clients_wave.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style74">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icon/clients_wave.png</href>
+      </Icon>
+      <scale>1.300000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style47">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icon/clients_wave.png</href>
+      </Icon>
+      <scale>1.300000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style61">
+    <IconStyle>
+      <Icon>
+        <href>http://shaw-online.com/emec_icons/buoys.png</href>
+      </Icon>
+      <scale>0.600000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.600000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style91">
+    <IconStyle>
+      <Icon>
+        <href>http://shaw-online.com/emec_icons/buoys.png</href>
+      </Icon>
+      <scale>0.600000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.600000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style55">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FFFFFFFF</color>
+      <width>2</width>
+    </LineStyle>
+    <PolyStyle>
+      <color>03FFFFFF</color>
+      <fill>1</fill>
+      <outline>1</outline>
+    </PolyStyle>
+  </Style>
+  <Style id="style12">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/anchors.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style77">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/anchors.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style44">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/anchors.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style35">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/anchors.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style37">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/anchors.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style32">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/lookout.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style82">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/lookout.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style28">
+    <IconStyle>
+      <Icon>
+        <href>http://shaw-online.com/emec_icons/buoys.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style25">
+  </Style>
+  <Style id="style9">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin_maps.png</href>
+      </Icon>
+      <scale>1.100000</scale>
+    </IconStyle>
+    <LineStyle>
+      <color>FFFFFFFF</color>
+      <width>2</width>
+    </LineStyle>
+    <PolyStyle>
+      <color>03FFFFFF</color>
+      <fill>1</fill>
+      <outline>1</outline>
+    </PolyStyle>
+  </Style>
+  <Style id="style14">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/anchors.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style80">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/anchors.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style41">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/anchors.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style1">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/anchors.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style87">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/anchors.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style45">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/lookout.png</href>
+      </Icon>
+      <scale>1.200000</scale>
+    </IconStyle>
+  </Style>
+  <Style id="style52">
+  </Style>
+  <Style id="style57">
+    <IconStyle>
+      <Icon>
+        <href>http://shaw-online.com/emec_icons/buoys.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0.700000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style86">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/office.png</href>
+      </Icon>
+      <scale>0.700000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <scale>1.400000</scale>
+    </LabelStyle>
+  </Style>
+  <Style id="style78">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/office.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style30">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/boats.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style65">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/air.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style27">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/boats.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style67">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/boats.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style17">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/boats.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style58">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/air.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style29">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/piers.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style84">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/piers.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style16">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/piers.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style39">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/piers.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style46">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/piers.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style18">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icon/clients_wave.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style20">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icon/clients_wave.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style88">
+    <LineStyle>
+      <color>73CC0066</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style40">
+    <LineStyle>
+      <color>73CC0066</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style4">
+    <LineStyle>
+      <color>73CC0066</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style48">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/boats.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style15">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/buoys_test.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style85">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/buoys_test.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style49">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/buoys_adcp.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style83">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icon/clients_wave.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style19">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/emec.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style75">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/emec.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style70">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/emec.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style5">
+    <IconStyle>
+      <Icon>
+        <href>http://www.shaw-online.com/emec_icons/emec.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style71">
+    <LineStyle>
+      <color>73CC0066</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <GroundOverlay>
+    <name>FoW Map</name>
+    <Snippet>© Crown Copyright, reproduced by permission of the Controller of Her Majesty’</Snippet>
+    <description><![CDATA[© Crown Copyright, reproduced by permission of the Controller of Her Majesty’s Stationery Office and the UK Hydrographic Office (www.ukho.gov.uk)
+
+Not to be used for navigation.]]></description>
+    <LatLonBox>
+      <north>59.196659</north>
+      <south>59.078396</south>
+      <east>-2.713941</east>
+      <west>-2.997983</west>
+    </LatLonBox>
+    <Icon>
+      <href>http://maps.google.com/mapsatt?id=&amp;f=files/CAPTURE+FOW_3.BMP</href>
+    </Icon>
+  </GroundOverlay>
+  <Placemark>
+    <name>Wildlife Observations Point</name>
+    <Snippet>A wildlife observations monitoring project is underway to provide an overall pic</Snippet>
+    <description><![CDATA[<div style="width:300px">To find out more about our wildlife observations&nbsp;<a href="http://www.emec.org.uk/research/emec-site-specific-projects/" target="_blank">click here</a>.</div>]]></description>
+    <LookAt>
+      <longitude>-2.801131</longitude>
+      <latitude>59.145916</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.066612</heading>
+      <tilt>0.000000</tilt>
+      <range>5500.946289</range>
+    </LookAt>
+    <styleUrl>#style79</styleUrl>
+    <Point>
+      <coordinates>-2.788941,59.151226,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Fall of Warness test site boundary</name>
+    <description><![CDATA[<div style="width:300px"></div>]]></description>
+    <styleUrl>#style2</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -2.818520,59.131008,0.000000
+        -2.817690,59.130291,0.000000
+        -2.816780,59.129620,0.000000
+        -2.815760,59.128979,0.000000
+        -2.814650,59.128391,0.000000
+        -2.813440,59.127850,0.000000
+        -2.812150,59.127361,0.000000
+        -2.810790,59.126930,0.000000
+        -2.809360,59.126560,0.000000
+        -2.807880,59.126251,0.000000
+        -2.806350,59.125999,0.000000
+        -2.804790,59.125820,0.000000
+        -2.803200,59.125710,0.000000
+        -2.801600,59.125671,0.000000
+        -2.800000,59.125690,0.000000
+        -2.798410,59.125778,0.000000
+        -2.796840,59.125938,0.000000
+        -2.795300,59.126160,0.000000
+        -2.793800,59.126450,0.000000
+        -2.792350,59.126801,0.000000
+        -2.790970,59.127209,0.000000
+        -2.789650,59.127682,0.000000
+        -2.788420,59.128208,0.000000
+        -2.787270,59.128780,0.000000
+        -2.786220,59.129398,0.000000
+        -2.785270,59.130058,0.000000
+        -2.784430,59.130772,0.000000
+        -2.783710,59.131500,0.000000
+        -2.783110,59.132259,0.000000
+        -2.782630,59.133049,0.000000
+        -2.782280,59.133850,0.000000
+        -2.782060,59.134670,0.000000
+        -2.781980,59.135490,0.000000
+        -2.782020,59.136311,0.000000
+        -2.782200,59.137131,0.000000
+        -2.782510,59.137939,0.000000
+        -2.782950,59.138729,0.000000
+        -2.783510,59.139500,0.000000
+        -2.783880,59.139042,0.000000
+        -2.784240,59.138741,0.000000
+        -2.785240,59.138550,0.000000
+        -2.786070,59.138458,0.000000
+        -2.786850,59.138439,0.000000
+        -2.787370,59.138351,0.000000
+        -2.788040,59.138081,0.000000
+        -2.788930,59.138340,0.000000
+        -2.789420,59.138371,0.000000
+        -2.790050,59.138481,0.000000
+        -2.790370,59.138710,0.000000
+        -2.790260,59.138889,0.000000
+        -2.790560,59.138988,0.000000
+        -2.790680,59.139488,0.000000
+        -2.795660,59.139542,0.000000
+        -2.806640,59.154129,0.000000
+        -2.798110,59.163059,0.000000
+        -2.798310,59.163738,0.000000
+        -2.798470,59.163929,0.000000
+        -2.797390,59.163631,0.000000
+        -2.798690,59.164120,0.000000
+        -2.799030,59.164310,0.000000
+        -2.799530,59.164429,0.000000
+        -2.799770,59.164558,0.000000
+        -2.799930,59.164761,0.000000
+        -2.800360,59.165001,0.000000
+        -2.802940,59.166019,0.000000
+        -2.804610,59.166500,0.000000
+        -2.805610,59.166649,0.000000
+        -2.806220,59.166641,0.000000
+        -2.806820,59.166592,0.000000
+        -2.807300,59.166401,0.000000
+        -2.808340,59.166740,0.000000
+        -2.809140,59.166840,0.000000
+        -2.813970,59.162361,0.000000
+        -2.846640,59.159828,0.000000
+        -2.830520,59.131828,0.000000
+        -2.829750,59.131981,0.000000
+        -2.829330,59.132210,0.000000
+        -2.829210,59.132439,0.000000
+        -2.828820,59.132511,0.000000
+        -2.828520,59.132641,0.000000
+        -2.828160,59.132648,0.000000
+        -2.827510,59.132999,0.000000
+        -2.827270,59.132832,0.000000
+        -2.827390,59.132561,0.000000
+        -2.826750,59.132641,0.000000
+        -2.826360,59.132778,0.000000
+        -2.826260,59.132568,0.000000
+        -2.826040,59.132370,0.000000
+        -2.826080,59.132080,0.000000
+        -2.825390,59.131260,0.000000
+        -2.825420,59.130970,0.000000
+        -2.825340,59.130661,0.000000
+        -2.825150,59.130440,0.000000
+        -2.824960,59.130360,0.000000
+        -2.818800,59.130989,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cable 7</name>
+    <Snippet>Cable 7 - laid Summer 2010</Snippet>
+    <description><![CDATA[<div dir="ltr">EMEC&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" target="_blank">sub-sea cables</a></div>]]></description>
+    <styleUrl>#style6</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -2.802553,59.166245,0.000000
+        -2.803721,59.165695,0.000000
+        -2.810762,59.161472,0.000000
+        -2.818342,59.159245,0.000000
+        -2.818971,59.158211,0.000000
+        -2.819671,59.157249,0.000000
+        -2.829104,59.153751,0.000000
+        -2.829070,59.152786,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cable 6</name>
+    <Snippet>Laid Summer 2010</Snippet>
+    <description><![CDATA[EMEC&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a>
+<div dir="ltr"></div>]]></description>
+    <styleUrl>#style73</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -2.802560,59.166241,0.000000
+        -2.803674,59.165703,0.000000
+        -2.810646,59.161381,0.000000
+        -2.815607,59.159824,0.000000
+        -2.816989,59.158127,0.000000
+        -2.824651,59.154552,0.000000
+        -2.825502,59.148647,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cable 5</name>
+    <description><![CDATA[EMEC&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a>
+]]></description>
+    <styleUrl>#style42</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -2.802561,59.166241,0.000000
+        -2.802908,59.165829,0.000000
+        -2.803256,59.165417,0.000000
+        -2.803604,59.165005,0.000000
+        -2.803960,59.164597,0.000000
+        -2.804315,59.164185,0.000000
+        -2.804501,59.163746,0.000000
+        -2.804667,59.163303,0.000000
+        -2.804852,59.162865,0.000000
+        -2.805036,59.162426,0.000000
+        -2.805191,59.161987,0.000000
+        -2.805286,59.161537,0.000000
+        -2.805452,59.161098,0.000000
+        -2.805778,59.160683,0.000000
+        -2.806155,59.160278,0.000000
+        -2.806553,59.159878,0.000000
+        -2.806985,59.159489,0.000000
+        -2.807448,59.159103,0.000000
+        -2.807917,59.158726,0.000000
+        -2.808377,59.158344,0.000000
+        -2.808824,59.157959,0.000000
+        -2.809269,59.157574,0.000000
+        -2.809706,59.157185,0.000000
+        -2.810132,59.156792,0.000000
+        -2.810553,59.156399,0.000000
+        -2.810974,59.156006,0.000000
+        -2.811406,59.155613,0.000000
+        -2.811843,59.155224,0.000000
+        -2.812269,59.154835,0.000000
+        -2.812657,59.154430,0.000000
+        -2.812844,59.153992,0.000000
+        -2.812715,59.153549,0.000000
+        -2.812490,59.153114,0.000000
+        -2.812355,59.152672,0.000000
+        -2.812219,59.152225,0.000000
+        -2.812076,59.151783,0.000000
+        -2.811934,59.151340,0.000000
+        -2.811798,59.150898,0.000000
+        -2.811669,59.150455,0.000000
+        -2.811543,59.150009,0.000000
+        -2.811418,59.149567,0.000000
+        -2.811293,59.149120,0.000000
+        -2.811170,59.148678,0.000000
+        -2.811046,59.148232,0.000000
+        -2.810923,59.147785,0.000000
+        -2.810798,59.147343,0.000000
+        -2.810670,59.146900,0.000000
+        -2.810536,59.146454,0.000000
+        -2.810397,59.146011,0.000000
+        -2.810251,59.145569,0.000000
+        -2.810078,59.145130,0.000000
+        -2.809882,59.144691,0.000000
+        -2.809674,59.144257,0.000000
+        -2.809456,59.143822,0.000000
+        -2.809217,59.143387,0.000000
+        -2.808943,59.142963,0.000000
+        -2.808621,59.142544,0.000000
+        -2.808530,59.142097,0.000000
+        -2.808451,59.141651,0.000000
+        -2.808326,59.141205,0.000000
+        -2.808156,59.140766,0.000000
+        -2.807957,59.140327,0.000000
+        -2.807748,59.139893,0.000000
+        -2.807529,59.139458,0.000000
+        -2.807305,59.139023,0.000000
+        -2.807099,59.138588,0.000000
+        -2.806907,59.138149,0.000000
+        -2.806709,59.137711,0.000000
+        -2.806495,59.137276,0.000000
+        -2.806265,59.136845,0.000000
+        -2.805948,59.136425,0.000000
+        -2.805477,59.136047,0.000000
+        -2.805116,59.135822,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cable 4</name>
+    <description><![CDATA[<div dir="ltr">EMEC&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a>
+</div>]]></description>
+    <styleUrl>#style63</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -2.802560,59.166241,0.000000
+        -2.804640,59.164261,0.000000
+        -2.804930,59.163841,0.000000
+        -2.805330,59.162971,0.000000
+        -2.805940,59.161201,0.000000
+        -2.806190,59.160770,0.000000
+        -2.806910,59.159950,0.000000
+        -2.807820,59.159191,0.000000
+        -2.808360,59.158829,0.000000
+        -2.810790,59.157539,0.000000
+        -2.812500,59.156521,0.000000
+        -2.814550,59.155071,0.000000
+        -2.815030,59.154690,0.000000
+        -2.815420,59.154289,0.000000
+        -2.815500,59.153839,0.000000
+        -2.815380,59.153400,0.000000
+        -2.813950,59.148972,0.000000
+        -2.813350,59.146740,0.000000
+        -2.811810,59.142780,0.000000
+        -2.811630,59.142342,0.000000
+        -2.811230,59.141640,0.000000
+        -2.814910,59.134129,0.000000
+        -2.815161,59.133549,0.000000
+        -2.815280,59.133259,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cable 3</name>
+    <description><![CDATA[EMEC&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a>
+]]></description>
+    <styleUrl>#style36</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -2.802561,59.166241,0.000000
+        -2.803034,59.165863,0.000000
+        -2.803508,59.165485,0.000000
+        -2.803981,59.165108,0.000000
+        -2.804454,59.164730,0.000000
+        -2.804923,59.164352,0.000000
+        -2.805311,59.163952,0.000000
+        -2.805605,59.163528,0.000000
+        -2.805865,59.163097,0.000000
+        -2.806106,59.162666,0.000000
+        -2.806313,59.162231,0.000000
+        -2.806443,59.161785,0.000000
+        -2.806520,59.161339,0.000000
+        -2.806928,59.160942,0.000000
+        -2.807596,59.160652,0.000000
+        -2.808369,59.160442,0.000000
+        -2.809165,59.160255,0.000000
+        -2.809934,59.160046,0.000000
+        -2.810686,59.159817,0.000000
+        -2.811432,59.159580,0.000000
+        -2.812167,59.159336,0.000000
+        -2.812892,59.159084,0.000000
+        -2.813614,59.158833,0.000000
+        -2.814342,59.158585,0.000000
+        -2.815089,59.158352,0.000000
+        -2.815810,59.158096,0.000000
+        -2.816464,59.157799,0.000000
+        -2.817086,59.157482,0.000000
+        -2.817697,59.157162,0.000000
+        -2.818295,59.156834,0.000000
+        -2.818847,59.156487,0.000000
+        -2.819383,59.156132,0.000000
+        -2.819988,59.155807,0.000000
+        -2.820758,59.155594,0.000000
+        -2.821550,59.155403,0.000000
+        -2.822221,59.155117,0.000000
+        -2.822579,59.154709,0.000000
+        -2.822625,59.154259,0.000000
+        -2.822603,59.153809,0.000000
+        -2.822622,59.153362,0.000000
+        -2.822751,59.152916,0.000000
+        -2.822836,59.152470,0.000000
+        -2.822877,59.152023,0.000000
+        -2.822901,59.151573,0.000000
+        -2.822905,59.151123,0.000000
+        -2.822795,59.150681,0.000000
+        -2.822588,59.150242,0.000000
+        -2.822352,59.149811,0.000000
+        -2.822108,59.149380,0.000000
+        -2.821870,59.148949,0.000000
+        -2.821655,59.148514,0.000000
+        -2.821455,59.148075,0.000000
+        -2.821264,59.147636,0.000000
+        -2.821075,59.147198,0.000000
+        -2.820884,59.146759,0.000000
+        -2.820685,59.146324,0.000000
+        -2.820470,59.145889,0.000000
+        -2.820244,59.145454,0.000000
+        -2.820017,59.145020,0.000000
+        -2.819788,59.144588,0.000000
+        -2.819558,59.144154,0.000000
+        -2.819327,59.143723,0.000000
+        -2.819093,59.143288,0.000000
+        -2.818858,59.142857,0.000000
+        -2.818621,59.142426,0.000000
+        -2.818381,59.141991,0.000000
+        -2.818138,59.141560,0.000000
+        -2.817996,59.141308,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cable 2</name>
+    <description><![CDATA[EMEC&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a>
+]]></description>
+    <styleUrl>#style43</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -2.802560,59.166241,0.000000
+        -2.804790,59.164310,0.000000
+        -2.805140,59.163898,0.000000
+        -2.806010,59.161701,0.000000
+        -2.806250,59.161270,0.000000
+        -2.806760,59.160900,0.000000
+        -2.808650,59.159962,0.000000
+        -2.812910,59.157711,0.000000
+        -2.818470,59.154850,0.000000
+        -2.819070,59.154518,0.000000
+        -2.819520,59.154140,0.000000
+        -2.819500,59.153690,0.000000
+        -2.818230,59.150162,0.000000
+        -2.817490,59.147491,0.000000
+        -2.816990,59.146172,0.000000
+        -2.816920,59.145721,0.000000
+        -2.816362,59.144554,0.000000
+        -2.816650,59.145191,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cable 1</name>
+    <description><![CDATA[EMEC&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a>]]></description>
+    <styleUrl>#style26</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -2.802561,59.166241,0.000000
+        -2.803056,59.165871,0.000000
+        -2.803552,59.165501,0.000000
+        -2.804048,59.165131,0.000000
+        -2.804544,59.164761,0.000000
+        -2.805040,59.164391,0.000000
+        -2.805536,59.164021,0.000000
+        -2.806030,59.163651,0.000000
+        -2.806522,59.163280,0.000000
+        -2.807016,59.162910,0.000000
+        -2.807516,59.162540,0.000000
+        -2.808025,59.162178,0.000000
+        -2.808548,59.161816,0.000000
+        -2.809088,59.161465,0.000000
+        -2.809648,59.161118,0.000000
+        -2.810297,59.160816,0.000000
+        -2.811037,59.160580,0.000000
+        -2.811801,59.160362,0.000000
+        -2.812563,59.160141,0.000000
+        -2.813327,59.159924,0.000000
+        -2.814092,59.159706,0.000000
+        -2.814856,59.159485,0.000000
+        -2.815615,59.159264,0.000000
+        -2.816370,59.159039,0.000000
+        -2.817124,59.158810,0.000000
+        -2.817876,59.158581,0.000000
+        -2.818628,59.158352,0.000000
+        -2.819379,59.158123,0.000000
+        -2.820130,59.157894,0.000000
+        -2.820881,59.157661,0.000000
+        -2.821628,59.157429,0.000000
+        -2.822371,59.157192,0.000000
+        -2.823107,59.156952,0.000000
+        -2.823800,59.156670,0.000000
+        -2.824159,59.156464,0.000000
+        -2.824687,59.156162,0.000000
+        -2.825111,59.156086,0.000000
+        -2.825520,59.156067,0.000000
+        -2.825793,59.156151,0.000000
+        -2.825889,59.156258,0.000000
+        -2.825925,59.156433,0.000000
+        -2.825899,59.156818,0.000000
+        -2.825851,59.157181,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Eday substation</name>
+    <Snippet>For more information click:  http://www.emec.org.uk/general_technical_electrical</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">For further information on our substations&nbsp;<a href="http://www.emec.org.uk/facilities/substations/" target="_blank">click here</a>.&nbsp;</div>]]></description>
+    <LookAt>
+      <longitude>-2.802656</longitude>
+      <latitude>59.166691</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.058358</heading>
+      <tilt>0.000000</tilt>
+      <range>807.524048</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style50</styleUrl>
+    <Point>
+      <coordinates>-2.808895,59.166866,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Cable marker board</name>
+    <Snippet>This displays to mariners that marine cables are present under the sea, exiting </Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">This is the point where the EMEC sub-sea cables, which are buried under the beach, come ashore and feed into the EMEC substation.</div>]]></description>
+    <LookAt>
+      <longitude>-2.802199</longitude>
+      <latitude>59.166122</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.068281</heading>
+      <tilt>0.000000</tilt>
+      <range>432.109375</range>
+    </LookAt>
+    <styleUrl>#style59</styleUrl>
+    <Point>
+      <coordinates>-2.802544,59.166206,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Open Hydro</name>
+    <Snippet>For more informations please click:  http://www.openhydro.com/home.html</Snippet>
+    <description><![CDATA[<div style="width:300px">Berth 4 -&nbsp;<a href="http://www.emec.org.uk/about-us/our-tidal-clients/open-hydro/" target="_blank">Open Hydro</a>, Open Centre Turbine</div>]]></description>
+    <LookAt>
+      <longitude>-2.779679</longitude>
+      <latitude>59.139511</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.094970</heading>
+      <tilt>0.000000</tilt>
+      <range>11354.911133</range>
+    </LookAt>
+    <styleUrl>#style69</styleUrl>
+    <Point>
+      <coordinates>-2.825933,59.157211,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Tidal Generation Ltd</name>
+    <Snippet>For more information click:  http://www.tidalgeneration.co.uk/</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Berth 2 - <a href="http://www.emec.org.uk/about-us/our-tidal-clients/tgl/" target="_blank">Tidal Generation Ltd</a>&nbsp;(TGL)&nbsp;, Deep Gen</div>]]></description>
+    <LookAt>
+      <longitude>-2.791823</longitude>
+      <latitude>59.132141</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.020062</heading>
+      <tilt>0.000000</tilt>
+      <range>4861.865723</range>
+    </LookAt>
+    <styleUrl>#style24</styleUrl>
+    <Point>
+      <coordinates>-2.805119,59.135838,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Cable 8</name>
+    <description><![CDATA[<div dir="ltr">EMEC&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a>
+</div><div dir="ltr"><br>&nbsp;</div><div dir="ltr">Temporary cable</div>]]></description>
+    <styleUrl>#style53</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -2.802561,59.166241,0.000000
+        -2.805037,59.164715,0.000000
+        -2.803923,59.164032,0.000000
+        -2.806819,59.153851,0.000000
+        -2.805254,59.144733,0.000000
+        -2.805399,59.143166,0.000000
+        -2.805918,59.143017,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Scotrenewables</name>
+    <Snippet>For more info see: www.scotrenewables.com</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Berth 8:&nbsp;<a href="http://www.emec.org.uk/about-us/our-tidal-clients/scotrenewables/" target="_blank">Scotrenewables</a>, SR250</div>]]></description>
+    <LookAt>
+      <longitude>-2.805917</longitude>
+      <latitude>59.143017</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.241681</heading>
+      <tilt>0.000000</tilt>
+      <range>8746.069336</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style76</styleUrl>
+    <Point>
+      <coordinates>-2.805917,59.143017,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Voith Hydro</name>
+    <Snippet>For more information click:  http://www.voithhydro.com/index_en.php</Snippet>
+    <description><![CDATA[<div style="width:300px">Berth 7 -&nbsp;<a href="http://www.emec.org.uk/about-us/our-tidal-clients/voith-hydro/" target="_blank">Voith Hydro</a></div>]]></description>
+    <LookAt>
+      <longitude>-2.812128</longitude>
+      <latitude>59.145237</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.246887</heading>
+      <tilt>0.000000</tilt>
+      <range>4609.181152</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style72</styleUrl>
+    <Point>
+      <coordinates>-2.829151,59.152569,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Atlantis Resources Corporation</name>
+    <Snippet>For more information click:  http://www.atlantisresourcescorporation.com/</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Berth 6 -&nbsp;<a href="http://www.emec.org.uk/about-us/our-tidal-clients/atlantis-resources-corporation-2/" target="_blank">Atlantis Resources Corporation</a>, AR1000</div>]]></description>
+    <LookAt>
+      <longitude>-2.812128</longitude>
+      <latitude>59.145237</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.246887</heading>
+      <tilt>0.000000</tilt>
+      <range>4609.181152</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style11</styleUrl>
+    <Point>
+      <coordinates>-2.825546,59.148563,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>ANDRITZ HYDRO Hammerfest</name>
+    <Snippet>For more info see: www.hammerfeststrom.com</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Berth 1 -&nbsp;<a href="http://www.emec.org.uk/about-us/our-tidal-clients/hammerfest-strom/" target="_blank">ANDRITZ&nbsp;HYDRO Hammerfest</a>, HS1000&nbsp;</div>]]></description>
+    <LookAt>
+      <longitude>-2.817550</longitude>
+      <latitude>59.142052</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.303465</heading>
+      <tilt>0.000000</tilt>
+      <range>10049.821289</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style54</styleUrl>
+    <Point>
+      <coordinates>-2.818079,59.141296,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Kawasaki Heavy Industry</name>
+    <Snippet>For more info see: www.khi.co.jp/english/news/detail/20111019_1.html</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Berth 3 -&nbsp;<a href="http://www.emec.org.uk/about-us/our-tidal-clients/kawasaki-heavy-industries/" target="_blank">Kawasaki Heavy Industry</a></div>]]></description>
+    <LookAt>
+      <longitude>-2.791399</longitude>
+      <latitude>59.145634</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.264775</heading>
+      <tilt>0.000000</tilt>
+      <range>6010.170410</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style51</styleUrl>
+    <Point>
+      <coordinates>-2.815418,59.133152,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bluewater Energy Services</name>
+    <Snippet>For more info see: www.bluewater.com/bluetec</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px"><a target="_blank">Berth 5 -&nbsp;</a><a href="http://www.emec.org.uk/about-us/our-tidal-clients/bluewater/" target="_blank">Bluewater Energy Services</a></div>]]></description>
+    <LookAt>
+      <longitude>-2.791399</longitude>
+      <latitude>59.145634</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.264775</heading>
+      <tilt>0.000000</tilt>
+      <range>6010.170410</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style22</styleUrl>
+    <Point>
+      <coordinates>-2.816277,59.144512,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <GroundOverlay>
+    <name>BCMap</name>
+    <Snippet>© Crown Copyright, reproduced by permission of the Controller of Her Majesty’</Snippet>
+    <description><![CDATA[© Crown Copyright, reproduced by permission of the Controller of Her Majesty’s Stationery Office and the UK Hydrographic Office (www.ukho.gov.uk)]]></description>
+    <LatLonBox>
+      <north>59.031754</north>
+      <south>58.913570</south>
+      <east>-3.254955</east>
+      <west>-3.541954</west>
+    </LatLonBox>
+    <Icon>
+      <href>http://maps.google.com/mapsatt?id=&amp;f=files/CAPTURE_1.BMP</href>
+    </Icon>
+  </GroundOverlay>
+  <Placemark>
+    <name>Cable 1</name>
+    <Snippet>For more information click:  http://www.emec.org.uk/general_technical_sub_sea_ca</Snippet>
+    <description><![CDATA[<div>For more information about our&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a><span style="font-size:10pt">&nbsp;</span><span style="font-size:10pt">please visit our </span><a href="http://www.emec.org.uk" style="font-size:10pt" target="_blank">website</a><span style="font-size:10pt">.</span></div>]]></description>
+    <styleUrl>#style13</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -3.350999,58.972000,0.000000
+        -3.360068,58.972305,0.000000
+        -3.394249,58.982811,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cable 2</name>
+    <Snippet>For more information click:  http://www.emec.org.uk/general_technical_sub_sea_ca</Snippet>
+    <description><![CDATA[For more information about our&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a><span style="font-size:10pt">&nbsp;</span><span style="font-size:10pt">please visit our&nbsp;</span><a href="http://www.emec.org.uk/" style="font-size:10pt" target="_blank">website</a><span style="font-size:10pt">.</span>
+]]></description>
+    <styleUrl>#style56</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -3.388241,58.976330,0.000000
+        -3.360069,58.972305,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cable 3</name>
+    <description><![CDATA[For more information about our&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a><span style="font-size:10pt">&nbsp;</span><span style="font-size:10pt">please visit our&nbsp;</span><a href="http://www.emec.org.uk/" style="font-size:10pt" target="_blank">website</a><span style="font-size:10pt">.</span>
+<div dir="ltr"></div>]]></description>
+    <styleUrl>#style21</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -3.360060,58.972301,0.000000
+        -3.385270,58.972031,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cable 4</name>
+    <description><![CDATA[For more information about our&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a><span style="font-size:10pt">&nbsp;</span><span style="font-size:10pt">please visit our&nbsp;</span><a href="http://www.emec.org.uk/" style="font-size:10pt" target="_blank">website</a><span style="font-size:10pt">.</span>
+]]></description>
+    <styleUrl>#style64</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -3.360069,58.972305,0.000000
+        -3.386330,58.967556,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Cable 5</name>
+    <description><![CDATA[For more information about our&nbsp;<a href="http://www.emec.org.uk/facilities/sub-sea-cables/" style="font-size:10pt" target="_blank">sub-sea cables</a><span style="font-size:10pt">&nbsp;</span><span style="font-size:10pt">please visit our&nbsp;</span><a href="http://www.emec.org.uk/" style="font-size:10pt" target="_blank">website</a><span style="font-size:10pt">.</span>
+<div dir="ltr"></div>]]></description>
+    <styleUrl>#style31</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -3.350879,58.972031,0.000000
+        -3.359901,58.972382,0.000000
+        -3.363133,58.973324,0.000000
+        -3.364927,58.974892,0.000000
+        -3.371808,58.977768,0.000000
+        -3.373506,58.978340,0.000000
+        -3.408243,58.991596,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>South cardinal buoy</name>
+    <Snippet>58 57 25.84 03 23 01.69</Snippet>
+    <description><![CDATA[<div style="width:300px"><font size="2"><div>Lat Long 58°57.431`N, 03°23.028`W</div>&nbsp;</font></div>]]></description>
+    <LookAt>
+      <longitude>-3.370960</longitude>
+      <latitude>58.973408</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.001432</heading>
+      <tilt>0.000000</tilt>
+      <range>4583.006348</range>
+    </LookAt>
+    <styleUrl>#style68</styleUrl>
+    <Point>
+      <coordinates>-3.384000,58.957233,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>East cardinal buoy</name>
+    <Snippet>58 58 23.15 03 22 23.92</Snippet>
+    <description><![CDATA[<div style="width:300px"><span style="font-size:10pt">Lat Long 58°58.386`N, 03°22.399`W</span></div>]]></description>
+    <LookAt>
+      <longitude>-3.370960</longitude>
+      <latitude>58.973408</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.001432</heading>
+      <tilt>0.000000</tilt>
+      <range>4583.006348</range>
+    </LookAt>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>-3.373217,58.973068,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>West cardinal buoy (1)</name>
+    <Snippet>58 58 31.73 03 24 38.27</Snippet>
+    <description><![CDATA[<font size="2"><div style="width:300px">Lat Long 58°58.529`N, 03°24.638`W</div></font>]]></description>
+    <LookAt>
+      <longitude>-3.372631</longitude>
+      <latitude>58.973362</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.000000</heading>
+      <tilt>0.000000</tilt>
+      <range>4583.005371</range>
+    </LookAt>
+    <styleUrl>#style38</styleUrl>
+    <Point>
+      <coordinates>-3.410740,58.975231,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>North cardinal buoy</name>
+    <Snippet>59° 0.000&#39;N  3° 24.330&#39;W</Snippet>
+    <description><![CDATA[<font size="2"><div style="width:300px">Lat Long 58°59.524`N, 03°23.760`W</div></font>]]></description>
+    <LookAt>
+      <longitude>-3.405500</longitude>
+      <latitude>59.000000</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.003087</heading>
+      <tilt>0.000000</tilt>
+      <range>7574.999023</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style90</styleUrl>
+    <Point>
+      <coordinates>-3.405762,58.999954,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>West cardinal buoy (2)</name>
+    <Snippet>58° 59.500&#39;N   3° 25.330&#39;W</Snippet>
+    <description><![CDATA[<font size="2"><div style="width:300px">Lat Long 58°59.500`N, 03°25.330`W</div></font>]]></description>
+    <LookAt>
+      <longitude>-3.422167</longitude>
+      <latitude>58.991669</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.003087</heading>
+      <tilt>0.000000</tilt>
+      <range>11014.335938</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style23</styleUrl>
+    <Point>
+      <coordinates>-3.422585,58.991467,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Test site boundary</name>
+    <description><![CDATA[<font size="2"><br></font>]]></description>
+    <styleUrl>#style62</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -3.410625,58.975510,0.000000
+        -3.422430,58.991566,0.000000
+        -3.405718,58.999992,0.000000
+        -3.373246,58.973202,0.000000
+        -3.383882,58.957157,0.000000
+        -3.410537,58.975239,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Nearshore boundary north</name>
+    <description><![CDATA[<span style="font-size:small"><a href="http://www.emec.org.uk/facilities/wave-test-site/" target="_blank">www.emec.org.uk/facilities/wave-test-site/</a></span>]]></description>
+    <styleUrl>#style10</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -3.384083,58.982162,0.000000
+        -3.361216,58.982155,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Nearshore boundary south</name>
+    <description><![CDATA[<span style="font-size:small"><a href="http://www.emec.org.uk/facilities/wave-test-site/" target="_blank">www.emec.org.uk/facilities/wave-test-site/</a></span>]]></description>
+    <styleUrl>#style89</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -3.377080,58.967449,0.000000
+        -3.354177,58.967491,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Billia Croo substation</name>
+    <Snippet>For more information click:  http://www.emec.org.uk/general_technical_electrical</Snippet>
+    <description><![CDATA[<div style="width:300px">Find out more about our&nbsp;<a href="http://www.emec.org.uk/facilities/substations/" target="_blank">substations</a>.</div>]]></description>
+    <LookAt>
+      <longitude>-3.342631</longitude>
+      <latitude>58.960896</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.010213</heading>
+      <tilt>0.000000</tilt>
+      <range>9182.928711</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style34</styleUrl>
+    <Point>
+      <coordinates>-3.354006,58.974701,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Black Craig observation point</name>
+    <Snippet>For more information click:  http://www.emec.org.uk/wave_site_projects.asp</Snippet>
+    <description><![CDATA[<div style="width:300px">To find out more about our wildlife observations click <a href="http://http://www.emec.org.uk/research/emec-site-specific-projects/" target="_blank">here</a>.&nbsp;<br><br></div>]]></description>
+    <LookAt>
+      <longitude>-3.363698</longitude>
+      <latitude>58.974854</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.007473</heading>
+      <tilt>0.000000</tilt>
+      <range>4987.239258</range>
+    </LookAt>
+    <styleUrl>#style66</styleUrl>
+    <Point>
+      <coordinates>-3.358414,58.979111,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>MET station</name>
+    <description><![CDATA[<div dir="ltr" style="width:300px"><font face="arial" size="2" style="font-size:10pt">For more information about our MET stations&nbsp;<a href="http://www.emec.org.uk/facilities/live-data/weather-stations/" target="_blank">click here</a>.&nbsp;</font></div><div dir="ltr"><font face="arial" size="2" style="font-size:10pt"><br></font></div><div dir="ltr"><font face="arial" size="2" style="font-size:10pt">View</font><span style="font-size:small">&nbsp;live MET data on our&nbsp;</span><a href="http://www.emec.org.uk/facilities/live-data/" style="font-size:small" target="_blank">live data dashboard</a><span style="font-size:small">.</span></div>]]></description>
+    <LookAt>
+      <longitude>-3.347719</longitude>
+      <latitude>58.972767</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.057857</heading>
+      <tilt>0.000000</tilt>
+      <range>93.325340</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style60</styleUrl>
+    <Point>
+      <coordinates>-3.346539,58.973244,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Power cable marker</name>
+    <description><![CDATA[<div dir="ltr" style="width:300px">This is the point where the <a href="http://www.emec.org.uk/facilities/sub-sea-cables/" target="_blank">EMEC sub-sea cables</a>, which are buried under the beach come ashore and feed into the <a href="http://www.emec.org.uk/facilities/substations/" target="_blank">EMEC substation</a>.</div>]]></description>
+    <LookAt>
+      <longitude>-3.397556</longitude>
+      <latitude>58.975464</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.000000</heading>
+      <tilt>0.000000</tilt>
+      <range>13605.782227</range>
+    </LookAt>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-3.351603,58.971828,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Wello Oy</name>
+    <Snippet>For more information click:  http://www.wello.fi/</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Berth 5 -&nbsp;<a href="http://http://www.emec.org.uk/about-us/our-wave-clients/wello-oy/" target="_blank">Wello Oy</a>, Penguin<br>&nbsp;</div>]]></description>
+    <LookAt>
+      <longitude>-3.404863</longitude>
+      <latitude>58.991898</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.044267</heading>
+      <tilt>0.000000</tilt>
+      <range>540.819214</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>-3.408251,58.991642,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>ScottishPower Renewables</name>
+    <Snippet>SPR are deploying and testing a P2 device.  For more information click:  http://</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px"><font face="arial" size="2">Berth 2 -&nbsp;<a href="http://www.emec.org.uk/about-us/wave-clients/scottishpower-renewables/" target="_blank">ScottishPower Renewables</a>, Pelamis P2</font></div>]]></description>
+    <LookAt>
+      <longitude>-3.388105</longitude>
+      <latitude>58.975227</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.029904</heading>
+      <tilt>0.000000</tilt>
+      <range>823.780273</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style74</styleUrl>
+    <Point>
+      <coordinates>-3.388424,58.976471,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>E.ON</name>
+    <Snippet>E.ON is testing a P2 device  For more information click:  http://www.pelamiswave</Snippet>
+    <description><![CDATA[<div style="font-size:10pt;width:300px"><font face="arial" size="2">Berth 1 -&nbsp;<a href="http://www.emec.org.uk/about-us/wave-clients/eon-uk/" target="_blank">E.ON UK</a>, Pelamis 2</font></div>]]></description>
+    <LookAt>
+      <longitude>-71.082649</longitude>
+      <latitude>45.790924</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-4.857697</heading>
+      <tilt>0.000000</tilt>
+      <range>19719604.000000</range>
+    </LookAt>
+    <styleUrl>#style47</styleUrl>
+    <Point>
+      <coordinates>-3.394303,58.982864,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Waverider</name>
+    <Snippet>Wave Rider Buoy E Type: Datawell Mark II  For more information click:  http://ww</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px"><div>To find out more about waveriders visit our&nbsp;<a href="http://www.emec.org.uk/facilities/live-data/wave-data/" target="_blank">wave data</a>&nbsp;page.</div><div><br><span style="font-size:10pt">View live data from the site at our&nbsp;</span><a href="http://www.emec.org.uk/facilities/live-data/" style="font-size:10pt" target="_blank">live data dashboard</a><span style="font-size:10pt">.</span></div></div>]]></description>
+    <LookAt>
+      <longitude>-3.390900</longitude>
+      <latitude>58.970234</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.019549</heading>
+      <tilt>0.000000</tilt>
+      <range>5239.364258</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style61</styleUrl>
+    <Point>
+      <coordinates>-3.392372,58.970543,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Waverider</name>
+    <Snippet>Wave Rider Buoy E Type: Datawell Mark II  For more information click: http://www</Snippet>
+    <description><![CDATA[<div style="width:300px">To find out more about waveriders visit our&nbsp;<a href="http://www.emec.org.uk/facilities/live-data/wave-data/" target="_blank">wave data</a>&nbsp;page.<br><br>&nbsp;</div><div><span style="font-size:10pt">View live data from the site at our&nbsp;</span><a href="http://www.emec.org.uk/facilities/live-data/" style="font-size:10pt" target="_blank">live data dashboard</a><span style="font-size:10pt">.</span></div>]]></description>
+    <LookAt>
+      <longitude>-3.399483</longitude>
+      <latitude>58.977768</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.000584</heading>
+      <tilt>0.000000</tilt>
+      <range>13312.054688</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style91</styleUrl>
+    <Point>
+      <coordinates>-3.399483,58.977768,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Crown Estate lease area -  Shapinsay Sound</name>
+    <styleUrl>#style55</styleUrl>
+    <Polygon>
+      <outerBoundaryIs>
+        <LinearRing>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -2.867500,58.995335,0.000000
+            -2.862501,59.003334,0.000000
+            -2.889169,59.007500,0.000000
+            -2.892752,59.000000,0.000000
+            -2.867500,58.995335,0.000000
+          </coordinates>
+        </LinearRing>
+      </outerBoundaryIs>
+    </Polygon>
+  </Placemark>
+  <Placemark>
+    <name>Anchor</name>
+    <Snippet>Blocks Deployed = 8 x 13.3 tonnes (in air) Frame = 240 - 600kN</Snippet>
+    <description><![CDATA[<div style="width:300px"><div><div><a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">Nursery test site</a>&nbsp;anchor. Pre-laid foundation and attachment point comprising 5m x 5m x 2m gravity-based frames loaded with densecrete blocks for equipment moorings.&nbsp;<br>&nbsp;</div><div><br>&nbsp;</div></div></div>]]></description>
+    <styleUrl>#style12</styleUrl>
+    <Point>
+      <coordinates>-2.886186,59.003735,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Anchor</name>
+    <Snippet>Blocks Deployed = 8 x 13.3 tonnes (in air) Frame = 240 - 600kN</Snippet>
+    <description><![CDATA[<div style="width:300px"><a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">Nursery test site</a>&nbsp;anchor. Pre-laid foundation and attachment point comprising 5m x 5m x 2m gravity-based frames loaded with densecrete blocks for equipment moorings.</div>
+]]></description>
+    <styleUrl>#style77</styleUrl>
+    <Point>
+      <coordinates>-2.880435,59.002628,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Anchor</name>
+    <Snippet>Blocks to be Deployed = 8 x 13.3 tonnes (in air) Frame to be Deployed = 240 - 60</Snippet>
+    <description><![CDATA[<div style="width:300px"><a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">Nursery test site</a>&nbsp;anchor. Pre-laid foundation and attachment point comprising 5m x 5m x 2m gravity-based frames loaded with densecrete blocks for equipment moorings.</div>
+]]></description>
+    <styleUrl>#style44</styleUrl>
+    <Point>
+      <coordinates>-2.883310,59.001411,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Anchor</name>
+    <Snippet>Blocks to be Deployed = 8 x 13.3 tonnes (in air) Frame to be Deployed = 240 - 60</Snippet>
+    <description><![CDATA[<div style="width:300px"><a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">Nursery test site</a>&nbsp;anchor. Pre-laid foundation and attachment point comprising 5m x 5m x 2m gravity-based frames loaded with densecrete blocks for equipment moorings.</div>
+]]></description>
+    <styleUrl>#style35</styleUrl>
+    <Point>
+      <coordinates>-2.886701,59.001610,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Anchor</name>
+    <Snippet>Blocks Deployed = 4 x 6.9 tonnes (in air)      4 x 13.3 tonnes (in air) Frame De</Snippet>
+    <description><![CDATA[<div style="width:300px"><a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">Nursery test site</a>&nbsp;anchor. Pre-laid foundation and attachment point comprising 5m x 5m x 2m gravity-based frames loaded with densecrete blocks for equipment moorings.</div>
+]]></description>
+    <styleUrl>#style37</styleUrl>
+    <Point>
+      <coordinates>-2.881917,59.004349,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Head of Work observations point</name>
+    <Snippet>Head of Work Observation Post</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">To find out more about our wildlife observations click&nbsp;<a href="http://http//www.emec.org.uk/research/emec-site-specific-projects/" target="_blank">here</a>.&nbsp;</div>]]></description>
+    <LookAt>
+      <longitude>-2.901207</longitude>
+      <latitude>59.008244</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.154907</heading>
+      <tilt>0.000000</tilt>
+      <range>2000.000000</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style32</styleUrl>
+    <Point>
+      <coordinates>-2.900934,59.008259,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Head Of Holland observations point</name>
+    <Snippet>Head of Holland Observation Post</Snippet>
+    <description><![CDATA[To find out more about our wildlife observations click&nbsp;<a href="http://http//www.emec.org.uk/research/emec-site-specific-projects/" target="_blank">here</a>.&nbsp;<div dir="ltr" style="width:300px"></div>]]></description>
+    <LookAt>
+      <longitude>-2.888603</longitude>
+      <latitude>58.992203</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.165708</heading>
+      <tilt>0.000000</tilt>
+      <range>2000.000000</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style82</styleUrl>
+    <Point>
+      <coordinates>-2.888922,58.992256,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>TRIAXYS buoy</name>
+    <Snippet>For more info see: http://www.emec.org.uk/wave_site_data.asp</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">TRIAXYS buoy in the <a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">nursery test site</a><div><br>&nbsp;</div><div><span style="font-size:10pt">View live data from the site at our&nbsp;</span><a href="http://www.emec.org.uk/facilities/live-data/" style="font-size:10pt" target="_blank">live data dashboard</a><span style="font-size:10pt">.</span>
+</div></div>]]></description>
+    <LookAt>
+      <longitude>-2.867717</longitude>
+      <latitude>59.001469</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.322331</heading>
+      <tilt>0.000000</tilt>
+      <range>5000.000000</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style28</styleUrl>
+    <Point>
+      <coordinates>-2.867717,59.001469,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <GroundOverlay>
+    <name>Map</name>
+    <Snippet>© Crown Copyright, reproduced by permission of the Controller of Her Majesty’</Snippet>
+    <description><![CDATA[© Crown Copyright, reproduced by permission of the Controller of Her Majesty’s Stationery Office and the UK Hydrographic Office (www.ukho.gov.uk)]]></description>
+    <LatLonBox>
+      <north>59.015980</north>
+      <south>58.989143</south>
+      <east>-2.838552</east>
+      <west>-2.916456</west>
+    </LatLonBox>
+    <Icon>
+      <href>http://maps.google.com/mapsatt?id=&amp;f=files/Shapinsay+Sound_2.bmp</href>
+    </Icon>
+  </GroundOverlay>
+  <Placemark>
+    <name>Crown Estate lease area -  Scapa Flow</name>
+    <styleUrl>#style9</styleUrl>
+    <Polygon>
+      <outerBoundaryIs>
+        <LinearRing>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -2.941682,58.899185,0.000000
+            -2.958423,58.899162,0.000000
+            -2.958351,58.886150,0.000000
+            -2.941575,58.886215,0.000000
+            -2.941682,58.899185,0.000000
+          </coordinates>
+        </LinearRing>
+      </outerBoundaryIs>
+    </Polygon>
+  </Placemark>
+  <Placemark>
+    <name>Anchor</name>
+    <Snippet>Blocks deployed = 8x20.5 tonnes (in air) Frame = 600-1200kN</Snippet>
+    <description><![CDATA[<div style="width:300px"><a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">Nursery test site</a>&nbsp;anchor. Pre-laid foundation and attachment point comprising 5m x 5m x 2m gravity-based frames loaded with densecrete blocks for equipment moorings.</div>
+]]></description>
+    <styleUrl>#style14</styleUrl>
+    <Point>
+      <coordinates>-2.948542,58.897221,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Anchor</name>
+    <Snippet>Blocks Deployed = 4x20.5 tonnes (in air) Frame = 600-1200kN  Blocks yet to be de</Snippet>
+    <description><![CDATA[<div style="width:300px"><a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">Nursery test site</a>&nbsp;anchor. Pre-laid foundation and attachment point comprising 5m x 5m x 2m gravity-based frames loaded with densecrete blocks for equipment moorings. </div>
+]]></description>
+    <styleUrl>#style80</styleUrl>
+    <Point>
+      <coordinates>-2.947469,58.894958,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Anchor</name>
+    <Snippet>Blocks Deployed = 4x20.5 tonnes (in air) Frame = 600-1200kN  Blocks yet to be de</Snippet>
+    <description><![CDATA[<div style="width:300px"><a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">Nursery test site</a>&nbsp;anchor. Pre-laid foundation and attachment point comprising 5m x 5m x 2m gravity-based frames loaded with densecrete blocks for equipment moorings. </div>
+]]></description>
+    <styleUrl>#style41</styleUrl>
+    <Point>
+      <coordinates>-2.952125,58.894306,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Anchor</name>
+    <Snippet>Blocks Deployed = 4 x 6.9 tonnes (in air)      4 x 13.3 tonnes (in air)  Frame =</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px"><a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">Nursery test site</a>&nbsp;anchor. Pre-laid foundation and attachment point comprising 5m x 5m x 2m gravity-based frames loaded with densecrete blocks for equipment moorings.</div>]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-2.953050,58.898018,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Anchor</name>
+    <Snippet>Blocks Deployed = 4x20.5 tonnes (in air) Frame = 600-1200kN  Blocks yet to be de</Snippet>
+    <description><![CDATA[<a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">Nursery test site</a>&nbsp;anchor. Pre-laid foundation and attachment point comprising 5m x 5m x 2m gravity-based frames loaded with densecrete blocks for equipment moorings.
+]]></description>
+    <styleUrl>#style87</styleUrl>
+    <Point>
+      <coordinates>-2.953842,58.896267,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Howequoy Head</name>
+    <Snippet>Howequoy Head Observation Post</Snippet>
+    <description><![CDATA[To find out more about our wildlife observations click&nbsp;<a href="http://http//www.emec.org.uk/research/emec-site-specific-projects/" target="_blank">here</a>.&nbsp;<div dir="ltr" style="width:300px"></div>]]></description>
+    <LookAt>
+      <longitude>-2.931607</longitude>
+      <latitude>58.892483</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.128869</heading>
+      <tilt>0.000000</tilt>
+      <range>57.345131</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style45</styleUrl>
+    <Point>
+      <coordinates>-2.931608,58.892414,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <GroundOverlay>
+    <name>Map</name>
+    <Snippet>© Crown Copyright, reproduced by permission of the Controller of Her Majesty’</Snippet>
+    <description><![CDATA[© Crown Copyright, reproduced by permission of the Controller of Her Majesty’s Stationery Office and the UK Hydrographic Office (www.ukho.gov.uk)]]></description>
+    <LatLonBox>
+      <north>58.917362</north>
+      <south>58.881416</south>
+      <east>-2.911367</east>
+      <west>-2.972839</west>
+    </LatLonBox>
+    <Icon>
+      <href>http://maps.google.com/mapsatt?id=&amp;f=files/S_1.Flow.bmp</href>
+    </Icon>
+  </GroundOverlay>
+  <Placemark>
+    <name>Waverider</name>
+    <Snippet>For more info see:  http://www.emec.org.uk/wave_site_data.asp</Snippet>
+    <description><![CDATA[<div style="width:300px">Waverider buoy in the&nbsp;<a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">nursery test site</a>.<div><br><span style="font-size:10pt">View live data from the site at our&nbsp;</span><a href="http://www.emec.org.uk/facilities/live-data/" style="font-size:10pt" target="_blank">live data dashboard</a><span style="font-size:10pt">.</span></div></div>]]></description>
+    <LookAt>
+      <longitude>-3.411848</longitude>
+      <latitude>58.985325</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.322331</heading>
+      <tilt>0.000000</tilt>
+      <range>7464.595703</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style57</styleUrl>
+    <Point>
+      <coordinates>-2.950000,58.895248,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>EMEC head office</name>
+    <Snippet>Old Academy Business Centre Back Road Stromness Orkney KW163AW  Tel: 01856852060</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Old Academy Business Centre&nbsp;<br>Back Road&nbsp;<br>Stromness&nbsp;<br>Orkney<br>KW163AW&nbsp;<br>Tel: +44 (0)1856 852060&nbsp;<br>Email: info@emec.org.uk<br><a href="http://www.emec.org.uk" target="_blank">www.emec.org.uk</a></div>]]></description>
+    <LookAt>
+      <longitude>-3.301503</longitude>
+      <latitude>58.963402</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.262885</heading>
+      <tilt>0.000000</tilt>
+      <range>250.000000</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style86</styleUrl>
+    <Point>
+      <coordinates>-3.301369,58.963371,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>EMEC Kirkwall office</name>
+    <Snippet>Situated in Block 2</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">2 Warness Park<br>Hatston Pier Road<br>Crowness Business Park<br>Kirkwall<br>KW15 1ZL</div>]]></description>
+    <LookAt>
+      <longitude>-2.985970</longitude>
+      <latitude>58.999702</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.803961</heading>
+      <tilt>0.000000</tilt>
+      <range>2434.787109</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style78</styleUrl>
+    <Point>
+      <coordinates>-2.985940,58.997837,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Pentland Ferries terminal - St. Margarets Hope</name>
+    <Snippet>Ferry to Gills Bay. For more info see: www.pentlandferries.co.uk</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px"><a href="http://www.pentlandferries.co.uk" target="_blank">Pentland Ferry</a> to Gills Bay</div>]]></description>
+    <LookAt>
+      <longitude>-2.958755</longitude>
+      <latitude>58.830730</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.724278</heading>
+      <tilt>0.000000</tilt>
+      <range>4590.049316</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style30</styleUrl>
+    <Point>
+      <coordinates>-2.960784,58.831623,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Kirkwall airport</name>
+    <Snippet>From here you can fly to many of the outer isles (including Eday) and also furth</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Connecting Orkney to Glasgow, Edinburgh, Aberdeen, Inverness and Sumburgh. Kirkwall airport also provides inter-island flights to many of the outer isles including Eday.&nbsp;<div>For more info see <a href="http://www.flybe.com" target="_blank">FlyBe</a>&nbsp;<span style="font-size:10pt">and <a href="http://www.loganair.co.uk/" target="_blank">Loganair</a> (inter-island)</span></div></div>]]></description>
+    <LookAt>
+      <longitude>-2.899004</longitude>
+      <latitude>58.957172</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.729439</heading>
+      <tilt>0.000000</tilt>
+      <range>2147.947510</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style65</styleUrl>
+    <Point>
+      <coordinates>-2.905190,58.957623,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Northlink ferry teminal - Kirkwall</name>
+    <Snippet>Ferries to Lerwick (Shetland) and Aberdeen For more info see: www.northlinkferri</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px"><a href="http://www.northlinkferries.co.uk" target="_blank">NorthLink Ferries</a> to Lerwick (Shetland) and Aberdeen</div>]]></description>
+    <LookAt>
+      <longitude>-2.972276</longitude>
+      <latitude>59.000511</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.792223</heading>
+      <tilt>0.000000</tilt>
+      <range>2997.271484</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style27</styleUrl>
+    <Point>
+      <coordinates>-2.973798,58.999424,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Kirkwall Northern Isles ferry terminal</name>
+    <Snippet>Catch the ferry here to the nothern isles including Eday  For more info see: www</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Catch the <a href="http://www.orkneyferries.co.uk" target="_blank">inter island ferry</a> here to the nothern isles including Eday</div>]]></description>
+    <LookAt>
+      <longitude>-2.956470</longitude>
+      <latitude>58.987354</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.778676</heading>
+      <tilt>0.000000</tilt>
+      <range>2755.312012</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style67</styleUrl>
+    <Point>
+      <coordinates>-2.960547,58.985161,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Northlink Ferry terminal - Stromness</name>
+    <Snippet>Ferry to Scrabster.   See www.northlinkferries.co.uk for info</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px"><a href="http://www.northlinkferries.co.uk" target="_blank">NorthLink Ferry</a> to Scrabster</div>]]></description>
+    <LookAt>
+      <longitude>-3.294289</longitude>
+      <latitude>58.964558</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.436654</heading>
+      <tilt>0.000000</tilt>
+      <range>516.628845</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style17</styleUrl>
+    <Point>
+      <coordinates>-3.295030,58.963226,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Eday Airstrip</name>
+    <Snippet>Flights to Kirkwall For more info see: www.hial.co.uk/kirkwall-airport</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Flights to <a href="http://www.hial.co.uk/kirkwall-airport" target="_blank">Kirkwall airport&nbsp;</a></div>]]></description>
+    <LookAt>
+      <longitude>-2.776661</longitude>
+      <latitude>59.191547</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.277440</heading>
+      <tilt>0.000000</tilt>
+      <range>6013.780273</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style58</styleUrl>
+    <Point>
+      <coordinates>-2.771392,59.190166,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Kirkwall Marina</name>
+    <Snippet>For more info see: http://www.orkneymarinas.co.uk/kirkwall_marina.asp</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">For more info visit the <a href="http://www.orkneymarinas.co.uk/kirkwall_marina.asp" target="_blank">Orkney Marinas website</a>.</div>]]></description>
+    <LookAt>
+      <longitude>-2.956470</longitude>
+      <latitude>58.987354</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.778676</heading>
+      <tilt>0.000000</tilt>
+      <range>2755.312012</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style29</styleUrl>
+    <Point>
+      <coordinates>-2.957931,58.986912,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Hatston estate and pier</name>
+    <Snippet>For more info see: http://www.orkneyharbours.com/pdfs/PortsHandbook-2010-V4-Kirk</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">For more info see <a href="http://www.orkneyharbours.com/pdfs/PortsHandbook-2010-V4-Kirkwall-Hatston.pdf" target="_blank">Orkney Harbour Ports Handbook</a>.</div>]]></description>
+    <LookAt>
+      <longitude>-2.972276</longitude>
+      <latitude>59.000511</latitude>
+      <altitude>0.000000</altitude>
+      <heading>-0.792223</heading>
+      <tilt>0.000000</tilt>
+      <range>2997.271484</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style84</styleUrl>
+    <Point>
+      <coordinates>-2.979355,58.999645,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Stromness marina</name>
+    <Snippet>For more information see: http://www.orkneymarinas.co.uk/stromness_marina.asp</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">For more information visit the <a href="http://www.orkneymarinas.co.uk/stromness_marina.asp" target="_blank">Orkney Marinas website</a>.&nbsp;</div>]]></description>
+    <LookAt>
+      <longitude>-3.294289</longitude>
+      <latitude>58.964558</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.436654</heading>
+      <tilt>0.000000</tilt>
+      <range>1472.324341</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style16</styleUrl>
+    <Point>
+      <coordinates>-3.293324,58.964703,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Pole Star pier</name>
+    <Snippet>For more info see: http://www.orkneyharbours.com/pdfs/PortsHandbook-2010-V4-Stro</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">For more info see <a href="http://www.orkneyharbours.com/pdfs/PortsHandbook-2010-V4-Stromness-PoleStar.pdf" target="_blank">Orkney Harbour Port Handbook</a>.</div>]]></description>
+    <LookAt>
+      <longitude>-3.298509</longitude>
+      <latitude>58.959095</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.433038</heading>
+      <tilt>0.000000</tilt>
+      <range>742.384338</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style39</styleUrl>
+    <Point>
+      <coordinates>-3.299110,58.958897,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Lyness estate and pier</name>
+    <Snippet>For more info see: http://www.orkneyharbours.com/pdfs/PortsHandbook-2010-V4-Hoy-</Snippet>
+    <description><![CDATA[<div dir="ltr" style="width:300px">For more info see <a href="http://www.orkneyharbours.com/pdfs/PortsHandbook-2010-V4-Hoy-Lyness.pdf" target="_blank">Orkney Harbour Ports Handbook</a>.</div>]]></description>
+    <LookAt>
+      <longitude>-3.194984</longitude>
+      <latitude>58.835678</latitude>
+      <altitude>0.000000</altitude>
+      <heading>0.522145</heading>
+      <tilt>0.000000</tilt>
+      <range>2824.262939</range>
+      <altitudeMode>relativeToGround</altitudeMode>
+    </LookAt>
+    <styleUrl>#style46</styleUrl>
+    <Point>
+      <coordinates>-3.194984,58.835678,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Seatricity</name>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Berth 4 - <a href="http://www.emec.org.uk/about-us/wave-clients/seatricity/" target="_blank">Seatricity</a></div>]]></description>
+    <styleUrl>#style18</styleUrl>
+    <Point>
+      <coordinates>-3.386536,58.967533,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Vattenfall</name>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Berth 3 - <a href="http://www.emec.org.uk/about-us/wave-clients/vattenfall/" target="_blank">Vattenfall</a>, Pelamis</div>]]></description>
+    <styleUrl>#style20</styleUrl>
+    <Point>
+      <coordinates>-3.385162,58.972050,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>The Grid</name>
+    <description><![CDATA[<div dir="ltr">Connection to the National Grid.</div>]]></description>
+    <styleUrl>#style88</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -3.362040,58.597599,0.000000
+        -3.463660,58.651939,0.000000
+        -3.405990,58.803070,0.000000
+        -3.356550,58.830090,0.000000
+        -3.356550,58.831509,0.000000
+        -3.245310,58.890450,0.000000
+        -3.179390,58.929459,0.000000
+        -2.959670,58.981861,0.000000
+        -2.903930,59.035252,0.000000
+        -2.664980,59.077969,0.000000
+        -2.669790,59.100552,0.000000
+        -2.631340,59.108662,0.000000
+        -2.613480,59.123810,0.000000
+        -2.647130,59.153400,0.000000
+        -2.634080,59.236740,0.000000
+        -2.763860,59.189640,0.000000
+        -2.781710,59.189991,0.000000
+        -2.871660,59.239201,0.000000
+        -2.859990,59.206169,0.000000
+        -2.965050,59.182961,0.000000
+        -2.991140,59.163261,0.000000
+        -2.973290,59.139309,0.000000
+        -3.041950,59.131920,0.000000
+        -3.079030,59.115002,0.000000
+        -3.116790,59.007679,0.000000
+        -2.959670,58.981861,0.000000
+        -2.926590,58.892578,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Line 25</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style40</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -3.078918,59.114124,0.000000
+        -3.158970,59.125580,0.000000
+        -3.158970,59.125580,0.000000
+        -3.158970,59.125580,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>The Grid</name>
+    <description><![CDATA[<font face="arial" size="2">Connection to the National Grid.</font>]]></description>
+    <styleUrl>#style4</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -3.116340,59.008389,0.000000
+        -3.255100,58.981159,0.000000
+        -3.350272,58.971981,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Eday ferry</name>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Catch the&nbsp;<a href="http://www.orkneyferries.co.uk/" target="_blank">inter island ferry</a>&nbsp;here back to Kirkwall.</div>]]></description>
+    <styleUrl>#style48</styleUrl>
+    <Point>
+      <coordinates>-2.748127,59.156750,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Test buoy</name>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Test buoy in the&nbsp;<a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">nursery test site</a><div></div></div>]]></description>
+    <styleUrl>#style15</styleUrl>
+    <Point>
+      <coordinates>-2.883611,59.002827,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Test buoy</name>
+    <description><![CDATA[<div dir="ltr" style="width:300px">For more information about the nursery test sites <a href="http://www.emec.org.uk/facilities/nursery-test-sites/" target="_blank">click here</a></div>]]></description>
+    <styleUrl>#style85</styleUrl>
+    <Point>
+      <coordinates>-2.951503,58.896511,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>ADCP</name>
+    <description><![CDATA[<div dir="ltr" style="width:300px">Fixed ADCP to be deployed in July 2012.<br><br><div><div>For further information on how we collect data from the tidal test site <a href="http://www.emec.org.uk/facilities/tidal-test-site/" target="_blank">click here</a>.<span style="font-size:10pt">&nbsp;<br></span><span style="font-size:10pt"><br>View live data from the tidal site on our </span><a href="http://www.emec.org.uk/facilities/live-data/" style="font-size:10pt" target="_blank">live data dashboard.</a></div><div><br>&nbsp;</div><div><span style="font-size:10pt"></span></div></div></div>]]></description>
+    <styleUrl>#style49</styleUrl>
+    <Point>
+      <coordinates>-2.833614,59.156219,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Aquamarine Power</name>
+    <description><![CDATA[Inshore berth - <a href="http://www.emec.org.uk/about-us/wave-clients/aquamarine-power/" target="_blank">Aquamarine Power</a>, Oyster 800]]></description>
+    <styleUrl>#style83</styleUrl>
+    <Point>
+      <coordinates>-3.363619,58.970100,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Wave test site - Billia Croo</name>
+    <description><![CDATA[<br>]]></description>
+    <styleUrl>#style19</styleUrl>
+    <Point>
+      <coordinates>-3.396320,58.974613,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Nursery wave test site - Scapa Flow</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style75</styleUrl>
+    <Point>
+      <coordinates>-2.949829,58.891788,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Nursery tidal test site - Shapinsay Sound</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style70</styleUrl>
+    <Point>
+      <coordinates>-2.875843,59.000706,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Tidal test site - Fall of Warness</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-2.801342,59.131481,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Line 21</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style71</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -2.764091,59.189560,0.000000
+        -2.802479,59.166267,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>
