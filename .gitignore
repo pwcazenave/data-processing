@@ -21,6 +21,7 @@
 *.qgs
 *.nc
 *.bz2
+*.qxf
 
 # Miscellaneous files
 .~lock*#
