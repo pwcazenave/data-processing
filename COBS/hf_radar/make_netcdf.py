@@ -46,15 +46,16 @@ ncout = 'cobs_hf_radar.nc'
 fcells = open('cellinfo.txt', 'r')
 cellinfo = fcells.readlines()
 
-sid, slon, slat = [], [], []
+sid, slon, slat, sdepth = [], [], [], []
 data = {}
 for site in cellinfo:
     cid, clon, clat, bear_master, bear_slave, range_master, range_slave, depth = site.strip().split('\t')
     sid.append(cid)
     slon.append(clon)
     slat.append(clat)
+    sdepth.append(depth)
 
-sid, slon, slat = np.asarray(sid, dtype=float), np.asarray(slon, dtype=float), np.asarray(slat, dtype=float)
+sid, slon, slat, sdepth = np.asarray(sid, dtype=float), np.asarray(slon, dtype=float), np.asarray(slat, dtype=float), np.asarray(sdepth, dtype=float)
 
 fcells.close()
 
@@ -65,7 +66,9 @@ fcells.close()
 # the list and use that.
 nx, ny, nt = 16, 20, 166535
 
-lon, lat = np.empty((nx, ny)) * np.nan, np.empty((nx, ny)) * np.nan
+lon = np.empty((nx, ny)) * np.nan
+lat = np.empty((nx, ny)) * np.nan
+depth = np.empty((nx, ny)) * np.nan
 speed = np.empty((nx, ny, nt)) * np.nan
 direction = np.empty((nx, ny, nt)) * np.nan
 winddir = np.empty((nx, ny, 1nt)) * np.nan
@@ -93,6 +96,7 @@ for xi, x in enumerate(alon):
         dist = np.sqrt((slon - x)**2 + (slat - y)**2)
         lon[xi, yi] = slon[dist.argmin()]
         lat[xi, yi] = slat[dist.argmin()]
+        depth[xi, yi] = sdepth[dist.argmin()]
 
         cell = sid[dist.argmin()].astype(int)
 
@@ -151,14 +155,18 @@ nc['variables'] = {
                 'long_name':'Modified Julian Day (Time since 1858-11-17 00:00:00)',
                 'time_zone':'UTC',
                 'comments':'Times are fixed for sampling period by adding 266 seconds to each time stamp'}},
+        'depth':{'data':depth,
+            'dimensions':['lon', 'lat'],
+            'attributes':{'units':'metres',
+                'long_name':'water depth in metres (positive down)'}},
         'lon':{'data':lon,
             'dimensions':['lon', 'lat'],
             'attributes':{'units':'degrees',
-                'long_name':'nodal x-coordinate'}},
+                'long_name':'longitude grid'}},
         'lat':{'data':lat,
             'dimensions':['lon', 'lat'],
             'attributes':{'units':'degrees',
-                'long_name':'nodal x-coordinate'}},
+                'long_name':'latitude grid'}},
         'current_speed':{'data':speed,
             'dimensions':['lon', 'lat', 'time'],
             'attributes':{'units':'m/s',
