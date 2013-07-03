@@ -13,6 +13,7 @@ raw_data/currents###.txt format:
     current speed (m/s)
 
 cellinfo.txt format:
+
     cell number or ID (1-320)
     latitude of cell (degs)
     longitude of cell (degs)
