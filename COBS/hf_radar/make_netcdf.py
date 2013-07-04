@@ -77,8 +77,17 @@ times = np.arange(1122854400, 1322696400, 1200) # 20 minute sampling minimum inc
 # Adjust times to account for the sampling period
 times_fixed = times + 266.0
 # Convert to Modified Julian Day.
+#greg_fixed = np.asarray([datetime.utcfromtimestamp(i) for i in times_fixed])
+#year = np.asarray([int(str(i).split('-')[0]) for i in greg_fixed])
+#month = np.asarray([int(str(i).split('-')[1]) for i in greg_fixed])
+#day = np.asarray([int(str(i).split('-')[-1].split(' ')[0]) for i in greg_fixed])
+#hour = np.asarray([int(str(i).split(' ')[-1].split(':')[0]) for i in greg_fixed])
+#minute = np.asarray([int(str(i).split(':')[1]) for i in greg_fixed])
+#second = np.asarray([int(str(i).split(':')[2]) for i in greg_fixed])
+#mjd_fixed = julianDay(np.column_stack((year, month, day, hour, minute, second)), mjd=True)
+
 refDate = julianDay([1970, 1, 1, 0, 0, 0], mjd=True)
-mjd_fixed = times_fixed / 60 / 60 / 24.0 + refDate
+mjd_fixed = (times_fixed / 60.0 / 60.0 / 24.0) + refDate
 
 alon = np.linspace(-4.035, -3.116026, nx)
 alat = np.linspace(53.315578, 54, ny)
