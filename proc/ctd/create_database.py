@@ -128,7 +128,7 @@ if __name__ == '__main__':
     cur = con.cursor()
 
     base = '/users/modellers/pica/Data/BODC/ctd/'
-    metaDataFiles = (os.path.join(base, 'all_stations.csv'))
+    metaDataFiles = (os.path.join(base, 'new_all_stations.csv'))
 
     # Read the metadata into a dict
     f = open(metaDataFiles, 'rt')
@@ -151,6 +151,9 @@ if __name__ == '__main__':
                     yearStart INT, \
                     monthStart INT, \
                     dayStart INT, \
+                    hourStart INT, \
+                    minuteStart INT, \
+                    secondStart INT, \
                     EndDate TEXT COLLATE nocase, \
                     yearEnd INT, \
                     monthEnd INT, \
@@ -208,10 +211,17 @@ if __name__ == '__main__':
                     except:
                         eYear, eMonth, eDay = -99, -99, -99 # use the nodata value
 
+                    # Split the start times. Assume midnight if we have no
+                    # other information.
+                    try:
+                        sHour, sMin, sSec = row['Start time'].split(':')
+                    except:
+                        sHour, sMin, sSec = 0, 0, 0
+
                     cur.execute('\
                             INSERT INTO Stations VALUES(\
-                            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, \
-                            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (\
+                            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, \
+                            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (\
                             int(row['BODC reference']), \
                             row['Oceanographic data type'], \
                             row['Instrument'], \
@@ -223,6 +233,9 @@ if __name__ == '__main__':
                             int(sYear), \
                             int(sMonth), \
                             int(sDay), \
+                            int(sHour), \
+                            int(sMin), \
+                            int(sSec), \
                             row['End date'], \
                             int(eYear), \
                             int(eMonth), \
