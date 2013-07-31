@@ -1,0 +1,36 @@
+Definition for Latitude and Longitude values ,,,,,,,,,,,,,,,,,,,,
+Negative values indicate South of the Equator or  West of the Greenwich Meridian,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+Positional definition = fixed point,,,,,,,,,,,,,,,,,,,,
+Latitude A = Latitude (decimal degrees),,,,,,,,,,,,,,,,,,,,
+Longitude A =  Longitude  (decimal degrees),,,,,,,,,,,,,,,,,,,,
+Latitude B -  not used,,,,,,,,,,,,,,,,,,,,
+Longitude B - not used,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+Positional definition = line,,,,,,,,,,,,,,,,,,,,
+Latitude A = Start Latitude (decimal degrees),,,,,,,,,,,,,,,,,,,,
+Longitude A = Start Longitude (decimal degrees),,,,,,,,,,,,,,,,,,,,
+Latitude B = End Latitude (decimal degrees),,,,,,,,,,,,,,,,,,,,
+Longitude B = End Longitude (decimal degrees),,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+Positional definition = box,,,,,,,,,,,,,,,,,,,,
+Latitude A = Southern Latitude of the bounding box (decimal degrees),,,,,,,,,,,,,,,,,,,,
+Longitude A = Western Longitude of the bounding box (decimal degrees),,,,,,,,,,,,,,,,,,,,
+Latitude B = Northern Latitude of the bounding box (decimal degrees),,,,,,,,,,,,,,,,,,,,
+Longitude B = Eastern Longitude of the bounding box (decimal degrees),,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+Null values are represented by -99 and -999 for longitude,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+BODC reference,Oceanographic data type,Instrument,Platform,Latitude A,Latitude B,Longitude A,Longitude B,Positional definition,Start date,End date,Series duration (days),Sea floor depth (m),Series depth minimum (m),Series depth maximum (m),Project,Country,Organisation,Quality control (QC),Series availability,Warnings,Licence 
+978974,Hydrography time series at depth,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,22/02/60,27/10/61,613,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement
+978998,Hydrography time series at depth,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,12/01/66,30/11/71,2148,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement
+979025,Hydrography time series at depth,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,02/02/54,16/12/57,1413,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement
+979001,Hydrography time series at depth,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,18/01/72,08/12/89,6534,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement
+1002772,Water column chemistry,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,21/01/92,30/06/94,891,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement
+1002803,Hydrography time series at depth,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,02/07/98,23/10/01,1209,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement
+1002796,Hydrography time series at depth,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,15/01/96,17/06/98,884,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement
+979013,Hydrography time series at depth,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,16/02/90,09/12/91,661,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement
+978986,Hydrography time series at depth,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,06/11/61,01/12/65,1486,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement
+978962,Hydrography time series at depth,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,15/01/58,08/02/60,754,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement
+1002815,Hydrography time series at depth,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,16/11/01,08/12/05,1483,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement
+1002784,Hydrography time series at depth,Bottle station,vessel at fixed position,54.09167,-99,-4.83333,-999,Fixed point,08/07/94,29/11/95,509,37,37,0,IoM Long-term Environmental Time Series,-99,University of Liverpool Port Erin Marine Laboratory,null,Academic,N,BODC Data Licence Agreement

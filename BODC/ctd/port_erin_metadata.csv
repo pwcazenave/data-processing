@@ -1,0 +1,38 @@
+National Oceanographic Database (NODB) data series
+Search results generated on 2013-07-31
+
+Oceanographic: All available oceanographic data types
+Instrument: All available instruments
+Platform: All available platforms
+Parameter discipline: Biological oceanography, Chemical oceanography, Physical oceanography
+Parameter category: Carbon, nitrogen and phosphorus, Currents, Nutrients, Other physical oceanographic measurements
+Parameter group: All available groups
+Geographic area: 54° 34' N to 53° 54' N and 6° 16' W to 2° 37' W
+Date range: 02 February 1954 to 08 December 2005
+Duration: All available durations
+Water depth: All available water depths
+Instrument depth: All available instrument depths
+Project: All available projects
+Cruise: All available cruises
+Fixed station: All available fixed stations
+Country: All available countries
+Organisation: University of Liverpool Port Erin Marine Laboratory
+Quality control: All data, including those not quality controlled
+Data warnings: All data, including those with warnings
+"Absent data values for water depth and max series depth are represented by -99."
+
+
+
+Row,BODC reference,Oceanographic data type,Instrument,Platform,Latitude A,Latitude B,Longitude A,Longitude B,Positional definition,Start date,End date,Series duration,Sea floor depth,Series depth minimum,Series depth maximum,Project,Cruise,Fixed station,Country,Organisation,Quality control (QC),Series availability,Warnings,Documentation,
+1,978962,"Hydrography time series at depth","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",1958-01-15,1960-02-08,754,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/978962/
+2,978974,"Hydrography time series at depth","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",1960-02-22,1961-10-27,613,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/978974/
+3,978986,"Hydrography time series at depth","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",1961-11-06,1965-12-01,1486,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/978986/
+4,978998,"Hydrography time series at depth","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",1966-01-12,1971-11-30,2148,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/978998/
+5,979001,"Hydrography time series at depth","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",1972-01-18,1989-12-08,6534,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/979001/
+6,979013,"Hydrography time series at depth","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",1990-02-16,1991-12-09,661,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/979013/
+7,979025,"Hydrography time series at depth","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",1954-02-02,1957-12-16,1413,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/979025/
+8,1002772,"Water column chemistry","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",1992-01-21,1994-06-30,891,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/1002772/
+9,1002784,"Hydrography time series at depth","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",1994-07-08,1995-11-29,509,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/1002784/
+10,1002796,"Hydrography time series at depth","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",1996-01-15,1998-06-17,884,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/1002796/
+11,1002803,"Hydrography time series at depth","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",1998-07-02,2001-10-23,1209,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/1002803/
+12,1002815,"Hydrography time series at depth","Bottle station","vessel at fixed position",54.09167,-99.0,-4.83333,-999.0,"Fixed point",2001-11-16,2005-12-08,1483,37.0,0.0,37.0,"IoM Long-term Environmental Time Series","unknown","CYPRIS","unknown","University of Liverpool Port Erin Marine Laboratory",Y,"A",N,http://www.bodc.ac.uk/data/documents/series/1002815/
