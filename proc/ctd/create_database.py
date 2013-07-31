@@ -27,8 +27,8 @@ def findNamesBODC(data):
     The function searches for any of the following:
 
     Depth: ADEPZZ01 DEPHPR01
-    Temperature: POTMCV01 TEMPCC01 TEMPCU01 TEMPS901 TEMPST01 TEMPST02
-    Salinity: PSALCC01 PSALCC02 PSALCU01 PSALST01
+    Temperature: POTMCV01 TEMPCC01 TEMPCU01 TEMPS901 TEMPST01 TEMPST02 TEMPPR01
+    Salinity: PSALCC01 PSALCC02 PSALCU01 PSALST01 SSALBSTX
     Sigma-t: SIGTPR01 SIGTPR02
     Pressure: PRESPR01
     Instrument fluorometer voltage: FVLTAQ01 FVLTPELN FVLTWS01 FVLTZZ01
@@ -42,8 +42,8 @@ def findNamesBODC(data):
     Parameters
     ----------
 
-    data : ndarray
-        Dict of data from the BODC CTD NetCDF files.
+    data : dict
+        Dict of ndarrays of the data from the BODC CTD NetCDF files.
 
     Returns
     -------
@@ -67,8 +67,8 @@ def findNamesBODC(data):
     """
 
     conv = ['TOKGPR01']
-    salt = ['PSALCC01', 'PSALCC02', 'PSALCU01', 'PSALPR01', 'PSALST01']
-    temp = ['TEMPCC01', 'TEMPCU01', 'TEMPS901', 'TEMPST01', 'TEMPST02']
+    salt = ['PSALCC01', 'PSALCC02', 'PSALCU01', 'PSALPR01', 'PSALST01', 'SSALBSTX']
+    temp = ['TEMPCC01', 'TEMPCU01', 'TEMPS901', 'TEMPST01', 'TEMPST02', 'TEMPPR01']
     conc = ['CPHLPM01', 'CPHLPS01', 'DOXYPR01', 'DOXYSC01', 'DOXYSU01']
     satu = ['OXYSBB01', 'OXYSSC01', 'OXYSSU01', 'OXYSZZ01']
     fluo = ['FVLTAQ01', 'FVLTPELN', 'FVLTWS01', 'FVLTZZ01']
