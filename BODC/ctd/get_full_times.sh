@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Script to extract the full times from the lst files for each site (necessary for comparisons with model output).
+# Script to extract the full times from the lst files for each site (necessary
+# for comparisons with model output).
 
 echo site,year,month,day,hour,minute,second > all_times.txt
 
