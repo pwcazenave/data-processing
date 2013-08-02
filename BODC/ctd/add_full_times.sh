@@ -8,8 +8,13 @@
 
 set -e
 
-# The new header (has "Start time" inserted after "Start date").
-echo '"BODC reference","Oceanographic data type",Instrument,Platform,"Latitude A","Latitude B","Longitude A","Longitude B","Positional definition","Start date","Start time","End date","Series duration (days)","Sea floor depth (m)","Series depth minimum (m)","Series depth maximum (m)",Project,Country,Organisation,"Quality control (QC)","Series availability",Warnings,Licence' > new_all_stations.csv
+infile=all_stations.csv
+outfile=new_${infile}
+infile=port_erin.csv
+outfile=new_${infile}
+
+# The new header (has "Start time" and "End time" inserted after "Start date" and "End date", respectively).
+echo '"BODC reference","Oceanographic data type",Instrument,Platform,"Latitude A","Latitude B","Longitude A","Longitude B","Positional definition","Start date","Start time","End date","End time","Series duration (days)","Sea floor depth (m)","Series depth minimum (m)","Series depth maximum (m)",Project,Country,Organisation,"Quality control (QC)","Series availability",Warnings,Licence' > $outfile
 
 while read line; do
     site=$(echo $line | cut -f1 -d,)
@@ -22,6 +27,16 @@ while read line; do
         # Find the current site's times and insert into the CSV file after the Start date.
         startDate=$(grep $filename all_times.txt | awk -F, '{printf "%04i%02i%02i\n", $2,$3,$4}')
         startTime=$(grep $filename all_times.txt | awk -F, '{printf "%02i:%02i:%02i\n", $5,$6,$7}')
+        endDate=$(grep $filename all_times.txt | awk -F, '{printf "%04i%02i%02i\n", $8,$9,$10}')
+        endTime=$(grep $filename all_times.txt | awk -F, '{printf "%02i:%02i:%02i\n", $11,$12,$13}')
+
+        # If we have empty end dates, replace with -99 (no data value).
+        if [ -z $endDate ]; then
+            endDate=-99
+        fi
+        if [ -z $endTime ]; then
+            endTime=-99
+        fi
 
         diffDate=$(echo "scale=2; $startDate - $csvDate" | bc -l)
         if [ $diffDate -ne 0 ]; then
@@ -33,15 +48,19 @@ while read line; do
         for ((i=0; i<22; i++)); do
             col=$(echo $line | cut -f$(($i + 1)) -d,)
             if [ $i -eq 9 ]; then
-                echo -n "$col", >> new_all_stations.csv
-                echo -n "$startTime", >> new_all_stations.csv
+                echo -n "$col", >> $outfile
+                echo -n "$startTime", >> $outfile
+            elif [ $i -eq 10 ]; then
+                #echo -n "$col", >> $outfile
+                echo -n "${endDate:0:4}/${endDate:4:2}/${endDate:6:2}", >> $outfile
+                echo -n "$endTime", >> $outfile
             elif [ $i -eq 21 ]; then
-                echo "$col" >> new_all_stations.csv
+                echo "$col" >> $outfile
             else
-                echo -n "$col", >> new_all_stations.csv
+                echo -n "$col", >> $outfile
             fi
         done
     fi
 
-done < all_stations.csv
+done < $infile
 
