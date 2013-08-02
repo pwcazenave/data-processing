@@ -11,7 +11,9 @@ IFS="
 
 for var in ${data[@]}; do
     #echo -n "$var = "
-    res=($(grep -B1 "$var" raw_data/*.lst | grep -v $var | grep -v -- -- | cut -f2 -d- | grep -v lst | cut -f1 -d' ' | sort -u))
+    res=($(grep -B1 "$var" $(find ./raw_data/ -type f -mtime -10 -iname *.lst) | grep -v $var | grep -v -- -- | cut -f2 -d- | grep -v lst | cut -f1 -d' ' | sort -u))
+
+    echo -n "$(echo ${var:0:4} | tr "[A-Z]" "[a-z]") = "
 
     for ((i=0; i<${#res[@]}; i++)); do
 
