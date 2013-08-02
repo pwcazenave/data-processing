@@ -28,7 +28,7 @@ def findNamesBODC(data):
 
     Depth: ADEPZZ01 DEPHPR01
     Temperature: POTMCV01 TEMPCC01 TEMPCU01 TEMPS901 TEMPST01 TEMPST02 TEMPPR01
-    Salinity: PSALCC01 PSALCC02 PSALCU01 PSALST01 SSALBSTX
+    Salinity: PSALCC01 PSALCC02 PSALCU01 PSALST01 SSALBSTX SSALAGT1
     Sigma-t: SIGTPR01 SIGTPR02
     Pressure: PRESPR01
     Instrument fluorometer voltage: FVLTAQ01 FVLTPELN FVLTWS01 FVLTZZ01
@@ -67,7 +67,7 @@ def findNamesBODC(data):
     """
 
     conv = ['TOKGPR01']
-    salt = ['PSALCC01', 'PSALCC02', 'PSALCU01', 'PSALPR01', 'PSALST01', 'SSALBSTX']
+    salt = ['PSALCC01', 'PSALCC02', 'PSALCU01', 'PSALPR01', 'PSALST01', 'SSALBSTX', 'SSALAGT1']
     temp = ['TEMPCC01', 'TEMPCU01', 'TEMPS901', 'TEMPST01', 'TEMPST02', 'TEMPPR01']
     conc = ['CPHLPM01', 'CPHLPS01', 'DOXYPR01', 'DOXYSC01', 'DOXYSU01']
     satu = ['OXYSBB01', 'OXYSSC01', 'OXYSSU01', 'OXYSZZ01']
@@ -158,6 +158,9 @@ if __name__ == '__main__':
                     yearEnd INT, \
                     monthEnd INT, \
                     dayEnd INT, \
+                    hourEnd INT, \
+                    minuteEnd INT, \
+                    secondEnd INT, \
                     Duration FLOAT(10), \
                     SeaFloorDepth FLOAT(10), \
                     SeriesDepthMin FLOAT(10), \
@@ -211,17 +214,23 @@ if __name__ == '__main__':
                     except:
                         eYear, eMonth, eDay = -99, -99, -99 # use the nodata value
 
-                    # Split the start times. Assume midnight if we have no
-                    # other information.
+                    # Split the times. Assume midnight if we have no other
+                    # information.
                     try:
                         sHour, sMin, sSec = row['Start time'].split(':')
                     except:
                         sHour, sMin, sSec = 0, 0, 0
 
+                    try:
+                        eHour, eMin, eSec = row['End time'].split(':')
+                    except:
+                        eHour, eMin, eSec = 0, 0, 0
+
+
                     cur.execute('\
                             INSERT INTO Stations VALUES(\
-                            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, \
-                            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (\
+                            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, \
+                            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (\
                             int(row['BODC reference']), \
                             row['Oceanographic data type'], \
                             row['Instrument'], \
@@ -240,6 +249,9 @@ if __name__ == '__main__':
                             int(eYear), \
                             int(eMonth), \
                             int(eDay), \
+                            int(eHour), \
+                            int(eMin), \
+                            int(eSec), \
                             float(row['Series duration (days)']), \
                             float(row['Sea floor depth (m)']), \
                             float(row['Series depth minimum (m)']), \
