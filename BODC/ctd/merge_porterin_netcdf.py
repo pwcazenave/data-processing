@@ -25,7 +25,10 @@ from tide_tools import gregorianDate
 
 if __name__ == '__main__':
 
+    # Draw a figure of the temperature and salinity from the imported data.
     drawFig = True
+    # Draw a figure of the same but from the new netCDF file.
+    checkOutput = True
 
     base = '/users/modellers/pica/Data/BODC/ctd'
 
@@ -129,19 +132,27 @@ if __name__ == '__main__':
 
         print '\n'
 
-    # Now sort the data by time ('AADYAA01')
-    s = np.argsort(out[:, 0, vars.index('AADYAA01')])
+    # Now sort the data by days ('AADYAA01') and fractions of day ('AAFDZZ01').
+    try:
+        s = np.argsort(out[:, 0, vars.index('AADYAA01')] + out[:, 0, vars.index('AAFDZZ01')])
+    except:
+        # The files I've got have all had the AAFDZZ01 field, but perhaps some
+        # others don't and only have whole days. If that is the case, then just
+        # use whole days for the time, ignoring the fractional component.
+        s = np.argsort(out[:, 0, vars.index('AADYAA01')])
+
     out = out[s, :, :]
 
     # Convert the time to Modified Julian Days. The offset between the BODC
     # time and MJD time origins is -36114 days (i.e. BODC starts before MJD).
-    mjd = out[:, 0, vars.index('AADYAA01')] - 36114.0
+    mjd = (out[:, 0, vars.index('AADYAA01')] +
+            out[:, 0, vars.index('AAFDZZ01')]) - 36114.0
     times = gregorianDate(mjd, mjd=True)
 
     # Make a Times array for the netCDF file.
     Times = ['{:04d}-{:02d}-{:02d}T{:02d}:{:02d}:{:09.6f}'.format(int(i[0]), int(i[1]), int(i[2]), int(i[3]), int(i[4]), i[5]) for i in times]
 
-    # Export to NetCDF
+    # Export to netCDF
 
     nt, nz, nv = out.shape
 
@@ -154,8 +165,8 @@ if __name__ == '__main__':
             }
     # Add the global attributes
     nc['global attributes'] = {
-            'description':'Time series of the ADCP data from the WaveHub site vertical distribution of pH, TCO2 and PCO2 from the Tamar FVCOM CO2 release model',
-            'source':'Ian Ashton (i.g.c.ashton@exeter.ac.uk)',
+            'description':'Time series of the data collected at the Port Erin station in the Irish Sea (from the BODC)',
+            'source':'British Oceanographic Data Centre (http://www.bodc.ac.uk)',
             'history': 'Created by Pierre Cazenave on {}'.format(time.ctime(time.time()))
             }
     # Build the variables
@@ -163,11 +174,11 @@ if __name__ == '__main__':
             'lon':{'data':[lon],
                 'dimensions':['one'],
                 'attributes':{'units':'degrees',
-                        'long_name':'ADCP position (longitude)'}},
+                    'long_name':'ADCP position (longitude)'}},
             'lat':{'data':[lat],
                 'dimensions':['one'],
                 'attributes':{'units':'degrees',
-                        'long_name':'ADCP position (latitude)'}},
+                    'long_name':'ADCP position (latitude)'}},
             'Times':{'data':Times,
                 'dimensions':['time', 'DateStrLen'],
                 'attributes':{'time_zone':'UTC'},
@@ -177,7 +188,11 @@ if __name__ == '__main__':
                 'attributes':{'units':'days since 1858-11-17 00:00:00',
                     'format':'modified julian day (MJD)',
                     'time_zone':'UTC',
-                    'long_name':'time'}}
+                    'long_name':'time'}},
+            'depth':{'data':data[data.keys()[0]]['ADEPZZ01'],
+                'dimensions':['level'],
+                'attributes':{'units':'metres below sea surface (+ve down)',
+                    'long_name':'depth below the sea surface'}}
             }
 
     # Append the other variables
@@ -199,19 +214,98 @@ if __name__ == '__main__':
     ncwrite.ncdfWrite(nc, ncout, Quiet=False)
 
     if drawFig:
+
         import matplotlib.pyplot as plt
+
+        # Create an appropriately sized array of depth values. This is because
+        # for pcolormesh, the y array has to be n + 1 values long. What I'm
+        # doing here is using the first and last depth values and adding those
+        # to the midpoint of the depths inbetween.
+        z = -data[k]['ADEPZZ01']
+        Z = np.hstack((z[0], (np.diff(z) / 2) + z[:-1], z[-1]))
 
         plt.figure()
         plt.subplot(2, 1, 1)
-        plt.pcolormesh(out[:, 0, vars.index('AADYAA01')], -data[k]['ADEPZZ01'], out[:, :, vars.index('TEMPPR01')].transpose())
+        plt.pcolormesh(
+                out[:, 0, vars.index('AADYAA01')] +
+                out[:, 0, vars.index('AAFDZZ01')],
+                Z,
+                out[:, :, vars.index('TEMPPR01')].transpose()
+            )
         plt.colorbar()
         plt.clim(7, 15)
         _ = plt.axis('tight')
 
         plt.subplot(2, 1, 2)
-        plt.pcolormesh(out[:, 0, vars.index('AADYAA01')], -data[k]['ADEPZZ01'], out[:, :, vars.index('SSALBSTX')].transpose())
+        plt.pcolormesh(
+                out[:, 0, vars.index('AADYAA01')] +
+                out[:, 0, vars.index('AAFDZZ01')],
+                Z,
+                out[:, :, vars.index('SSALBSTX')].transpose()
+                )
         plt.colorbar()
         plt.clim(33, 35)
         _ = plt.axis('tight')
 
         plt.show()
+
+    # Check the resulting netCDF
+    if checkOutput:
+
+        import matplotlib.pyplot as plt
+
+        ncin = readFVCOM(ncout, noisy=True)
+
+        # Extract the salinity data (SSALBSTX and SSALAGT1) and combine the two
+        # data sets.
+        sal1 = ncin['SSALBSTX']
+        sal2 = ncin['SSALAGT1']
+
+        # OK, this is doing my head in. We'll save all positions of zero values
+        # in the original array so we can put them back at the end of all this.
+        # Then we'll replace all values below zero with zero. We can then sum
+        # the two arrays and put back the NaNs using the index we just saved.
+        # There has to be a prettier way of doing this, but I haven't found it
+        # yet.
+        sal1idx = (sal1 == 0)
+        sal2idx = (sal2 == 0)
+        sal1nan = np.isnan(sal1) | (sal1 < 0)
+        sal2nan = np.isnan(sal2) | (sal2 < 0)
+        sal1a = sal1
+        sal2a = sal2
+        sal1a[sal1nan] = 0
+        sal2a[sal2nan] = 0
+        salt = sal1a + sal2a
+        salt[sal1nan * sal2nan] = np.nan
+
+        # Create an appropriately sized array of depth values. This is because
+        # for pcolormesh, the y array has to be n + 1 values long. What I'm
+        # doing here is using the first and last depth values and adding those
+        # to the midpoint of the depths inbetween.
+        z = -ncin['depth']
+        Z = np.hstack((z[0], (np.diff(z) / 2) + z[:-1], z[-1]))
+
+        plt.figure()
+        plt.subplot(2, 1, 1)
+        plt.pcolormesh(
+                ncin['AADYAA01'][:, 0] + ncin['AAFDZZ01'][:, 0],
+                Z,
+                ncin['TEMPPR01'].transpose()
+                )
+        plt.colorbar()
+        plt.clim(7, 15)
+        _ = plt.axis('tight')
+
+        plt.subplot(2, 1, 2)
+        plt.pcolormesh(
+                ncin['AADYAA01'][:, 0] + ncin['AAFDZZ01'][:, 0],
+                Z,
+                salt.transpose()
+                )
+        plt.colorbar()
+        plt.clim(33, 35)
+        _ = plt.axis('tight')
+
+        plt.show()
+
+
