@@ -1,0 +1,37 @@
+﻿--------------------------------------------------------------------------------
+This material should not be reproduced without acknowledgement of the source of 
+the material and the inclusion of the disclaimer below.
+--------------------------------------------------------------------------------
+
+The data are provided "as is" and in no event shall Cefas be liable for any 
+damages, including, without limitation, any disruption, damage and/or loss 
+to your data or computer system that may occur while using this site or data. 
+Cefas makes no warranty, express or implied, including the warranties of 
+merchantability and fitness for a particular purpose; nor assumes any legal 
+liability or responsibility for the accuracy, completeness or usefulness of 
+any data, information, apparatus, product, or process disclosed; nor 
+represents that its use would not infringe the rights of any third party.
+
+Cefas is committed to complying with the requirements of the Data Protection 
+Act 1998 that govern the processing of personal data.
+
+The following information will be collected: the number of visitors on this 
+site using the data; your use of the data; and which sites you have visited. 
+
+The material featured on this website is subject to Crown copyright protection
+unless otherwise indicated. The material must be acknowledged as Crown 
+copyright in this manner:
+
+© Crown copyright, 2012 [or year of use]
+
+You may use and re-use Crown copyright information featured on this website 
+(not including logos) free of charge in any format or medium, under the 
+terms of the Open Government Licence.
+
+http://reference.data.gov.uk/id/open-government-licence
+
+Any enquiries regarding the use and re-use of this information resource should 
+be sent to: psi@nationalarchives.gsi.gov.uk
+
+Where we have identified any third party copyright material you will need to 
+obtain permission from the copyright holders concerned.
