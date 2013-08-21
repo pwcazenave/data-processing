@@ -32,7 +32,10 @@
 
 # Data directories
 ArcGIS/
+CEFAS/WaveNet/formatted/
+CEFAS/WaveNet/raw_data/
 ESPA/
+FerryBox/raw_data/
 GEBCO/
 GSHHS/shp/GSHHS_shp/
 HRCS/
