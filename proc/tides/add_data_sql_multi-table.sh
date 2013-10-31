@@ -5,11 +5,11 @@
 # trawling through the entire database every time. Instead, we can just pull
 # the appropriate table from the database.
 
-files="../../NTSLF/BPR/shelf_stations_sql.csv ../../SHOM/shelf_stations_sql_edited.csv ../../REFMAR/shelf_stations_sql.csv ../../NSTD/shelf_stations_latlong_sql.csv ../../NTSLF/shelf_stations_sql.csv"
+files="../../NTSLF/shelf_stations_sql.csv ../../NTSLF/BPR/shelf_stations_sql.csv ../../SHOM/shelf_stations_sql_edited.csv ../../REFMAR/shelf_stations_sql.csv ../../NSTD/shelf_stations_latlong_sql.csv"
 
 for file in $files; do
 
-    dataDir=$(dirname ${file})/formatted/
+    dataDir=$(dirname ${file})/formatted
     delim=','
 
     while read line; do
