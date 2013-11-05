@@ -170,7 +170,7 @@ if __name__ == '__main__':
                 'attributes':{'units':'metres',
                     'long_name':'River position (northings) British National Grid'}},
             'time':{'data':Times,
-                'dimensions':['time'],
+                'dimensions':['days'],
                 'attributes':{'units':'days',
                     'format':'day of year',
                     'long_name':'time'}},
