@@ -65,6 +65,7 @@ if __name__ == '__main__':
     with open(climmeta, 'r') as f:
         for c, line in enumerate(f):
             if c > 0: # skip the header
+
                 # Wow, this is messy!
                 ID, startDate, endDate, dataCount, detCode, sourceCode, \
                 WIMS_REGION, WIMS_SPT_DESC, EA_REGION, EA_AREA, EA_WM_REGION, \
@@ -72,6 +73,8 @@ if __name__ == '__main__':
                 EA_WB_ID_LAKES, EA_WB_ID_COAST, EA_WB_ID_GWATR, a10KM_SQ, \
                 EA_BFI_ID, siteID, siteName, siteX, siteY, siteZ, operatorCode, \
                 siteType, siteComment = line.strip().split(',')
+
+                print('Site {}'.format(ID)),
 
                 # Save the relevant parts into their corresponding dicts.
                 metadata['ID'].append(ID)
@@ -97,35 +100,35 @@ if __name__ == '__main__':
                 metadata['EA_BFI_ID'].append(EA_BFI_ID)
                 metadata['siteID'].append(siteID)
                 metadata['siteName'].append(siteName)
-                if siteX:
-                    siteX = float(siteX)
-                metadata['siteX'].append(siteX)
-                if siteY:
-                    siteY = float(siteY)
-                metadata['siteY'].append(siteY)
-                if siteZ:
-                    siteZ = float(siteZ)
-                metadata['siteZ'].append(siteZ)
+                if not siteX:
+                    siteX = 0
+                metadata['siteX'].append(float(siteX))
+                if not siteY:
+                    siteY = 0
+                metadata['siteY'].append(float(siteY))
+                if not siteZ:
+                    siteZ = -9999
+                metadata['siteZ'].append(float(siteZ))
                 metadata['operatorCode'].append(operatorCode)
                 metadata['siteType'].append(siteType)
                 metadata['siteComment'].append(siteComment)
                 # Add useful coordinates (lon/lat) to the metadata.
                 lon, lat = OSGB36toWGS84(np.array([float(siteX)]), np.array([float(siteY)]))
-                metadata['siteLon'].append(lon)
-                metadata['siteLat'].append(lat)
-
+                metadata['siteLon'].append(lon[0])
+                metadata['siteLat'].append(lat[0])
 
                 # Load the relevant climatology data. Use a numpy array to store
                 # the data as we'll be dumping it out as a 2D array.
                 data = np.genfromtxt(os.path.join('climatology', ID + '.csv'), delimiter=',')
 
                 if c == 1:
-                    climatology = data
+                    Times = data[:, 0]
+                    climatology = data[:, 1]
                 else:
-                    climatology = np.column_stack([climatology, data])
+                    climatology = np.column_stack([climatology, data[:, 1]])
 
-    # Create a day of year array.
-    Times = np.arange(1, 365)
+                print('done.')
+
 
     # Export to netCDF
 
@@ -133,9 +136,10 @@ if __name__ == '__main__':
 
     nc = {}
 
-    nc['dimensions'] = {'time':nt,
-            'sites':ns
-            'strlen':20
+    nc['dimensions'] = {'days':nt,
+            'time':None,
+            'DateStrLen':20,
+            'strlen':50,
             'one':1
             }
 
@@ -143,25 +147,26 @@ if __name__ == '__main__':
     nc['global attributes'] = {
             'description':"Climatology of river temperatures derived from the Environment Agency's surface water tempearture archive for fresh water and estuarine sites in England & Wales.",
             'source':'Source data from the Environment Agency. Climatology calculated by Pierre Cazenave at Plymouth Marine Laboratory',
-            'history': 'Created by Pierre Cazenave on {}'.format(time.ctime(time.time()))
+            'history':'Created by Pierre Cazenave on {}'.format(time.ctime(time.time())),
+            'notes':'Due to a limitation in the code used to write the netCDF file, the "time" dimension should be more accurately named "sites", indicating the number of stations in the database.'
             }
 
     # Build the variables
     nc['variables'] = {
-            'lon':{'data':[lon],
-                'dimensions':['ns'],
+            'lon':{'data':metadata['siteLon'],
+                'dimensions':['time'],
                 'attributes':{'units':'degrees',
                     'long_name':'River position (longitude)'}},
-            'lat':{'data':[metadata['siteLon']],
-                'dimensions':['ns'],
+            'lat':{'data':metadata['siteLat'],
+                'dimensions':['time'],
                 'attributes':{'units':'degrees',
                     'long_name':'River position (latitude)'}},
-            'x':{'data':[metadata['siteLon']],
-                'dimensions':['ns'],
+            'x':{'data':metadata['siteX'],
+                'dimensions':['time'],
                 'attributes':{'units':'metres',
                     'long_name':'River position (eastings) British National Grid'}},
-            'y':{'data':[metadata['siteLat']],
-                'dimensions':['ns'],
+            'y':{'data':metadata['siteY'],
+                'dimensions':['time'],
                 'attributes':{'units':'metres',
                     'long_name':'River position (northings) British National Grid'}},
             'time':{'data':Times,
@@ -169,111 +174,59 @@ if __name__ == '__main__':
                 'attributes':{'units':'days',
                     'format':'day of year',
                     'long_name':'time'}},
-            'height':{'data':[metadata['siteZ']],
-                'dimensions':['one'],
+            'height':{'data':metadata['siteZ'],
+                'dimensions':['time'],
                 'attributes':{'units':'metres above mean sea level (positive up)',
                     'long_name':'height of recording station above mean sea level'}},
-            'climatology':{'data':[climatology]],
-                'dimensions':['ns', 'time'],
+            'StartDate':{'data':['{:20s}'.format(i) for i in metadata['startDate']],
+                'dimensions':['time', 'DateStrLen'],
+                'attributes':{'format':'DD/MM/YYYY HH:MM:SS',
+                    'time_zone':'UTC',
+                    'long_name':'Time series start date'},
+                'data_type':'c'},
+            'EndDate':{'data':['{:20s}'.format(i) for i in metadata['endDate']],
+                'dimensions':['time', 'DateStrLen'],
+                'attributes':{'format':'DD/MM/YYYY HH:MM:SS',
+                    'time_zone':'UTC',
+                    'long_name':'Time series end date'},
+                'data_type':'c'},
+            'EA_REGION':{'data':['{:50s}'.format(i) for i in metadata['EA_REGION']],
+                'dimensions':['time', 'strlen'],
+                'attributes':{'long_name':'Environment Agency region name'},
+                'data_type':'c'},
+            'EA_AREA':{'data':['{:50s}'.format(i) for i in metadata['EA_AREA']],
+                'dimensions':['time', 'strlen'],
+                'attributes':{'long_name':'Environment Agency area name'},
+                'data_type':'c'},
+            'SiteName':{'data':['{:50s}'.format(i) for i in metadata['siteName']],
+                'dimensions':['time', 'strlen'],
+                'attributes':{'long_name':'Site name for the river temperature data'},
+                'data_type':'c'},
+            'SiteType':{'data':['{:50s}'.format(i) for i in metadata['siteType']],
+                'dimensions':['time', 'strlen'],
+                'attributes':{'long_name':'Site type for the temperature data'},
+                'data_type':'c'},
+            'Comments':{'data':['{:50s}'.format(i) for i in metadata['siteComment']],
+                'dimensions':['time', 'strlen'],
+                'attributes':{'long_name':'Notes/comments on the site'},
+                'data_type':'c'},
+            'OperatorCode':{'data':['{:50s}'.format(i) for i in metadata['operatorCode']],
+                'dimensions':['time', 'strlen'],
+                'attributes':{'long_name':'Operator code for the site'},
+                'data_type':'c'},
+            '10KM_SQ':{'data':['{:50s}'.format(i) for i in metadata['10KM_SQ']],
+                'dimensions':['time', 'strlen'],
+                'attributes':{'long_name':'Ordnance Survey grid square ID'},
+                'data_type':'c'},
+            'DataCount':{'data':metadata['dataCount'],
+                'dimensions':['time'],
+                'attributes':{'long_name':'Number of data points in this record'}},
+            'climatology':{'data':climatology.transpose(),
+                'dimensions':['time', 'days'],
                 'attributes':{'units':'celsius',
                     'long_name':'calculated mean daily river temperature'}}
             }
 
     ncwrite.ncdfWrite(nc, ncout, Quiet=False)
-
-    if drawFig:
-
-        import matplotlib.pyplot as plt
-
-        # Create an appropriately sized array of depth values. This is because
-        # for pcolormesh, the y array has to be n + 1 values long. What I'm
-        # doing here is using the first and last depth values and adding those
-        # to the midpoint of the depths inbetween.
-        z = -data[k]['ADEPZZ01']
-        Z = np.hstack((z[0], (np.diff(z) / 2) + z[:-1], z[-1]))
-
-        plt.figure()
-        plt.subplot(2, 1, 1)
-        plt.pcolormesh(
-                out[:, 0, vars.index('AADYAA01')] +
-                out[:, 0, vars.index('AAFDZZ01')],
-                Z,
-                out[:, :, vars.index('TEMPPR01')].transpose()
-            )
-        plt.colorbar()
-        plt.clim(7, 15)
-        _ = plt.axis('tight')
-
-        plt.subplot(2, 1, 2)
-        plt.pcolormesh(
-                out[:, 0, vars.index('AADYAA01')] +
-                out[:, 0, vars.index('AAFDZZ01')],
-                Z,
-                out[:, :, vars.index('SSALBSTX')].transpose()
-                )
-        plt.colorbar()
-        plt.clim(33, 35)
-        _ = plt.axis('tight')
-
-        plt.show()
-
-    # Check the resulting netCDF
-    if checkOutput:
-
-        import matplotlib.pyplot as plt
-
-        ncin = readFVCOM(ncout, noisy=True)
-
-        # Extract the salinity data (SSALBSTX and SSALAGT1) and combine the two
-        # data sets.
-        sal1 = ncin['SSALBSTX']
-        sal2 = ncin['SSALAGT1']
-
-        # OK, this is doing my head in. We'll save all positions of zero values
-        # in the original array so we can put them back at the end of all this.
-        # Then we'll replace all values below zero with zero. We can then sum
-        # the two arrays and put back the NaNs using the index we just saved.
-        # There has to be a prettier way of doing this, but I haven't found it
-        # yet.
-        sal1idx = (sal1 == 0)
-        sal2idx = (sal2 == 0)
-        sal1nan = np.isnan(sal1) | (sal1 < 0)
-        sal2nan = np.isnan(sal2) | (sal2 < 0)
-        sal1a = sal1
-        sal2a = sal2
-        sal1a[sal1nan] = 0
-        sal2a[sal2nan] = 0
-        salt = sal1a + sal2a
-        salt[sal1nan * sal2nan] = np.nan
-
-        # Create an appropriately sized array of depth values. This is because
-        # for pcolormesh, the y array has to be n + 1 values long. What I'm
-        # doing here is using the first and last depth values and adding those
-        # to the midpoint of the depths inbetween.
-        z = -ncin['depth']
-        Z = np.hstack((z[0], (np.diff(z) / 2) + z[:-1], z[-1]))
-
-        plt.figure()
-        plt.subplot(2, 1, 1)
-        plt.pcolormesh(
-                ncin['AADYAA01'][:, 0] + ncin['AAFDZZ01'][:, 0],
-                Z,
-                ncin['TEMPPR01'].transpose()
-                )
-        plt.colorbar()
-        plt.clim(7, 15)
-        _ = plt.axis('tight')
-
-        plt.subplot(2, 1, 2)
-        plt.pcolormesh(
-                ncin['AADYAA01'][:, 0] + ncin['AAFDZZ01'][:, 0],
-                Z,
-                salt.transpose()
-                )
-        plt.colorbar()
-        plt.clim(33, 35)
-        _ = plt.axis('tight')
-
-        plt.show()
 
 
