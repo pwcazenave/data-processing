@@ -1,15 +1,6 @@
 """
-Read in the Port Erin netCDFs and create a super netCDF of all the time
-series.
-
-The variable AADYAA01 is not present in the ASCII equivalents of the netCDF
-files, but it represents time (days?) since 00:00 01/01/1760.
-
-Unfortunately, the values in AADYAA01 are integer days, so there are no times
-(everything is at midnight). Comparing this with the data in the ASCII
-filesshows that from 1996 onwards, the data do have time values. I haven't
-figured a sensible way of adding the times to the concatenated netCDF file
-generated here.
+Read in the calculated climatologies for the river temperature data and
+generate a single netCDF.
 
 """
 
@@ -76,12 +67,16 @@ if __name__ == '__main__':
 
                 print('Site {}'.format(ID)),
 
+                # Some need to be in specific formats.
+                dataCount = int(float(dataCount)) # not sure why this is the way it is...
+                siteX, siteY, siteZ = float(siteX), float(siteY), float(siteZ)
+
                 # Save the relevant parts into their corresponding dicts.
                 metadata['ID'].append(ID)
                 metadata['siteID'].append(siteID)
                 metadata['startDate'].append(startDate)
                 metadata['endDate'].append(endDate)
-                metadata['dataCount'].append(int(float(dataCount)))
+                metadata['dataCount'].append(dataCount)
                 metadata['detCode'].append(detCode)
                 metadata['sourceCode'].append(sourceCode)
                 metadata['WIMS_REGION'].append(WIMS_REGION)
@@ -101,19 +96,19 @@ if __name__ == '__main__':
                 metadata['siteID'].append(siteID)
                 metadata['siteName'].append(siteName)
                 if not siteX:
-                    siteX = 0
-                metadata['siteX'].append(float(siteX))
+                    siteX = 0.0
+                metadata['siteX'].append(siteX)
                 if not siteY:
-                    siteY = 0
-                metadata['siteY'].append(float(siteY))
+                    siteY = 0.0
+                metadata['siteY'].append(siteY)
                 if not siteZ:
                     siteZ = -9999
-                metadata['siteZ'].append(float(siteZ))
+                metadata['siteZ'].append(siteZ)
                 metadata['operatorCode'].append(operatorCode)
                 metadata['siteType'].append(siteType)
                 metadata['siteComment'].append(siteComment)
                 # Add useful coordinates (lon/lat) to the metadata.
-                lon, lat = OSGB36toWGS84(np.array([float(siteX)]), np.array([float(siteY)]))
+                lon, lat = OSGB36toWGS84(np.array([siteX]), np.array([siteY]))
                 metadata['siteLon'].append(lon[0])
                 metadata['siteLat'].append(lat[0])
 
