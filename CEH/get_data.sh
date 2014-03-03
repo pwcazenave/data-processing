@@ -43,10 +43,10 @@ main(){
             if [ $downloadable == "Y" ]; then
                 echo -n "Getting river $name at $(echo $loc | tr "-" " ") ($id), "
 
-                out="./raw_data/${name}_${loc}.csv"
+                out="./raw_data/${id}_${name}_${loc}.csv"
 
                 if [ -f "$out" ]; then
-                    echo ${name}_${loc},$(\grep Reference $out | cut -f3 -d,) >> positions.txt
+                    echo ${id},${name}_${loc},$(\grep Reference $out | cut -f3 -d,) >> positions.txt
 
                     echo "skipping."
 
