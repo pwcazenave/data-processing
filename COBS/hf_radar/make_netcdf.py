@@ -137,9 +137,9 @@ nc['dimensions'] = {'time':nt,
         }
 # Add the global attributes
 nc['global attributes'] = {
-        'description':'NOC High Frequency (HF) Radar Time series',
+        'description':'CObs High Frequency (HF) Radar Time series',
         'source':'netCDF3 python',
-        'history': 'Created from the ASCII data on the Coastal Observatory website (http://cobs.noc.ac.uk/wera/) on {}'.format(time.ctime(time.time()))
+        'history':'Created from the ASCII data on the Coastal Observatory website (http://cobs.noc.ac.uk/wera/) on {}'.format(time.ctime(time.time()))
         }
 
 # Build the variables
