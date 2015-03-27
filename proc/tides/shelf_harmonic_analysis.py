@@ -12,8 +12,6 @@ import subprocess
 import sys
 import os
 
-from lxml import etree
-
 from tide_tools import getObservedData, addHarmonicResults, parseTAPPyXML
 
 
