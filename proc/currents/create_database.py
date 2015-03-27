@@ -30,24 +30,17 @@ if __name__ == '__main__':
     # some of the metadata fields.
     try:
         with con:
-            cur.execute(re.sub(' +', ' ', 'CREATE TABLE Stations( \
-                    Name TEXT COLLATE nocase, \
-                    Latitude FLOAT(10), \
-                    Longitude FLOAT(10), \
-                    StartDate TEXT COLLATE nocase, \
-                    yearStart INT, \
-                    monthStart INT, \
-                    dayStart INT, \
-                    hourStart INT, \
-                    minuteStart INT, \
-                    secondStart INT, \
-                    EndDate TEXT COLLATE nocase, \
-                    yearEnd INT, \
-                    monthEnd INT, \
-                    dayEnd INT, \
-                    hourEnd INT, \
-                    minuteEnd INT, \
-                    secondEnd INT);'))
+            meta = re.sub(' +', ' ', 'CREATE TABLE Stations(\
+                    latDD FLOAT(10), \
+                    lonDD FLOAT(10), \
+                    shortName TEXT COLLATE nocase, \
+                    longName TEXT COLLATE nocase, \
+                    originatorName TEXT COLLATE nocase, \
+                    originatorLongName TEXT COLLATE nocase, \
+                    startDate TEXT COLLATE nocase, \
+                    endDate TEXT COLLATE nocase \
+                    )')
+            cur.execute(meta)
 
             # Add each site and its associated metadata.
             for row in reader:
@@ -94,35 +87,26 @@ if __name__ == '__main__':
                     # Get the position for this site
 
                     cur.execute('INSERT INTO Stations VALUES( \
-                            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (
-                            row['name'],
+                            ?, ?, ?, ?, ?, ?, ?, ?)', (
                             float(metadata['latDD']),
                             float(metadata['lonDD']),
+                            row['name'],
+                            row['name'],
+                            'BODC',
+                            'British Oceanographic Data Centre',
                             '{:04d}-{:02d}-{:02d} {:02d}:{:02d}:{:02d}'.format(
                                 sYear, sMonth, sDay, sHour, sMin, sSec
                                 ),
-                            sYear,
-                            sMonth,
-                            sDay,
-                            sHour,
-                            sMin,
-                            sSec,
                             '{:04d}-{:02d}-{:02d} {:02d}:{:02d}:{:02d}'.format(
                                 eYear, eMonth, eDay, eHour, eMin, eSec
                                 ),
-                            eYear,
-                            eMonth,
-                            eDay,
-                            eHour,
-                            eMin,
-                            eSec
                             )
                             )
 
                     # Create a table with all the possible data types we're likely
                     # to find from the BODC data. Some of these will be blank if we
                     # don't have any data for a given station.
-                    query = re.sub(' +', ' ', 'CREATE TABLE {}( \
+                    query = re.sub(' +', ' ', 'CREATE TABLE {}(\
                             year INT, \
                             month INT, \
                             day INT, \
