@@ -147,32 +147,34 @@ if __name__ == '__main__':
     # output.
     keys = data.keys()
     ns = len(keys)
-    TASKS = [(Tide, (
-        data[keys[i]]['dates'],
-        data[keys[i]]['u'],
-        keys[i]
-        )) for i in range(ns)]
-    for task in TASKS:
-        task_queue.put(task)
-    for _ in range(NPROCS):
-        multiprocessing.Process(target=worker, args=(task_queue, done_queue)).start()
-    # Extract the results into a single large dict.
-    harmonics = {}
-    for _ in TASKS:
-        ret = done_queue.get()
-        results, name = ret
-        harmonics[name] = results
+    for comp in 'u', 'v':
+        TASKS = [(Tide, (
+            data[keys[i]]['dates'],
+            data[keys[i]][comp],
+            keys[i]
+            )) for i in range(ns)]
+        for task in TASKS:
+            task_queue.put(task)
+        for _ in range(NPROCS):
+            multiprocessing.Process(target=worker, args=(task_queue, done_queue)).start()
+        # Extract the results into a single large dict.
+        harmonics = {}
+        for _ in TASKS:
+            ret = done_queue.get()
+            results, name = ret
+            harmonics[name] = results
 
-    for k in keys:
-        # We don't have a speed value, so set to -1 here. Set the inferred
-        # values to False too.
-        addHarmonicResults(hdb, k,
-                harmonics[k]['constituent'],
-                harmonics[k]['phase'],
-                harmonics[k]['amplitude'],
-                np.zeros(harmonics[k]['phase'].shape) - 1,
-                np.repeat('False', len(harmonics[k]['constituent'])),
-                noisy=noisy)
+        for k in keys:
+            # We don't have a speed value, so set to -1 here. Set the inferred
+            # values to False too.
+            addHarmonicResults(hdb, k,
+                    harmonics[k]['constituent'],
+                    harmonics[k]['phase'],
+                    harmonics[k]['amplitude'],
+                    np.zeros(harmonics[k]['phase'].shape) - 1,
+                    np.repeat('False', len(harmonics[k]['constituent'])),
+                    ident=comp,
+                    noisy=noisy)
 
     # Set up the ancillary information for the plot.
     extents = np.array((np.min(lon), np.max(lon), np.min(lat), np.max(lat)))
