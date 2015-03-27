@@ -1,6 +1,4 @@
 Filename,Orginator's,Latitude,Longitude,Site,Start,End,Instrument,Parameters,Water,Minimum,Maximum,Cautions
-,Identifier,,,,Date/time,Date/time,,measured,Depth,Depth,Depth,
-,,deg +ve N,deg +ve E,,UT,UT,,,m,m,m,
 cmd\b0003593.lst,S303B/AM5,61.3333,0,NS303,10/03/1973 18:15,06/04/1973 07:05,Impeller current meter,DS,159,76,76,C
 cmd\b0003600.lst,S303M/AM6,61.3333,0,NS303,10/03/1973 17:50,06/04/1973 07:15,Impeller current meter,DS,159,156,156,C
 cmd\b0003612.lst,S304T/AM7,61.3333,0,S304T/AM7,12/04/1973 17:25,04/05/1973 00:05,Impeller current meter,DS,159,30,30,C
@@ -3993,14 +3991,3 @@ cmd\b0664489.lst,IW3B_D,55.88333,-9.21667,IW3_RIG_B,09/07/1983 20:30,11/08/1983 
 cmd\b0664490.lst,IW3B_E,55.88333,-9.21667,IW3_RIG_B,09/07/1983 20:30,11/08/1983 06:10,Savonius rotor current meter,CDPST,190,177,177
 cmd\b0666110.lst,S41119B.584,54.8583,-5.2133,POLRIG#584,19/09/1993 11:10,24/09/1993 12:30,Electromagnetic current meter,DS,74,15,15
 cmd\b0666122.lst,S41644T.584,54.8583,-5.2133,POLRIG#584,19/09/1993 11:10,24/09/1993 12:30,Electromagnetic current meter,DS,74,5,5
-
-Parameter Codes,,,,,,,,,,,
-
-A,Attenuance/Transmittance/Turbidity,,,,,,,,,,
-C,Salinity/Conductivity,,,,,,,,,,
-D,Current Direction
-P,Pressure
-R,Temperature Gradient
-S,Current Speed
-T,Sea Temperature
-V,Horizontal Current Velocity
