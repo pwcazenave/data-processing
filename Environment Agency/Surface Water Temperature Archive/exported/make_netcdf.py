@@ -69,7 +69,12 @@ if __name__ == '__main__':
 
                 # Some need to be in specific formats.
                 dataCount = int(float(dataCount)) # not sure why this is the way it is...
-                siteX, siteY, siteZ = float(siteX), float(siteY), float(siteZ)
+                if siteX:
+                    siteX = float(siteX)
+                if siteY:
+                    siteY = float(siteY)
+                if siteZ:
+                    siteZ = float(siteZ)
 
                 # Save the relevant parts into their corresponding dicts.
                 metadata['ID'].append(ID)
