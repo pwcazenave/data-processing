@@ -38,7 +38,8 @@ if __name__ == '__main__':
                     originatorName TEXT COLLATE nocase, \
                     originatorLongName TEXT COLLATE nocase, \
                     startDate TEXT COLLATE nocase, \
-                    endDate TEXT COLLATE nocase \
+                    endDate TEXT COLLATE nocase, \
+                    depth FLOAT(10) \
                     )')
             cur.execute(meta)
 
@@ -56,7 +57,7 @@ if __name__ == '__main__':
 
                         dateval, timeval, dirval, speedval, flagval = [], [], [], [], []
                         for val in rawdata:
-                            flag = False
+                            flag = 'F'
                             line = filter(None, val.strip().split(' '))
                             # Skip a record if we're missing some aspect of the data.
                             if len(line) >= 5:
@@ -65,10 +66,10 @@ if __name__ == '__main__':
                             timeval.append(timestr.split('.'))
                             if speed[-1].isalpha():
                                 speed = speed[:-1]
-                                flag = True
+                                flag = 'T'
                             if direction[-1].isalpha():
                                 direction = direction[:-1]
-                                flag = True
+                                flag = 'T'
                             dirval.append(float(direction))
                             speedval.append(float(speed))
                             flagval.append(flag)
@@ -87,7 +88,7 @@ if __name__ == '__main__':
                     # Get the position for this site
 
                     cur.execute('INSERT INTO Stations VALUES( \
-                            ?, ?, ?, ?, ?, ?, ?, ?)', (
+                            ?, ?, ?, ?, ?, ?, ?, ?, ?)', (
                             float(metadata['latDD']),
                             float(metadata['lonDD']),
                             row['name'],
@@ -100,6 +101,7 @@ if __name__ == '__main__':
                             '{:04d}-{:02d}-{:02d} {:02d}:{:02d}:{:02d}'.format(
                                 eYear, eMonth, eDay, eHour, eMin, eSec
                                 ),
+                            row['Water']
                             )
                             )
 
