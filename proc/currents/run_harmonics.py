@@ -105,8 +105,9 @@ if __name__ == '__main__':
     lat, lon, site, longname = getObservedMetadata(db)
 
     data = {}
-    for s in site:
-        sitedata = np.asarray(getObservedData(db, s, noisy=noisy))
+    for ii, s in enumerate(site):
+        print('Getting data for {} ({} of {})'.format(s, ii + 1, len(site)))
+        sitedata = np.asarray(getObservedData(db, s))
         times = sitedata[:, :6].astype(int)
         dates = np.asarray([datetime(*i) for i in times])
         # Only add this site if we've got a sufficiently long time series, defined
