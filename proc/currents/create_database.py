@@ -5,11 +5,13 @@ Take the BODC current meter data and add it to a simple SQLite database.
 
 import os
 import re
-import csv
 import sys
+import pandas
 import sqlite3
 
 import numpy as np
+
+from datetime import datetime
 
 
 if __name__ == '__main__':
@@ -19,12 +21,11 @@ if __name__ == '__main__':
     con = sqlite3.connect('./currents.db')
     cur = con.cursor()
 
-    base = '/users/modellers/pica/Data/BODC/currents/2012/'
-    metaDataFiles = (os.path.join(base, 'Moorinv.csv'))
+    base = '/users/modellers/pica/Data/BODC/currents/2015/'
+    metaDataFiles = (os.path.join(base, 'metadata', 'bodc_series_metadata_summary.csv'))
 
-    # Read the metadata into a dict
-    f = open(metaDataFiles, 'rt')
-    reader = csv.DictReader(f)
+    # Read the metadata into a pandas dataframe.
+    metadata = pandas.read_csv(metaDataFiles, header=23, parse_dates={'start_time':[9], 'end_time':[10]}, na_values=[-99, -999])
 
     # Create a new database and add the metadata to a field called Stations with
     # some of the metadata fields.
@@ -44,70 +45,69 @@ if __name__ == '__main__':
             cur.execute(meta)
 
             # Add each site and its associated metadata.
-            for row in reader:
+            for row in metadata.iterrows():
 
-                row['name'] = os.path.splitext(row['Filename'].split('\\')[-1])[0].lower().strip()
+                _, currsite = row
+                start, end = currsite['start_time'], currsite['end_time']
+                site = 'b{:07d}'.format(currsite['BODC reference'])
 
                 if noisy:
-                    print('Adding station {}'.format(row['name']))
+                    print('Adding station {}'.format(site))
 
                 try:
-                    with open(os.path.join(base, 'formatted', '{}.lst'.format(row['name']))) as d:
+                    # This is probably more robustly done with a pandas
+                    # dataframe, but I'd already written this so it stays
+                    # unless something horrible breaks.
+                    datafile = os.path.join(base, 'formatted', '{}.csv'.format(site))
+                    with open(datafile) as d:
                         rawdata = d.readlines()
 
                         dateval, timeval, dirval, speedval, flagval = [], [], [], [], []
-                        for val in rawdata:
-                            flag = 'F'
-                            line = filter(None, val.strip().split(' '))
-                            # Skip a record if we're missing some aspect of the data.
-                            if len(line) >= 5:
-                                _, datestr, timestr, direction, speed = filter(None, val.strip().split(' '))[:5]
+                        for line in rawdata:
+                            datestr, timestr, direction, speed, flag = line.strip().split(',')
                             dateval.append(datestr.split('/'))
-                            timeval.append(timestr.split('.'))
-                            if speed[-1].isalpha():
-                                speed = speed[:-1]
-                                flag = 'T'
-                            if direction[-1].isalpha():
-                                direction = direction[:-1]
-                                flag = 'T'
-                            dirval.append(float(direction))
-                            speedval.append(float(speed))
-                            flagval.append(flag)
-
-                    metadata = {}
-                    metadata['start'] = dateval[0] + timeval[0]
-                    metadata['end'] = dateval[-1] + timeval[-1]
-                    metadata['lonDD'] = row['Longitude']
-                    metadata['latDD'] = row['Latitude']
+                            timeval.append(timestr.split(':'))
+                            dirval.append(direction)
+                            speedval.append(speed)
+                            flagval.append(flag[0])
 
                     data = np.column_stack((dateval, timeval, speedval, dirval, flagval))
 
-                    sYear, sMonth, sDay, sHour, sMin, sSec = np.array(metadata['start']).astype(int)
-                    eYear, eMonth, eDay, eHour, eMin, eSec = np.array(metadata['end']).astype(int)
+                except IOError:
+                    print('WARNING: Unable to open data file {}'.format(datafile))
+                    continue
 
-                    # Get the position for this site
+                # Find dodgy end times if the metadata didn't have the correct
+                # end time.
+                if pandas.isnull(end):
+                    times = np.column_stack((dateval, timeval)).astype(int)
+                    end = [datetime(*i) for i in times][-1]
 
-                    cur.execute('INSERT INTO Stations VALUES( \
-                            ?, ?, ?, ?, ?, ?, ?, ?, ?)', (
-                            float(metadata['latDD']),
-                            float(metadata['lonDD']),
-                            row['name'],
-                            row['name'],
-                            'BODC',
-                            'British Oceanographic Data Centre',
+                try:
+                    # Do the SQLite stuff.
+
+                    # Get the position for this site and add it to the Stations table.
+                    cur.execute(re.sub(' +', ' ', 'INSERT INTO Stations VALUES(\
+                            ?, ?, ?, ?, ?, ?, ?, ?, ?)'), (
+                            float(currsite['Latitude A']),
+                            float(currsite['Longitude A']),
+                            site,
+                            str(currsite['BODC reference']),
+                            ''.join([i[0] for i in currsite['Organisation'].split(' ') if i if i[0].isupper()]),
+                            currsite['Organisation'],
                             '{:04d}-{:02d}-{:02d} {:02d}:{:02d}:{:02d}'.format(
-                                sYear, sMonth, sDay, sHour, sMin, sSec
+                                start.year, start.month, start.day,
+                                start.hour, start.minute, start.second
                                 ),
                             '{:04d}-{:02d}-{:02d} {:02d}:{:02d}:{:02d}'.format(
-                                eYear, eMonth, eDay, eHour, eMin, eSec
+                                end.year, end.month, end.day,
+                                end.hour, end.minute, end.second
                                 ),
-                            row['Water']
+                            currsite['Series depth minimum (m)']
                             )
                             )
 
-                    # Create a table with all the possible data types we're likely
-                    # to find from the BODC data. Some of these will be blank if we
-                    # don't have any data for a given station.
+                    # Create new table for this site in the database.
                     query = re.sub(' +', ' ', 'CREATE TABLE {}(\
                             year INT, \
                             month INT, \
@@ -117,22 +117,17 @@ if __name__ == '__main__':
                             second INT, \
                             speed FLOAT(10), \
                             direction FLOAT(10), \
-                            flag TEXT collate nocase)'.format(row['name']))
+                            flag TEXT collate nocase)'.format(site))
 
                     cur.execute(query)
 
-                    try:
-                        cur.executemany(
-                                'INSERT INTO {} VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'.format(row['name']), data
-                                )
-                    except:
-                        if noisy: print 'uh oh'
-                        sys.exit(1)
+                    # Populate the table with the time series.
+                    cur.executemany(
+                            'INSERT INTO {} VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'.format(site), data
+                            )
 
-                except sqlite3.Error, e:
-                    print 'Problem with row {}'.format(e.args[0])
-                    sys.exit(1)
-
+                except Exception:
+                    raise Exception('Error adding site {} table.'.format(site))
 
     except sqlite3.Error, e:
         if con:
@@ -146,5 +141,4 @@ if __name__ == '__main__':
         if con:
             con.commit()
             con.close()
-        f.close()
 
