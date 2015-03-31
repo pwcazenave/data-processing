@@ -45,14 +45,18 @@ if __name__ == '__main__':
             cur.execute(meta)
 
             # Add each site and its associated metadata.
-            for row in metadata.iterrows():
+            for ii, row in enumerate(metadata.iterrows()):
 
                 _, currsite = row
                 start, end = currsite['start_time'], currsite['end_time']
                 site = 'b{:07d}'.format(currsite['BODC reference'])
 
                 if noisy:
-                    print('Adding station {}'.format(site))
+                    print('Adding station {} ({} of {})'.format(
+                        site,
+                        ii + 1,
+                        len(metadata['BODC reference'])
+                        ))
 
                 try:
                     # This is probably more robustly done with a pandas
@@ -73,6 +77,7 @@ if __name__ == '__main__':
 
                     data = np.column_stack((dateval, timeval, speedval, dirval, flagval))
 
+                # If we don't have the file, skip this site.
                 except IOError:
                     print('WARNING: Unable to open data file {}'.format(datafile))
                     continue
