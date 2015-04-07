@@ -1,0 +1,209 @@
+"""
+This is going to be a monster.
+
+Grid the data in the whole UKHO data set received so far (2015/04/07) to 1km
+resolution. That's pretty low compared with the source data (probably), but is
+pretty high for a shelf-wide data set. To make this even vaguely managable,
+split the entire domain up into 100km by 100km tiles.
+
+Don't do any fancy gridding (the newest, highest quality etc.) just average
+everything which touches each tile.
+
+"""
+
+import os
+import utm
+import glob
+import subprocess
+
+class Point(object):
+    """ A point class for a two coordinate location. """
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+class Rect(object):
+    """ A rectangle class with four points. """
+
+    def __init__(self, p1, p2):
+        """
+        Store the top, bottom, left and right values for points
+        p1 and p2 are the (corners) in either order.
+        """
+
+        self.left   = min(p1.x, p2.x)
+        self.right  = max(p1.x, p2.x)
+        self.bottom = min(p1.y, p2.y)
+        self.top    = max(p1.y, p2.y)
+
+
+def range_overlap(a_min, a_max, b_min, b_max):
+    """ Check for overlapping ranges.
+
+    Neither range is completely greater than the other.
+
+    Taken from http://codereview.stackexchange.com/questions/31352
+
+    Parameters
+    ----------
+    a_min, a_max, b_min, b_max : float
+        Minimum and maximum values for two ranges (i.e. the edges of
+        a rectangle).
+
+    Returns
+    -------
+    overlapping : bool
+        True if the ranges overlap.
+
+    """
+
+    return (a_min <= b_max) and (b_min <= a_max)
+
+
+def overlap(r1, r2):
+    """ Check for overlapping rectangles.
+
+    Overlapping rectangles overlap both horizontally & vertically.
+
+    Taken from http://codereview.stackexchange.com/questions/31352
+
+    Parameters
+    ----------
+    r1, r2 : 
+
+    """
+    return range_overlap(r1.left, r1.right, r2.left, r2.right) and range_overlap(r1.bottom, r1.top, r2.bottom, r2.top)
+
+
+def sources(rect, poly, files):
+    """ Find the raw files to use to grid the box defined by rect.
+
+    For the box defined in rect, in the list of bounds defined in poly,
+    extract the files whose bounding boxes interect the box and return the
+    file names as a list.
+
+    Coordinate types for each rectangle definition must be the same (i.e.
+    all UTM, all spherical etc.).
+
+    Parameters
+    ----------
+    rect : Rect
+        Class describing the rectangle within which all intersecting data
+        polygons should be identified.
+    poly : list
+        List of Rect classes describing the data polygons.
+    files : list
+        List of file names corresponding to the data polygon extents.
+
+    Returns
+    -------
+    overlapping : list
+        List of file paths which intersect the box `rect'.
+
+    """
+
+    # OK, we have a box. Do any of the raw data sets intersect this
+    # box? We'll check each polygon and mark whether we should be using
+    # it in the final gridding.
+    rect = Rect(Point(sw, ss), Point(se, sn))
+    overlapping = []
+    for data_rect, f in zip(poly, files):
+        if overlap(rect, data_rect):
+            overlapping.append(f)
+
+    return overlapping
+
+
+def grid():
+    """ Farm out the gridding for a given box to GMT.
+
+    Parameters
+    ----------
+    rect : Rect
+        Box within which to grid the data.
+    files : list
+        List of file name to include in the gridding.
+
+    """
+
+    if not files:
+        # If the list of files is empty, just skip this box.
+        return
+    else:
+        subprocess('something')
+
+
+
+if __name__ == '__main__':
+
+    raw = glob.glob(os.path.join('ascii', '*.ascii'))
+    bnds = glob.glob(os.path.join('metadata', '*.bnd'))
+
+    res = 1000 # in metres
+
+    # Get the coverage of the whole data set. Requires running the bounds.sh
+    # script to extract the metadata from each file. Apparently the .xml
+    # metadata doesn't include this (basic) information.
+    west, east, south, north = float('inf'), -float('inf'), float('inf'), -float('inf')
+    poly = []
+
+    for file in bnds:
+        with open(file) as f:
+            bnd = [float(i) for i in f.read().strip().split('\t')]
+            if bnd[2] < west:
+                west = bnd[2]
+            if bnd[3] > east:
+                east = bnd[3]
+            if bnd[0] < south:
+                south = bnd[0]
+            if bnd[1] > north:
+                north = bnd[1]
+
+            ll = utm.from_latlon(bnd[0], p[2], force_zone_number=30)[:2]
+            ur = utm.from_latlon(bnd[1], p[3], force_zone_number=30)[:2]
+            poly.append(Rect(Point(ll[0], ll[1]), Point(ur[0], ur[1])))
+
+    # For sensible grids, convert to UTM. We can do the reverse at the end to
+    # maintain a sensible overall grid configuration. Buffer the bounds by the
+    # desired grid resolution each way.
+    southwest = utm.from_latlon(south, west, force_zone_number=30)
+    northeast = utm.from_latlon(north, east, force_zone_number=30)
+
+    # Make a list of boxes which will be checked for validity when being
+    # gridded.
+    nx = int(ceil((northeast[0] - southwest[0]) / res))
+    ny = int(ceil((northeast[1] - southwest[1]) / res))
+
+    sw, ss = southwest[:2]
+
+    box = []
+    for y in range(ny):
+        for x in range(nx):
+
+            # Get the rest of the coordinates.
+            se = sw + res
+            sn = ss + res
+
+            box.append((sw, se, ss, sn))
+
+            # Move to the next box across.
+            sw = sw + res
+
+        # Jump to the next row.
+        ss = ss + res
+
+    # Now we have a list of boxes, grid them.
+    nb = range(nx * ny)
+
+
+
+        # Now we have a list of data sets to use. We'll farm out the actual
+        # gridding to GMT since it's probably quicker overall. We will,
+        # however, use the multiprocessing library to grid different boxes
+        # in parallel, saving each output to a new netCDF and geoTIFF file.
+
+
+
+
