@@ -173,7 +173,7 @@ def grid(rect):
 
 if __name__ == '__main__':
 
-    raw = glob.glob(os.path.join('ascii', '*.ascii'))
+    raw = glob.glob(os.path.join('ascii', 'utm30n', '*.ascii'))
     bnds = glob.glob(os.path.join('metadata', '*.bnd'))
 
     res = 1000 # in metres
