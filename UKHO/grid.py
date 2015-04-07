@@ -14,7 +14,11 @@ everything which touches each tile.
 import os
 import utm
 import glob
+import tempfile
 import subprocess
+import multiprocessing
+
+import numpy as np
 
 class Point(object):
     """ A point class for a two coordinate location. """
@@ -95,7 +99,7 @@ def sources(rect, poly, files):
     poly : list
         List of Rect classes describing the data polygons.
     files : list
-        List of file names corresponding to the data polygon extents.
+        List of file names of data corresponding to the data polygon extents.
 
     Returns
     -------
@@ -116,23 +120,54 @@ def sources(rect, poly, files):
     return overlapping
 
 
-def grid():
+def grid(rect):
     """ Farm out the gridding for a given box to GMT.
+
+    Checks for which files intersect this box and grids those that fall within
+    it. Skips this box if no files are found to intersect.
+
+    The GMT pipeline is as follows:
+
+    1. blockmean - regularly grid the data to the desired resolution.
+    2. nearneighbor - interpolate to fill gaps.
+    3. grdmask - mask off regions more than four times the resolution away from
+       the original data point.
+    4. grdmath - apply the mask and save to netCDF.
+    5. grdformat - convert from netCDF to geoTIFF.
 
     Parameters
     ----------
     rect : Rect
         Box within which to grid the data.
-    files : list
-        List of file name to include in the gridding.
 
     """
+
+    files = sources(rect, poly, raw)
 
     if not files:
         # If the list of files is empty, just skip this box.
         return
     else:
-        subprocess('something')
+        bfile = tempfile.NamedTemporaryFile(delete=True)
+        nfile = tempfile.NamedTemporaryFile(delete=True)
+        mfile = tempfile.NamedTemporaryFile(delete=True)
+        prefix = 'UKHO_{}_{}_{}_{}'.format(
+                rect.left,
+                rect.right,
+                rect.bottom,
+                rect.top
+                )
+        ncfile = os.path.join('nc', '{}.nc'.format(prefix))
+        geofile = os.path.join('tiffs', '{}.tiff'.format(prefix))
+
+        area = '-R{}/{}/{}/{}'.format(rect.left, rect.right, rect.bottom, rect.top)
+        blockmean = ['gmt blockmean', area, '-I{}'.format(res), files, '>', bfile.name]
+        nearneighbor = ['gmt nearneighbor', area, '-I{}'.format(res), '-N4', '-S{}'.format(res * 4), bfile.name, '-G{}'.format(nfile)]
+        grdmask = ['gmt grdmask', area, '-I{}'.format(res), '-NNaN/1/1', bfile.name, '-G{}'.format(mfile.name)]
+        grdmath = ['gmt grdmath', nfile.name, mfile.name, 'MUL = {}'.format(ncfile.name)]
+        grdreformat = ['gmt grdreformat', ncfile.name, '{}:=gd:gtiff'.format(geofile.name)]
+        for proc in blockmean, nearneighbor, grdmask, grdmath, grdformat:
+            subprocess.call(proc)
 
 
 
@@ -161,8 +196,8 @@ if __name__ == '__main__':
             if bnd[1] > north:
                 north = bnd[1]
 
-            ll = utm.from_latlon(bnd[0], p[2], force_zone_number=30)[:2]
-            ur = utm.from_latlon(bnd[1], p[3], force_zone_number=30)[:2]
+            ll = utm.from_latlon(bnd[0], bnd[2], force_zone_number=30)[:2]
+            ur = utm.from_latlon(bnd[1], bnd[3], force_zone_number=30)[:2]
             poly.append(Rect(Point(ll[0], ll[1]), Point(ur[0], ur[1])))
 
     # For sensible grids, convert to UTM. We can do the reverse at the end to
@@ -173,8 +208,8 @@ if __name__ == '__main__':
 
     # Make a list of boxes which will be checked for validity when being
     # gridded.
-    nx = int(ceil((northeast[0] - southwest[0]) / res))
-    ny = int(ceil((northeast[1] - southwest[1]) / res))
+    nx = int(np.ceil((northeast[0] - southwest[0]) / res))
+    ny = int(np.ceil((northeast[1] - southwest[1]) / res))
 
     sw, ss = southwest[:2]
 
@@ -194,16 +229,20 @@ if __name__ == '__main__':
         # Jump to the next row.
         ss = ss + res
 
-    # Now we have a list of boxes, grid them.
-    nb = range(nx * ny)
+    try:
+        os.mkdir('nc')
+    except:
+        pass
+
+    try:
+        os.mkdir('geotiff')
+    except:
+        pass
 
 
-
-        # Now we have a list of data sets to use. We'll farm out the actual
-        # gridding to GMT since it's probably quicker overall. We will,
-        # however, use the multiprocessing library to grid different boxes
-        # in parallel, saving each output to a new netCDF and geoTIFF file.
-
-
+    # Leave a spare CPU.
+    pool = multiprocessing.Pool(multiprocessing.cpu_count() - 1)
+    pool.map(grid, box)
+    pool.close()
 
 
