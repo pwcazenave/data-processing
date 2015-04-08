@@ -187,6 +187,8 @@ def grid(rect):
 
 if __name__ == '__main__':
 
+    serial = False # run in serial or parallel?
+
     raw = glob.glob(os.path.join('ascii', 'utm30n', '*.ascii'))
     bnds = glob.glob(os.path.join('metadata', '*.bnd'))
 
@@ -254,9 +256,14 @@ if __name__ == '__main__':
         pass
 
 
-    # Leave a spare CPU.
-    pool = multiprocessing.Pool(multiprocessing.cpu_count() - 1)
-    pool.map(grid, box)
-    pool.close()
+    if serial:
+        for b in box:
+            grid(b)
+
+    else:
+        # Leave a spare CPU.
+        pool = multiprocessing.Pool(multiprocessing.cpu_count() - 1)
+        pool.map(grid, box)
+        pool.close()
 
 
