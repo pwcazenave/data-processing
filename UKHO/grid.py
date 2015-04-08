@@ -192,7 +192,9 @@ if __name__ == '__main__':
     raw = glob.glob(os.path.join('ascii', 'utm30n', '*.ascii'))
     bnds = glob.glob(os.path.join('metadata', '*.bnd'))
 
-    res = 1000 # in metres
+    # Grid resolution and box size.
+    res = 500 # in metres
+    size = 50000 # in metres
 
     # Get the coverage of the whole data set. Requires running the bounds.sh
     # script to extract the metadata from each file. Apparently the .xml
@@ -224,26 +226,28 @@ if __name__ == '__main__':
 
     # Make a list of boxes which will be checked for validity when being
     # gridded.
-    nx = int(np.ceil((northeast[0] - southwest[0]) / res))
-    ny = int(np.ceil((northeast[1] - southwest[1]) / res))
+    nx = int(np.ceil((northeast[0] - southwest[0]) / size))
+    ny = int(np.ceil((northeast[1] - southwest[1]) / size))
 
-    sw, ss = southwest[:2]
+    west, south = southwest[:2]
 
     box = []
     for y in range(ny):
         for x in range(nx):
 
             # Get the rest of the coordinates.
-            se = sw + res
-            sn = ss + res
+            east = west + size
+            north = south + size
 
-            box.append((sw, se, ss, sn))
+            #box.append((west, east, south, north))
+            box.append(Rect(Point(west, south), Point(east, north)))
 
             # Move to the next box across.
-            sw = sw + res
+            west = west + size
 
         # Jump to the next row.
-        ss = ss + res
+        south = south + size
+        west = southwest[0]
 
     try:
         os.mkdir('nc')
