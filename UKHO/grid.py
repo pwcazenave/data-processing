@@ -115,10 +115,7 @@ def sources(rect, poly, files):
 
     """
 
-    # OK, we have a box. Do any of the raw data sets intersect this
-    # box? We'll check each polygon and mark whether we should be using
-    # it in the final gridding.
-    rect = Rect(Point(sw, ss), Point(se, sn))
+    # Do any of the raw data sets intersect this box?
     overlapping = []
     for data_rect, f in zip(poly, files):
         if overlap(rect, data_rect):
@@ -140,7 +137,7 @@ def grid(rect):
     3. grdmask - mask off regions more than four times the resolution away from
        the original data point.
     4. grdmath - apply the mask and save to netCDF.
-    5. grdformat - convert from netCDF to geoTIFF.
+    5. grdreformat - convert from netCDF to geoTIFF.
 
     Parameters
     ----------
