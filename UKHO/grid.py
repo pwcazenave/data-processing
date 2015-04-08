@@ -151,7 +151,12 @@ def grid(rect):
     if not files:
         # If the list of files is empty, just skip this box.
         return
+
     else:
+
+        # Fix quoting for subprocess call.
+        files = ['"{}"'.format(i) for i in files]
+
         bfile = tempfile.NamedTemporaryFile(delete=True)
         nfile = tempfile.NamedTemporaryFile(delete=True)
         mfile = tempfile.NamedTemporaryFile(delete=True)
