@@ -75,9 +75,16 @@ def overlap(r1, r2):
 
     Parameters
     ----------
-    r1, r2 : 
+    r1, r2 : Rect
+        Two rectangle classes for overlap check.
+
+    Returns
+    -------
+    check : bool
+        True if rectangles overlap at all.
 
     """
+
     return range_overlap(r1.left, r1.right, r2.left, r2.right) and range_overlap(r1.bottom, r1.top, r2.bottom, r2.top)
 
 
