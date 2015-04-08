@@ -170,13 +170,18 @@ def grid(rect):
         geofile = os.path.join('tiffs', '{}.tiff'.format(prefix))
 
         area = '-R{}/{}/{}/{}'.format(rect.left, rect.right, rect.bottom, rect.top)
-        blockmean = ['gmt blockmean', area, '-I{}'.format(res), files, '>', bfile.name]
-        nearneighbor = ['gmt nearneighbor', area, '-I{}'.format(res), '-N4', '-S{}'.format(res * 4), bfile.name, '-G{}'.format(nfile)]
-        grdmask = ['gmt grdmask', area, '-I{}'.format(res), '-NNaN/1/1', bfile.name, '-G{}'.format(mfile.name)]
-        grdmath = ['gmt grdmath', nfile.name, mfile.name, 'MUL = {}'.format(ncfile.name)]
-        grdreformat = ['gmt grdreformat', ncfile.name, '{}:=gd:gtiff'.format(geofile.name)]
-        for proc in blockmean, nearneighbor, grdmask, grdmath, grdformat:
-            subprocess.call(proc)
+
+        blockmean = ['/usr/bin/gmt blockmean', area, '-I{}'.format(res), ' '.join(files)]
+        nearneighbor = ['/usr/bin/gmt nearneighbor', area, '-I{}'.format(res), '-N4', '-S{}'.format(res * 4), bfile.name, '-G{}'.format(nfile.name)]
+        grdmask = ['/usr/bin/gmt grdmask', area, '-I{}'.format(res), '-S{}'.format(res * 4), '-NNaN/1/1', bfile.name, '-G{}'.format(mfile.name)]
+        grdmath = ['/usr/bin/gmt grdmath', nfile.name, mfile.name, 'MUL = {}'.format(ncfile)]
+        grdreformat = ['/usr/bin/gmt grdreformat', ncfile, '{}=gd:gtiff'.format(geofile)]
+
+        # Blockmean has to be handled slightly differently as it writes to
+        # stdout. The others all handle output files internally.
+        subprocess.call(' '.join(blockmean), stdout=bfile, shell=True)
+        for proc in nearneighbor, grdmask, grdmath, grdreformat:
+            subprocess.call(' '.join(proc), shell=True)
 
 
 
