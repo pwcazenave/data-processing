@@ -65,7 +65,7 @@ for y in ${years[@]}; do
                 -nc4 \
                 -match "\":\(UGRD:10 m above ground|VGRD:10 m above ground|TMP:surface|DSWRF:surface|USWRF:surface|DLWRF:surface|TMP:2 m above ground|PRES:surface|LHTFL:surface|RH:2 m above ground|PRATE:surface\):\"" \
                 \> /dev/null \
-                ::: $dir/pgbh{00..06}.gdas.??????????.grb2
+                ::: $dir/pgbh{{00..06},09}.gdas.??????????.grb2
             echo "done."
         done
     done
