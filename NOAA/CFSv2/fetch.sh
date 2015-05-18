@@ -15,7 +15,7 @@ months=({1..12})
 
 for y in ${years[@]}; do
     root="http://nomads.ncdc.noaa.gov/modeldata/cmd_pgbh"
-    for m in {1..12}; do
+    for m in ${months[@]}; do
         days=$(date -d "$y/$m/01 + 1 month - 1 day" +%d)
         for d in $(seq 1 $days); do
             c=0
