@@ -1,0 +1,7 @@
+buoys - buoy data - temperature time series.
+ctd - CTD casts from the BODC archives.
+currents - current meter data from the BODC archives.
+ferrybox - FerryBox data from the old NOC FerryBox webpage.
+ices - ICES data - not processed.
+stations.csv - list of stations to use for probes output in FVCOM. Used by the MATLAB scripts to create model input.
+tides - NTSLF/REFMAR/NSTD/etc. time series of surface elevation.
