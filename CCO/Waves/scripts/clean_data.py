@@ -49,7 +49,7 @@ for buoy in glob.glob('clean/*.txt'):
     temp = data[keys['temp']].values
     out = np.column_stack((year, month, day, hour, minute, second, temp))
     if np.sum(np.isnan(out[:, -1])) == len(temp):
-        print('skipping (no valid data).')
+        print('skipping (no valid temperature data).')
         continue
 
     # Save the median location for the current data set to a metadata file.
