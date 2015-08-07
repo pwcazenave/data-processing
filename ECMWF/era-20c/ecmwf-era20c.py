@@ -204,18 +204,19 @@ def fix(fname, sampling=3, noisy=False):
     return data
 
 def update_plot(i):
-    pc = ax.pcolormesh(day_diff[..., i])
+    pc = ax.pcolormesh(lon, lat, plotdata[..., i])
     pc.set_clim(0, cmax)
     return pc,
 
 def init_plot():
-    pc = ax.pcolormesh(day_diff[..., 0])
+    pc = ax.pcolormesh(lon, lat, plotdata[..., 0])
     plt.colorbar(pc)
     pc.set_clim(0, cmax)
     return pc,
 
-
 if __name__ == '__main__':
+
+    noisy = True
 
     start = 2000
     end = 2010
@@ -224,11 +225,23 @@ if __name__ == '__main__':
 
     for year in range(start, end):
 
-        # Download the GRIB file.
-        get(year)
+        # Download the GRIB files.
+        files = get(year)
 
         # Fix the forecast data variables to instantaneous and write out to
         # netCDF.
-        #fix(year)
+        data = fix(files[-1], noisy=noisy)  # the last file is the forecast one.
 
-
+        # Animate some data.
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        cmax = 500
+        plotdata = data['Surface net thermal radiation']['data']
+        lon = data['Surface net thermal radiation']['lon']
+        lat = data['Surface net thermal radiation']['lat']
+        ani = animation.FuncAnimation(fig,
+                                      update_plot,
+                                      np.arange(8),
+                                      init_func=init_plot,
+                                      interval=25,
+                                      blit=True)
