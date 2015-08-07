@@ -102,27 +102,42 @@ def get(year, outdir='./'):
         "type": "fc",
     })
 
-def fix(year, sampling=3):
+    return files
+
+def fix(fname, sampling=3, noisy=False):
     """
     Fix the accumulated forecast variables back to instantaneous values for
     a given year's output.
 
-    Optionally specify the sampling interval in hours (defaults to 3 for the
-    ERA-20C data).
+    Parameters
+    ----------
+    year : int
+        Model year to process.
+    sampling : int, optional
+        Sampling interval (in hours). Defaults to 3.
+    noisy : bool, optional
+        Set to True to enable verbose output. Defaults to False.
+
+    Returns
+    -------
+    data : dict
+        Dictionary of numpy arrays whose keys are the variable names from the
+        GRIB file.
 
     """
 
-    fname = '{}_forecast.grb'.format(year)
     grb = pygrib.open(fname)
 
     # Get a list of the unique variable nanes. This is inefficient because we
     # iterate through all variables and all times. I haven't found a nice way
     # to get these names with pygrib, which seems like a bit of a limitation to
     # me.
-    names = []
+    names, longnames, shortnames = [], [], []
     for g in grb:
         if g['name'] not in names:
             names.append(g['name'])
+            longnames.append(g['cfName'])
+            shortnames.append(g['cfVarName'])
 
     grb.rewind()
 
@@ -130,44 +145,63 @@ def fix(year, sampling=3):
     # them in a dict for writing to netCDF. Store the metadata too.
     data = {}
     for name in names:
+
+        if noisy:
+            print('Working on {}'.format(name))
+
         current = grb.select(name=name)
 
         # We have 24 hour long 3-hourly cumulative forecast data which need to
-        # be converted to instantaneous values.
+        # be converted to instantaneous values. We must also convert from J/m^2
+        # to W/m^2 (by dividing by the time interval in seconds).
+        lat, lon = current[0].latlons()
         ns = 24 / sampling
         nt = len(current)
-        lat, lon = current[0].latlons()
         ny, nx = np.shape(lat)
-        for tt in range(ns + 3, nt, ns):
-            day = np.empty((ny, nx, ns))
+        # We skip the first day because it doesn't start at the right time (the
+        # download seems to miss the first of the eight samples in a single
+        # forecast). We've accounted for this in get() by offsetting the
+        # download by a day for each year. Getting this offset wrong will
+        # seriously break the conversion from cumulative to instantaneous, so
+        # be mindful of the data you're working with!
+        data[name] = {}
+        data[name]['data'] = np.empty((ny, nx, nt - ns))
+        data[name]['lon'] = lon
+        data[name]['lat'] = lat
+        data[name]['units'] = current[0]['units']
+        data[name]['Times'] = np.empty((nt))
+        data[name]['time'] = np.empty((nt))
+
+        for tt in range(ns * 2, nt - ns, ns):
+            day = np.ma.empty((ny, nx, ns))
+            time, Times = [], []  # MJD and Y/M/D h:m:s
             for hh in range(ns):
-                day[..., ns - hh - 1] = current[tt - hh - 1]['values']
-            day_diff = np.dstack((day[..., 0], np.diff(day[..., ::-1], axis=2)))
-            # Convert the heat flux parameters from J/m^2 to W/m^2 by dividing by the time interval (in seconds).
+                si = tt - hh - 1  # source array index
+                ti = ns - hh - 1  # target array index
+
+                currenttime = (current[si]['year'],
+                               current[si]['month'],
+                               current[si]['day'],
+                               current[si]['hour'],
+                               current[si]['minute'],
+                               current[si]['second'])
+                Times.append(currenttime)
+                time.append(current[si]['julianDay'])
+                day[..., ti] = np.ma.masked_where(current[si]['values'] == current[si]['missingValue'],
+                                                  current[si]['values'])
+
+            day_diff = np.dstack((day[..., 0], np.diff(day, axis=2)))
             if 'radiation' in name:
+                # J/m^2 to W/m^2
                 day_diff = day_diff / (3600 * ns)
 
+            st = tt - (ns * 2)
+            data[name]['data'][..., st:st + ns] = day_diff
+            data[name]['Times'][st:st + ns] = Times
 
+    grb.close()
 
-        # Animate the current data
-        fig = plt.figure()
-        ax = fig.add_subplot(111)
-        cmax = 500
-        ani = animation.FuncAnimation(fig,
-                                      update_plot,
-                                      np.arange(8),
-                                      init_func=init_plot,
-                                      interval=25,
-                                      blit=True)
-
-
-
-
-    for v in grb:
-        if 'precipitation' in v:
-
-
-        pass
+    return data
 
 def update_plot(i):
     pc = ax.pcolormesh(day_diff[..., i])
