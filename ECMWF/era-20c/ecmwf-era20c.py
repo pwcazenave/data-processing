@@ -29,6 +29,7 @@ the result by the interval (3 hours):
 
 """
 
+import os
 import pygrib
 import netCDF4
 
@@ -37,14 +38,43 @@ import matplotlib.animation as animation
 from ecmwfapi import ECMWFDataServer
 
 
-def get(year):
-    """ Get the ECMWF ERA-20C FVCOM forcing data for a given year. """
 
-    # The analysis data (instantaneous values)
-    #   - 2m temperature
-    #   - 10m u wind
-    #   - 10m v wind
-    #   - Surface pressure
+def get(year, outdir='./'):
+    """
+    Get the ECMWF ERA-20C FVCOM forcing data for a given year.
+
+    The analysis data (instantaneous values):
+        - 2m temperature (Celsius)
+        - Dew point temperature (Celsius)
+        - 10m u wind (m/s)
+        - 10m v wind (m/s)
+        - Surface pressure (hPA)
+
+    The forecast data (accumulated from 0600UTC + n hours for each step).
+        - Evaporation
+        - Total precipitation
+        - Surface net solar
+        - Surface net thermal
+        - Surface downward solar
+        - Surface downward thermal
+
+    Parameters
+    ----------
+    year : int
+        Year for which to download data.
+    outdir : str, optional
+        Output directory for the files. Defaults to the current directory.
+
+    Returns
+    -------
+    files : tuple
+        File paths for the analysis and forecast data (in that order).
+
+    """
+
+    files = (os.path.join(outdir, '{}_analysis.grb'.format(year)),
+             os.path.join(outdir, '{}_forecast.grb'.format(year)))
+
     server.retrieve({
         "class": "e2",
         "dataset": "era20c",
@@ -58,13 +88,6 @@ def get(year):
         "type": "an",
     })
 
-    # The forecast data (accumulated from 0600UTC + n hours for each step).
-    #   - Evaporation
-    #   - Total precipitation
-    #   - Surface net solar
-    #   - Surface net thermal
-    #   - Surface downward solar
-    #   - Surface downward thermal
     server.retrieve({
         "class": "e2",
         "dataset": "era20c",
