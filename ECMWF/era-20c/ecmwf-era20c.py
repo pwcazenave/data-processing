@@ -11,10 +11,13 @@ This is split into analysis:
 and forecast:
     - Evaporation
     - Total precipitation
-    - Surface net solar
-    - Surface net thermal
-    - Surface downward solar
-    - Surface downward thermal
+    - Surface net solar (long wave)
+    - Surface net thermal (short wave)
+    - Surface downward solar (long wave)
+    - Surface downward thermal (short wave)
+
+The relative humidity is calculated from the dew point temperature and ambient
+temperature.
 
 The forecast data are accumulated from 0600UTC with each forecast step (3 hour
 interval). The 3rd time step is therefore the accumulated data from 0600
