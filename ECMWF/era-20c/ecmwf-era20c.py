@@ -37,6 +37,7 @@ import matplotlib.animation as animation
 
 from ecmwfapi import ECMWFDataServer
 
+from PyFVCOM.ocean_tools import calculate_rhum
 
 
 def get(year, outdir='./'):
