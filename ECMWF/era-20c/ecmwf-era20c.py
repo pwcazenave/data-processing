@@ -300,10 +300,71 @@ def gread(fname, fix, noisy=False):
 
     return data
 
-def update_plot(i):
-    pc = ax.pcolormesh(lon, lat, plotdata[..., i])
-    pc.set_clim(0, cmax)
-    return pc,
+def dump(data, fout, noisy=False):
+    """
+    Dump the data from the GRIB files into a netCDF file.
+
+    Parameters
+    ----------
+    data : dict
+        The data from the GRIB files. This is the output of `gread'.
+    fout : str
+        Output file name.
+    noisy : bool, optional
+        Set to True for verbose output (defaults to False).
+
+    """
+
+    tmpvar = data.keys()[0]
+    lon, lat = data[tmpvar]['lon'], data[tmpvar]['lat']
+    time = data[tmpvar]['time']
+    Times = data[tmpvar]['Times']
+    ny, nx, _ = data[data.keys()[0]]['data'].shape
+    nt = -1
+    datestrlen = 26
+
+    nc = {}
+    nc['dimensions'] = {
+        'lat', ny,
+        'lon', nx,
+        'time', nt
+    }
+    nc['variables'] = {
+        'latitude':{'data':lat,
+                    'dimensions':(ny, nx),
+                    'attributes':{'units':'Degrees North'}
+                    },
+        'longitude':{'data':lon,
+                    'dimensions':(ny, nx),
+                    'attributes':{'units':'Degrees North'}
+                    },
+        # 'time':{'data':time,
+        #         'dimensions':time,
+        #         'attributes':{'format':'Modified Julian Day (MJD)',
+        #                       'longname':'time',
+        #                       'units':'days since 1858-11-17 00:00:00',
+        #                       'time_zone':'UTC'}
+        #         },
+        'Times':{'data':Times,
+                'dimensions':(time, datestrlen),
+                'attributes':{'time_zone':'UTC'}
+                }
+    }
+
+    # Add the rest of the variables and their data.
+    for var in data.keys():
+        # Use the shortname as the variable name (no spaces).
+        sname = data[var]['shortname']
+        new = {sname:{'data':data[var]['data'],
+                      'dimensions':(ny, nx, nt),
+                      'attributes':{'shortname':data[var]['shortname'],
+                                    'longname':data[var]['longname'],
+                                    'units':data[var]['units']
+                                    }
+                      }}
+        nc['variables'].update(new)
+
+    ncwrite(nc, fout)
 
 def init_plot():
     pc = ax.pcolormesh(lon, lat, plotdata[..., 0])
