@@ -1,5 +1,3 @@
-!/usr/bin/env python
-
 """
 Get the relevant forcing data from the ECMWF servers.
 
