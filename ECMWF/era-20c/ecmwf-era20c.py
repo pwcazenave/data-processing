@@ -103,15 +103,18 @@ def get(year, outdir='./'):
 
     return files
 
-def fix(fname, sampling=3, noisy=False):
+def gread(fname, fix, sampling=3, noisy=False):
     """
-    Fix the accumulated forecast variables back to instantaneous values for
-    a given year's output.
+    Read the GRIB data and optionally fix back to instantaneous values for a
+    given year's output.
 
     Parameters
     ----------
-    year : int
-        Model year to process.
+    fname : int
+        GRIB file name to process.
+    fix : list
+        List of True/False for whether to fix the cumulative values back to
+        instantaneous (True = yes).
     sampling : int, optional
         Sampling interval (in hours). Defaults to 3.
     noisy : bool, optional
@@ -121,84 +124,127 @@ def fix(fname, sampling=3, noisy=False):
     -------
     data : dict
         Dictionary of numpy arrays whose keys are the variable names from the
-        GRIB file.
+        GRIB file(s).
 
     """
 
-    grb = pygrib.open(fname)
+    if len(fname) != len(fix):
+        raise ValueError('The length of the `fix\' array does not match the number of files to process.')
 
-    # Get a list of the unique variable nanes. This is inefficient because we
-    # iterate through all variables and all times. I haven't found a nice way
-    # to get these names with pygrib, which seems like a bit of a limitation to
-    # me.
-    names, longnames, shortnames = [], [], []
-    for g in grb:
-        if g['name'] not in names:
-            names.append(g['name'])
-            longnames.append(g['cfName'])
-            shortnames.append(g['cfVarName'])
+    for params in zip(fname, fix):
 
-    grb.rewind()
-
-    # Now we've got the variable names, we can open them individually and dump
-    # them in a dict for writing to netCDF. Store the metadata too.
-    data = {}
-    for name in names:
+        fname, cumul2inst = params
 
         if noisy:
-            print('Working on {}'.format(name))
+            print('Loading GRIB file {}...'.format(gfile), end=' ')
+        sys.stdout.flush()
+        grb = pygrib.open(gfile)
+        if noisy:
+            print('done.')
 
-        current = grb.select(name=name)
+        # Get a list of the unique variable nanes. This is inefficient because we
+        # iterate through all variables and all times. I haven't found a nice way
+        # to get these names with pygrib, which seems like a bit of a limitation to
+        # me.
 
-        # We have 24 hour long 3-hourly cumulative forecast data which need to
-        # be converted to instantaneous values. We must also convert from J/m^2
-        # to W/m^2 (by dividing by the time interval in seconds).
-        lat, lon = current[0].latlons()
-        ns = 24 / sampling
-        nt = len(current)
-        ny, nx = np.shape(lat)
-        # We skip the first day because it doesn't start at the right time (the
-        # download seems to miss the first of the eight samples in a single
-        # forecast). We've accounted for this in get() by offsetting the
-        # download by a day for each year. Getting this offset wrong will
-        # seriously break the conversion from cumulative to instantaneous, so
-        # be mindful of the data you're working with!
-        data[name] = {}
-        data[name]['data'] = np.empty((ny, nx, nt - ns))
-        data[name]['lon'] = lon
-        data[name]['lat'] = lat
-        data[name]['units'] = current[0]['units']
-        data[name]['Times'] = np.empty((nt))
-        data[name]['time'] = np.empty((nt))
+        if noisy:
+            print('Extracting variable names...', end=' ')
+        sys.stdout.flush()
+        names, longnames, shortnames = [], [], []
+        for g in grb:
+            if g['name'] not in names:
+                names.append(g['name'])
+                longnames.append(g['cfName'])
+                shortnames.append(g['cfVarName'])
 
-        for tt in range(ns * 2, nt - ns, ns):
-            day = np.ma.empty((ny, nx, ns))
-            time, Times = [], []  # MJD and Y/M/D h:m:s
-            for hh in range(ns):
-                si = tt - hh - 1  # source array index
-                ti = ns - hh - 1  # target array index
+        grb.rewind()
 
-                currenttime = (current[si]['year'],
-                               current[si]['month'],
-                               current[si]['day'],
-                               current[si]['hour'],
-                               current[si]['minute'],
-                               current[si]['second'])
-                Times.append(currenttime)
-                time.append(current[si]['julianDay'])
-                day[..., ti] = np.ma.masked_where(current[si]['values'] == current[si]['missingValue'],
-                                                  current[si]['values'])
+        # Now we know what we've got for this file, we can load the data.
+        data = {}
+        for name in names:
 
-            day_diff = np.dstack((day[..., 0], np.diff(day, axis=2)))
-            if 'radiation' in name:
-                # J/m^2 to W/m^2
-                day_diff = day_diff / (3600 * ns)
+            if noisy:
+                print('Working on {}...'.format(name), end=' ')
 
-            st = tt - (ns * 2)
-            data[name]['data'][..., st:st + ns] = day_diff
-            data[name]['Times'][st:st + ns] = Times
+            current = grb.select(name=name)
 
-    grb.close()
+            # We have 24 hour long 3-hourly cumulative forecast data which need to
+            # be converted to instantaneous values. We must also convert from J/m^2
+            # to W/m^2 (by dividing by the time interval in seconds).
+            lat, lon = current[0].latlons()
+            ns = 24 / sampling
+            nt = len(current)
+            ny, nx = np.shape(lat)
+
+            if name in data:
+                raise KeyError('The current variable ({}) is already in the loaded data.'.format(name))
+
+            data[name] = {}
+            data[name]['data'] = np.empty((ny, nx, nt - ns))
+            data[name]['lon'] = lon
+            data[name]['lat'] = lat
+            data[name]['units'] = current[0]['units']
+
+            # Allocate the temporal variables. Remove three ns's because the range
+            # used for tt (below) start from ns * 2 and ends at nt - ns.
+            data[name]['Times'] = np.zeros(nt - (ns * 3)).astype(datetime.datetime)
+            data[name]['time'] = np.zeros(nt - (ns * 3))
+            data[name]['step'] = np.zeros(nt - (ns * 3))
+
+            # We skip the first day because it doesn't start at the right time (the
+            # download seems to miss the first of the eight samples in a single
+            # forecast). We've accounted for this in get() by offsetting the
+            # download by a day for each year. Getting this offset wrong will
+            # seriously break the conversion from cumulative to instantaneous, so
+            # be mindful of the data you're working with!
+            for tt in range(ns * 2, nt - ns, ns):
+                day = np.ma.empty((ny, nx, ns))
+                time, Times = [], []  # Julian Day and Y/M/D h:m:s
+                step = []  # forecast step
+                for ti in range(ns):
+                    si = ti + ns  # source array index
+
+                    currenttime = (current[si]['year'],
+                                   current[si]['month'],
+                                   current[si]['day'],
+                                   current[si]['hour'],
+                                   current[si]['minute'],
+                                   current[si]['second'])
+                    step.append(current[si]['startStep'])
+                    # Offset the Julian Day by the step.
+                    daystep = step[-1] / 24.0
+                    time.append(current[si]['julianDay'] + daystep)
+                    # Do the same for the Y/M/D h:m:s
+                    Times.append(datetime.datetime(*currenttime) +
+                                 datetime.timedelta(daystep))
+
+                    day[..., ti] = np.ma.masked_where(current[si]['values'] == current[si]['missingValue'],
+                                                      current[si]['values'])
+                # Check we're working with the right offset (the first step should
+                # be 3).
+                if step[0] != sampling:
+                    msg = 'The first step in the data is {}, not {}. Have you downloaded from a non-midnight start point? Have you specified the correct `sampling\' value?'.format(
+                        step[0], sampling)
+                    raise ValueError(msg)
+
+                if cumul2inst:
+                    day_diff = np.dstack((day[..., 0], np.diff(day, axis=2)))
+
+                if data[name]['units'] == 'J m**-2':
+                    # J/m^2 to W/m^2
+                    day_diff = day_diff / (3600 * sampling)
+
+                # Store all the temporal data in the output dict.
+                st = tt - (ns * 2)  # offset to account for the first day of data
+                data[name]['data'][..., st:st + ns] = day_diff
+                data[name]['Times'][st:st + ns] = Times
+                data[name]['time'][st:st + ns] = np.asarray(time)
+                data[name]['step'][st:st + ns] = np.asarray(step)
+
+            if noisy:
+                print('done.')
+
+        grb.close()
 
     return data
 
