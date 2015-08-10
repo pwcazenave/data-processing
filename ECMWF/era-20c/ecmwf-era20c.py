@@ -27,15 +27,21 @@ the result by the interval (3 hours):
 
 """
 
-import os
-import pygrib
-import netCDF4
+from __future__ import print_function
 
+import os
+import sys
+import pygrib
+import datetime
+
+import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import numpy as np
 
 from ecmwfapi import ECMWFDataServer
 
 from PyFVCOM.ocean_tools import calculate_rhum
+from PyFVCOM.read_FVCOM_results import ncwrite
 
 
 def get(year, outdir='./'):
