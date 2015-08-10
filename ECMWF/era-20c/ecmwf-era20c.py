@@ -366,15 +366,11 @@ def dump(data, fout, noisy=False):
 
     ncwrite(nc, fout)
 
-def init_plot():
-    pc = ax.pcolormesh(lon, lat, plotdata[..., 0])
-    plt.colorbar(pc)
-    pc.set_clim(0, cmax)
-    return pc,
 
 if __name__ == '__main__':
 
     noisy = True
+    looksee = False  # animate some data
 
     start = 2000
     end = 2010
@@ -384,22 +380,41 @@ if __name__ == '__main__':
     for year in range(start, end):
 
         # Download the GRIB files.
-        files = get(year)
+        #files = get(year)
+        files = ('2003_analysis.grb', '2003_forecast.grb')
+        fix = [False, True]  # do we fix the cumulative?
 
-        # Fix the forecast data variables to instantaneous and write out to
-        # netCDF.
-        data = fix(files[-1], noisy=noisy)  # the last file is the forecast one.
+        # Load the data and fix the forecast data variables to instantaneous.
+        data = gread(files, fix, noisy=noisy)
 
-        # Animate some data.
-        fig = plt.figure()
-        ax = fig.add_subplot(111)
-        cmax = 500
-        plotdata = data['Surface net thermal radiation']['data']
-        lon = data['Surface net thermal radiation']['lon']
-        lat = data['Surface net thermal radiation']['lat']
-        ani = animation.FuncAnimation(fig,
-                                      update_plot,
-                                      np.arange(8),
-                                      init_func=init_plot,
-                                      interval=25,
-                                      blit=True)
+        # Dump to netCDF.
+        fout = '2003.nc'
+        dump(data, fout, noisy=noisy)
+
+        # Animate some of the data.
+        if looksee:
+            cmax = 500
+            plotdata = data['Surface thermal radiation downwards']['data']
+            lon = data['Surface thermal radiation downwards']['lon']
+            lat = data['Surface thermal radiation downwards']['lat']
+
+            def update_plot(i):
+                pc = ax.pcolormesh(lon, lat, plotdata[..., i])
+                pc.set_clim(0, cmax)
+                return pc,
+
+            def init_plot():
+                pc = ax.pcolormesh(lon, lat, plotdata[..., 0])
+                plt.colorbar(pc)
+                pc.set_clim(0, cmax)
+                return pc,
+
+            fig = plt.figure()
+            ax = fig.add_subplot(111)
+            ani = animation.FuncAnimation(fig,
+                                          update_plot,
+                                          np.arange(plotdata.shape[-1]),
+                                          init_func=init_plot,
+                                          interval=25,
+                                          blit=True)
+            plt.show()
