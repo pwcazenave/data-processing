@@ -136,9 +136,11 @@ def gread(fname, fix, noisy=False):
     if len(fname) != len(fix):
         raise ValueError('The length of the `fix\' array does not match the number of files to process.')
 
+    data = {}
+
     for params in zip(fname, fix):
 
-        fname, cumul2inst = params
+        gfile, cumul2inst = params
 
         if noisy:
             print('Loading GRIB file {}...'.format(gfile), end=' ')
@@ -147,35 +149,38 @@ def gread(fname, fix, noisy=False):
         if noisy:
             print('done.')
 
-        # Get a list of the unique variable nanes. This is inefficient because we
-        # iterate through all variables and all times. I haven't found a nice way
-        # to get these names with pygrib, which seems like a bit of a limitation to
-        # me.
-
+        # Get a list of the unique variable names. This is inefficient
+        # because we iterate through all variables and all times. I haven't
+        # found a nice way to get these names with pygrib, which seems like a
+        # bit of a limitation to me.
         if noisy:
             print('Extracting variable names...', end=' ')
         sys.stdout.flush()
-        names, longnames, shortnames = [], [], []
+        names = []
         for g in grb:
             if g['name'] not in names:
                 names.append(g['name'])
-                longnames.append(g['cfName'])
-                shortnames.append(g['cfVarName'])
+
+        if noisy:
+            print('done.')
+            for v in names:
+                print('Found: {}'.format(v))
 
         grb.rewind()
 
         # Now we know what we've got for this file, we can load the data.
-        data = {}
         for name in names:
 
             if noisy:
                 print('Working on {}...'.format(name), end=' ')
+            sys.stdout.flush()
 
             current = grb.select(name=name)
 
-            # We have 24 hour long 3-hourly cumulative forecast data which need to
-            # be converted to instantaneous values. We must also convert from J/m^2
-            # to W/m^2 (by dividing by the time interval in seconds).
+            # We have 24 hour long 3-hourly cumulative forecast data which
+            # need to be converted to instantaneous values. We must also
+            # convert from J/m^2 to W/m^2 (by dividing by the time interval
+            # in seconds).
             lat, lon = current[0].latlons()
 
             # Get the sampling interval. We have to do this dynamically
