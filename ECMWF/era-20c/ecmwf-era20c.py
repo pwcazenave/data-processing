@@ -102,7 +102,7 @@ def get(year, outdir='.'):
         "param": "169.128/175.128/176.128/177.128/182.128/228.128",
         "step": "3/6/9/12/15/18/21/24",
         "stream": "oper",
-        "target": "2003_forecast.grb",
+        "target": "{}_forecast.grb".format(year),
         "time": "06",
         "type": "fc",
     })
