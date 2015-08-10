@@ -207,23 +207,34 @@ def gread(fname, fix, noisy=False):
             data[name]['lon'] = lon
             data[name]['lat'] = lat
             data[name]['units'] = current[0]['units']
+            data[name]['shortName'] = current[0]['cfVarName']
+            data[name]['longName'] = current[0]['cfName']
 
-            # Allocate the temporal variables. Remove three ns's because the range
-            # used for tt (below) start from ns * 2 and ends at nt - ns.
-            data[name]['Times'] = np.zeros(nt - (ns * 3)).astype(datetime.datetime)
-            data[name]['time'] = np.zeros(nt - (ns * 3))
-            data[name]['step'] = np.zeros(nt - (ns * 3))
+            # For the output arrays
+            array_offset = 0
+            # For the `tt' loop
+            loop_offsets = 0
+            # If we're working with forecast data, clip accordingly.
+            if cumul2inst:
+                array_offset = ns * 3
+                loop_offsets = ns * 2
 
-            # We skip the first day because it doesn't start at the right time (the
-            # download seems to miss the first of the eight samples in a single
-            # forecast). We've accounted for this in get() by offsetting the
-            # download by a day for each year. Getting this offset wrong will
-            # seriously break the conversion from cumulative to instantaneous, so
-            # be mindful of the data you're working with!
-            for tt in range(ns * 2, nt - ns, ns):
+            # Allocate the temporal variables. Remove three ns's because the
+            # range used for tt (below) start from ns * 2 and ends at nt - ns.
+            data[name]['Times'] = np.zeros(nt - array_offset).astype(datetime.datetime)
+            data[name]['time'] = np.zeros(nt - array_offset)
+
+            # We skip the first day because it doesn't start at the right
+            # time (the download seems to miss the first of the eight samples
+            # in a single forecast). We've accounted for this in get() by
+            # offsetting the download by a day for each year. Getting this
+            # offset wrong will seriously break the conversion from
+            # cumulative to instantaneous, so be mindful of the data you're
+            # working with! We don't use the last time because we read
+            # forward for each day.
+            for tt in range(loop_offsets, nt - ns, ns):
                 day = np.ma.empty((ny, nx, ns))
-                time, Times = [], []  # Julian Day and Y/M/D h:m:s
-                step = []  # forecast step
+                Times = []  # Y/M/D h:m:s
                 for ti in range(ns):
                     si = ti + ns  # source array index
                     hoursminutes = '{:04d}'.format(current[si]['dataTime'])
@@ -258,11 +269,9 @@ def gread(fname, fix, noisy=False):
                     day_diff = day_diff / (3600 * sampling)
 
                 # Store all the temporal data in the output dict.
-                st = tt - (ns * 2)  # offset to account for the first day of data
-                data[name]['data'][..., st:st + ns] = day_diff
+                st = tt - loop_offsets  # offset for the first day of data
+                data[name]['data'][..., st:st + ns] = day
                 data[name]['Times'][st:st + ns] = Times
-                data[name]['time'][st:st + ns] = np.asarray(time)
-                data[name]['step'][st:st + ns] = np.asarray(step)
 
             if noisy:
                 print('done.')
