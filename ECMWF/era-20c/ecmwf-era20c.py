@@ -53,7 +53,7 @@ def get(year, outdir='.'):
         - Dew point temperature (Celsius)
         - 10m u wind (m/s)
         - 10m v wind (m/s)
-        - Surface pressure (hPA)
+        - Mean Sea Level pressure (hPA)
 
     The forecast data (accumulated from 0600UTC + n hours for each step).
         - Evaporation
@@ -86,7 +86,7 @@ def get(year, outdir='.'):
         "date": "{}-12-31/to/{}-01-01".format(year - 1, year + 1),
         "expver": "1",
         "levtype": "sfc",
-        "param": "134.128/165.128/166.128/167.128/168.128",
+        "param": "151.128/165.128/166.128/167.128/168.128",
         "stream": "oper",
         "target": "{}_analysis.grb".format(year),
         "time": "00/03/06/09/12/15/18/21",
