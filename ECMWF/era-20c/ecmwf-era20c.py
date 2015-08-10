@@ -109,7 +109,8 @@ def get(year, outdir='.'):
 
     return files
 
-def gread(fname, fix, sampling=3, noisy=False):
+
+def gread(fname, fix, noisy=False):
     """
     Read the GRIB data and optionally fix back to instantaneous values for a
     given year's output.
@@ -121,8 +122,6 @@ def gread(fname, fix, sampling=3, noisy=False):
     fix : list
         List of True/False for whether to fix the cumulative values back to
         instantaneous (True = yes).
-    sampling : int, optional
-        Sampling interval (in hours). Defaults to 3.
     noisy : bool, optional
         Set to True to enable verbose output. Defaults to False.
 
@@ -178,6 +177,19 @@ def gread(fname, fix, sampling=3, noisy=False):
             # be converted to instantaneous values. We must also convert from J/m^2
             # to W/m^2 (by dividing by the time interval in seconds).
             lat, lon = current[0].latlons()
+
+            # Get the sampling interval. We have to do this dynamically
+            # because some of the data are every 6 hours (the temperature)
+            # whilst the majority are every 3 hours.
+
+            # Set the sampling based on the hours in the first two time steps
+            # and only overwrite it if we have a specific sampling value.
+            sampling = current[0]['startStep']
+            if sampling == 0:
+                sampling = np.abs(current[1]['hour'] - current[0]['hour'])
+
+            if sampling == 0:
+                raise ValueError('Sampling interval (hours) cannot be zero.')
             ns = 24 / sampling
             nt = len(current)
             ny, nx = np.shape(lat)
@@ -209,28 +221,28 @@ def gread(fname, fix, sampling=3, noisy=False):
                 step = []  # forecast step
                 for ti in range(ns):
                     si = ti + ns  # source array index
-
+                    hoursminutes = '{:04d}'.format(current[si]['dataTime'])
                     currenttime = (current[si]['year'],
                                    current[si]['month'],
                                    current[si]['day'],
-                                   current[si]['hour'],
-                                   current[si]['minute'],
+                                   int(hoursminutes[:2]),
+                                   int(hoursminutes[2:]),
                                    current[si]['second'])
-                    step.append(current[si]['startStep'])
-                    # Offset the Julian Day by the step.
-                    daystep = step[-1] / 24.0
-                    time.append(current[si]['julianDay'] + daystep)
-                    # Do the same for the Y/M/D h:m:s
-                    Times.append(datetime.datetime(*currenttime) +
-                                 datetime.timedelta(daystep))
+                    if cumul2inst:
+                        Times.append(datetime.datetime(*currenttime) +
+                                     datetime.timedelta(24.0 / current[si]['startStep']))
+                    else:
+                        Times.append(datetime.datetime(*currenttime))
 
                     day[..., ti] = np.ma.masked_where(current[si]['values'] == current[si]['missingValue'],
                                                       current[si]['values'])
-                # Check we're working with the right offset (the first step should
-                # be 3).
-                if step[0] != sampling:
+
+                # Check we're working with the right offset (the first step
+                # should be the same as the sampling interval). This is only
+                # necessary on the forecast data (signified by cumul2inst).
+                if cumul2inst and sampling != current[0]['startStep']:
                     msg = 'The first step in the data is {}, not {}. Have you downloaded from a non-midnight start point? Have you specified the correct `sampling\' value?'.format(
-                        step[0], sampling)
+                        Times[0].hour, sampling)
                     raise ValueError(msg)
 
                 if cumul2inst:
