@@ -262,11 +262,20 @@ def gread(fname, fix, noisy=False):
                     raise ValueError(msg)
 
                 if cumul2inst:
-                    day_diff = np.dstack((day[..., 0], np.diff(day, axis=2)))
+                    if noisy:
+                        print('cumulative data to instantaneous...', end=' ')
+                    day = np.dstack((day[..., 0], np.diff(day, axis=2)))
 
                 if data[name]['units'] == 'J m**-2':
                     # J/m^2 to W/m^2
-                    day_diff = day_diff / (3600 * sampling)
+                    if noisy:
+                        print('Joules to Watts...', end=' ')
+                    day = day / (3600 * sampling)
+                    data[name]['units'] = 'W m**-2'
+
+                if data[name]['units'] == 'K':
+                    day = day - 273.15
+                    data[name]['units'] = 'degrees_C'
 
                 # Store all the temporal data in the output dict.
                 st = tt - loop_offsets  # offset for the first day of data
