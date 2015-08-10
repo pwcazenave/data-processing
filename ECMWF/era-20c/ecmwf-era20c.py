@@ -44,7 +44,7 @@ from PyFVCOM.ocean_tools import calculate_rhum
 from PyFVCOM.read_FVCOM_results import ncwrite
 
 
-def get(year, outdir='./'):
+def get(year, outdir='.'):
     """
     Get the ECMWF ERA-20C FVCOM forcing data for a given year.
 
