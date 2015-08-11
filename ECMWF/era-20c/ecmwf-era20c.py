@@ -328,10 +328,11 @@ def gread(fname, fix, noisy=False):
         data['Relative humidity']['shortName'] = 'rhum'
         data['Relative humidity']['longName'] = 'Relative Humidity'
         data['Relative humidity']['units'] = '%'
-        # Just copy some time and position information.
-        data['Relative humidity']['lon'] = data[data.keys()[0]]['lon']
-        data['Relative humidity']['lat'] = data[data.keys()[0]]['lat']
-        data['Relative humidity']['Times'] = data[data.keys()[0]]['Times']
+        # Use one of the source data arrays for the spatial and temporal data.
+        data['Relative humidity']['lon'] = data['2 metre dewpoint temperature']['lon']
+        data['Relative humidity']['lat'] = data['2 metre dewpoint temperature']['lat']
+        data['Relative humidity']['Times'] = data['2 metre dewpoint temperature']['Times']
+        data['Relative humidity']['time'] = data['2 metre dewpoint temperature']['time']
 
     return data
 
