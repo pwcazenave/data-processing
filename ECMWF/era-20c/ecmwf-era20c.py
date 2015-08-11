@@ -253,7 +253,7 @@ def gread(fname, fix, noisy=False):
                                    current[si]['second'])
                     if cumul2inst:
                         Times.append(datetime.datetime(*currenttime) +
-                                     datetime.timedelta(24.0 / current[si]['startStep']))
+                                     datetime.timedelta(current[si]['startStep'] / 24.0))
                     else:
                         Times.append(datetime.datetime(*currenttime))
 
