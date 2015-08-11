@@ -32,6 +32,7 @@ from __future__ import print_function
 
 import os
 import sys
+import time
 import pygrib
 import datetime
 
@@ -333,54 +334,59 @@ def dump(data, fout, noisy=False):
 
     tmpvar = data.keys()[0]
     lon, lat = data[tmpvar]['lon'], data[tmpvar]['lat']
-    time = data[tmpvar]['time']
+    mjdtime = data[tmpvar]['time']
     Times = data[tmpvar]['Times']
     ny, nx, _ = data[data.keys()[0]]['data'].shape
-    nt = -1
     datestrlen = 26
 
     nc = {}
     nc['dimensions'] = {
-        'lat', ny,
-        'lon', nx,
-        'time', nt
+        'lat': ny,
+        'lon': nx,
+        'time': None,
+        'datestrlen': datestrlen
     }
+    nc['global attributes'] = {
+            'description': 'ECMWF ERA-20C data for FVCOM converted from GRIB to netCDF by ecmwf-era20c.py',
+            'source': 'http://apps.ecmwf.int/datasets/data/era20c-daily/',
+            'history': 'Created by Pierre Cazenave on {}'.format(time.ctime(time.time()))
+            }
     nc['variables'] = {
-        'latitude': {'data': lat,
-                     'dimensions': (ny, nx),
+        'latitude': {'data': [lat],
+                     'dimensions': ['lon', 'lat'],
                      'attributes': {'units': 'Degrees North'}
                      },
-        'longitude': {'data': lon,
-                      'dimensions': (ny, nx),
+        'longitude': {'data': [lon],
+                      'dimensions': ['lon', 'lat'],
                       'attributes': {'units': 'Degrees North'}
                       },
-        # 'time':{'data': time,
-        #         'dimensions': time,
+        # 'time':{'data': mjdtime,
+        #         'dimensions': ['time'],
         #         'attributes': {'format': 'Modified Julian Day (MJD)',
         #                        'longname': 'time',
         #                        'units': 'days since 1858-11-17 00:00:00',
         #                        'time_zone': 'UTC'}
-        #         },
-        'Times': {'data': Times,
-                  'dimensions': (time, datestrlen),
-                  'attributes': {'time_zone': 'UTC'}
-                  }
+        #         }
+        # 'Times': {'data': Times,
+        #           'dimensions': ['time'],
+        #           'attributes': {'time_zone': 'UTC'}
+        #           }
     }
 
     # Add the rest of the variables and their data.
     for var in data.keys():
         # Use the shortname as the variable name (no spaces).
-        sname = data[var]['shortname']
-        new = {sname: {'data': data[var]['data'],
-                       'dimensions': (ny, nx, nt),
-                       'attributes': {'shortname': data[var]['shortname'],
-                                      'longname': data[var]['longname'],
+        sname = data[var]['shortName']
+        new = {sname: {'data': data[var]['data'].transpose(2, 0, 1),
+                       'dimensions': ['time', 'lat', 'lon'],
+                       'attributes': {'shortname': data[var]['shortName'],
+                                      'longname': data[var]['longName'],
                                       'units': data[var]['units']
                                       }
                        }}
         nc['variables'].update(new)
 
-    ncwrite(nc, fout)
+    ncwrite(nc, fout, Quiet=False)
 
 
 if __name__ == '__main__':
