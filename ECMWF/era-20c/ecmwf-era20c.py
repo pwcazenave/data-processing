@@ -337,7 +337,7 @@ def gread(fname, fix, noisy=False):
     return data
 
 
-def interp(data):
+def interp(data, noisy=False):
     """
     Interpolate the data onto a common time reference (the highest resolution
     of all the data).
@@ -346,6 +346,8 @@ def interp(data):
     ----------
     data: dict
         Output of gread().
+    noisy : bool, optional
+        Set to True to enable verbose output. Defaults to False.
 
     Returns
     -------
@@ -384,6 +386,9 @@ def interp(data):
     # Interpolate each variable onto the common time reference and update the
     # time variables as necessary.
     for var in data:
+        if noisy:
+            print('Interpolating {} to {} hourly...'.format(min_increment),
+                  end=' ')
         data_interp[var] = {}
         X, Y, T = np.meshgrid(data[var]['lon'][0, :], data[var]['lat'][:, 0], data[var]['time'])
         _, _, Ti = np.meshgrid(data[var]['lon'][0, :], data[var]['lat'][:, 0], common_time)
@@ -407,6 +412,9 @@ def interp(data):
         data_interp[var]['shortName'] = data[var]['shortName']
         data_interp[var]['longName'] = data[var]['longName']
         data_interp[var]['units'] = data[var]['units']
+
+        if noisy:
+            print('done.')
 
     return data_interp
 
