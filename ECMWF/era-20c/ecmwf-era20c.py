@@ -34,6 +34,7 @@ import os
 import sys
 import time
 import pygrib
+import calendar
 import datetime
 
 import matplotlib.pyplot as plt
@@ -47,7 +48,7 @@ from PyFVCOM.ocean_tools import calculate_rhum
 from PyFVCOM.read_FVCOM_results import ncwrite
 
 
-def get(year, outdir='.'):
+def get(year, month, outdir='.'):
     """
     Get the ECMWF ERA-20C FVCOM forcing data for a given year.
 
@@ -80,18 +81,26 @@ def get(year, outdir='.'):
 
     """
 
-    files = (os.path.join(outdir, '{}_analysis.grb'.format(year)),
-             os.path.join(outdir, '{}_forecast.grb'.format(year)))
+    # Buffer by four days from the current month.
+    date = datetime.datetime(year, month, 01, 00, 00, 00)
+    dom = calendar.monthrange(year, month)[-1]
+    start_date = date - datetime.timedelta(days=4)
+    end_date = date + datetime.timedelta(dom + 4)
+    s_start = start_date.strftime('%Y-%m-%d')
+    s_end = end_date.strftime('%Y-%m-%d')
+
+    files = (os.path.join(outdir, '{:04d}-{:02d}_analysis.grb'.format(year, month)),
+             os.path.join(outdir, '{:04d}-{:02d}_forecast.grb'.format(year, month)))
 
     server.retrieve({
         "class": "e2",
         "dataset": "era20c",
-        "date": "{}-12-31/to/{}-01-01".format(year - 1, year + 1),
+        "date": "{}/to/{}".format(s_start, s_end),
         "expver": "1",
         "levtype": "sfc",
         "param": "151.128/165.128/166.128/167.128/168.128",
         "stream": "oper",
-        "target": "{}_analysis.grb".format(year),
+        "target": files[0],
         "time": "00/03/06/09/12/15/18/21",
         "type": "an",
     })
@@ -99,13 +108,13 @@ def get(year, outdir='.'):
     server.retrieve({
         "class": "e2",
         "dataset": "era20c",
-        "date": "{}-12-31/to/{}-01-01".format(year - 1, year + 1),
+        "date": "{}/to/{}".format(s_start, s_end),
         "expver": "1",
         "levtype": "sfc",
         "param": "169.128/175.128/176.128/177.128/182.128/228.128",
         "step": "3/6/9/12/15/18/21/24",
         "stream": "oper",
-        "target": "{}_forecast.grb".format(year),
+        "target": files[1],
         "time": "06",
         "type": "fc",
     })
