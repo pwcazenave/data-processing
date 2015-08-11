@@ -210,7 +210,6 @@ def gread(fname, fix, noisy=False):
                 raise KeyError('The current variable ({}) is already in the loaded data.'.format(name))
 
             data[name] = {}
-            data[name]['data'] = np.empty((ny, nx, nt - ns))
             data[name]['lon'] = lon
             data[name]['lat'] = lat
             data[name]['units'] = current[0]['units']
@@ -228,14 +227,11 @@ def gread(fname, fix, noisy=False):
             data[name]['shortName'] = shortName
             data[name]['longName'] = longName
 
-            # For the output arrays
-            array_offset = 0
-            # For the `tt' loop
-            loop_offsets = 0
-            # If we're working with forecast data, clip accordingly.
+            # For the analysis data, start at 6am to match the forecast data.
+            loop_offsets = (6 / sampling)
+            # If we're working with forecast data, just start at the beginning.
             if cumul2inst:
-                array_offset = ns * 3
-                loop_offsets = ns * 2
+                loop_offsets = 0
 
             # Allocate the temporal variables. Remove three ns's because the
             # range used for tt (below) start from ns * 2 and ends at nt - ns.
@@ -249,26 +245,36 @@ def gread(fname, fix, noisy=False):
             # cumulative to instantaneous, so be mindful of the data you're
             # working with! We don't use the last time because we read
             # forward for each day.
-            for tt in range(loop_offsets, nt - ns, ns):
-                day = np.ma.empty((ny, nx, ns))
-                Times = []  # Y/M/D h:m:s
-                for ti in range(ns):
-                    si = ti + ns  # source array index
-                    hoursminutes = '{:04d}'.format(current[si]['dataTime'])
-                    currenttime = (current[si]['year'],
-                                   current[si]['month'],
-                                   current[si]['day'],
-                                   int(hoursminutes[:2]),
-                                   int(hoursminutes[2:]),
-                                   current[si]['second'])
-                    if cumul2inst:
-                        Times.append(datetime.datetime(*currenttime) +
-                                     datetime.timedelta(current[si]['startStep'] / 24.0))
-                    else:
-                        Times.append(datetime.datetime(*currenttime))
+            for tt in range(loop_offsets, nt - loop_offsets, ns):
+                if (tt + ns) <= nt:
+                    day = np.ma.empty((ny, nx, ns))
+                    Times = []  # Y/M/D h:m:s
+                    for ti in range(ns):
+                        si = tt + ti  # source array index
+                        hoursminutes = '{:04d}'.format(current[si]['dataTime'])
+                        currenttime = (current[si]['year'],
+                                       current[si]['month'],
+                                       current[si]['day'],
+                                       int(hoursminutes[:2]),
+                                       int(hoursminutes[2:]),
+                                       current[si]['second'])
+                        if cumul2inst:
+                            Times.append(datetime.datetime(*currenttime) +
+                                         datetime.timedelta(current[si]['startStep'] / 24.0))
+                        else:
+                            Times.append(datetime.datetime(*currenttime))
 
-                    day[..., ti] = np.ma.masked_where(current[si]['values'] == current[si]['missingValue'],
-                                                      current[si]['values'])
+                        day[..., ti] = np.ma.masked_where(current[si]['values'] == current[si]['missingValue'],
+                                                          current[si]['values'])
+                else:
+                    if noisy:
+                        extra_times = tt + ns - nt
+                        if extra_times == 1:
+                            msg = '{} trailing time dropped...'
+                        else:
+                            msg = '{} trailing times dropped...'
+                        print(msg.format(extra_times),
+                              end=' ')
 
                 # Check we're working with the right offset (the first step
                 # should be the same as the sampling interval). This is only
@@ -285,8 +291,11 @@ def gread(fname, fix, noisy=False):
 
                 # Store all the temporal data in the output dict.
                 st = tt - loop_offsets  # offset for the first day of data
-                data[name]['data'][..., st:st + ns] = day
-                data[name]['Times'].append(Times)
+                if 'data' in data[name]:
+                    data[name]['data'] = np.dstack((data[name]['data'], day))
+                else:
+                    data[name]['data'] = day
+                data[name]['Times'] = data[name]['Times'] + Times
 
             # Fix Times and make Modified Julian Days array.
             data[name]['Times'] = np.asarray(data[name]['Times'])
