@@ -302,10 +302,12 @@ def gread(fname, fix, noisy=False):
     # Calculate relative humidity from the dew point temperature and
     # air temperature,
     if '2 metre dewpoint temperature' in data and '2 metre temperature' in data:
-        data['Relative humidity']['data'] = calculate_rhum(data['2 metre dewpoint temperature'],
-                                                           data['2 metre temperature'])
+        data['Relative humidity'] = {}
+        data['Relative humidity']['data'] = calculate_rhum(data['2 metre dewpoint temperature']['data'],
+                                                           data['2 metre temperature']['data'])
         data['Relative humidity']['shortName'] = 'rhum'
         data['Relative humidity']['longName'] = 'Relative Humidity'
+        data['Relative humidity']['units'] = '%'
         # Just copy some time and position information.
         data['Relative humidity']['lon'] = data[data.keys()[0]]['lon']
         data['Relative humidity']['lat'] = data[data.keys()[0]]['lat']
