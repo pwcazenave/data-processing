@@ -82,6 +82,8 @@ def get(year, month, outdir='.'):
 
     """
 
+    server = ECMWFDataServer()
+
     # Buffer by four days from the current month.
     date = datetime.datetime(year, month, 01, 00, 00, 00)
     dom = calendar.monthrange(year, month)[-1]
@@ -498,8 +500,6 @@ if __name__ == '__main__':
 
     start = 2000
     end = 2010
-
-    server = ECMWFDataServer()
 
     # for year in range(start, end):
     for year in range(start, start + 1):
