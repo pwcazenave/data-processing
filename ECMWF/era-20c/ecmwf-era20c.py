@@ -40,6 +40,7 @@ import matplotlib.animation as animation
 import numpy as np
 
 from ecmwfapi import ECMWFDataServer
+from netCDF4 import date2num
 
 from PyFVCOM.ocean_tools import calculate_rhum
 from PyFVCOM.read_FVCOM_results import ncwrite
@@ -233,8 +234,7 @@ def gread(fname, fix, noisy=False):
 
             # Allocate the temporal variables. Remove three ns's because the
             # range used for tt (below) start from ns * 2 and ends at nt - ns.
-            data[name]['Times'] = np.zeros(nt - array_offset).astype(datetime.datetime)
-            data[name]['time'] = np.zeros(nt - array_offset)
+            data[name]['Times'] = []
 
             # We skip the first day because it doesn't start at the right
             # time (the download seems to miss the first of the eight samples
@@ -278,21 +278,26 @@ def gread(fname, fix, noisy=False):
                         print('cumulative data to instantaneous...', end=' ')
                     day = np.dstack((day[..., 0], np.diff(day, axis=2)))
 
-                if data[name]['units'] == 'J m**-2':
-                    # J/m^2 to W/m^2
-                    if noisy and tt == loop_offsets:
-                        print('Joules to Watts...', end=' ')
-                    day /= (3600 * sampling)
-                    data[name]['units'] = 'W m**-2'
-
-                if data[name]['units'] == 'K':
-                    day -= 273.15
-                    data[name]['units'] = 'degrees_C'
-
                 # Store all the temporal data in the output dict.
                 st = tt - loop_offsets  # offset for the first day of data
                 data[name]['data'][..., st:st + ns] = day
-                data[name]['Times'][st:st + ns] = Times
+                data[name]['Times'].append(Times)
+
+            # Fix Times and make Modified Julian Days array.
+            data[name]['Times'] = np.asarray(data[name]['Times'])
+            data[name]['time'] = date2num(data[name]['Times'],
+                                          'days since 1858-11-17 00:00:00')
+
+            if data[name]['units'] == 'J m**-2':
+                # J/m^2 to W/m^2
+                if noisy:
+                    print('Joules to Watts...', end=' ')
+                data[name]['data'] /= (3600 * sampling)
+                data[name]['units'] = 'W m**-2'
+
+            if data[name]['units'] == 'K':
+                data[name]['data'] -= 273.15
+                data[name]['units'] = 'degrees_C'
 
             if noisy:
                 print('done.')
