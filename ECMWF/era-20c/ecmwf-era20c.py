@@ -3,6 +3,7 @@ Get the relevant forcing data from the ECMWF servers.
 
 This is split into analysis:
     - 2m temperature
+    - Dew point temperature
     - 10m u wind
     - 10m v wind
     - Surface pressure
