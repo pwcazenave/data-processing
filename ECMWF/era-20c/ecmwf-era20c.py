@@ -389,8 +389,10 @@ def interp(data, noisy=False):
     # time variables as necessary.
     for var in data:
         if noisy:
-            print('Interpolating {} to {} hourly...'.format(min_increment),
+            print('Interpolating {} to {} hourly...'.format(var, int(24.0 * min_increment)),
                   end=' ')
+            sys.stdout.flush()
+
         data_interp[var] = {}
         X, Y, T = np.meshgrid(data[var]['lon'][0, :], data[var]['lat'][:, 0], data[var]['time'])
         _, _, Ti = np.meshgrid(data[var]['lon'][0, :], data[var]['lat'][:, 0], common_time)
@@ -515,7 +517,7 @@ if __name__ == '__main__':
             data = gread(files, fix, noisy=noisy)
 
             # Interpolate everything onto a common time reference.
-            data_interp = interp(data)
+            data_interp = interp(data, noisy)
 
             # Dump to netCDF.
             fout = 'ECMWF-ERA20C_FVCOM_{:04d}-{:02d}.nc'.format(year, month)
