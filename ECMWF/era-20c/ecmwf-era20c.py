@@ -493,44 +493,50 @@ if __name__ == '__main__':
 
     server = ECMWFDataServer()
 
-    for year in range(start, end):
+    # for year in range(start, end):
+    for year in range(start, start + 1):
 
-        # Download the GRIB files.
-        #files = get(year)
-        files = ('2003_analysis.grb', '2003_forecast.grb')
-        fix = [False, True]  # do we fix the cumulative?
+        # for month in range(1, 13):
+        for month in range(1, 2):
+            # Download the GRIB files.
+            files = get(year, month)
+            # files = ('2003-01_analysis.grb', '2003-01_forecast.grb')
+            fix = [False, True]  # do we fix the cumulative?
 
-        # Load the data and fix the forecast data variables to instantaneous.
-        data = gread(files, fix, noisy=noisy)
+            # Load the data and fix the forecast data variables to instantaneous.
+            data = gread(files, fix, noisy=noisy)
 
-        # Dump to netCDF.
-        fout = '2003.nc'
-        dump(data, fout, noisy=noisy)
+            # Interpolate everything onto a common time reference.
+            data_interp = interp(data)
 
-        # Animate some of the data.
-        if looksee:
-            cmax = 500
-            plotdata = data['Surface thermal radiation downwards']['data']
-            lon = data['Surface thermal radiation downwards']['lon']
-            lat = data['Surface thermal radiation downwards']['lat']
+            # Dump to netCDF.
+            fout = 'ECMWF-ERA20C_FVCOM_{:04d}-{:02d}.nc'.format(year, month)
+            dump(data_interp, fout, noisy=noisy)
 
-            def update_plot(i):
-                pc = ax.pcolormesh(lon, lat, plotdata[..., i])
-                pc.set_clim(0, cmax)
-                return pc,
+            # Animate some of the data.
+            if looksee:
+                cmax = 500
+                plotdata = data['Surface thermal radiation downwards']['data']
+                lon = data['Surface thermal radiation downwards']['lon']
+                lat = data['Surface thermal radiation downwards']['lat']
 
-            def init_plot():
-                pc = ax.pcolormesh(lon, lat, plotdata[..., 0])
-                plt.colorbar(pc)
-                pc.set_clim(0, cmax)
-                return pc,
+                def update_plot(i):
+                    pc = ax.pcolormesh(lon, lat, plotdata[..., i])
+                    pc.set_clim(0, cmax)
+                    return pc,
 
-            fig = plt.figure()
-            ax = fig.add_subplot(111)
-            ani = animation.FuncAnimation(fig,
-                                          update_plot,
-                                          np.arange(plotdata.shape[-1]),
-                                          init_func=init_plot,
-                                          interval=25,
-                                          blit=True)
-            plt.show()
+                def init_plot():
+                    pc = ax.pcolormesh(lon, lat, plotdata[..., 0])
+                    plt.colorbar(pc)
+                    pc.set_clim(0, cmax)
+                    return pc,
+
+                fig = plt.figure()
+                ax = fig.add_subplot(111)
+                ani = animation.FuncAnimation(fig,
+                                              update_plot,
+                                              np.arange(plotdata.shape[-1]),
+                                              init_func=init_plot,
+                                              interval=25,
+                                              blit=True)
+                plt.show()
