@@ -343,38 +343,38 @@ def dump(data, fout, noisy=False):
         'time', nt
     }
     nc['variables'] = {
-        'latitude':{'data':lat,
-                    'dimensions':(ny, nx),
-                    'attributes':{'units':'Degrees North'}
-                    },
-        'longitude':{'data':lon,
-                    'dimensions':(ny, nx),
-                    'attributes':{'units':'Degrees North'}
-                    },
-        # 'time':{'data':time,
-        #         'dimensions':time,
-        #         'attributes':{'format':'Modified Julian Day (MJD)',
-        #                       'longname':'time',
-        #                       'units':'days since 1858-11-17 00:00:00',
-        #                       'time_zone':'UTC'}
+        'latitude': {'data': lat,
+                     'dimensions': (ny, nx),
+                     'attributes': {'units': 'Degrees North'}
+                     },
+        'longitude': {'data': lon,
+                      'dimensions': (ny, nx),
+                      'attributes': {'units': 'Degrees North'}
+                      },
+        # 'time':{'data': time,
+        #         'dimensions': time,
+        #         'attributes': {'format': 'Modified Julian Day (MJD)',
+        #                        'longname': 'time',
+        #                        'units': 'days since 1858-11-17 00:00:00',
+        #                        'time_zone': 'UTC'}
         #         },
-        'Times':{'data':Times,
-                'dimensions':(time, datestrlen),
-                'attributes':{'time_zone':'UTC'}
-                }
+        'Times': {'data': Times,
+                  'dimensions': (time, datestrlen),
+                  'attributes': {'time_zone': 'UTC'}
+                  }
     }
 
     # Add the rest of the variables and their data.
     for var in data.keys():
         # Use the shortname as the variable name (no spaces).
         sname = data[var]['shortname']
-        new = {sname:{'data':data[var]['data'],
-                      'dimensions':(ny, nx, nt),
-                      'attributes':{'shortname':data[var]['shortname'],
-                                    'longname':data[var]['longname'],
-                                    'units':data[var]['units']
-                                    }
-                      }}
+        new = {sname: {'data': data[var]['data'],
+                       'dimensions': (ny, nx, nt),
+                       'attributes': {'shortname': data[var]['shortname'],
+                                      'longname': data[var]['longname'],
+                                      'units': data[var]['units']
+                                      }
+                       }}
         nc['variables'].update(new)
 
     ncwrite(nc, fout)
