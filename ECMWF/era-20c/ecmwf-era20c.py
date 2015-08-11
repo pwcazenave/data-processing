@@ -42,7 +42,8 @@ import matplotlib.animation as animation
 import numpy as np
 
 from ecmwfapi import ECMWFDataServer
-from netCDF4 import date2num
+from netCDF4 import date2num, num2date
+from scipy.interpolate import griddata
 
 from PyFVCOM.ocean_tools import calculate_rhum
 from PyFVCOM.read_FVCOM_results import ncwrite
@@ -333,6 +334,80 @@ def gread(fname, fix, noisy=False):
         data['Relative humidity']['Times'] = data[data.keys()[0]]['Times']
 
     return data
+
+
+def interp(data):
+    """
+    Interpolate the data onto a common time reference (the highest resolution
+    of all the data).
+
+    Parameters
+    ----------
+    data: dict
+        Output of gread().
+
+    Returns
+    -------
+    data_interp: dict
+        New data interpolated onto a common time reference.
+
+    """
+
+    data_interp = {}
+
+    min_increment = np.Inf
+    min_time = -np.Inf
+    max_time = np.Inf
+
+    for var in data:
+        # Find the finest resolution time data.
+        if 'time' in data[var]:
+            vtime = data[var]['time']
+            inc = np.min(np.diff(data[var]['time']))
+            if inc < 0:
+                inc = np.median(np.diff(data[var]['time']))
+            if inc < min_increment:
+                min_increment = inc
+
+            maxt = np.max(vtime)
+            mint = np.min(vtime)
+            if maxt < max_time:
+                max_time = maxt
+            if mint > min_time:
+                min_time = mint
+
+    common_time = np.arange(min_time, max_time + min_increment, min_increment)
+    common_Times = num2date(common_time,
+                            'days since 1858-11-17 00:00:00')
+
+    # Interpolate each variable onto the common time reference and update the
+    # time variables as necessary.
+    for var in data:
+        data_interp[var] = {}
+        X, Y, T = np.meshgrid(data[var]['lon'][0, :], data[var]['lat'][:, 0], data[var]['time'])
+        _, _, Ti = np.meshgrid(data[var]['lon'][0, :], data[var]['lat'][:, 0], common_time)
+
+        # Use ravel as it provides views to the data instead of copies (more
+        # memory efficient).
+        points = (X.ravel(), Y.ravel(), T.ravel())
+        values = data[var]['data'].ravel()
+        ipoints = (X.ravel(), Y.ravel(), Ti.ravel())
+        data_interp[var]['data'] = np.reshape(griddata(points,
+                                                values,
+                                                ipoints,
+                                                method='linear'),
+                                       X.shape)
+        # New times
+        data_interp[var]['time'] = common_time
+        data_interp[var]['Times'] = common_Times
+        # And the rest
+        data_interp[var]['lon'] = data[var]['lon']
+        data_interp[var]['lat'] = data[var]['lat']
+        data_interp[var]['shortName'] = data[var]['shortName']
+        data_interp[var]['longName'] = data[var]['longName']
+        data_interp[var]['units'] = data[var]['units']
+
+    return data_interp
 
 
 def dump(data, fout, noisy=False):
