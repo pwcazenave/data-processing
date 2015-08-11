@@ -178,11 +178,6 @@ def gread(fname, fix, noisy=False):
             sys.stdout.flush()
 
             current = grb.select(name=name)
-
-            # We have 24 hour long 3-hourly cumulative forecast data which
-            # need to be converted to instantaneous values. We must also
-            # convert from J/m^2 to W/m^2 (by dividing by the time interval
-            # in seconds).
             lat, lon = current[0].latlons()
 
             # Get the sampling interval. We have to do this dynamically
