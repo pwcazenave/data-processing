@@ -208,8 +208,19 @@ def gread(fname, fix, noisy=False):
             data[name]['lon'] = lon
             data[name]['lat'] = lat
             data[name]['units'] = current[0]['units']
-            data[name]['shortName'] = current[0]['cfVarName']
-            data[name]['longName'] = current[0]['cfName']
+            # Not all the records have the CF names (I'm looking at you,
+            # Mean sea level pressure), so make them up here if they're
+            # missing.
+            if 'cfVarName' in current[0].keys():
+                shortName = current[0]['cfVarName']
+            else:
+                shortName = ''.join([i[0] for i in name.split(' ')]).lower()
+            if 'cfName' in current[0].keys():
+                longName = current[0]['cfName']
+            else:
+                longName = name
+            data[name]['shortName'] = shortName
+            data[name]['longName'] = longName
 
             # For the output arrays
             array_offset = 0
