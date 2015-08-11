@@ -282,11 +282,11 @@ def gread(fname, fix, noisy=False):
                     # J/m^2 to W/m^2
                     if noisy and tt == loop_offsets:
                         print('Joules to Watts...', end=' ')
-                    day = day / (3600 * sampling)
+                    day /= (3600 * sampling)
                     data[name]['units'] = 'W m**-2'
 
                 if data[name]['units'] == 'K':
-                    day = day - 273.15
+                    day -= 273.15
                     data[name]['units'] = 'degrees_C'
 
                 # Store all the temporal data in the output dict.
