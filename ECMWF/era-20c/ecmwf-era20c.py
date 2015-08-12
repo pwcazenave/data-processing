@@ -36,6 +36,7 @@ import time
 import pygrib
 import calendar
 import datetime
+import multiprocessing
 
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -43,7 +44,6 @@ import numpy as np
 
 from ecmwfapi import ECMWFDataServer
 from netCDF4 import date2num, num2date
-from scipy.interpolate import griddata
 
 from PyFVCOM.ocean_tools import calculate_rhum
 from PyFVCOM.read_FVCOM_results import ncwrite
@@ -339,6 +339,53 @@ def gread(fname, fix, noisy=False):
     return data
 
 
+def worker(input, output):
+    """ Worker function to add our function of interest to the queue. """
+
+    for func, args in iter(input.get, 'STOP'):
+        indices, result = calculate(interp1d, args)
+        output.put((indices, result))
+
+
+def calculate(func, args):
+    """ Wrapper around the function we want to run and its inputs. """
+
+    indices, result = func(*args)
+
+    return indices, result
+
+
+def interp1d(interptimes, times, values, indices):
+    """
+    Wrapper around np.interp to return the index we've used as well as the
+    interpolated data. We need the indices passed through the multiprocessing
+    pipeline so we can reconstruct the output data in the right order.
+
+    Parameters
+    ----------
+    interptimes: np.ndarray
+        Times onto which to interpolate the timeseries (times, values).
+    times: np.ndarray
+        Times of the original data.
+    values: np.ndarray
+        Values of the original data.
+    indices: np.ndarray
+        Indices in the original data array.
+
+    Returns
+    -------
+    indices: np.ndarray
+        The indices in the original data.
+    interpvalues: np.ndarray
+        The interpolated time series.
+
+    """
+
+    interpvalues = np.interp(interptimes, times, values)
+
+    return indices, interpvalues
+
+
 def interp(data, noisy=False):
     """
     Interpolate the data onto a common time reference (the highest resolution
@@ -357,6 +404,11 @@ def interp(data, noisy=False):
         New data interpolated onto a common time reference.
 
     """
+
+    multiprocessing.freeze_support()
+    task_queue = multiprocessing.Queue()
+    done_queue = multiprocessing.Queue()
+    NPROCS = multiprocessing.cpu_count() - 1 # leave a spare CPU
 
     data_interp = {}
 
@@ -388,25 +440,53 @@ def interp(data, noisy=False):
     # Interpolate each variable onto the common time reference and update the
     # time variables as necessary.
     for var in data:
-        if noisy:
-            print('Interpolating {} to {} hourly...'.format(var, int(24.0 * min_increment)),
-                  end=' ')
-            sys.stdout.flush()
 
         data_interp[var] = {}
-        X, Y, T = np.meshgrid(data[var]['lon'][0, :], data[var]['lat'][:, 0], data[var]['time'])
-        _, _, Ti = np.meshgrid(data[var]['lon'][0, :], data[var]['lat'][:, 0], common_time)
 
-        # Use ravel as it provides views to the data instead of copies (more
-        # memory efficient).
-        points = (X.ravel(), Y.ravel(), T.ravel())
-        values = data[var]['data'].ravel()
-        ipoints = (X.ravel(), Y.ravel(), Ti.ravel())
-        data_interp[var]['data'] = np.reshape(griddata(points,
-                                                values,
-                                                ipoints,
-                                                method='linear'),
-                                       X.shape)
+        # For those data which are already 3-hourly (i.e. most), just trim to
+        # the right period. For the others, do the actual interpolation.
+        trim = False
+        if np.median(np.diff(data[var]['time'])) == min_increment:
+            if noisy:
+                print('Trimming {} to common time...'.format(var),
+                      end=' ')
+                sys.stdout.flush()
+
+            mint_diff = np.abs(data[var]['time'] - min_time)
+            maxt_diff = np.abs(data[var]['time'] - max_time)
+            if mint_diff.min() == 0 and maxt_diff.min() == 0:
+                trim = True
+
+        if trim:
+            si = np.argmin(mint_diff)
+            ei = np.argmin(maxt_diff)
+            data_interp[var]['data'] = data[var]['data'][..., si:ei]
+        else:
+            if noisy:
+                print('Interpolating {} to {} hourly...'.format(var, int(24.0 * min_increment)),
+                      end=' ')
+                sys.stdout.flush()
+
+            ny, nx, nt = np.shape(data[var]['data'])
+            TASKS = []
+            for xx in range(nx):
+                for yy in range(ny):
+                    TASKS.append((interp1d,
+                                  (common_time,
+                                   data[var]['time'],
+                                   data[var]['data'][yy, xx, :],
+                                   (yy, xx))))
+            for task in TASKS:
+                task_queue.put(task)
+            for _ in range(NPROCS):
+                multiprocessing.Process(target=worker,
+                                        args=(task_queue, done_queue)).start()
+            # Extract the results into a single large array
+            data_interp[var]['data'] = np.empty((ny, nx, len(common_time)))
+            for _ in TASKS:
+                pos, result = done_queue.get()
+                data_interp[var]['data'][pos[0], pos[1], :] = result
+
         # New times
         data_interp[var]['time'] = common_time
         data_interp[var]['Times'] = common_Times
