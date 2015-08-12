@@ -553,13 +553,13 @@ def dump(data, fout, noisy=False):
                       'dimensions': ['lon', 'lat'],
                       'attributes': {'units': 'Degrees North'}
                       },
-        'time':{'data': mjdtime,
-                'dimensions': ['time'],
-                'attributes': {'format': 'Modified Julian Day (MJD)',
-                               'longname': 'time',
-                               'units': 'days since 1858-11-17 00:00:00',
-                               'time_zone': 'UTC'}
-                }
+        'time': {'data': mjdtime,
+                 'dimensions': ['time'],
+                 'attributes': {'format': 'Modified Julian Day (MJD)',
+                                'longname': 'time',
+                                'units': 'days since 1858-11-17 00:00:00',
+                                'time_zone': 'UTC'}
+                 }
         # 'Times': {'data': Times,
         #           'dimensions': ['time'],
         #           'attributes': {'time_zone': 'UTC'}
