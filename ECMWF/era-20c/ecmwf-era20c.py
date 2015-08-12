@@ -540,10 +540,12 @@ def dump(data, fout, noisy=False):
         'datestrlen': datestrlen
     }
     nc['global attributes'] = {
-            'description': 'ECMWF ERA-20C data for FVCOM converted from GRIB to netCDF by ecmwf-era20c.py',
-            'source': 'http://apps.ecmwf.int/datasets/data/era20c-daily/',
-            'history': 'Created by Pierre Cazenave on {}'.format(time.ctime(time.time()))
-            }
+        'description': 'ECMWF ERA-20C data for FVCOM from ecmwf-era20c.py',
+        'source': 'http://apps.ecmwf.int/datasets/data/era20c-daily/',
+        'history': 'Created by Pierre Cazenave on {}'.format(
+            time.ctime(time.time())
+        )
+    }
     nc['variables'] = {
         'latitude': {'data': [lat],
                      'dimensions': ['lon', 'lat'],
