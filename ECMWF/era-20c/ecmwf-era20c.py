@@ -528,9 +528,9 @@ def dump(data, fout, noisy=False):
     tmpvar = data.keys()[0]
     lon, lat = data[tmpvar]['lon'], data[tmpvar]['lat']
     mjdtime = data[tmpvar]['time']
-    Times = data[tmpvar]['Times']
+    Times = [i.strftime('%Y-%m-%dT%H:%M:%S') for i in data[tmpvar]['Times']]
     ny, nx, _ = data[data.keys()[0]]['data'].shape
-    datestrlen = 26
+    datestrlen = 19
 
     nc = {}
     nc['dimensions'] = {
@@ -559,11 +559,12 @@ def dump(data, fout, noisy=False):
                                 'longname': 'time',
                                 'units': 'days since 1858-11-17 00:00:00',
                                 'time_zone': 'UTC'}
-                 }
-        # 'Times': {'data': Times,
-        #           'dimensions': ['time'],
-        #           'attributes': {'time_zone': 'UTC'}
-        #           }
+                 },
+        'Times': {'data': Times,
+                  'dimensions': ['time', 'datestrlen'],
+                  'attributes': {'time_zone': 'UTC'},
+                  'data_type': 'c'
+                  }
     }
 
     # Add the rest of the variables and their data.
