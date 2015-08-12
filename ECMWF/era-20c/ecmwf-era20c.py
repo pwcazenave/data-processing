@@ -261,12 +261,11 @@ def gread(fname, fix, noisy=False):
                     Times = []  # Y/M/D h:m:s
                     for ti in range(ns):
                         si = tt + ti  # source array index
-                        hoursminutes = '{:04d}'.format(current[si]['dataTime'])
                         currenttime = (current[si]['year'],
                                        current[si]['month'],
                                        current[si]['day'],
-                                       int(hoursminutes[:2]),
-                                       int(hoursminutes[2:]),
+                                       current[si]['hour'],
+                                       current[si]['minute'],
                                        current[si]['second'])
                         if cumul2inst:
                             Times.append(datetime.datetime(*currenttime) +
@@ -300,7 +299,6 @@ def gread(fname, fix, noisy=False):
                     day = np.dstack((day[..., 0], np.diff(day, axis=2)))
 
                 # Store all the temporal data in the output dict.
-                st = tt - loop_offsets  # offset for the first day of data
                 if 'data' in data[name]:
                     data[name]['data'] = np.dstack((data[name]['data'], day))
                 else:
