@@ -1,19 +1,21 @@
 """
-Get the relevant forcing data from the ECMWF servers.
+Get relevant forcing data for FVCOM from the ECMWF servers.
+
+Author: Pierre Cazenave, Plymouth Marine Laboratory, August 2015
 
 This is split into analysis:
-    - 2m temperature
-    - Dew point temperature
-    - 10m u wind
-    - 10m v wind
-    - Surface pressure
+    - 2m temperature (Kelvin)
+    - Dew point temperature (Kelvin)
+    - 10m u wind (m/s)
+    - 10m v wind (m/s)
+    - Mean Sea Level pressure (Pa)
 and forecast:
-    - Evaporation
-    - Total precipitation
-    - Surface net solar (long wave)
-    - Surface net thermal (short wave)
-    - Surface downward solar (long wave)
-    - Surface downward thermal (short wave)
+    - Evaporation (m)
+    - Total precipitation (m)
+    - Surface net solar (long wave) (J/m**2)
+    - Surface net thermal (short wave) (J/m**2)
+    - Surface downward solar (long wave) (J/m**2)
+    - Surface downward thermal (short wave) (J/m**2)
 
 The relative humidity is calculated from the dew point temperature and ambient
 temperature.
@@ -21,10 +23,15 @@ temperature.
 The forecast data are accumulated from 0600UTC with each forecast step (3 hour
 interval). The 3rd time step is therefore the accumulated data from 0600
 + 9 hours, which is the value at 1500. To get the instantaneous, subtract the
-accumulated from the given step from the previous step's data and then divide
-the result by the interval (3 hours):
+accumulated from the given step from the previous step's data:
 
-    inst = (data(n) - data(n - 1)) / interval
+    inst = (data(n) - data(n - 1))
+
+Temperatures are converted to Celsius and heat fluxes to W/m**2.
+
+Data sampled less frequently (the temperatures) are linearly interpolated
+onto the finer time series of the other data. All data are clipped to the
+common time period.
 
 """
 
@@ -54,19 +61,19 @@ def get(year, month, outdir='.'):
     Get the ECMWF ERA-20C FVCOM forcing data for a given year.
 
     The analysis data (instantaneous values):
-        - 2m temperature (Celsius)
-        - Dew point temperature (Celsius)
+        - 2m temperature (Kelvin)
+        - Dew point temperature (Kelvin)
         - 10m u wind (m/s)
         - 10m v wind (m/s)
-        - Mean Sea Level pressure (hPA)
+        - Mean Sea Level pressure (Pa)
 
-    The forecast data (accumulated from 0600UTC + n hours for each step).
+    The forecast data (accumulated from 0600UTC + n hours for each step):
         - Evaporation
         - Total precipitation
-        - Surface net solar
-        - Surface net thermal
-        - Surface downward solar
-        - Surface downward thermal
+        - Surface net solar (J/m**2)
+        - Surface net thermal (J/m**2)
+        - Surface downward solar (J/m**2)
+        - Surface downward thermal (J/m**2)
 
     Parameters
     ----------
