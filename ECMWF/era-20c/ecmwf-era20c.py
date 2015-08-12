@@ -603,7 +603,8 @@ if __name__ == '__main__':
             # files = ('2003-01_analysis.grb', '2003-01_forecast.grb')
             fix = [False, True]  # do we fix the cumulative?
 
-            # Load the data and fix the forecast data variables to instantaneous.
+            # Load the data and fix the forecast data variables to
+            # instantaneous.
             data = gread(files, fix, noisy=noisy)
 
             # Interpolate everything onto a common time reference.
