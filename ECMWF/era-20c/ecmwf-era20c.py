@@ -484,8 +484,10 @@ def interp(data, noisy=False):
             for task in TASKS:
                 task_queue.put(task)
             for _ in range(NPROCS):
-                multiprocessing.Process(target=worker,
-                                        args=(task_queue, done_queue)).start()
+                process = multiprocessing.Process(target=worker,
+                                        args=(task_queue, done_queue))
+                process.daemon = True
+                process.start()
             # Extract the results into a single large array
             data_interp[var]['data'] = np.empty((ny, nx, len(common_time)))
             for _ in TASKS:
