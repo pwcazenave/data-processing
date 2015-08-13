@@ -278,14 +278,6 @@ def gread(fname, fix, noisy=False):
                         print(msg.format(extra_times),
                               end=' ')
 
-                # Check we're working with the right offset (the first step
-                # should be the same as the sampling interval). This is only
-                # necessary on the forecast data (signified by cumul2inst).
-                if cumul2inst and sampling / 2.0 != current[0]['startStep']:
-                    msg = 'The first step in the data is {}, not {}.'.format(
-                        Times[0].hour, sampling / 2.0)
-                    raise ValueError(msg)
-
                 # Add a flag saying this variable is forecast.
                 data[name]['forecast'] = False
                 if cumul2inst:
