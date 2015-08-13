@@ -615,14 +615,10 @@ if __name__ == '__main__':
     start = 2000
     end = 2010
 
-    # for year in range(start, end):
-    for year in range(start, start + 1):
-
-        # for month in range(1, 13):
-        for month in range(1, 2):
+    for year in range(start, end + 1):
+        for month in range(1, 13):
             # Download the GRIB files.
-            files = get(year, month)
-            # files = ('2003-01_analysis.grb', '2003-01_forecast.grb')
+            files = get(year, month, outdir='grib')
             fix = [False, True]  # do we fix the cumulative?
 
             # Load the data and fix the forecast data variables to
@@ -633,7 +629,8 @@ if __name__ == '__main__':
             data_interp = interp(data, noisy)
 
             # Dump to netCDF.
-            fout = 'ECMWF-ERA20C_FVCOM_{:04d}-{:02d}.nc'.format(year, month)
+            fout = os.path.join('nc',
+                                'ECMWF-ERA20C_FVCOM_{:04d}-{:02d}.nc'.format(year, month))
             dump(data_interp, fout, noisy=noisy)
 
             # Animate some of the data.
