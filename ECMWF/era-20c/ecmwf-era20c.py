@@ -248,14 +248,6 @@ def gread(fname, fix, noisy=False):
             # range used for tt (below) start from ns * 2 and ends at nt - ns.
             data[name]['Times'] = []
 
-            # We skip the first day because it doesn't start at the right
-            # time (the download seems to miss the first of the eight samples
-            # in a single forecast). We've accounted for this in get() by
-            # offsetting the download by a day for each year. Getting this
-            # offset wrong will seriously break the conversion from
-            # cumulative to instantaneous, so be mindful of the data you're
-            # working with! We don't use the last time because we read
-            # forward for each day.
             for tt in range(loop_offsets, nt - loop_offsets, ns):
                 if (tt + ns) <= nt:
                     day = np.ma.empty((ny, nx, ns))
