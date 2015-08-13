@@ -331,6 +331,7 @@ def gread(fname, fix, noisy=False):
         data['Relative humidity']['lat'] = data['2 metre dewpoint temperature']['lat']
         data['Relative humidity']['Times'] = data['2 metre dewpoint temperature']['Times']
         data['Relative humidity']['time'] = data['2 metre dewpoint temperature']['time']
+        data['Relative humidity']['forecast'] = data['2 metre dewpoint temperature']['forecast']
 
     return data
 
