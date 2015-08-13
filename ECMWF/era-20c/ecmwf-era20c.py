@@ -12,10 +12,10 @@ This is split into analysis:
 and forecast:
     - Evaporation (m)
     - Total precipitation (m)
-    - Surface net solar (long wave) (J/m**2)
-    - Surface net thermal (short wave) (J/m**2)
-    - Surface solar radiation downward (long wave) (J/m**2)
-    - Surface thermal radiation downward (short wave) (J/m**2)
+    - Surface net solar radiation (short wave) (J/m**2)
+    - Surface net thermal radiation (long wave) (J/m**2)
+    - Surface solar radiation downward (short wave) (J/m**2)
+    - Surface thermal radiation downward (long wave) (J/m**2)
 
 The relative humidity is calculated from the dew point temperature and ambient
 temperature.
@@ -70,8 +70,8 @@ def get(year, month, outdir='.'):
     The forecast data (accumulated from 0600UTC + n hours for each step):
         - Evaporation
         - Total precipitation
-        - Surface net solar (J/m**2)
-        - Surface net thermal (J/m**2)
+        - Surface net solar radiation (J/m**2)
+        - Surface net thermal radiation (J/m**2)
         - Surface solar radiation downward (J/m**2)
         - Surface thermal radiation downward (J/m**2)
 
