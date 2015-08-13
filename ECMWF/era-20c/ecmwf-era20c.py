@@ -418,7 +418,6 @@ def interp(data, noisy=False):
 
     """
 
-    multiprocessing.freeze_support()
     task_queue = multiprocessing.Queue()
     done_queue = multiprocessing.Queue()
     NPROCS = multiprocessing.cpu_count() - 1 # leave a spare CPU
@@ -498,6 +497,10 @@ def interp(data, noisy=False):
                                         args=(task_queue, done_queue))
                 process.daemon = True
                 process.start()
+
+            # Wait for everything to finish.
+            task_queue.join()
+
             # Extract the results into a single large array
             data_interp[var]['data'] = np.empty((ny, nx, len(common_time)))
             for _ in TASKS:
@@ -516,6 +519,9 @@ def interp(data, noisy=False):
 
         if noisy:
             print('done.')
+
+    task_queue.close()
+    done_queue.close()
 
     return data_interp
 
