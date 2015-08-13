@@ -563,13 +563,19 @@ def dump(data, fout, noisy=False):
         )
     }
     nc['variables'] = {
-        'latitude': {'data': [lat],
+        'lat': {'data': [lat],
                      'dimensions': ['lon', 'lat'],
-                     'attributes': {'units': 'Degrees North'}
+                     'attributes': {'units': 'degrees_north',
+                                    'standard_name': 'latitude',
+                                    'long_name': 'Latitude',
+                                    'axis': 'Y'}
                      },
-        'longitude': {'data': [lon],
+        'lon': {'data': [lon],
                       'dimensions': ['lon', 'lat'],
-                      'attributes': {'units': 'Degrees North'}
+                      'attributes': {'units': 'degrees_east',
+                                     'standard_name': 'longitude',
+                                     'long_name': 'Longitude',
+                                     'axis': 'X'}
                       },
         'time': {'data': mjdtime,
                  'dimensions': ['time'],
