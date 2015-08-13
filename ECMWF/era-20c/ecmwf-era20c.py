@@ -270,7 +270,8 @@ def gread(fname, fix, noisy=False):
                                        current[si]['second'])
                         if cumul2inst:
                             Times.append(datetime.datetime(*currenttime) +
-                                         datetime.timedelta(current[si]['startStep'] / 24.0))
+                                         datetime.timedelta(current[si]['startStep'] / 24.0) +
+                                         datetime.timedelta(sampling / 24.0))
                         else:
                             Times.append(datetime.datetime(*currenttime))
 
@@ -289,9 +290,9 @@ def gread(fname, fix, noisy=False):
                 # Check we're working with the right offset (the first step
                 # should be the same as the sampling interval). This is only
                 # necessary on the forecast data (signified by cumul2inst).
-                if cumul2inst and sampling != current[0]['startStep']:
-                    msg = 'The first step in the data is {}, not {}. Have you downloaded from a non-midnight start point? Have you specified the correct `sampling\' value?'.format(
-                        Times[0].hour, sampling)
+                if cumul2inst and sampling / 2.0 != current[0]['startStep']:
+                    msg = 'The first step in the data is {}, not {}.'.format(
+                        Times[0].hour, sampling / 2.0)
                     raise ValueError(msg)
 
                 if cumul2inst:
