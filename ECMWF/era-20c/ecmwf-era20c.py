@@ -221,9 +221,7 @@ def gread(fname, fix, noisy=False):
 
             data[name] = {}
             data[name]['lon'] = lon
-            # Latitudes are the wrong way around relative to the orientation
-            # of the data array, for some reason. Fix that here.
-            data[name]['lat'] = 0.0 - lat
+            data[name]['lat'] = lat
             data[name]['units'] = current[0]['units']
             # Not all the records have the CF names (I'm looking at you,
             # Mean sea level pressure), so make them up here if they're
@@ -311,6 +309,9 @@ def gread(fname, fix, noisy=False):
                     data[name]['data'] = day
                 data[name]['Times'] = data[name]['Times'] + Times
 
+            # Flip the data upside down because it gets stored upside down
+            # otherwise, making subsetting it a pain. Also, it'd be wrong.
+            data[name]['data'] = data[name]['data'][::-1, :, :]
             # Fix Times and make Modified Julian Days array.
             data[name]['Times'] = np.asarray(data[name]['Times'])
             data[name]['time'] = date2num(data[name]['Times'],
