@@ -232,6 +232,10 @@ def gread(fname, fix, noisy=False):
                 shortName = current[0]['cfVarName']
             else:
                 shortName = ''.join([i[0] for i in name.split(' ')]).lower()
+                # Remove numbers from the short names.
+                shortName = ''.join([i if i.isalpha() else '' for i in shortName])
+                if shortName[0].isnumeric():
+                    shortName = shortName[1:]
             if 'cfName' in current[0].keys():
                 longName = current[0]['cfName']
             else:
