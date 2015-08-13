@@ -13,8 +13,6 @@ and forecast:
     - Evaporation (m)
     - Total precipitation (m)
     - Surface net solar radiation (short wave) (J/m**2)
-    - Surface net thermal radiation (long wave) (J/m**2)
-    - Surface solar radiation downward (short wave) (J/m**2)
     - Surface thermal radiation downward (long wave) (J/m**2)
 
 The relative humidity is calculated from the dew point temperature and ambient
@@ -66,13 +64,12 @@ def get(year, month, outdir='.'):
         - 10m u wind (m/s)
         - 10m v wind (m/s)
         - Mean Sea Level pressure (Pa)
+    The two temperature variables are only available every 6 hours.
 
     The forecast data (accumulated from 0600UTC + n hours for each step):
         - Evaporation
         - Total precipitation
         - Surface net solar radiation (J/m**2)
-        - Surface net thermal radiation (J/m**2)
-        - Surface solar radiation downward (J/m**2)
         - Surface thermal radiation downward (J/m**2)
 
     Parameters
@@ -121,7 +118,7 @@ def get(year, month, outdir='.'):
         "date": "{}/to/{}".format(s_start, s_end),
         "expver": "1",
         "levtype": "sfc",
-        "param": "169.128/175.128/176.128/177.128/182.128/228.128",
+        "param": "175.128/176.128/182.128/228.128",
         "step": "3/6/9/12/15/18/21/24",
         "stream": "oper",
         "target": files[1],
