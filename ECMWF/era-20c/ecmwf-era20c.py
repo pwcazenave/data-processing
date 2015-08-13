@@ -221,7 +221,9 @@ def gread(fname, fix, noisy=False):
 
             data[name] = {}
             data[name]['lon'] = lon
-            data[name]['lat'] = lat
+            # Latitudes are the wrong way around relative to the orientation
+            # of the data array, for some reason. Fix that here.
+            data[name]['lat'] = 0.0 - lat
             data[name]['units'] = current[0]['units']
             # Not all the records have the CF names (I'm looking at you,
             # Mean sea level pressure), so make them up here if they're
