@@ -295,7 +295,10 @@ def gread(fname, fix, noisy=False):
                         Times[0].hour, sampling / 2.0)
                     raise ValueError(msg)
 
+                # Add a flag saying this variable is forecast.
+                data[name]['forecast'] = False
                 if cumul2inst:
+                    data[name]['forecast'] = True
                     if noisy and tt == loop_offsets:
                         print('cumulative data to instantaneous...', end=' ')
                     day = np.dstack((day[..., 0], np.diff(day, axis=2)))
@@ -427,8 +430,8 @@ def interp(data, noisy=False):
     max_time = np.Inf
 
     for var in data:
-        # Find the finest resolution time data.
-        if 'time' in data[var]:
+        # Find the finest resolution time data from the analysis variables.
+        if 'time' in data[var] and not data[var]['forecast']:
             vtime = data[var]['time']
             inc = np.min(np.diff(data[var]['time']))
             if inc < 0:
@@ -453,10 +456,12 @@ def interp(data, noisy=False):
 
         data_interp[var] = {}
 
-        # For those data which are already 3-hourly (i.e. most), just trim to
-        # the right period. For the others, do the actual interpolation.
+        # For those analysis data which are already 3-hourly (i.e. not
+        # temperature), just trim to the right period. For the others, do the
+        # actual interpolation.
         trim = False
-        if np.median(np.diff(data[var]['time'])) == min_increment:
+        var_increment = np.median(np.diff(data[var]['time']))
+        if var_increment == min_increment and not data[var]['forecast']:
             if noisy:
                 print('Trimming {} to common time...'.format(var),
                       end=' ')
