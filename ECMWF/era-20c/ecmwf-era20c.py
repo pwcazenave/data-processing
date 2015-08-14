@@ -262,7 +262,7 @@ def gread(fname, fix, noisy=False):
                                        current[si]['second'])
                         if cumul2inst:
                             Times.append(datetime.datetime(*currenttime) +
-                                         datetime.timedelta(current[si]['startStep'] / 2.0 / 24.0))
+                                         datetime.timedelta(current[si]['startStep'] / 24.0))
                         else:
                             Times.append(datetime.datetime(*currenttime))
 
@@ -296,7 +296,9 @@ def gread(fname, fix, noisy=False):
             # Flip the data upside down because it gets stored upside down
             # otherwise, making subsetting it a pain. Also, it'd be wrong.
             data[name]['data'] = data[name]['data'][::-1, :, :]
-            # Fix Times and make Modified Julian Days array.
+            # Add half the sampling to the Times and make Modified Julian Days
+            # array.
+            data[name]['Times'] = [i + datetime.timedelta(sampling / 2.0 / 24.0) for i in data[name]['Times']]
             data[name]['Times'] = np.asarray(data[name]['Times'])
             data[name]['time'] = date2num(data[name]['Times'],
                                           'days since 1858-11-17 00:00:00')
