@@ -346,47 +346,11 @@ def worker(input, output):
     """ Worker function to add our function of interest to the queue. """
 
     for func, args in iter(input.get, 'STOP'):
-        indices, result = calculate(interp1d, args)
+        indices = args[-1]
+        result = func(*args[:-1])
         output.put((indices, result))
 
-
-def calculate(func, args):
-    """ Wrapper around the function we want to run and its inputs. """
-
-    indices, result = func(*args)
-
     return indices, result
-
-
-def interp1d(interptimes, times, values, indices):
-    """
-    Wrapper around np.interp to return the index we've used as well as the
-    interpolated data. We need the indices passed through the multiprocessing
-    pipeline so we can reconstruct the output data in the right order.
-
-    Parameters
-    ----------
-    interptimes: np.ndarray
-        Times onto which to interpolate the timeseries (times, values).
-    times: np.ndarray
-        Times of the original data.
-    values: np.ndarray
-        Values of the original data.
-    indices: np.ndarray
-        Indices in the original data array.
-
-    Returns
-    -------
-    indices: np.ndarray
-        The indices in the original data.
-    interpvalues: np.ndarray
-        The interpolated time series.
-
-    """
-
-    interpvalues = np.interp(interptimes, times, values)
-
-    return indices, interpvalues
 
 
 def interp(data, noisy=False):
