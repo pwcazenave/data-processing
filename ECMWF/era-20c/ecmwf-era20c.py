@@ -44,7 +44,6 @@ import datetime
 import multiprocessing
 
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
 import numpy as np
 
 from ecmwfapi import ECMWFDataServer
@@ -566,51 +565,24 @@ if __name__ == '__main__':
     noisy = True
     looksee = False  # animate some data
 
-    start = 2000
-    end = 2010
+    # Read in the month and year from the arguments to the script.
+    year = int(sys.argv[1])
+    month = int(sys.argv[2])
 
-    for year in range(start, end + 1):
-        for month in range(1, 13):
-            # Download the GRIB files.
-            files = get(year, month, outdir='grib')
-            fix = [False, True]  # do we fix the cumulative?
+    # Download the GRIB files.
+    # files = get(year, month, outdir='grib')
+    files = ('grib/{:04d}-{:02d}_analysis.grb'.format(year, month),
+             'grib/{:04d}-{:02d}_forecast.grb'.format(year, month))
+    fix = [False, True]  # do we fix the cumulative?
 
-            # Load the data and fix the forecast data variables to
-            # instantaneous.
-            data = gread(files, fix, noisy=noisy)
+    # Load the data and fix the forecast data variables to
+    # instantaneous.
+    data = gread(files, fix, noisy=noisy)
 
-            # Interpolate everything onto a common time reference.
-            data_interp = interp(data, noisy)
+    # Interpolate everything onto a common time reference.
+    data_interp = interp(data, noisy=noisy)
 
-            # Dump to netCDF.
-            fout = os.path.join('nc',
-                                'ECMWF-ERA20C_FVCOM_{:04d}-{:02d}.nc'.format(year, month))
-            dump(data_interp, fout, noisy=noisy)
-
-            # Animate some of the data.
-            if looksee:
-                cmax = 500
-                plotdata = data['Surface thermal radiation downwards']['data']
-                lon = data['Surface thermal radiation downwards']['lon']
-                lat = data['Surface thermal radiation downwards']['lat']
-
-                def update_plot(i):
-                    pc = ax.pcolormesh(lon, lat, plotdata[..., i])
-                    pc.set_clim(0, cmax)
-                    return pc,
-
-                def init_plot():
-                    pc = ax.pcolormesh(lon, lat, plotdata[..., 0])
-                    plt.colorbar(pc)
-                    pc.set_clim(0, cmax)
-                    return pc,
-
-                fig = plt.figure()
-                ax = fig.add_subplot(111)
-                ani = animation.FuncAnimation(fig,
-                                              update_plot,
-                                              np.arange(plotdata.shape[-1]),
-                                              init_func=init_plot,
-                                              interval=25,
-                                              blit=True)
-                plt.show()
+    # Dump to netCDF.
+    fout = os.path.join('/dev/shm', 'nc',
+                        'ECMWF-ERA20C_FVCOM_{:04d}-{:02d}.nc'.format(year, month))
+    dump(data_interp, fout, noisy=noisy)
