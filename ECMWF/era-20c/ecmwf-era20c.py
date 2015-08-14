@@ -307,12 +307,16 @@ def gread(fname, fix, noisy=False):
                 # J/m^2 to W/m^2
                 if noisy:
                     print('Joules to Watts...', end=' ')
-                data[name]['data'] /= (3600 * sampling)
+                data[name]['data'] /= 3600 * sampling
                 data[name]['units'] = 'W m**-2'
 
             if data[name]['units'] == 'K':
                 data[name]['data'] -= 273.15
                 data[name]['units'] = 'degrees_C'
+
+            if name.lower() in ['evaporation', 'total precipitation']:
+                data[name]['data'] /= 3600 * sampling
+                data[name]['units'] = 'm s**-1'
 
             if noisy:
                 print('done.')
