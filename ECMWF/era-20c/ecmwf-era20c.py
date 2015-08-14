@@ -354,8 +354,7 @@ def worker(input, output):
 
 def interp(data, noisy=False):
     """
-    Interpolate the data onto a common time reference (the highest resolution
-    of all the data).
+    Interpolate the data onto a common time reference.
 
     Parameters
     ----------
@@ -398,6 +397,13 @@ def interp(data, noisy=False):
             if mint > min_time:
                 min_time = mint
 
+    # Split the increment so we don't lose the peaks in the data when
+    # interpolating from the offset forecast data to the analysis data times.
+    # This is because we've had to offset the forecast data by half the time
+    # step since the forecast is the integral over the time step, meaning the
+    # value of the instantaneous is at the halfway point in the step.
+    min_increment /= 2.0
+
     common_time = np.arange(min_time, max_time + min_increment, min_increment)
     common_Times = num2date(common_time,
                             'days since 1858-11-17 00:00:00')
@@ -408,57 +414,35 @@ def interp(data, noisy=False):
 
         data_interp[var] = {}
 
-        # For those analysis data which are already 3-hourly (i.e. not
-        # temperature), just trim to the right period. For the others, do the
-        # actual interpolation.
-        trim = False
-        var_increment = np.median(np.diff(data[var]['time']))
-        if var_increment == min_increment and not data[var]['forecast']:
-            if noisy:
-                print('Trimming {} to common time...'.format(var),
-                      end=' ')
-                sys.stdout.flush()
+        if noisy:
+            print('Interpolating {} to {} hourly...'.format(var, 24.0 * min_increment),
+                  end=' ')
+            sys.stdout.flush()
 
-            mint_diff = np.abs(data[var]['time'] - min_time)
-            maxt_diff = np.abs(data[var]['time'] - max_time)
-            if mint_diff.min() == 0 and maxt_diff.min() == 0:
-                trim = True
+        ny, nx, nt = np.shape(data[var]['data'])
+        tasks = []
+        for xx in range(nx):
+            for yy in range(ny):
+                tasks.append((np.interp,
+                              (common_time,
+                               data[var]['time'],
+                               data[var]['data'][yy, xx, :],
+                               (yy, xx))))
 
-        if trim:
-            si = np.argmin(mint_diff)
-            ei = np.argmin(maxt_diff)
-            data_interp[var]['data'] = data[var]['data'][..., si:ei]
-        else:
-            if noisy:
-                print('Interpolating {} to {} hourly...'.format(var, int(24.0 * min_increment)),
-                      end=' ')
-                sys.stdout.flush()
+        for task in tasks:
+            task_queue.put(task)
 
-            ny, nx, nt = np.shape(data[var]['data'])
-            TASKS = []
-            for xx in range(nx):
-                for yy in range(ny):
-                    TASKS.append((interp1d,
-                                  (common_time,
-                                   data[var]['time'],
-                                   data[var]['data'][yy, xx, :],
-                                   (yy, xx))))
-            for task in TASKS:
-                task_queue.put(task)
-            for _ in range(NPROCS):
-                process = multiprocessing.Process(target=worker,
-                                        args=(task_queue, done_queue))
-                process.daemon = True
-                process.start()
+        for _ in range(NPROCS):
+            process = multiprocessing.Process(target=worker,
+                                              args=(task_queue, done_queue))
+            process.daemon = True
+            process.start()
 
-            # Wait for everything to finish.
-            task_queue.join()
-
-            # Extract the results into a single large array
-            data_interp[var]['data'] = np.empty((ny, nx, len(common_time)))
-            for _ in TASKS:
-                pos, result = done_queue.get()
-                data_interp[var]['data'][pos[0], pos[1], :] = result
+        # Extract the results into a single large array
+        data_interp[var]['data'] = np.empty((ny, nx, len(common_time)))
+        for _ in tasks:
+            pos, result = done_queue.get()
+            data_interp[var]['data'][pos[0], pos[1], :] = result
 
         # New times
         data_interp[var]['time'] = common_time
@@ -472,6 +456,12 @@ def interp(data, noisy=False):
 
         if noisy:
             print('done.')
+
+    # See if emptying the queues does anything...
+    while not task_queue.empty():
+        task_queue.get()
+    while not done_queue.empty():
+        done_queue.get()
 
     task_queue.close()
     done_queue.close()
