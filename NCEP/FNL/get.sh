@@ -23,7 +23,7 @@ cert_opt=""
 # authenticate - NOTE: You should only execute this command ONE TIME.
 # Executing this command for every data file you download may cause
 # your download privileges to be suspended.
-wget $cert_opt -O auth_status.rda.ucar.edu --save-cookies auth.rda.ucar.edu.$$ --post-data="email=pica@pml.ac.uk&passwd=$passwd&action=login" https://rda.ucar.edu/cgi-bin/login
+wget -q $cert_opt -O auth_status.rda.ucar.edu --save-cookies auth.rda.ucar.edu.$$ --post-data="email=pica@pml.ac.uk&passwd=$passwd&action=login" https://rda.ucar.edu/cgi-bin/login
 
 # Sort out the time stuff.
 #     J  F  M  A  M  J  J  A  S  O  N  D
