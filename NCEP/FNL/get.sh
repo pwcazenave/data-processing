@@ -44,8 +44,8 @@ for year in $years; do
     fi
 
     for month in {01..12}; do
-        echo -n "${monthnames[$((month - 1))]} $year: "
-        for rawday in $(seq 1 ${dom[$((month - 1))]}); do
+        echo -n "${monthnames[$((10#$month - 1))]} $year: "
+        for rawday in $(seq 1 ${dom[$((10#$month - 1))]}); do
             day=$(printf %02d $rawday)
             echo -n "$day "
             wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ http://rda.ucar.edu/data/ds083.2/grib1/$year/$year.$month/fnl_${year}${month}${day}_00_00.grib1
