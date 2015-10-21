@@ -23,6 +23,7 @@
 *.bz2
 *.qxf
 *.grb
+*.grib1
 
 # Miscellaneous files
 .~lock*#
