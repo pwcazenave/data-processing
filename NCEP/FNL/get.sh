@@ -12,8 +12,8 @@ opts="-qcN"
 # IMPORTANT NOTE:  If your password uses a special character that has special
 #                  meaning to csh, you should escape it with a backslash
 #                  Example:  set passwd = "my\!password"
-passwd=${:-xxx}
-num_chars=$(echo "$passwd" |awk '{print length($0)}')
+passwd=${passwd:-xxxxxx}
+num_chars=$(echo "$passwd" | awk '{print length($0)}')
 
 cert_opt=""
 # If you get a certificate verification error (version 1.10 or higher),
