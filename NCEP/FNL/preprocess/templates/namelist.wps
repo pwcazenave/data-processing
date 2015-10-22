@@ -1,0 +1,44 @@
+&share
+ wrf_core = 'ARW',
+ max_dom  = 3,
+ start_date = '2002-01-01_00:00:00','2002-01-01_00:00:00','2002-01-01_00:00:00',
+ end_date   = '2002-12-31_18:00:00','2002-12-31_18:00:00','2002-12-31_18:00:00',
+ interval_seconds = 21600,
+ active_grid      = .true., .true., .true.,
+ subgrid_ratio_x = 1,
+ subgrid_ratio_y = 1,
+ io_form_geogrid = 2,
+/
+
+&geogrid
+ parent_id         = 0,     1,     2,
+ parent_grid_ratio = 1,     2,     3,
+ i_parent_start    = 1,     40,    49,
+ j_parent_start    = 1,     40,    38,
+ s_we              = 1,     1,     1,
+ e_we              = 175,   232,   367,
+ s_sn              = 1,     1,     1,
+ e_sn              = 175,   232,   385,
+ geog_data_res     = '30s', '30s', '30s',
+ dx                = 20000, ! controls the domain resolution (m for lambert)
+ dy                = 20000, ! controls the domain resolution (m for lambert)
+ map_proj = 'lambert',
+ ref_lat   =  53.00,
+ ref_lon   =  -5.50,
+ truelat1  =  53.00,
+ truelat2  =  53.00,
+ stand_lon =  -5.50,
+ geog_data_path = '/users/modellers/pica/Data/WRF/WPS/geog'
+/
+
+&ungrib
+ out_format = 'WPS',
+ prefix = 'FLX',
+/
+
+&metgrid
+ fg_name = 'SST','FLX','PGB',
+ io_form_metgrid = 2,
+ opt_metgrid_tbl_path         = '../templates',
+ opt_output_from_metgrid_path = './',
+/
