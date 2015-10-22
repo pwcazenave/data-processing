@@ -36,7 +36,10 @@ years=({2003..2013})
 # download the file(s)
 # NOTE:  if you get 403 Forbidden errors when downloading the data files, check
 #        the contents of the file 'auth_status.rda.ucar.edu'
-for year in $years; do
+for year in ${years[@]}; do
+    if [ ! -d ./$year ]; then
+        mkdir ./$year
+    fi
     if [ $(echo "scale=0; $year % 4" | bc -l) -eq 0 ]; then
         dom[1]=29
     else
@@ -55,6 +58,8 @@ for year in $years; do
         done
         echo
     done
+    # Move the files to their own directory.
+    mv fnl_${year}????_??_??.grib1 $year
 done
 
 # clean up
