@@ -8,6 +8,9 @@ set -eu
 # For metgrid.exe to run in parallel.
 module load mpi/mpich-x86_64
 np=$(grep -c physical\ id /proc/cpuinfo)
+if [ -z $np ]; then
+    np=1
+fi
 
 namelist=templates/namelist.wps
 Vtable=templates/Vtable
