@@ -53,13 +53,20 @@ for year in ${years[@]}; do
             echo -n "$day "
             for rawhour in 0 6 12 18; do
                 hour=$(printf %02d $rawhour)
-                if [ $year -ge 2007 -a $month -ge 12 -a $rawday -ge 6 -a $rawhour -ge 12 ]; then
-                    grib=grib2
-                else
+                if [ $year -ge 2007 -a $month -ge 12 -a $rawday -lt 6 ]; then
                     grib=grib1
+                elif [ $year -eq 2007 -a $month -eq 12 -a $rawday -eq 6 ]; then
+                    if [ $hour -le 6 ]; then
+                        grib=grib1
+                    else
+                        grib=grib2
+                    fi
+                elif [ $year -ge 2007 -a $month -ge 12 -a $rawday -gt 6 ]; then
+                    grib=grib2
                 fi
 
                 wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ http://rda.ucar.edu/data/ds083.2/$grib/$year/$year.$month/fnl_${year}${month}${day}_${hour}_00.$grib
+
             done
         done
         echo
