@@ -51,15 +51,21 @@ for year in ${years[@]}; do
         for rawday in $(seq 1 ${dom[$((10#$month - 1))]}); do
             day=$(printf %02d $rawday)
             echo -n "$day "
-            wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ http://rda.ucar.edu/data/ds083.2/grib1/$year/$year.$month/fnl_${year}${month}${day}_00_00.grib1
-            wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ http://rda.ucar.edu/data/ds083.2/grib1/$year/$year.$month/fnl_${year}${month}${day}_06_00.grib1
-            wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ http://rda.ucar.edu/data/ds083.2/grib1/$year/$year.$month/fnl_${year}${month}${day}_12_00.grib1
-            wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ http://rda.ucar.edu/data/ds083.2/grib1/$year/$year.$month/fnl_${year}${month}${day}_18_00.grib1
+            for rawhour in 0 6 12 18; do
+                hour=$(printf %02d $rawhour)
+                if [ $year -ge 2007 -a $month -ge 12 -a $rawday -ge 6 -a $rawhour -ge 12 ]; then
+                    grib=grib2
+                else
+                    grib=grib1
+                fi
+
+                wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ http://rda.ucar.edu/data/ds083.2/$grib/$year/$year.$month/fnl_${year}${month}${day}_${hour}_00.$grib
+            done
         done
         echo
     done
     # Move the files to their own directory.
-    mv fnl_${year}????_??_??.grib1 $year
+    mv fnl_${year}????_??_??.grib? $year
 done
 
 # clean up
