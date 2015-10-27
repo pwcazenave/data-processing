@@ -53,7 +53,9 @@ for year in ${years[@]}; do
             echo -n "$day "
             for rawhour in 0 6 12 18; do
                 hour=$(printf %02d $rawhour)
-                if [ $year -ge 2007 -a $month -ge 12 -a $rawday -lt 6 ]; then
+                if [ $year -lt 2007 ]; then
+                    grib=grib1
+                elif [ $year -ge 2007 -a $month -ge 12 -a $rawday -lt 6 ]; then
                     grib=grib1
                 elif [ $year -eq 2007 -a $month -eq 12 -a $rawday -eq 6 ]; then
                     if [ $hour -le 6 ]; then
@@ -62,6 +64,8 @@ for year in ${years[@]}; do
                         grib=grib2
                     fi
                 elif [ $year -ge 2007 -a $month -ge 12 -a $rawday -gt 6 ]; then
+                    grib=grib2
+                elif [ $year -gt 2007 ]; then
                     grib=grib2
                 fi
 
