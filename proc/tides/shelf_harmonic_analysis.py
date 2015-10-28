@@ -12,7 +12,7 @@ import subprocess
 import sys
 import os
 
-from tide_tools import getObservedData, addHarmonicResults, parseTAPPyXML
+from PyFVCOM.tide_tools import getObservedData, addHarmonicResults, parseTAPPyXML
 
 
 if __name__ == '__main__':
