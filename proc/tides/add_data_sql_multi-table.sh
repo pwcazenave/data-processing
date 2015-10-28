@@ -40,6 +40,8 @@ SQL
             currFile=$dataDir/f${station}.slv
         elif [ -f $dataDir/${station}.dat ]; then
             currFile=$dataDir/${station}.dat
+        elif [ -f $dataDir/${station}.lst ]; then
+            currFile=$dataDir/${station}.lst
         else
             echo "Metadata for ${station} is present, but data file is not. Skipped"
             continue
