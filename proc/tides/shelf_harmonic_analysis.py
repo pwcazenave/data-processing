@@ -105,7 +105,7 @@ if __name__ == '__main__':
                     #   2. Parse the XML and add the relevant values to an SQL
                     #   database.
 
-                    subprocess.call(['/usr/bin/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=./harmonics/' + tableName + '.xml', '--quiet', '/tmp/data_' + tableName + '.txt'])
+                    subprocess.call(['/users/modellers/pica/Code/PyFVCOM/PyFVCOM/tappy.py', 'analysis', '--def_filename=' + formatFile, '--outputxml=./harmonics/' + tableName + '.xml', '--quiet', '/tmp/data_' + tableName + '.txt'])
 
                 else:
                     print 'No observed data for the time period selected for analysis...',
