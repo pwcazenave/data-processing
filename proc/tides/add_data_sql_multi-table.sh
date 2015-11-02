@@ -19,7 +19,7 @@ for file in $files; do
             echo "WARNING: No short name given. Usually because SHOM metadata has more stations that data available. Skipped."
             continue
         fi
-        sqlite3 ./tides_multitable.db << SQL
+        sqlite3 ./tides.db << SQL
 CREATE TABLE $station(
     year INT,
     month INT,
@@ -48,7 +48,7 @@ SQL
         fi
 
         echo -n "Adding $currFile... "
-            sqlite3 ./tides_multitable.db << SQL
+            sqlite3 ./tides.db << SQL
 .separator "$delim"
 .import $currFile $station
 SQL
@@ -58,7 +58,7 @@ done
 
 # Add all the metadata
 echo -n "Add metadata... "
-sqlite3 ./tides_multitable.db << STATIONS
+sqlite3 ./tides.db << STATIONS
 CREATE TABLE Stations(
     latDD FLOAT(10),
     lonDD FLOAT(10),
@@ -68,7 +68,7 @@ CREATE TABLE Stations(
 STATIONS
 # Populate with the station info
 for file in $files; do
-    sqlite3 ./tides_multitable.db << SQL
+    sqlite3 ./tides.db << SQL
 .separator ','
 .import $file Stations
 SQL
