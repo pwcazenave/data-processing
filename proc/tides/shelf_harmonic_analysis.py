@@ -47,7 +47,8 @@ if __name__ == '__main__':
             try:
                 f = open('./harmonics/' + tableName + '.xml', 'r')
                 f.close()
-                print 'Analysis already completed. Skipping.'
+                print 'Analysis already completed for {}. Skipping.'.format(tableName)
+                sys.stdout.flush()
             except:
                 # Use getObservedData() to extract all the data for each table
                 currData = getObservedData('./tides.db', tableName,
@@ -86,12 +87,15 @@ if __name__ == '__main__':
                     # ideal.
                     if noisy:
                         print 'Saving station {} to /tmp/data_{}.txt...'.format(row[3].title(), tableName),
+                        sys.stdout.flush()
                     np.savetxt('/tmp/data_' + tableName + '.txt', obsData, fmt='%4i/%02i/%02i %02i:%02i:%02i %.3f')
                     if noisy:
                         print 'done.'
+                        sys.stdout.flush()
 
                     if noisy:
                         print 'Running TAPPy on the data...',
+                        sys.stdout.flush()
 
                     # This is a bit of a hack. It ought to be possible to
                     # import tappy and use the data directly with the imported
@@ -105,6 +109,7 @@ if __name__ == '__main__':
 
                 else:
                     print 'No observed data for the time period selected for analysis...',
+                    sys.stdout.flush()
                     doStation = False
 
                 # Remove the temporary file we created upon which to run TAPPy
@@ -113,21 +118,25 @@ if __name__ == '__main__':
                 except:
                     if doStation:
                         print 'Unable to remove /tmp/data_{}.txt. File may be locked or you don\'t have permissions.'.format(tableName)
+                        sys.stdout.flush()
 
                 if noisy:
                     print 'done.'
+                    sys.stdout.flush()
 
 
             # Now I need to read in the xml file and add the results to an SQL
             # database.
             if doStation:
                 if noisy:
-                    print 'Adding station ' + tableName + ' harmonics to database:',
+                    print 'Adding station ' + tableName + ' harmonics to database: ',
+                    sys.stdout.flush()
 
                 try:
                     [cName, cSpeed, cPhase, cAmplitude, cInference] = parseTAPPyXML('./harmonics/' + tableName + '.xml')
                 except IOError:
                     print 'Unable to open constituent XML file. Skipping {}.'.format(tableName)
+                    sys.stdout.flush()
                     continue
 
                 # Now add all those values to the database
@@ -142,8 +151,10 @@ if __name__ == '__main__':
 
                 if noisy:
                     print 'done.'
+                    sys.stdout.flush()
 
             else:
                 print 'Skipping ' + tableName + '.'
+                sys.stdout.flush()
 
 
