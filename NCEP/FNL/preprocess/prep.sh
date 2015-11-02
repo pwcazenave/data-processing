@@ -18,10 +18,6 @@ years=({2002..2004})
 years=(2003)
 grids=(grids/geo_em.d??.nc)
 
-if [ ! -d ./logs ]; then
-    mkdir ./logs
-fi
-
 for year in ${years[@]}; do
     if [ ! -d ./$year ]; then
         mkdir ./$year
@@ -57,8 +53,8 @@ for year in ${years[@]}; do
 
         # Run the link script, ungrib and then finally metgrid.
         ../bin/link_grib.csh ../../$year/*.grib1
-        ../bin/ungrib.exe 2>&1 ../logs/${year}_ungrib.log
-        mpirun -n $np ../bin/metgrid.exe 2>&1 ../logs/${year}_metgrid.log
+        ../bin/ungrib.exe
+        mpirun -n $np ../bin/metgrid.exe
 
         # Tidy up
         rm Vtable namelist.wps GRIBFILE.???
