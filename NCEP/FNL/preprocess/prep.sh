@@ -43,7 +43,7 @@ for year in ${years[@]}; do
             echo "WARNING: Vtable found but not a symlink to the default one."
         fi
 
-        # Don't clobber old namelists.
+        # Do not clobber old namelists.
         if [ -f namelist.wps ]; then
             mv namelist.wps namelist.wps.$$
         fi
