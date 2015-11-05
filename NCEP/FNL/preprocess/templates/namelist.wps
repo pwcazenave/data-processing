@@ -37,7 +37,7 @@
 /
 
 &metgrid
- fg_name = 'SST','FLX','PGB',
+ fg_name = 'FLX',
  io_form_metgrid = 2,
  opt_metgrid_tbl_path         = '../templates',
  opt_output_from_metgrid_path = './',
