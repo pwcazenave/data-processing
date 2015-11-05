@@ -52,7 +52,7 @@ for year in ${years[@]}; do
         sed -i 's/2002-'/$year-'/g' namelist.wps
 
         # Run the link script, ungrib and then finally metgrid.
-        ../bin/link_grib.csh ../../$year/*.grib1
+        ../bin/link_grib.csh ../../$year/*.grib?
         ../bin/ungrib.exe
         mpirun -n $np ../bin/metgrid.exe
 
