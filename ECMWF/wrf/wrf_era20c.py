@@ -60,18 +60,19 @@ def get(year, month, outdir='.'):
 
     if not os.path.exists(files[0]):
         try:
+            # Pressure levels data
             server.retrieve({
                 "class": "e2",
-                "type": "an",
-                "stream": "oper",
-                "expver": "1",
-                "levtype": "pl",
-                "levelist": "1/to/137",
-                "date": "{}/to/{}".format(s_start, s_end),
-                "time": "00/03/06/09/12/15/18/21",
-                "param": "130.128/131.128/132.128/133.128/138.128/155.128/157.128",
                 "dataset": "era20c",
+                "date": "{}/to/{}".format(s_start, s_end),
+                "expver": "1",
+                "levelist": "1/2/3/5/7/10/20/30/50/70/100/125/150/175/200/225/250/300/350/400/450/500/550/600/650/700/750/775/800/825/850/875/900/925/950/975/1000",
+                "levtype": "pl",
+                "param": "129.128/130.128/131.128/132.128/133.128/138.128/155.128",
+                "stream": "oper",
                 "target": files[0],
+                "time": "00/03/06/09/12/15/18/21",
+                "type": "an",
             })
         except Exception:
             os.remove(files[1])
