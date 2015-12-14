@@ -79,19 +79,20 @@ def get(year, month, outdir='.'):
 
     if not os.path.exists(files[1]):
         try:
+            # Surface data
             server.retrieve({
                 "class": "e2",
-                "type": "an",
-                "stream": "oper",
+                "dataset": "era20c",
+                "date": "{}/to/{}".format(s_start, s_end),
                 "expver": "1",
                 "levtype": "sfc",
-                "date": "{}/to/{}".format(s_start, s_end),
-                "time": "00/06/12/18",
                 "param": "31.128/34.128/39.128/40.128/41.128/42.128/134.128/139.128/"
                          "141.128/151.128/165.128/166.128/167.128/168.128/170.128/"
                          "183.128/235.128/236.128",
-                "dataset": "era20c",
+                "stream": "oper",
                 "target": files[1],
+                "time": "00/06/12/18",
+                "type": "an",
             })
         except Exception:
             os.remove(files[1])
