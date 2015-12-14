@@ -19,7 +19,7 @@ def get(year, month, outdir='.'):
     """
     Get the ECMWF ERA-20C FVCOM forcing data for a given year.
 
-    Gets the following variables at the surface and model levels:
+    Gets the following variables at the surface and model levels.
 
     Model:
     ML_PARAMS=z/q/u/v/t/d/vo
