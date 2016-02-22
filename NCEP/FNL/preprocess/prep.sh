@@ -51,9 +51,17 @@ for year in ${years[@]}; do
 
         sed -i 's/2002-'/$year-'/g' namelist.wps
 
-        # Run the link script, ungrib and then finally metgrid.
-        ../bin/link_grib.csh ../../$year/*.grib?
-        ../bin/ungrib.exe
+        # Run the link script, ungrib and then finally metgrid. Do grib1 first,
+        # then grib2 for 2007, otherwise just do whatever we find.
+        if [ $year -eq 2007 ]; then
+            ../bin/link_grib.csh ../../$year/*.grib1
+            ../bin/ungrib.exe
+            ../bin/link_grib.csh ../../$year/*.grib2
+            ../bin/ungrib.exe
+        else
+            ../bin/link_grib.csh ../../$year/*.grib?
+            ../bin/ungrib.exe
+        fi
         mpirun -n $np ../bin/metgrid.exe
 
         # Tidy up
@@ -63,5 +71,4 @@ for year in ${years[@]}; do
         done
     )
 done
-
 
