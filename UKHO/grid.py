@@ -19,6 +19,7 @@ import subprocess
 import multiprocessing
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 class Point(object):
     """ A point class for a two coordinate location. """
@@ -146,10 +147,27 @@ def grid(rect):
 
     """
 
+    gotgmt = 5
+    gmt = 'gmt' # Assume GMT 5. Change only if the blockmean command is found.
+
+    try:
+        #subprocess.call('blockmean', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True) == 0
+        ret = subprocess.call(['blockmean', '--help'])
+        gotgmt = 4
+        # Eliminate the GMT prefix command used in GMT5.
+        gmt = ''
+    except OSError:
+        pass
+
+    if not gotgmt:
+        raise OSError('GMT not/installed cannot be found. Check you PATH and/or installation.')
+
     files = sources(rect, poly, raw)
 
     if not files:
         # If the list of files is empty, just skip this box.
+        if noisy:
+            print('No files in this box. Skipping.')
         return
 
     else:
@@ -160,41 +178,61 @@ def grid(rect):
         bfile = tempfile.NamedTemporaryFile(delete=True)
         nfile = tempfile.NamedTemporaryFile(delete=True)
         mfile = tempfile.NamedTemporaryFile(delete=True)
-        prefix = 'UKHO_{}_{}_{}_{}'.format(
+        prefix = 'UKHO_{}_{}_{}_{}-{}m'.format(
                 rect.left,
                 rect.right,
                 rect.bottom,
-                rect.top
+                rect.top,
+                res
                 )
-        ncfile = os.path.join('nc', '{}.nc'.format(prefix))
-        geofile = os.path.join('tiffs', '{}.tiff'.format(prefix))
+        ncfile = os.path.join('nc', '{}m'.format(res), '{}.nc'.format(prefix))
+        geofile = os.path.join('tiffs', '{}m'.format(res), '{}.tiff'.format(prefix))
+
+        #ax0.plot(np.mean((rect.left, rect.right)), np.mean((rect.top, rect.bottom)), 'ro')
+        #fig0.show()
+        #fig0.canvas.draw()
+
+        if os.path.isfile(ncfile) and not clobber:
+            if noisy:
+                print('netCDF file {} exists and clobber set to False. Skipping'.format(ncfile))
+            return
 
         area = '-R{}/{}/{}/{}'.format(rect.left, rect.right, rect.bottom, rect.top)
 
-        blockmean = ['/usr/bin/gmt blockmean', area, '-I{}'.format(res), ' '.join(files)]
-        nearneighbor = ['/usr/bin/gmt nearneighbor', area, '-I{}'.format(res), '-N4', '-S{}'.format(res * 4), bfile.name, '-G{}'.format(nfile.name)]
-        grdmask = ['/usr/bin/gmt grdmask', area, '-I{}'.format(res), '-S{}'.format(res * 4), '-NNaN/1/1', bfile.name, '-G{}'.format(mfile.name)]
-        grdmath = ['/usr/bin/gmt grdmath', nfile.name, mfile.name, 'MUL = {}'.format(ncfile)]
-        grdreformat = ['/usr/bin/gmt grdreformat', ncfile, '{}=gd:gtiff'.format(geofile)]
+        blockmean = [gmt, 'blockmean', area, '-I{}'.format(res), ' '.join(files)]
+        nearneighbor = [gmt, 'nearneighbor', area, '-I{}'.format(res), '-N4', '-S{}'.format(res * 4), bfile.name, '-G{}'.format(ncfile)]
+        grdmask = [gmt, 'grdmask', area, '-I{}'.format(res), '-S{}'.format(res * 4), '-NNaN/1/1', bfile.name, '-G{}'.format(mfile.name)]
+        grdmath = [gmt, 'grdmath', nfile.name, mfile.name, 'MUL = {}'.format(ncfile)]
+        grdreformat = [gmt, 'grdreformat', ncfile, '{}=gd:gtiff'.format(geofile)]
 
         # Blockmean has to be handled slightly differently as it writes to
         # stdout. The others all handle output files internally.
         subprocess.call(' '.join(blockmean), stdout=bfile, shell=True)
-        for proc in nearneighbor, grdmask, grdmath, grdreformat:
+        for proc in [nearneighbor]: #, grdmask, grdmath:
             subprocess.call(' '.join(proc), shell=True)
 
+        if gotgmt == 5:
+            subprocess.call(' '.join(grdreformat), shell=True)
+
+        if noisy:
+            if gotgmt == 5:
+                print('Created files {} and {}.'.format(ncfile, geofile))
+            else:
+                print('Created file {}.'.format(ncfile))
 
 
 if __name__ == '__main__':
 
+    noisy = True # print output?
     serial = False # run in serial or parallel?
+    clobber = True # overwrite existing files?
 
     raw = glob.glob(os.path.join('ascii', 'utm30n', '*.ascii'))
     bnds = glob.glob(os.path.join('metadata', '*.bnd'))
 
     # Grid resolution and box size.
-    res = 500 # in metres
-    size = 50000 # in metres
+    res = 250 # in metres
+    size = 25000 # in metres
 
     # Get the coverage of the whole data set. Requires running the bounds.sh
     # script to extract the metadata from each file. Apparently the .xml
@@ -229,6 +267,9 @@ if __name__ == '__main__':
     nx = int(np.ceil((northeast[0] - southwest[0]) / size))
     ny = int(np.ceil((northeast[1] - southwest[1]) / size))
 
+    if noisy:
+        print('{} potential boxes within the domain.'.format(nx * ny))
+
     west, south = southwest[:2]
 
     box = []
@@ -250,18 +291,23 @@ if __name__ == '__main__':
         west = southwest[0]
 
     try:
-        os.mkdir('nc')
+        os.mkdir(os.path.join('nc', '{}m'.format(res)))
     except:
         pass
 
     try:
-        os.mkdir('geotiff')
+        os.mkdir(os.path.join('tiffs', '{}m'.format(res)))
     except:
         pass
 
 
     if serial:
+        #fig0 = plt.figure()
+        #ax0 = fig0.add_subplot(111)
+        c = 0
         for b in box:
+            c += 1
+            if noisy: print('{} of {}'.format(c, len(box)))
             grid(b)
 
     else:
