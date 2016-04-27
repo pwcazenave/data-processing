@@ -14,8 +14,8 @@ import re
 
 import numpy as np
 
-from read_FVCOM_results import readFVCOM
-from ocean_tools import pressure2depth
+from PyFVCOM.read_FVCOM_results import ncread
+from PyFVCOM.ocean_tools import pressure2depth
 
 def findNamesBODC(data):
     """
