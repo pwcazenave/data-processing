@@ -112,7 +112,7 @@ if __name__ == '__main__':
             }
     # Add the global attributes
     nc['global attributes'] = {
-            'description':'Time series of the ADCP data from the WaveHub site vertical distribution of pH, TCO2 and PCO2 from the Tamar FVCOM CO2 release model',
+            'description':'Time series of the ADCP data from the WaveHub site',
             'source':'Ian Ashton (i.g.c.ashton@exeter.ac.uk)',
             'history': 'Created by Pierre Cazenave on {}'.format(time.ctime(time.time()))
             }
@@ -152,7 +152,7 @@ if __name__ == '__main__':
                 'dimensions':['time', 'level'],
                 'attributes':{'units':'meters s-1',
                     'long_name':'Vertical Water Velocity'}},
-            'error':{'data':ADCP[:, -4, :],
+            'error':{'data':ADCP[:, -3, :],
                 'dimensions':['time', 'level'],
                 'attributes':{'units':'meters s-1',
                     'long_name':'Velocity error magnitude'}},
