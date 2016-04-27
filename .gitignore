@@ -24,6 +24,9 @@
 *.qxf
 *.grb
 *.grib1
+*.grib2
+*.log.*
+*.log
 
 # Miscellaneous files
 .~lock*#
@@ -31,6 +34,7 @@
 *.swp
 .gmtdefaults4
 .gmtcommands4
+.idea
 
 # Data directories
 ArcGIS/
