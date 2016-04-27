@@ -560,9 +560,9 @@ if __name__ == '__main__':
     month = int(sys.argv[2])
 
     # Download the GRIB files.
-    # files = get(year, month, outdir='grib')
-    files = ('grib/{:04d}-{:02d}_analysis.grb'.format(year, month),
-             'grib/{:04d}-{:02d}_forecast.grb'.format(year, month))
+    files = get(year, month, outdir='grib')
+    # files = ('grib/{:04d}-{:02d}_analysis.grb'.format(year, month),
+    #          'grib/{:04d}-{:02d}_forecast.grb'.format(year, month))
     fix = [False, True]  # do we fix the cumulative?
 
     # Load the data and fix the forecast data variables to
@@ -573,6 +573,6 @@ if __name__ == '__main__':
     data_interp = interp(data, noisy=noisy)
 
     # Dump to netCDF.
-    fout = os.path.join('/dev/shm', 'nc',
+    fout = os.path.join('nc',
                         'ECMWF-ERA20C_FVCOM_{:04d}-{:02d}.nc'.format(year, month))
     dump(data_interp, fout, noisy=noisy)
