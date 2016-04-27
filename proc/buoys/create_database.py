@@ -38,8 +38,8 @@ if __name__ == '__main__':
         f = open(metaDataFile, 'rt')
         reader = csv.DictReader(f)
 
-        # Create a new database and add the metadata to a field called Stations with
-        # some of the metadata fields.
+        # Create a new database and add the metadata to a field called
+        # Stations with some of the metadata fields.
         try:
             with con:
                 try:
@@ -63,6 +63,7 @@ if __name__ == '__main__':
                             minuteEnd INT, \
                             secondEnd INT);')
                 except:
+                    # We've already made the Stations table.
                     pass
 
                 # Now add the metadata.
@@ -90,7 +91,6 @@ if __name__ == '__main__':
                         sYear, sMonth, sDay, sHour, sMin, sSec = data[0, 0:6].astype(int)
                         eYear, eMonth, eDay, eHour, eMin, eSec = data[-1, 0:6].astype(int)
 
-                        # Get the position for this site
 
                         cur.execute('\
                                 INSERT INTO Stations VALUES(\
@@ -113,9 +113,10 @@ if __name__ == '__main__':
                                 int(eMin), \
                                 int(eSec)))
 
-                        # Create a table with all the possible data types we're likely
-                        # to find from the BODC data. Some of these will be blank if we
-                        # don't have any data for a given station.
+                        # Create a table with all the possible data types
+                        # we're likely to find from the BODC data. Some of
+                        # these will be blank if we don't have any data for a
+                        # given station.
                         query = 'CREATE TABLE {}(\
                                 year INT, \
                                 month INT, \
@@ -127,7 +128,8 @@ if __name__ == '__main__':
 
                         cur.execute(query)
 
-                        # I can't get the 'safe' way to work, so we'll have to be 'unsafe'. Ho hum.
+                        # I can't get the 'safe' way to work, so we'll have
+                        # to be 'unsafe'. Ho hum.
                         #cur.execute('INSERT INTO ? (?) VALUES (?)', (site, ','.join(s), ','.join([str(i) for i in v.tolist()])))
                         try:
                             cur.executemany('INSERT INTO {} VALUES (?, ?, ?, ?, ?, ?, ?)'.format(site), data)
@@ -136,8 +138,7 @@ if __name__ == '__main__':
                             break
 
                     except sqlite3.Error, e:
-                        print 'Problem with row {}'.format(e.args[0])
-
+                        print 'Problem with row: {}'.format(e.args[0])
 
         except sqlite3.Error, e:
             if con:
