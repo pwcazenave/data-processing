@@ -4,4 +4,5 @@ currents - current meter data from the BODC archives.
 ferrybox - FerryBox data from the old NOC FerryBox webpage.
 ices - ICES data - not processed.
 stations.csv - list of stations to use for probes output in FVCOM. Used by the MATLAB scripts to create model input.
+stations_thin.csv - thinned list of the above stations. Omits a lot of the BODC records.
 tides - NTSLF/REFMAR/NSTD/etc. time series of surface elevation.
