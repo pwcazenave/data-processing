@@ -124,6 +124,8 @@ if __name__ == '__main__':
 
     noisy = True
 
+    os.remove('./ctd.db')
+
     con = sqlite3.connect('./ctd.db')
     cur = con.cursor()
 
