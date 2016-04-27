@@ -7,7 +7,7 @@ files, but it represents time (days?) since 00:00 01/01/1760.
 
 Unfortunately, the values in AADYAA01 are integer days, so there are no times
 (everything is at midnight). Comparing this with the data in the ASCII
-filesshows that from 1996 onwards, the data do have time values. I haven't
+files shows that from 1996 onwards, the data do have time values. I haven't
 figured a sensible way of adding the times to the concatenated netCDF file
 generated here.
 
