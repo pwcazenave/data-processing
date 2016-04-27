@@ -75,6 +75,7 @@ if __name__ == '__main__':
         df = df[1:]
 
         # Find the speed and direction data.
+        direction, speed = [], []
         for d in direction_names:
             if d in df.keys():
                 direction = d
@@ -94,7 +95,7 @@ if __name__ == '__main__':
         # from all frames, we need to offset the indexing by one accordingly.
         dflag = []
         for vv, val in enumerate(df[direction]):
-            if val[-1].isalpha():
+            if str(val)[-1].isalpha():
                 dflag.append('True')
                 df[direction][vv + 1] = val[:-1]
             else:
@@ -102,7 +103,7 @@ if __name__ == '__main__':
 
         sflag = []
         for vv, val in enumerate(df[speed]):
-            if val[-1].isalpha():
+            if str(val)[-1].isalpha():
                 sflag.append('True')
                 df[speed][vv + 1] = val[:-1]
             else:
