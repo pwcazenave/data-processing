@@ -90,7 +90,6 @@ if __name__ == '__main__':
                         sYear, sMonth, sDay, sHour, sMin, sSec = data[0, 0:6].astype(int)
                         eYear, eMonth, eDay, eHour, eMin, eSec = data[-1, 0:6].astype(int)
 
-
                         cur.execute('\
                                 INSERT INTO Stations VALUES(\
                                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (\
