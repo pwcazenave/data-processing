@@ -335,7 +335,11 @@ if __name__ == '__main__':
                             if len(values) == 0:
                                 values = addme
                             else:
-                                values = np.column_stack((values, addme))
+                                try:
+                                    values = np.column_stack((values, addme))
+                                except ValueError:
+                                    print('Problem concatenating data from `{}\' into the values array.'.format(k))
+                                    print(values.shape, addme.shape)
 
                     # If we haven't been given a sequence number, make one here.
                     if keys['sequence'] is None:
