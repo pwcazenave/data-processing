@@ -28,6 +28,7 @@ if __name__ == '__main__':
 
     bases = ('/users/modellers/pica/Data/WCO/',
             '/users/modellers/pica/Data/CCO/Waves',
+            '/users/modellers/pica/Data/CEFAS/SmartBuoys',
             '/users/modellers/pica/Data/CEFAS/WaveNet')
 
     for base in bases:
@@ -72,21 +73,19 @@ if __name__ == '__main__':
                         print('Adding station {}'.format(row['name']))
 
                     try:
-                        # Save the current site ID. Try lowercase first, then upper case.
-                        try:
-                            site = row['name'].replace(' ', '_').lower()
-                            data = np.genfromtxt(os.path.join(base,
-                                                              'formatted',
-                                                              '{}.csv'.format(site.replace('_', '-'))),
-                                                 delimiter=',',
-                                                 skip_header=1)
-                        except IOError:
-                            site = row['name'].replace(' ', '_')
-                            data = np.genfromtxt(os.path.join(base,
-                                                              'formatted',
-                                                              '{}.csv'.format(site.replace('_', '-'))),
-                                                 delimiter=',',
-                                                 skip_header=1)
+                        # Save the current site ID. Try a few different name
+                        # permutations to try and get the right file.
+                        site = row['name'].replace(' ', '_').replace("'", "")
+                        names = (site, site.replace('_', '-'), site.lower(), site.replace('_', '-').lower())
+                        for n in names:
+                            fname = os.path.join(base,
+                                                 'formatted',
+                                                 '{}.csv'.format(n))
+                            if os.path.isfile(fname):
+                                data = np.genfromtxt(fname,
+                                                     delimiter=',',
+                                                     skip_header=1)
+                                break
 
                         sYear, sMonth, sDay, sHour, sMin, sSec = data[0, 0:6].astype(int)
                         eYear, eMonth, eDay, eHour, eMin, eSec = data[-1, 0:6].astype(int)
@@ -124,7 +123,8 @@ if __name__ == '__main__':
                                 hour INT, \
                                 minute INT, \
                                 second INT, \
-                                temperature FLOAT(10))'.format(site)
+                                temperature FLOAT(10), \
+                                salinity FLOAT(10))'.format(site)
 
                         cur.execute(query)
 
@@ -132,7 +132,11 @@ if __name__ == '__main__':
                         # to be 'unsafe'. Ho hum.
                         #cur.execute('INSERT INTO ? (?) VALUES (?)', (site, ','.join(s), ','.join([str(i) for i in v.tolist()])))
                         try:
-                            cur.executemany('INSERT INTO {} VALUES (?, ?, ?, ?, ?, ?, ?)'.format(site), data)
+                            if data.shape[-1] == 7:
+                                data = np.column_stack((data,
+                                                        np.ones(data[:, -1].shape) *
+                                                        np.nan))
+                            cur.executemany('INSERT INTO {} VALUES (?, ?, ?, ?, ?, ?, ?, ?)'.format(site), data)
                         except:
                             if noisy: print 'uh oh'
                             break
