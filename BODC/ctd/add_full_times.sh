@@ -10,8 +10,8 @@ set -e
 
 infile=all_stations.csv
 outfile=new_${infile}
-infile=port_erin.csv
-outfile=new_${infile}
+#infile=port_erin.csv
+#outfile=new_${infile}
 
 # The new header (has "Start time" and "End time" inserted after "Start date" and "End date", respectively).
 echo '"BODC reference","Oceanographic data type",Instrument,Platform,"Latitude A","Latitude B","Longitude A","Longitude B","Positional definition","Start date","Start time","End date","End time","Series duration (days)","Sea floor depth (m)","Series depth minimum (m)","Series depth maximum (m)",Project,Country,Organisation,"Quality control (QC)","Series availability",Warnings,Licence' > $outfile
@@ -20,15 +20,23 @@ while read line; do
     site=$(echo $line | cut -f1 -d,)
 
     if [ "$site" != '"BODC reference"' ]; then
+
+        # Skip sites with null dates.
+        if [ "$site" == "null" ]; then
+            echo "Skipping $site."
+            continue
+        fi
+
         filename=$(printf "b%07i" $site)
+        echo "File $filename"
 
         csvDate=$(echo $line | cut -f10 -d, | tr -d "-" | tr -d "/")
 
         # Find the current site's times and insert into the CSV file after the Start date.
-        startDate=$(grep $filename all_times.txt | awk -F, '{printf "%04i%02i%02i\n", $2,$3,$4}')
-        startTime=$(grep $filename all_times.txt | awk -F, '{printf "%02i:%02i:%02i\n", $5,$6,$7}')
-        endDate=$(grep $filename all_times.txt | awk -F, '{printf "%04i%02i%02i\n", $8,$9,$10}')
-        endTime=$(grep $filename all_times.txt | awk -F, '{printf "%02i:%02i:%02i\n", $11,$12,$13}')
+        startDate=$(grep $filename all_times.txt | awk -F, '{printf "%04i%02i%02i\n", $4,$3,$2}')
+        startTime=$(grep $filename all_times.txt | awk -F, '{printf "%04i:%02i:%02i\n", $7,$6,$5}')
+        endDate=$(grep $filename all_times.txt | awk -F, '{printf "%04i%02i%02i\n", $10,$9,$8}')
+        endTime=$(grep $filename all_times.txt | awk -F, '{printf "%04i:%02i:%02i\n", $13,$12,$11}')
 
         # If we have empty end dates, replace with -99 (no data value).
         if [ -z $endDate ]; then
