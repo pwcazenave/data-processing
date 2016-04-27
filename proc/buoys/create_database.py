@@ -17,6 +17,12 @@ if __name__ == '__main__':
 
     noisy = True
 
+    # Remove the existing database.
+    try:
+        os.remove('./buoys.db')
+    except:
+        pass
+
     con = sqlite3.connect('./buoys.db')
     cur = con.cursor()
 
