@@ -184,7 +184,7 @@ if __name__ == '__main__':
                     site = 'b{:07d}'.format(int(row['BODC reference']))
 
                     ncfile = os.path.join(base, 'raw_data', '{}.qxf'.format(site))
-                    data = readFVCOM(ncfile)
+                    data = ncread(ncfile)
 
                     # Since the BODC data has a bunch of different codes for
                     # the same thing then I have to search for one of a few
