@@ -4,7 +4,7 @@
 # http://www.ceh.ac.uk/data/nrfa/data/search.html).
 #
 # The search has to be done in two goes (once for stations east of the
-# Greenwich meridien, once for stations west of it. The results from those two
+# Greenwich meridian, once for stations west of it. The results from those two
 # searches are in ceh_rivers_info.csv.
 #
 # rivers_IRS_crossref.txt is a file from Karen Amoudry (originally from Laurent
