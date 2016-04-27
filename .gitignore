@@ -27,6 +27,7 @@
 *.grib2
 *.log.*
 *.log
+*.xml
 
 # Miscellaneous files
 .~lock*#
